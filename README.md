@@ -281,6 +281,7 @@ Brotli quality 11 on the shipped files; method and commands in
 [docs/performance.md](docs/performance.md)
 - [docs/effects.md](docs/effects.md) — glass & gradient presets
 - [docs/inventory.md](docs/inventory.md) — full inventory of the 1,015 icons, variants, categories and differentiators.
+- [Fair comparison vs Lucide](docs/performance.md#fair-comparison-nexa-vs-lucide) — same bundler/settings: Nexa is smaller at 1, 10, 30 and 168 icons.
 
 | Asset | Raw | Brotli |
 |---|---:|---:|

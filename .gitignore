@@ -52,3 +52,6 @@ review/api/pack/pack.json
 review/api/pack/pack-dryrun.*
 review/api/pack/pack.stderr
 review/api/pack/webpack-test/
+
+# generated benchmark output
+bench/comparison.json

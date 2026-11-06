@@ -73,3 +73,14 @@ Machine-dependent numbers; sizes are deterministic.
 | `dist/animations.css` | ≤ 12 KB raw, ≤ 4 KB brotli |
 | `gallery/index.html` | ≤ 200 KB raw T7 target (measured 28910 B) |
 | `js/index.mjs` | < 24 KB gzip (single-file API inlines all 166 icon datasets) |
+
+
+## Nexa vs Lucide (like-for-like)
+
+```bash
+npm i -D lucide-react@1.70.0
+node bench/compare-lucide.mjs   # writes bench/comparison.json
+```
+
+Same esbuild config (ESM, minified, React external) and the same icon names.
+Measures first-icon bundles, marginal per-icon cost and the 168-name catalog.

@@ -168,6 +168,41 @@ network, no per-frame path math. Its build cost is the cost of GPUI itself
 (≈400 transitive crates, ~47 s cold check, ~796 MB target); see
 [gpui.md](gpui.md).
 
+## Fair comparison: Nexa vs Lucide
+
+The only meaningful comparison uses the **same bundler, same settings, same
+icon names, same compression**. `node bench/compare-lucide.mjs` does exactly
+that (ESM, minified, React external, brotli q11 / gzip 9). Measured on this repo:
+
+| Icons imported | Nexa brotli | Lucide brotli | Nexa gzip | Lucide gzip |
+|---:|---:|---:|---:|---:|
+| 1 | **1,512 B** | 1,571 B | **1,656 B** | 1,756 B |
+| 2 | **1,599 B** | 1,685 B | **1,745 B** | 1,874 B |
+| 5 | **1,790 B** | 1,913 B | **1,942 B** | 2,130 B |
+| 10 | **1,957 B** | 2,138 B | **2,121 B** | 2,392 B |
+| 20 | **2,488 B** | 2,810 B | **2,752 B** | 3,177 B |
+| 30 | **3,048 B** | 3,566 B | **3,425 B** | 4,119 B |
+| 168 (original catalog) | **9,606 B** (11,329 gzip) | 12,147 B (14,575 gzip) | | |
+
+- Marginal cost per extra icon is **~33–87 B brotli** for Nexa vs **~45–114 B**
+  for Lucide in the same setup — both are rounding errors on a real page.
+- The 168-name catalog is **~22% lighter with Nexa** on gzip.
+- A “392 B gzip per Lucide icon” figure is the *icon module alone / incremental
+  icon*, not the first-icon bundle. The like-for-like first-icon bundle includes
+  the shared factory on both sides: **~1.5 KB brotli either way** (Nexa 1,512 B,
+  Lucide 1,571 B). Comparing that bundle to Lucide’s per-icon module compares a
+  whole chunk to one leaf module.
+- Nexa’s first-icon factory still includes shape/fill/3D/glass/gradient props;
+  the optional `animations.css` / `effects.css` layers are separate and not paid
+  by apps that do not import them.
+
+Reproduce (Lucide pinned to the reference version):
+
+```bash
+npm i -D lucide-react@1.70.0
+node bench/compare-lucide.mjs
+```
+
 ## Measured runtime (`node bench/bench.mjs`)
 
 Machine-dependent; sizes above are deterministic. Node 26.9.0, darwin-arm64,

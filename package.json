@@ -100,7 +100,8 @@
     "test:rust": "cd rust && cargo test",
     "pm-check": "bash scripts/package-managers.sh",
     "verify": "node scripts/verify.mjs",
-    "release": "node scripts/generate-all.mjs && npm test && node scripts/verify.mjs"
+    "release": "node scripts/generate-all.mjs && npm test && node scripts/verify.mjs",
+    "bench:compare": "node bench/compare-lucide.mjs"
   },
   "peerDependencies": {
     "react": ">=18"
