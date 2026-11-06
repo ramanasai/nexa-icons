@@ -390,7 +390,7 @@ Measured baseline for the **1,034-icon catalog**:
 |---|---|---|
 | One tree-shaken React icon (incl. shape/fill/3D) | < 1.5 KB brotli | ~1,544 B brotli |
 | 8 tree-shaken icons | — | ~2,036 B brotli |
-| 13 tree-shaken icons (typical authenticated page) | — | ~2,415 B brotli (≈186 B/icon average) |
+| 13 tree-shaken icons (typical authenticated page) | — | ~2,091 B brotli (≈161 B/icon average) |
 | Full sprite, 1,034 icons | — | 357,126 B raw / 44,154 B brotli |
 | `animations.css` (incl. shape/fill/3D/swap) | ≤ 18 KB raw / ≤ 4 KB brotli | 16,198 B / 3,270 B |
 | React barrel / JS ESM | — | barrel 68,230 B raw / 11,953 B br; JS ESM 372,496 B raw / 60,896 B br |
