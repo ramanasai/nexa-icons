@@ -1,6 +1,6 @@
 # Nexa Icons — QA report
 
-**Release:** v1.0.0 · **Date:** 2026-11-06 · **Scope:** `@nexa/icons` 1,033-icon
+**Release:** v1.0.0 · **Date:** 2026-11-06 · **Scope:** `@nexa/icons` 1,034-icon
 catalog across React/TypeScript, vanilla JS, HTML, Go, Rust and the Rust GPUI
 adapter.
 
@@ -12,18 +12,18 @@ adapter.
 | Release verification | `node scripts/verify.mjs` | **OK** — all size/asset budgets |
 | Gallery browser checks | `python3 gallery/verify-browser.py` | **98/98 pass** (Chromium) |
 | Cross-browser checks | `python3 gallery/verify-cross-browser.py` | **26/26 pass** (Chromium + WebKit; Firefox launcher unavailable in this environment) |
-| Go module | `cd go && go test ./...` | pass (1,033 icons) |
+| Go module | `cd go && go test ./...` | pass (1,034 icons) |
 | Rust crate | `cd rust && cargo test` | 17 pass |
 | GPUI adapter | `cd rust/gpui && cargo test` | 7 pass + clippy clean |
 | Docs/link checks | `npm test` (docs tests) | pass — 0 broken links |
 
 ## What is covered
 
-- Dataset integrity: 1,033 unique glyphs, 26 categories, aliases, keywords,
+- Dataset integrity: 1,034 unique glyphs, 26 categories, aliases, keywords,
   17 semantic presets, fill-safety flags, geometry in the 24 grid, no hard-coded
   colours.
 - Every binding renders the same contract (structural/alias/category parity).
-- Assets: one SVG per icon, 1,033-symbol sprite, per-icon ESM/CJS modules,
+- Assets: one SVG per icon, 1,034-symbol sprite, per-icon ESM/CJS modules,
   `.d.ts`, category barrels and `effects.css`.
 - Accessibility: decorative defaults, labelled icons, icon-only buttons,
   reduced-motion and forced-colors rules, gallery keyboard/focus behaviour.

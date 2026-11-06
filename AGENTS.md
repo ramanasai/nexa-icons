@@ -5,7 +5,7 @@ Canonical guide for humans and coding agents working with **Nexa Icons**
 vanilla JS, plain HTML, Go and Rust with **zero runtime dependencies beyond the
 optional React peer**.
 
-> **Status snapshot:** **1,033 icons in 26 categories**, **12 duotone
+> **Status snapshot:** **1,034 icons in 26 categories**, **12 duotone
 > illustrations**, and a verified **Rust GPUI adapter** (`nexa-icons-gpui`) ship
 > in this release. Everything on this page is the current, implemented API.
 
@@ -284,7 +284,7 @@ directed edges; shipped and exported as `@nexa/icons/data/swaps.json`). Go:
 
 ## 9. Categories
 
-**1,033 icons in 26 categories** (`data/categories.json`). Tree-shakeable
+**1,034 icons in 26 categories** (`data/categories.json`). Tree-shakeable
 category subpaths, matching metadata in every binding:
 
 ```tsx
@@ -384,16 +384,16 @@ div().text_color(rgb(0x27272a)).child(icon("bell"))
 
 ## 14. Performance budgets
 
-Measured baseline for the **1,033-icon catalog**:
+Measured baseline for the **1,034-icon catalog**:
 
 | Asset | Budget | Current |
 |---|---|---|
 | One tree-shaken React icon (incl. shape/fill/3D) | < 1.5 KB brotli | ~1,544 B brotli |
 | 8 tree-shaken icons | — | ~2,036 B brotli |
-| Full sprite, 1,033 icons | — | 356,896 B raw / 44,142 B brotli |
+| Full sprite, 1,034 icons | — | 357,126 B raw / 44,154 B brotli |
 | `animations.css` (incl. shape/fill/3D/swap) | ≤ 18 KB raw / ≤ 4 KB brotli | 16,198 B / 3,270 B |
-| React barrel / JS ESM | — | barrel 68,176 B raw / 11,935 B br; JS ESM 372,288 B raw / 60,824 B br |
-| Gallery (shell-first) | 0 ms gallery JS before first paint (observer only); FP/FCP ~44 ms browser floor | 30,402 B shell + 456,839 B data + 87,603 B app; ~136-card virtual window, 976 DOM nodes |
+| React barrel / JS ESM | — | barrel 68,230 B raw / 11,953 B br; JS ESM 372,496 B raw / 60,896 B br |
+| Gallery (shell-first) | 0 ms gallery JS before first paint (observer only); FP/FCP ~44 ms browser floor | 30,402 B shell + 457,027 B data + 87,603 B app; ~136-card virtual window, 976 DOM nodes |
 
 Why it is fast: static precomputed node/string data, per-icon tree-shakeable
 modules, one cached sprite request, CSS-only animation/fill/swap/3D, no runtime

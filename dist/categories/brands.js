@@ -8,6 +8,7 @@ import { IrishJobs } from "../icons/irishjobs.js";
 import { JobsIE } from "../icons/jobsie.js";
 import { LinkedIn } from "../icons/linkedin.js";
 import { Microsoft } from "../icons/microsoft.js";
+import { Naukri } from "../icons/naukri.js";
 import { WhatsApp } from "../icons/whatsapp.js";
 import { XLogo } from "../icons/x-logo.js";
 export {
@@ -21,6 +22,7 @@ export {
   JobsIE,
   LinkedIn,
   Microsoft,
+  Naukri,
   WhatsApp,
   XLogo
 };

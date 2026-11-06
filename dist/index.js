@@ -1038,6 +1038,7 @@ import { Subscription } from "./icons/subscription.js";
 import { Hybrid } from "./icons/hybrid.js";
 import { Onsite } from "./icons/onsite.js";
 import { Remote } from "./icons/remote.js";
+import { Naukri } from "./icons/naukri.js";
 import { AlertTriangle as AlertTriangle2 } from "./icons/triangle-exclamation-point.js";
 import { X as X2 } from "./icons/x.js";
 export {
@@ -1656,6 +1657,7 @@ export {
   Move,
   MoveHorizontal,
   NEXA_MAP,
+  Naukri,
   Navigation,
   Navigation2,
   Navigation2Off,

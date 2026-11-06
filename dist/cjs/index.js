@@ -633,6 +633,7 @@ __export(index_exports, {
   Move: () => import_move.Move,
   MoveHorizontal: () => import_move_horizontal.MoveHorizontal,
   NEXA_MAP: () => import_map.NEXA_MAP,
+  Naukri: () => import_naukri.Naukri,
   Navigation: () => import_navigation.Navigation,
   Navigation2: () => import_navigation_2.Navigation2,
   Navigation2Off: () => import_navigation_2_off.Navigation2Off,
@@ -2112,5 +2113,6 @@ var import_subscription = require("./icons/subscription.js");
 var import_hybrid = require("./icons/hybrid.js");
 var import_onsite = require("./icons/onsite.js");
 var import_remote = require("./icons/remote.js");
+var import_naukri = require("./icons/naukri.js");
 var import_triangle_exclamation_point2 = require("./icons/triangle-exclamation-point.js");
 var import_x2 = require("./icons/x.js");

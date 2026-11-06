@@ -1,7 +1,7 @@
 # Glass & gradient effects
 
 Optional frosted-glass surfaces and gradient strokes for **every Nexa icon**
-(1,033 icons). Both are pure CSS/SVG — no WebGL, no runtime, no extra requests —
+(1,034 icons). Both are pure CSS/SVG — no WebGL, no runtime, no extra requests —
 and they are **off by default**. The reference point is the frosted-glass icon
 style popularised by sets like *Iceland — Frosted Glass*: translucent surface,
 soft blur, layered highlight, and an optional coloured gradient.

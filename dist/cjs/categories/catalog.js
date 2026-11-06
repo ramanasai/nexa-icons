@@ -1452,6 +1452,7 @@ const CATEGORIES = [
       "JobsIE",
       "LinkedIn",
       "Microsoft",
+      "Naukri",
       "WhatsApp",
       "XLogo"
     ]

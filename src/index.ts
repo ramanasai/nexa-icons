@@ -15,7 +15,7 @@ export { CATEGORIES } from "./categories/catalog.js";
 export type { NexaCategory } from "./categories/catalog.js";
 export { ICON_NAMES, resolveKebab } from "./registry.js";
 
-/* 1033 icons */
+/* 1034 icons */
 export { Activity } from "./icons/activity.js";
 export { AlertCircle } from "./icons/circle-exclamation-point.js";
 export { AlertTriangle } from "./icons/triangle-exclamation-point.js";
@@ -1049,6 +1049,7 @@ export { Subscription } from "./icons/subscription.js";
 export { Hybrid } from "./icons/hybrid.js";
 export { Onsite } from "./icons/onsite.js";
 export { Remote } from "./icons/remote.js";
+export { Naukri } from "./icons/naukri.js";
 
 /* Duplicate requested names kept as aliases: XIcon === X, TriangleAlert === AlertTriangle */
 export { AlertTriangle as TriangleAlert } from "./icons/triangle-exclamation-point.js";

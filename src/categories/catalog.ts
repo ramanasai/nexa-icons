@@ -1432,6 +1432,7 @@ export const CATEGORIES: readonly NexaCategory[] = [
       "JobsIE",
       "LinkedIn",
       "Microsoft",
+      "Naukri",
       "WhatsApp",
       "XLogo"
     ]

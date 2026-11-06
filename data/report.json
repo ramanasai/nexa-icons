@@ -1,6 +1,6 @@
 {
-  "requested": 1033,
-  "unique": 1033,
+  "requested": 1034,
+  "unique": 1034,
   "duplicates": [],
   "animation": {
     "bounce": [
@@ -485,7 +485,8 @@
       "Subscription",
       "Hybrid",
       "Onsite",
-      "Remote"
+      "Remote",
+      "Naukri"
     ],
     "pulse": [
       "Activity",
@@ -1072,9 +1073,9 @@
     ]
   },
   "sizes": {
-    "datasetBytes": 829642,
-    "svgTotalBytes": 409136,
+    "datasetBytes": 830058,
+    "svgTotalBytes": 409421,
     "svgAvgBytes": 396,
-    "spriteBytes": 356896
+    "spriteBytes": 357126
   }
 }

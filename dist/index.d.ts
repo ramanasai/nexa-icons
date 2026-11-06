@@ -1043,5 +1043,6 @@ export { Subscription } from "./icons/subscription.js";
 export { Hybrid } from "./icons/hybrid.js";
 export { Onsite } from "./icons/onsite.js";
 export { Remote } from "./icons/remote.js";
+export { Naukri } from "./icons/naukri.js";
 export { AlertTriangle as TriangleAlert } from "./icons/triangle-exclamation-point.js";
 export { X as XIcon } from "./icons/x.js";

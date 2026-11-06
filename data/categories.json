@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "total": 1033,
+  "total": 1034,
   "categories": [
     {
       "id": "health",
@@ -1432,6 +1432,7 @@
         "JobsIE",
         "LinkedIn",
         "Microsoft",
+        "Naukri",
         "WhatsApp",
         "XLogo"
       ]
@@ -4783,6 +4784,9 @@
     ],
     "Remote": [
       "places"
+    ],
+    "Naukri": [
+      "brands"
     ]
   },
   "uncategorized": []

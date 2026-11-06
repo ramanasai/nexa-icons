@@ -4,11 +4,11 @@ description: >-
   Use when designing, choosing, drawing, or reviewing icons for
   Nexa: UI icons, empty states, feature cards, nav, buttons,
   favicons, or social/OG graphics. The implementation lives in @nexa/icons
-  (1,033 icons, currentColor, CSS-only animation); never mix another icon set in.
+  (1,034 icons, currentColor, CSS-only animation); never mix another icon set in.
 ---
 # Nexa icon styles
 
-One consistent icon language for Nexa (Next.js app, light theme `#fafafa`, dark theme `#0c0c0e`). The icons ship in `@nexa/icons` — 1,033 unique icons generated from one canonical dataset (`data/icons.json`). Follow these rules on every screen.
+One consistent icon language for Nexa (Next.js app, light theme `#fafafa`, dark theme `#0c0c0e`). The icons ship in `@nexa/icons` — 1,034 unique icons generated from one canonical dataset (`data/icons.json`). Follow these rules on every screen.
 
 ## 1. Library
 

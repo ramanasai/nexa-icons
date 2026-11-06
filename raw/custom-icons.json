@@ -1288,5 +1288,41 @@
         }
       ]
     ]
+  },
+  {
+    "name": "Naukri",
+    "kebab": "naukri",
+    "categories": [
+      "brands"
+    ],
+    "keywords": [
+      "naukri",
+      "brand",
+      "source",
+      "job board",
+      "india"
+    ],
+    "preset": "pop",
+    "trigger": "hover",
+    "fillSafe": false,
+    "description": "Generic source-badge monogram (not the official logo).",
+    "nodes": [
+      [
+        "rect",
+        {
+          "x": "2.5",
+          "y": "2.5",
+          "width": "19",
+          "height": "19",
+          "rx": "5"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M8 16V8l8 8V8"
+        }
+      ]
+    ]
   }
 ]

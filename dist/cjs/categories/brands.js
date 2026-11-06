@@ -28,6 +28,7 @@ __export(brands_exports, {
   JobsIE: () => import_jobsie.JobsIE,
   LinkedIn: () => import_linkedin.LinkedIn,
   Microsoft: () => import_microsoft.Microsoft,
+  Naukri: () => import_naukri.Naukri,
   WhatsApp: () => import_whatsapp.WhatsApp,
   XLogo: () => import_x_logo.XLogo
 });
@@ -42,5 +43,6 @@ var import_irishjobs = require("../icons/irishjobs.js");
 var import_jobsie = require("../icons/jobsie.js");
 var import_linkedin = require("../icons/linkedin.js");
 var import_microsoft = require("../icons/microsoft.js");
+var import_naukri = require("../icons/naukri.js");
 var import_whatsapp = require("../icons/whatsapp.js");
 var import_x_logo = require("../icons/x-logo.js");

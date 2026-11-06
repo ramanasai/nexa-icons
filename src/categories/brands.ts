@@ -9,5 +9,6 @@ export { IrishJobs } from "../icons/irishjobs.js";
 export { JobsIE } from "../icons/jobsie.js";
 export { LinkedIn } from "../icons/linkedin.js";
 export { Microsoft } from "../icons/microsoft.js";
+export { Naukri } from "../icons/naukri.js";
 export { WhatsApp } from "../icons/whatsapp.js";
 export { XLogo } from "../icons/x-logo.js";
