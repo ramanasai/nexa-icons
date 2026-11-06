@@ -1,0 +1,4643 @@
+{
+  "version": 1,
+  "total": 1000,
+  "categories": [
+    {
+      "id": "health",
+      "label": "Health & Wellness",
+      "description": "Medical care, wellbeing, fitness, accessibility and body-related icons.",
+      "icons": [
+        "Accessibility",
+        "Activity",
+        "Ambulance",
+        "Baby",
+        "Bandage",
+        "BicepsFlexed",
+        "Biohazard",
+        "Bone",
+        "BoneFracture",
+        "Brain",
+        "BrainCircuit",
+        "BrainCog",
+        "BrainOff",
+        "BriefcaseMedical",
+        "Cigarette",
+        "CigaretteOff",
+        "Dna",
+        "DnaOff",
+        "Dumbbell",
+        "Ear",
+        "EarOff",
+        "FlaskConical",
+        "FlaskConicalOff",
+        "Footprints",
+        "Heart",
+        "HeartHandshake",
+        "HeartOff",
+        "HeartPlus",
+        "HeartPulse",
+        "HeartX",
+        "Hospital",
+        "Microscope",
+        "MonitorActivity",
+        "PersonStanding",
+        "Pill",
+        "PillBottle",
+        "Radiation",
+        "ScanHeart",
+        "SquareActivity",
+        "Stethoscope",
+        "Syringe",
+        "Tablets",
+        "TestTube",
+        "Thermometer",
+        "ThermometerSnowflake"
+      ]
+    },
+    {
+      "id": "finance",
+      "label": "Finance & Money",
+      "description": "Currency, payments, banking, invoices, pricing and financial data.",
+      "icons": [
+        "BadgeEuro",
+        "BadgeJapaneseYen",
+        "BadgePercent",
+        "BadgePoundSterling",
+        "Banknote",
+        "BanknoteArrowDown",
+        "BanknoteArrowUp",
+        "BanknoteCheck",
+        "BanknoteX",
+        "Calculator",
+        "CircleDollarSign",
+        "CircleEuro",
+        "CirclePoundSterling",
+        "Coins",
+        "CreditCard",
+        "CreditCardCheck",
+        "CreditCardMinus",
+        "CreditCardPlus",
+        "CreditCardReader",
+        "CreditCardX",
+        "Currency",
+        "DollarSign",
+        "Euro",
+        "HandCoins",
+        "IndianRupee",
+        "Landmark",
+        "Percent",
+        "PiggyBank",
+        "PoundSterling",
+        "Receipt",
+        "ReceiptCent",
+        "ReceiptEuro",
+        "ReceiptIndianRupee",
+        "ReceiptJapaneseYen",
+        "ReceiptPoundSterling",
+        "ReceiptSwissFranc",
+        "ReceiptText",
+        "ReceiptTurkishLira",
+        "Scale",
+        "SwissFranc",
+        "Vault",
+        "Wallet",
+        "WalletCards",
+        "WalletMinimal"
+      ]
+    },
+    {
+      "id": "food",
+      "label": "Food & Drink",
+      "description": "Meals, drinks, kitchen and restaurant icons.",
+      "icons": [
+        "Banana",
+        "Beef",
+        "BeefOff",
+        "Beer",
+        "BeerOff",
+        "Blender",
+        "BottleWine",
+        "Cake",
+        "CakeSlice",
+        "Candy",
+        "CandyOff",
+        "Carrot",
+        "ChefHat",
+        "Cherry",
+        "Citrus",
+        "Coffee",
+        "Cookie",
+        "CookingPot",
+        "Croissant",
+        "CupSoda",
+        "Dessert",
+        "Donut",
+        "Drumstick",
+        "Egg",
+        "EggOff",
+        "Grape",
+        "Ham",
+        "Hamburger",
+        "HandPlatter",
+        "IceCreamBowl",
+        "Martini",
+        "Menu",
+        "Microwave",
+        "Milk",
+        "MilkOff",
+        "Pizza",
+        "Popcorn",
+        "Refrigerator",
+        "Salad",
+        "Sandwich",
+        "Soup",
+        "Utensils",
+        "UtensilsCrossed",
+        "Vegan",
+        "Wheat",
+        "WheatOff",
+        "Wine",
+        "WineOff"
+      ]
+    },
+    {
+      "id": "weather",
+      "label": "Weather & Nature",
+      "description": "Sun, moon, clouds, precipitation, wind, plants and temperature.",
+      "icons": [
+        "Cloud",
+        "CloudDrizzle",
+        "CloudExclamationPoint",
+        "CloudFog",
+        "CloudHail",
+        "CloudLightning",
+        "CloudMoon",
+        "CloudRain",
+        "CloudSnow",
+        "Clover",
+        "Droplet",
+        "DropletOff",
+        "Droplets",
+        "Eclipse",
+        "Flame",
+        "Flower",
+        "Haze",
+        "Leaf",
+        "Moon",
+        "MoonStar",
+        "Rainbow",
+        "Snowflake",
+        "Sprout",
+        "Sun",
+        "SunDim",
+        "SunMedium",
+        "SunMoon",
+        "SunSnow",
+        "Sunrise",
+        "Sunset",
+        "Thermometer",
+        "ThermometerSnowflake",
+        "Tornado",
+        "Umbrella",
+        "UmbrellaOff",
+        "WavesArrowDown",
+        "WavesArrowUp",
+        "WavesHorizontal",
+        "WavesLadder",
+        "WavesVertical",
+        "Wind",
+        "WindArrowDown",
+        "WindArrowUp"
+      ]
+    },
+    {
+      "id": "education",
+      "label": "Education & Learning",
+      "description": "School, books, study, science and presentation icons.",
+      "icons": [
+        "Atom",
+        "Backpack",
+        "Book",
+        "BookAudio",
+        "BookCheck",
+        "BookCopy",
+        "BookHeart",
+        "BookKey",
+        "BookOpenCheck",
+        "BookPlus",
+        "BookX",
+        "Brain",
+        "Dna",
+        "DraftingCompass",
+        "FlaskConical",
+        "FlaskConicalOff",
+        "FlaskRound",
+        "GraduationCap",
+        "Languages",
+        "Library",
+        "LibraryBig",
+        "Microscope",
+        "Notebook",
+        "NotebookDot",
+        "NotebookPen",
+        "NotebookTabs",
+        "NotebookText",
+        "Orbit",
+        "PencilRuler",
+        "Presentation",
+        "Ruler",
+        "RulerDimensionLine",
+        "School",
+        "ScrollText",
+        "Telescope",
+        "TestTube",
+        "University"
+      ]
+    },
+    {
+      "id": "travel",
+      "label": "Travel & Transport",
+      "description": "Vehicles, routes, trips, tickets and travel luggage.",
+      "icons": [
+        "Anchor",
+        "Bike",
+        "Bus",
+        "Car",
+        "CarBattery",
+        "Caravan",
+        "Compass",
+        "Fuel",
+        "Hotel",
+        "Luggage",
+        "MapPinCheck",
+        "MapPinHouse",
+        "MapPinOff",
+        "MapPinPlusInside",
+        "MapPinSearch",
+        "MapPinX",
+        "MapPinXInside",
+        "Mountain",
+        "MountainSnow",
+        "ParkingMeter",
+        "Plane",
+        "PlaneLanding",
+        "Road",
+        "Rocket",
+        "Route",
+        "RouteOff",
+        "Sailboat",
+        "Scooter",
+        "Ship",
+        "ShipCargo",
+        "ShipWheel",
+        "Tent",
+        "TentTree",
+        "Ticket",
+        "TicketCheck",
+        "TicketMinus",
+        "TicketPercent",
+        "TicketPlus",
+        "TicketSlash",
+        "TicketX",
+        "Tickets",
+        "TicketsPlane",
+        "TrafficCone",
+        "TrainFront",
+        "TramFront",
+        "Truck",
+        "TruckElectric",
+        "Umbrella"
+      ]
+    },
+    {
+      "id": "commerce",
+      "label": "Shopping & Commerce",
+      "description": "Shopping, products, orders, delivery, tags, discounts and gifts.",
+      "icons": [
+        "Banknote",
+        "BanknoteArrowDown",
+        "BanknoteArrowUp",
+        "BanknoteCheck",
+        "BanknoteX",
+        "Barcode",
+        "Briefcase",
+        "Coins",
+        "Container",
+        "CreditCard",
+        "CreditCardCheck",
+        "CreditCardMinus",
+        "CreditCardPlus",
+        "CreditCardReader",
+        "CreditCardX",
+        "Factory",
+        "Fuel",
+        "Gift",
+        "HandCoins",
+        "Package",
+        "Package2",
+        "PackageCheck",
+        "PackageMinus",
+        "PackagePen",
+        "PackagePlus",
+        "PackageQuestionMark",
+        "PackageSearch",
+        "PackageX",
+        "Percent",
+        "PiggyBank",
+        "QrCode",
+        "Receipt",
+        "ReceiptCent",
+        "ReceiptEuro",
+        "ReceiptIndianRupee",
+        "ReceiptJapaneseYen",
+        "ReceiptPoundSterling",
+        "ReceiptSwissFranc",
+        "ReceiptText",
+        "ReceiptTurkishLira",
+        "ScanBarcode",
+        "ScanLine",
+        "ScanQrCode",
+        "ShoppingBag",
+        "ShoppingBasket",
+        "ShoppingCart",
+        "ShoppingCartMinus",
+        "ShoppingCartPlus",
+        "Store",
+        "Tag",
+        "TagPlus",
+        "TagX",
+        "Tags",
+        "Truck",
+        "TruckElectric",
+        "Wallet",
+        "WalletCards",
+        "WalletMinimal",
+        "Warehouse"
+      ]
+    },
+    {
+      "id": "security",
+      "label": "Security & Privacy",
+      "description": "Locks, keys, shields, authentication, scanning and protection.",
+      "icons": [
+        "Ban",
+        "Biohazard",
+        "BookKey",
+        "BrickWallFire",
+        "BrickWallShield",
+        "EarthLock",
+        "Eye",
+        "EyeClosed",
+        "EyeDashed",
+        "EyeOff",
+        "FileKey",
+        "FileLock",
+        "Fingerprint",
+        "Gavel",
+        "GlobeLock",
+        "IdCard",
+        "Key",
+        "KeyRound",
+        "KeySquare",
+        "LifeBuoy",
+        "Lock",
+        "LockKeyhole",
+        "LockKeyholeOpen",
+        "LockOpen",
+        "Radiation",
+        "Scale",
+        "ScanEye",
+        "ScanFace",
+        "Shield",
+        "ShieldAlert",
+        "ShieldBan",
+        "ShieldCheck",
+        "ShieldCog",
+        "ShieldEllipsis",
+        "ShieldHalf",
+        "ShieldMinus",
+        "ShieldOff",
+        "ShieldPlus",
+        "ShieldQuestionMark",
+        "ShieldX",
+        "Siren",
+        "SirenOff",
+        "Vault",
+        "VenetianMask"
+      ]
+    },
+    {
+      "id": "communication",
+      "label": "Communication",
+      "description": "Mail, messages, phone, notifications, contacts and sharing.",
+      "icons": [
+        "AtSign",
+        "Bell",
+        "BellCheck",
+        "BellDot",
+        "BellElectric",
+        "BellMinus",
+        "BellOff",
+        "BellPlus",
+        "Contact",
+        "ContactRound",
+        "Forward",
+        "Headset",
+        "Inbox",
+        "Languages",
+        "Mail",
+        "MailBadge",
+        "MailCheck",
+        "MailClock",
+        "MailDot",
+        "MailMinus",
+        "MailPen",
+        "MailPlus",
+        "MailQuestionMark",
+        "MailSearch",
+        "MailX",
+        "Mailbox",
+        "Mails",
+        "Megaphone",
+        "MegaphoneOff",
+        "MessageCircle",
+        "MessageCircleDashedCheck",
+        "MessageCircleOff",
+        "MessageCircleText",
+        "MessageCircleX",
+        "MessageSquare",
+        "MessageSquareDiff",
+        "MessageSquareLock",
+        "MessageSquareOff",
+        "MessageSquareX",
+        "MessagesSquare",
+        "Newspaper",
+        "Phone",
+        "PhoneLog",
+        "PhoneOff",
+        "Quote",
+        "Radio",
+        "RadioOff",
+        "Reply",
+        "Rss",
+        "Satellite",
+        "SatelliteDish",
+        "Send",
+        "SendToBack",
+        "Share",
+        "Share2",
+        "Smartphone",
+        "Speech",
+        "Vibrate",
+        "Voicemail"
+      ]
+    },
+    {
+      "id": "media",
+      "label": "Media & Camera",
+      "description": "Audio, video, images, playback and recording.",
+      "icons": [
+        "Airplay",
+        "Aperture",
+        "AudioLines",
+        "AudioLinesOff",
+        "AudioLinesX",
+        "AudioWaveform",
+        "BookAudio",
+        "Camera",
+        "CameraOff",
+        "Captions",
+        "CaptionsOff",
+        "Cast",
+        "Clapperboard",
+        "Disc",
+        "Disc2",
+        "Disc3",
+        "DiscAlbum",
+        "FastForward",
+        "Film",
+        "Headphones",
+        "ImageIcon",
+        "ImageOff",
+        "ImagePlay",
+        "ImagePlus",
+        "ImageUp",
+        "Images",
+        "Mic",
+        "MicAudioLines",
+        "MicOff",
+        "MicSignal",
+        "MicVocal",
+        "Newspaper",
+        "Pause",
+        "Play",
+        "PlayOff",
+        "Projector",
+        "Radio",
+        "RadioOff",
+        "Rewind",
+        "Rss",
+        "SkipBack",
+        "Speaker",
+        "Tv",
+        "TvMinimal",
+        "TvMinimalPlay",
+        "Video",
+        "VideoOff",
+        "Volume",
+        "VolumeOff",
+        "Webcam",
+        "WebcamOff"
+      ]
+    },
+    {
+      "id": "files",
+      "label": "Files & Folders",
+      "description": "Documents, folders, archives, attachments and file operations.",
+      "icons": [
+        "Archive",
+        "ArchiveX",
+        "BookCopy",
+        "BookUser",
+        "Clipboard",
+        "ClipboardCheck",
+        "ClipboardClock",
+        "ClipboardMinus",
+        "ClipboardPen",
+        "ClipboardPenLine",
+        "ClipboardPlus",
+        "ClipboardType",
+        "ClipboardX",
+        "Copy",
+        "Download",
+        "File",
+        "FileBox",
+        "FileClock",
+        "FileDatabase",
+        "FileKey",
+        "FilePen",
+        "FilePenLine",
+        "FileScan",
+        "FileSearch",
+        "FileSearchCorner",
+        "FileSpreadsheet",
+        "FileText",
+        "FileUp",
+        "Files",
+        "Folder",
+        "FolderCog",
+        "FolderDot",
+        "FolderGit2",
+        "FolderKanban",
+        "FolderKey",
+        "FolderOpen",
+        "FolderPen",
+        "FolderSearch",
+        "FolderSync",
+        "FolderUsers",
+        "HardDrive",
+        "HardDriveDownload",
+        "HardDriveUpload",
+        "Inbox",
+        "NotepadText",
+        "NotepadTextDashed",
+        "Package",
+        "Paperclip",
+        "Printer",
+        "Save",
+        "SaveCheck",
+        "SaveOff",
+        "SavePen",
+        "SavePlus",
+        "Scroll",
+        "ScrollText",
+        "StickyNote",
+        "StickyNoteCheck",
+        "StickyNoteMinus",
+        "StickyNoteOff",
+        "StickyNotePlus",
+        "StickyNoteX",
+        "Trash2",
+        "Upload",
+        "UploadCloud"
+      ]
+    },
+    {
+      "id": "data",
+      "label": "Data & Analytics",
+      "description": "Charts, graphs, metrics, databases, tables and reports.",
+      "icons": [
+        "Activity",
+        "BarChart2",
+        "BarChart3",
+        "Binary",
+        "CalendarClock",
+        "ChartBar",
+        "ChartBellCurve",
+        "ChartCandlestick",
+        "ChartGantt",
+        "ChartLine",
+        "ChartNetwork",
+        "ChartNoAxesGantt",
+        "ChartQuadrant",
+        "ChartRadar",
+        "ChartSpline",
+        "Crosshair",
+        "Database",
+        "DatabaseArrowUp",
+        "DatabaseBackup",
+        "DatabaseCheck",
+        "DatabaseMinus",
+        "DatabasePlus",
+        "DatabaseSearch",
+        "DatabaseX",
+        "DatabaseZap",
+        "FileSpreadsheet",
+        "Gauge",
+        "History",
+        "LayoutDashboard",
+        "Network",
+        "Presentation",
+        "Radar",
+        "ScanBox",
+        "ScanLine",
+        "ScanSearch",
+        "Sigma",
+        "SquareChartGantt",
+        "Table",
+        "TableOfContents",
+        "TableProperties",
+        "Target",
+        "TrendingDown",
+        "TrendingUp",
+        "TrendingUpDown",
+        "Workflow"
+      ]
+    },
+    {
+      "id": "devices",
+      "label": "Devices & Hardware",
+      "description": "Phones, computers, peripherals, power, connectivity and hardware.",
+      "icons": [
+        "Battery",
+        "BatteryPlus",
+        "Bluetooth",
+        "BluetoothOff",
+        "Cable",
+        "Cpu",
+        "CpuAi",
+        "EthernetPort",
+        "HardDrive",
+        "HardDriveDownload",
+        "HardDriveUpload",
+        "Keyboard",
+        "KeyboardMusic",
+        "KeyboardOff",
+        "Laptop",
+        "MemoryStick",
+        "Monitor",
+        "MonitorActivity",
+        "MonitorCheck",
+        "MonitorCog",
+        "MonitorDot",
+        "MonitorOff",
+        "MonitorPc",
+        "MonitorPlay",
+        "MonitorSmartphone",
+        "MonitorX",
+        "Mouse",
+        "MouseOff",
+        "MousePointer2Off",
+        "Plug",
+        "Plug2",
+        "PlugZap",
+        "Power",
+        "PowerOff",
+        "Printer",
+        "Printer3D",
+        "PrinterCheck",
+        "PrinterX",
+        "Projector",
+        "Radar",
+        "Router",
+        "Server",
+        "ServerCog",
+        "ServerNas",
+        "ServerOff",
+        "ServerPlus",
+        "Smartphone",
+        "SmartphoneCharging",
+        "SmartphoneNfc",
+        "SmartphoneUserRound",
+        "Speaker",
+        "Tablet",
+        "TabletSmartphone",
+        "Usb",
+        "UsbCPort",
+        "Vibrate",
+        "Watch",
+        "Wifi",
+        "WifiCog",
+        "WifiLock",
+        "WifiOff",
+        "WifiPen",
+        "WifiSync"
+      ]
+    },
+    {
+      "id": "development",
+      "label": "Development",
+      "description": "Code, terminals, Git, APIs, containers and developer tooling.",
+      "icons": [
+        "Binary",
+        "Blocks",
+        "Box",
+        "Boxes",
+        "BoxesLinked",
+        "Braces",
+        "Brackets",
+        "Bug",
+        "BugOff",
+        "BugPlay",
+        "CalendarSync",
+        "Code",
+        "CodeXml",
+        "Command",
+        "Component",
+        "Container",
+        "Cpu",
+        "CpuAi",
+        "Database",
+        "FolderGit2",
+        "GitBranch",
+        "GitBranchMinus",
+        "GitBranchPlus",
+        "GitCompare",
+        "GitFork",
+        "GitGraph",
+        "GitMerge",
+        "GitMergeConflict",
+        "GitPullRequestCreate",
+        "Loader2",
+        "Magnet",
+        "Network",
+        "Puzzle",
+        "QrCode",
+        "Regex",
+        "Rocket",
+        "Server",
+        "ServerCog",
+        "ServerNas",
+        "ServerOff",
+        "ServerPlus",
+        "Settings",
+        "Terminal",
+        "Variable",
+        "Webhook",
+        "WebhookOff",
+        "Workflow",
+        "Wrench",
+        "Zap"
+      ]
+    },
+    {
+      "id": "editing",
+      "label": "Editing & Text",
+      "description": "Writing, formatting, text lists, selection and clipboard editing.",
+      "icons": [
+        "ALargeSmall",
+        "AlignEndHorizontal",
+        "AlignEndVertical",
+        "AlignHorizontalSpaceBetween",
+        "AlignStartHorizontal",
+        "AlignStartVertical",
+        "AlignVerticalSpaceBetween",
+        "Baseline",
+        "Bold",
+        "CaseLower",
+        "CopyCheck",
+        "CopySlash",
+        "CopyX",
+        "Eraser",
+        "Heading1",
+        "Heading2",
+        "Heading3",
+        "Heading4",
+        "Heading5",
+        "Heading6",
+        "Highlighter",
+        "Italic",
+        "Ligature",
+        "List",
+        "ListCheck",
+        "ListChecks",
+        "ListChevronsDownUp",
+        "ListChevronsUpDown",
+        "ListClock",
+        "ListCollapse",
+        "ListOrdered",
+        "ListSortAscending",
+        "ListSortDescending",
+        "ListX",
+        "MailPen",
+        "Pen",
+        "PenLine",
+        "PenOff",
+        "PenSquare",
+        "Pencil",
+        "PencilLine",
+        "PencilOff",
+        "PencilSparkles",
+        "Pilcrow",
+        "Quote",
+        "RemoveFormatting",
+        "Scissors",
+        "SpellCheck",
+        "SpellCheck2",
+        "Strikethrough",
+        "Subscript",
+        "Superscript",
+        "Tag",
+        "TextAlignStart",
+        "TextCursor",
+        "TextInitial",
+        "TextSearch",
+        "TextWrap",
+        "Type",
+        "TypeOutline",
+        "Underline",
+        "UserPen",
+        "UserRoundPen",
+        "WholeWord",
+        "WifiPen"
+      ]
+    },
+    {
+      "id": "design",
+      "label": "Design & Shapes",
+      "description": "Colour, drawing, typography, shapes, layers and vector tools.",
+      "icons": [
+        "Axis3D",
+        "Blend",
+        "Bold",
+        "Brush",
+        "BrushCleaning",
+        "Camera",
+        "Circle",
+        "Component",
+        "Cone",
+        "Contrast",
+        "Crop",
+        "Cuboid",
+        "Cylinder",
+        "Diamond",
+        "DraftingCompass",
+        "Frame",
+        "Grid3x3",
+        "Group",
+        "Heading2",
+        "Hexagon",
+        "ImageIcon",
+        "Italic",
+        "Lasso",
+        "Layers",
+        "Layers2",
+        "LoaderPinwheel",
+        "Moon",
+        "Octagon",
+        "PaintBucket",
+        "Paintbrush",
+        "PaintbrushVertical",
+        "Palette",
+        "PenSquare",
+        "PencilLine",
+        "Pipette",
+        "Pyramid",
+        "RectangleVertical",
+        "Ruler",
+        "RulerDimensionLine",
+        "Shapes",
+        "Signature",
+        "Sparkles",
+        "Spline",
+        "SplinePointer",
+        "Square",
+        "Squircle",
+        "Stamp",
+        "Strikethrough",
+        "Sun",
+        "SwatchBook",
+        "Tangent",
+        "Torus",
+        "Triangle",
+        "Underline",
+        "Ungroup",
+        "VectorSquare",
+        "Wand",
+        "Wand2"
+      ]
+    },
+    {
+      "id": "time",
+      "label": "Time & Calendar",
+      "description": "Clocks, timers, calendars, schedules and history.",
+      "icons": [
+        "AlarmClock",
+        "AlarmClockCheck",
+        "AlarmClockMinus",
+        "AlarmClockOff",
+        "AlarmClockPlus",
+        "Calendar",
+        "Calendar1",
+        "CalendarArrowDown",
+        "CalendarArrowRight",
+        "CalendarArrowUp",
+        "CalendarChevronsLeft",
+        "CalendarClock",
+        "CalendarCog",
+        "CalendarDays",
+        "CalendarOff",
+        "CalendarSearch",
+        "CalendarSync",
+        "CalendarX",
+        "Clock",
+        "Clock1",
+        "Clock10",
+        "Clock11",
+        "Clock12",
+        "ClockArrowDown",
+        "ClockArrowUp",
+        "ClockCheck",
+        "ClockExclamationPoint",
+        "ClockPlus",
+        "FileClock",
+        "History",
+        "Hourglass",
+        "HourglassCog",
+        "Timer",
+        "TimerOff",
+        "TimerReset",
+        "Watch"
+      ]
+    },
+    {
+      "id": "people",
+      "label": "People & Users",
+      "description": "People, accounts, teams, contacts and reactions.",
+      "icons": [
+        "Accessibility",
+        "AtSign",
+        "Award",
+        "Baby",
+        "BadgeCheck",
+        "BookUser",
+        "Contact",
+        "ContactRound",
+        "Crown",
+        "Footprints",
+        "Group",
+        "Hand",
+        "HandFist",
+        "HandGrab",
+        "HandHeart",
+        "HandHelping",
+        "HandMetal",
+        "HandPlatter",
+        "HeartHandshake",
+        "IdCard",
+        "IdCardLanyard",
+        "PersonStanding",
+        "ScanFace",
+        "ThumbsDown",
+        "ThumbsUp",
+        "Trophy",
+        "User",
+        "UserCheck",
+        "UserCog",
+        "UserGroup",
+        "UserMinus",
+        "UserPen",
+        "UserPlus",
+        "UserRoundCog",
+        "UserRoundPen",
+        "UserRoundStar",
+        "UserSearch",
+        "UserStar",
+        "UserX",
+        "Users",
+        "UsersCollaboration",
+        "UsersRound",
+        "UsersRoundCollaboration",
+        "VenetianMask"
+      ]
+    },
+    {
+      "id": "navigation",
+      "label": "Navigation & Maps",
+      "description": "Maps, routes, wayfinding, location and home navigation.",
+      "icons": [
+        "Compass",
+        "Earth",
+        "EarthLock",
+        "ExternalLink",
+        "Globe",
+        "GlobeBan",
+        "GlobeCheck",
+        "GlobeCode",
+        "GlobeLock",
+        "GlobeOff",
+        "GlobePlus",
+        "GlobeX",
+        "Home",
+        "HouseCog",
+        "HousePlug",
+        "HousePlus",
+        "HouseWifi",
+        "Locate",
+        "LocateFixed",
+        "LocateOff",
+        "LogOut",
+        "Map",
+        "MapPin",
+        "MapPinHouse",
+        "MapPinOff",
+        "MapPinPen",
+        "MapPinPlusInside",
+        "MapPinSearch",
+        "MapPinX",
+        "MapPinXInside",
+        "Milestone",
+        "Navigation",
+        "Navigation2",
+        "Navigation2Off",
+        "NavigationOff",
+        "Route",
+        "RouteOff",
+        "Signpost",
+        "SignpostBig",
+        "Waypoints"
+      ]
+    },
+    {
+      "id": "layout",
+      "label": "Layout & UI",
+      "description": "Panels, grids, columns, sidebars, sizing and view controls.",
+      "icons": [
+        "BetweenHorizontalEnd",
+        "BetweenHorizontalStart",
+        "BetweenVerticalEnd",
+        "BetweenVerticalStart",
+        "Blocks",
+        "Columns2",
+        "Columns3",
+        "Columns3Cog",
+        "Columns4",
+        "Expand",
+        "Fullscreen",
+        "GalleryHorizontal",
+        "GalleryHorizontalEnd",
+        "GalleryVertical",
+        "GalleryVerticalEnd",
+        "Grid2x2",
+        "Grid2x2Check",
+        "Grid2x2Plus",
+        "Grid2x2X",
+        "Grid3x2",
+        "Grid3x3",
+        "Grid3x3Off",
+        "Kanban",
+        "Layers",
+        "LayoutArrowDown",
+        "LayoutDashboard",
+        "LayoutFreeform",
+        "LayoutGrid",
+        "LayoutGridCircles",
+        "LayoutList",
+        "LayoutPanelTop",
+        "List",
+        "Maximize",
+        "Minimize",
+        "PanelBottom",
+        "PanelBottomClose",
+        "PanelBottomOpen",
+        "PanelLeftClose",
+        "PanelLeftOpen",
+        "PanelRightClose",
+        "PanelRightOpen",
+        "PanelTop",
+        "PanelTopBottomDashed",
+        "PanelTopClose",
+        "PanelTopOpen",
+        "PanelsLeftBottom",
+        "PanelsRightBottom",
+        "PanelsTopLeft",
+        "Ratio",
+        "Rows2",
+        "Rows3",
+        "Rows4",
+        "Scaling",
+        "SeparatorVertical",
+        "Shrink",
+        "SlidersHorizontal",
+        "Split",
+        "Square",
+        "StretchVertical"
+      ]
+    },
+    {
+      "id": "status",
+      "label": "Status & Feedback",
+      "description": "Success, warning, errors, loading, badges, flags and signals.",
+      "icons": [
+        "AlertCircle",
+        "AlertTriangle",
+        "Award",
+        "BadgeCheck",
+        "BadgeInfo",
+        "BadgeMinus",
+        "BadgePlus",
+        "BadgeQuestionMark",
+        "BadgeX",
+        "Ban",
+        "Battery",
+        "Bell",
+        "BookHeart",
+        "BookOpenCheck",
+        "Check",
+        "CheckCircle",
+        "CheckCircle2",
+        "CheckSquare",
+        "Crown",
+        "Flag",
+        "FlagOff",
+        "Flame",
+        "Gauge",
+        "Gavel",
+        "Gift",
+        "HeartPulse",
+        "HouseHeart",
+        "Info",
+        "LifeBuoy",
+        "Loader",
+        "Loader2",
+        "LoaderPinwheel",
+        "MailCheck",
+        "Medal",
+        "MoonStar",
+        "ShieldAlert",
+        "ShieldCheck",
+        "SignalHigh",
+        "SignalLow",
+        "SignalMedium",
+        "SignalZero",
+        "Siren",
+        "Sparkles",
+        "SquareX",
+        "ThumbsUp",
+        "Trophy",
+        "UserCheck",
+        "Wifi",
+        "XCircle",
+        "Zap",
+        "ZapOff"
+      ]
+    },
+    {
+      "id": "actions",
+      "label": "Actions & Controls",
+      "description": "Common UI actions: create, search, copy, delete, save, share, filter.",
+      "icons": [
+        "Bookmark",
+        "BookmarkCheck",
+        "BookmarkMinus",
+        "BookmarkOff",
+        "BookmarkPlus",
+        "BookmarkX",
+        "Check",
+        "CheckLine",
+        "CircleOff",
+        "CircleSlash",
+        "Copy",
+        "ExternalLink",
+        "Filter",
+        "FunnelX",
+        "Grip",
+        "Link2",
+        "Link2Off",
+        "LinkIcon",
+        "LogOut",
+        "Magnet",
+        "Minus",
+        "MoreHorizontal",
+        "MoreVertical",
+        "Pin",
+        "PinOff",
+        "Plus",
+        "PlusCircle",
+        "Pointer",
+        "Power",
+        "Redo",
+        "RefreshCcw",
+        "RefreshCw",
+        "RefreshCwOff",
+        "Scan",
+        "Search",
+        "SearchCheck",
+        "SearchCode",
+        "SearchExclamationPoint",
+        "SearchSlash",
+        "SearchX",
+        "Send",
+        "Settings",
+        "Share2",
+        "Shuffle",
+        "SlidersHorizontal",
+        "SquareDashedSearch",
+        "SquareDashedX",
+        "SquareDashedXCorner",
+        "Star",
+        "StarCheck",
+        "StarHalf",
+        "StarMinus",
+        "StarOff",
+        "StarPlus",
+        "StarX",
+        "Target",
+        "Trash2",
+        "TrashOff",
+        "Undo",
+        "Undo2",
+        "Unlink",
+        "Wrench",
+        "X",
+        "XLineTop",
+        "ZoomIn"
+      ]
+    },
+    {
+      "id": "arrows",
+      "label": "Arrows & Direction",
+      "description": "Directional arrows, chevrons, corners and move/rotate controls.",
+      "icons": [
+        "ArrowDown",
+        "ArrowDown01",
+        "ArrowDown10",
+        "ArrowDownAZ",
+        "ArrowDownRight",
+        "ArrowDownToLine",
+        "ArrowDownUp",
+        "ArrowDownZA",
+        "ArrowLeft",
+        "ArrowRight",
+        "ArrowUp",
+        "ArrowUp01",
+        "ArrowUpAZ",
+        "ArrowUpDown",
+        "ArrowUpRight",
+        "ArrowUpZA",
+        "Axis3D",
+        "ChevronDown",
+        "ChevronLast",
+        "ChevronLeft",
+        "ChevronRight",
+        "ChevronUp",
+        "ChevronsDown",
+        "ChevronsLeft",
+        "ChevronsLeftRight",
+        "ChevronsLeftRightEllipsis",
+        "ChevronsRight",
+        "ChevronsUp",
+        "ChevronsUpDown",
+        "CircleChevronsDown",
+        "CircleChevronsLeft",
+        "CircleChevronsRight",
+        "CircleChevronsUp",
+        "CornerLeftUp",
+        "Expand",
+        "Fullscreen",
+        "IterationCw",
+        "Maximize",
+        "Minimize",
+        "Move",
+        "MoveHorizontal",
+        "Redo",
+        "RefreshCcw",
+        "RefreshCw",
+        "RefreshCwOff",
+        "Repeat",
+        "RotateCcw",
+        "Scaling",
+        "Shrink",
+        "Shuffle",
+        "SquareChevronUp",
+        "SquareChevronsDown",
+        "SquareChevronsUp",
+        "StretchVertical",
+        "TrendingDown",
+        "TrendingUp",
+        "TrendingUpDown",
+        "Undo",
+        "Undo2"
+      ]
+    },
+    {
+      "id": "places",
+      "label": "Places & Work",
+      "description": "Buildings, venues, offices, locations and work-related places.",
+      "icons": [
+        "BrickWall",
+        "BrickWallFire",
+        "BrickWallShield",
+        "Briefcase",
+        "BriefcaseBusiness",
+        "BriefcaseConveyorBelt",
+        "BriefcaseMedical",
+        "BriefcasePlus",
+        "Building",
+        "Building2",
+        "BuildingComplexPlus",
+        "Castle",
+        "Church",
+        "Dam",
+        "DoorClosed",
+        "DoorClosedCog",
+        "DoorClosedLocked",
+        "DoorClosedPackage",
+        "DoorOpen",
+        "Earth",
+        "Factory",
+        "Fence",
+        "Globe",
+        "GlobeBan",
+        "GlobeCheck",
+        "GlobeCode",
+        "GlobeOff",
+        "GlobePlus",
+        "GlobeX",
+        "Home",
+        "Hospital",
+        "Hotel",
+        "HouseCog",
+        "HouseHeart",
+        "HousePlug",
+        "HousePlus",
+        "HouseWifi",
+        "Landmark",
+        "Map",
+        "MapPin",
+        "MapPinCheck",
+        "MapPinPen",
+        "Mountain",
+        "MountainSnow",
+        "Pin",
+        "School",
+        "SolarPanel",
+        "Store",
+        "Tent",
+        "TentTree",
+        "TreeDeciduous",
+        "TreePalm",
+        "TreePine",
+        "Trees",
+        "UtilityPole",
+        "Warehouse"
+      ]
+    }
+  ],
+  "iconCategories": {
+    "Activity": [
+      "health",
+      "data"
+    ],
+    "AlertCircle": [
+      "status"
+    ],
+    "AlertTriangle": [
+      "status"
+    ],
+    "Archive": [
+      "files"
+    ],
+    "ArrowDown": [
+      "arrows"
+    ],
+    "ArrowDownRight": [
+      "arrows"
+    ],
+    "ArrowLeft": [
+      "arrows"
+    ],
+    "ArrowRight": [
+      "arrows"
+    ],
+    "ArrowUp": [
+      "arrows"
+    ],
+    "ArrowUpDown": [
+      "arrows"
+    ],
+    "ArrowUpRight": [
+      "arrows"
+    ],
+    "AtSign": [
+      "communication",
+      "people"
+    ],
+    "Award": [
+      "status",
+      "people"
+    ],
+    "BadgeCheck": [
+      "status",
+      "people"
+    ],
+    "Ban": [
+      "status",
+      "security"
+    ],
+    "BarChart2": [
+      "data"
+    ],
+    "BarChart3": [
+      "data"
+    ],
+    "Bell": [
+      "communication",
+      "status"
+    ],
+    "Bold": [
+      "editing",
+      "design"
+    ],
+    "BookUser": [
+      "people",
+      "files"
+    ],
+    "Bookmark": [
+      "actions"
+    ],
+    "Briefcase": [
+      "places",
+      "commerce"
+    ],
+    "Building": [
+      "places"
+    ],
+    "Building2": [
+      "places"
+    ],
+    "Calendar": [
+      "time"
+    ],
+    "CalendarClock": [
+      "time",
+      "data"
+    ],
+    "CalendarDays": [
+      "time"
+    ],
+    "CalendarSync": [
+      "time",
+      "development"
+    ],
+    "Camera": [
+      "media",
+      "design"
+    ],
+    "ChartLine": [
+      "data"
+    ],
+    "Check": [
+      "actions",
+      "status"
+    ],
+    "CheckCircle": [
+      "status"
+    ],
+    "CheckCircle2": [
+      "status"
+    ],
+    "CheckSquare": [
+      "status"
+    ],
+    "ChevronDown": [
+      "arrows"
+    ],
+    "ChevronLeft": [
+      "arrows"
+    ],
+    "ChevronRight": [
+      "arrows"
+    ],
+    "ChevronUp": [
+      "arrows"
+    ],
+    "ChevronsLeftRight": [
+      "arrows"
+    ],
+    "ChevronsUpDown": [
+      "arrows"
+    ],
+    "Circle": [
+      "design"
+    ],
+    "Clock": [
+      "time"
+    ],
+    "Code": [
+      "development"
+    ],
+    "Copy": [
+      "files",
+      "actions"
+    ],
+    "Crown": [
+      "status",
+      "people"
+    ],
+    "DollarSign": [
+      "finance"
+    ],
+    "Download": [
+      "files"
+    ],
+    "ExternalLink": [
+      "navigation",
+      "actions"
+    ],
+    "Eye": [
+      "security"
+    ],
+    "EyeOff": [
+      "security"
+    ],
+    "FileClock": [
+      "files",
+      "time"
+    ],
+    "FileSearch": [
+      "files"
+    ],
+    "FileSpreadsheet": [
+      "files",
+      "data"
+    ],
+    "FileText": [
+      "files"
+    ],
+    "FileUp": [
+      "files"
+    ],
+    "Filter": [
+      "actions"
+    ],
+    "Fingerprint": [
+      "security"
+    ],
+    "Flame": [
+      "status",
+      "weather"
+    ],
+    "FolderGit2": [
+      "files",
+      "development"
+    ],
+    "FolderOpen": [
+      "files"
+    ],
+    "Gauge": [
+      "data",
+      "status"
+    ],
+    "Gift": [
+      "commerce",
+      "status"
+    ],
+    "Globe": [
+      "navigation",
+      "places"
+    ],
+    "GraduationCap": [
+      "education"
+    ],
+    "Grid3x3": [
+      "layout",
+      "design"
+    ],
+    "Hand": [
+      "people"
+    ],
+    "Heading2": [
+      "editing",
+      "design"
+    ],
+    "Heart": [
+      "health"
+    ],
+    "HeartOff": [
+      "health"
+    ],
+    "History": [
+      "time",
+      "data"
+    ],
+    "Home": [
+      "navigation",
+      "places"
+    ],
+    "ImageIcon": [
+      "media",
+      "design"
+    ],
+    "ImagePlus": [
+      "media"
+    ],
+    "Inbox": [
+      "communication",
+      "files"
+    ],
+    "Info": [
+      "status"
+    ],
+    "Italic": [
+      "editing",
+      "design"
+    ],
+    "Key": [
+      "security"
+    ],
+    "KeyRound": [
+      "security"
+    ],
+    "Languages": [
+      "communication",
+      "education"
+    ],
+    "Layers": [
+      "design",
+      "layout"
+    ],
+    "LayoutDashboard": [
+      "layout",
+      "data"
+    ],
+    "LayoutGrid": [
+      "layout"
+    ],
+    "LifeBuoy": [
+      "status",
+      "security"
+    ],
+    "Link2": [
+      "actions"
+    ],
+    "LinkIcon": [
+      "actions"
+    ],
+    "List": [
+      "editing",
+      "layout"
+    ],
+    "ListOrdered": [
+      "editing"
+    ],
+    "Loader2": [
+      "status",
+      "development"
+    ],
+    "Lock": [
+      "security"
+    ],
+    "LogOut": [
+      "navigation",
+      "actions"
+    ],
+    "Magnet": [
+      "development",
+      "actions"
+    ],
+    "Mail": [
+      "communication"
+    ],
+    "MailCheck": [
+      "communication",
+      "status"
+    ],
+    "MailPlus": [
+      "communication"
+    ],
+    "MapPin": [
+      "places",
+      "navigation"
+    ],
+    "MessageSquare": [
+      "communication"
+    ],
+    "Minus": [
+      "actions"
+    ],
+    "Monitor": [
+      "devices"
+    ],
+    "Moon": [
+      "weather",
+      "design"
+    ],
+    "MoonStar": [
+      "weather",
+      "status"
+    ],
+    "MoreHorizontal": [
+      "actions"
+    ],
+    "MoreVertical": [
+      "actions"
+    ],
+    "MoveHorizontal": [
+      "arrows"
+    ],
+    "Newspaper": [
+      "media",
+      "communication"
+    ],
+    "Palette": [
+      "design"
+    ],
+    "PanelLeftClose": [
+      "layout"
+    ],
+    "PanelLeftOpen": [
+      "layout"
+    ],
+    "Paperclip": [
+      "files"
+    ],
+    "PenSquare": [
+      "editing",
+      "design"
+    ],
+    "Pencil": [
+      "editing"
+    ],
+    "PencilLine": [
+      "editing",
+      "design"
+    ],
+    "Percent": [
+      "finance",
+      "commerce"
+    ],
+    "Pin": [
+      "places",
+      "actions"
+    ],
+    "Plane": [
+      "travel"
+    ],
+    "Plug": [
+      "devices"
+    ],
+    "Plus": [
+      "actions"
+    ],
+    "PlusCircle": [
+      "actions"
+    ],
+    "Power": [
+      "devices",
+      "actions"
+    ],
+    "Quote": [
+      "editing",
+      "communication"
+    ],
+    "Radar": [
+      "data",
+      "devices"
+    ],
+    "Radio": [
+      "media",
+      "communication"
+    ],
+    "RefreshCw": [
+      "arrows",
+      "actions"
+    ],
+    "Repeat": [
+      "arrows"
+    ],
+    "Rocket": [
+      "travel",
+      "development"
+    ],
+    "RotateCcw": [
+      "arrows"
+    ],
+    "Rss": [
+      "media",
+      "communication"
+    ],
+    "ScrollText": [
+      "files",
+      "education"
+    ],
+    "Search": [
+      "actions"
+    ],
+    "Send": [
+      "communication",
+      "actions"
+    ],
+    "Settings": [
+      "actions",
+      "development"
+    ],
+    "Share2": [
+      "communication",
+      "actions"
+    ],
+    "Shield": [
+      "security"
+    ],
+    "ShieldAlert": [
+      "security",
+      "status"
+    ],
+    "ShieldCheck": [
+      "security",
+      "status"
+    ],
+    "SlidersHorizontal": [
+      "actions",
+      "layout"
+    ],
+    "Smartphone": [
+      "devices",
+      "communication"
+    ],
+    "Sparkles": [
+      "design",
+      "status"
+    ],
+    "Square": [
+      "design",
+      "layout"
+    ],
+    "Star": [
+      "actions"
+    ],
+    "StickyNote": [
+      "files"
+    ],
+    "Strikethrough": [
+      "editing",
+      "design"
+    ],
+    "Sun": [
+      "weather",
+      "design"
+    ],
+    "Tag": [
+      "commerce",
+      "editing"
+    ],
+    "Target": [
+      "data",
+      "actions"
+    ],
+    "ThumbsUp": [
+      "people",
+      "status"
+    ],
+    "Timer": [
+      "time"
+    ],
+    "Trash2": [
+      "files",
+      "actions"
+    ],
+    "TrendingDown": [
+      "data",
+      "arrows"
+    ],
+    "TrendingUp": [
+      "data",
+      "arrows"
+    ],
+    "Trophy": [
+      "status",
+      "people"
+    ],
+    "Underline": [
+      "editing",
+      "design"
+    ],
+    "Undo2": [
+      "actions",
+      "arrows"
+    ],
+    "Upload": [
+      "files"
+    ],
+    "UploadCloud": [
+      "files"
+    ],
+    "User": [
+      "people"
+    ],
+    "UserCheck": [
+      "people",
+      "status"
+    ],
+    "UserMinus": [
+      "people"
+    ],
+    "UserPlus": [
+      "people"
+    ],
+    "Users": [
+      "people"
+    ],
+    "Vibrate": [
+      "devices",
+      "communication"
+    ],
+    "Video": [
+      "media"
+    ],
+    "Wand2": [
+      "design"
+    ],
+    "Wrench": [
+      "development",
+      "actions"
+    ],
+    "X": [
+      "actions"
+    ],
+    "XCircle": [
+      "status"
+    ],
+    "Zap": [
+      "status",
+      "development"
+    ],
+    "Hamburger": [
+      "food"
+    ],
+    "Blender": [
+      "food"
+    ],
+    "Euro": [
+      "finance"
+    ],
+    "ChefHat": [
+      "food"
+    ],
+    "Ship": [
+      "travel"
+    ],
+    "Brain": [
+      "health",
+      "education"
+    ],
+    "Landmark": [
+      "finance",
+      "places"
+    ],
+    "Dessert": [
+      "food"
+    ],
+    "Tent": [
+      "travel",
+      "places"
+    ],
+    "Bandage": [
+      "health"
+    ],
+    "IndianRupee": [
+      "finance"
+    ],
+    "Cake": [
+      "food"
+    ],
+    "Eclipse": [
+      "weather"
+    ],
+    "Book": [
+      "education"
+    ],
+    "Scooter": [
+      "travel"
+    ],
+    "Package": [
+      "commerce",
+      "files"
+    ],
+    "Hospital": [
+      "health",
+      "places"
+    ],
+    "PoundSterling": [
+      "finance"
+    ],
+    "Cookie": [
+      "food"
+    ],
+    "Droplet": [
+      "weather"
+    ],
+    "Notebook": [
+      "education"
+    ],
+    "Tickets": [
+      "travel"
+    ],
+    "Barcode": [
+      "commerce"
+    ],
+    "Waypoints": [
+      "navigation"
+    ],
+    "Ambulance": [
+      "health"
+    ],
+    "SwissFranc": [
+      "finance"
+    ],
+    "Donut": [
+      "food"
+    ],
+    "Droplets": [
+      "weather"
+    ],
+    "Library": [
+      "education"
+    ],
+    "Caravan": [
+      "travel"
+    ],
+    "Container": [
+      "commerce",
+      "development"
+    ],
+    "Cable": [
+      "devices"
+    ],
+    "GlobeX": [
+      "navigation",
+      "places"
+    ],
+    "Radiation": [
+      "health",
+      "security"
+    ],
+    "Scale": [
+      "finance",
+      "security"
+    ],
+    "Egg": [
+      "food"
+    ],
+    "Sprout": [
+      "weather"
+    ],
+    "School": [
+      "education",
+      "places"
+    ],
+    "Road": [
+      "travel"
+    ],
+    "Tags": [
+      "commerce"
+    ],
+    "Tv": [
+      "media"
+    ],
+    "PowerOff": [
+      "devices"
+    ],
+    "Signpost": [
+      "navigation"
+    ],
+    "Syringe": [
+      "health"
+    ],
+    "Vault": [
+      "finance",
+      "security"
+    ],
+    "Utensils": [
+      "food"
+    ],
+    "Rainbow": [
+      "weather"
+    ],
+    "Ruler": [
+      "education",
+      "design"
+    ],
+    "Ticket": [
+      "travel"
+    ],
+    "Store": [
+      "commerce",
+      "places"
+    ],
+    "Disc": [
+      "media"
+    ],
+    "EthernetPort": [
+      "devices"
+    ],
+    "TimerOff": [
+      "time"
+    ],
+    "HouseCog": [
+      "navigation",
+      "places"
+    ],
+    "Biohazard": [
+      "health",
+      "security"
+    ],
+    "Coins": [
+      "finance",
+      "commerce"
+    ],
+    "Carrot": [
+      "food"
+    ],
+    "Leaf": [
+      "weather"
+    ],
+    "Presentation": [
+      "education",
+      "data"
+    ],
+    "Bus": [
+      "travel"
+    ],
+    "Truck": [
+      "commerce",
+      "travel"
+    ],
+    "CameraOff": [
+      "media"
+    ],
+    "MonitorX": [
+      "devices"
+    ],
+    "Variable": [
+      "development"
+    ],
+    "Hourglass": [
+      "time"
+    ],
+    "Milestone": [
+      "navigation"
+    ],
+    "Ratio": [
+      "layout"
+    ],
+    "Fence": [
+      "places"
+    ],
+    "Bone": [
+      "health"
+    ],
+    "Receipt": [
+      "finance",
+      "commerce"
+    ],
+    "Martini": [
+      "food"
+    ],
+    "Snowflake": [
+      "weather"
+    ],
+    "Telescope": [
+      "education"
+    ],
+    "Play": [
+      "media"
+    ],
+    "Cpu": [
+      "devices",
+      "development"
+    ],
+    "Watch": [
+      "time",
+      "devices"
+    ],
+    "Compass": [
+      "navigation",
+      "travel"
+    ],
+    "Columns4": [
+      "layout"
+    ],
+    "Warehouse": [
+      "places",
+      "commerce"
+    ],
+    "Dna": [
+      "health",
+      "education"
+    ],
+    "Banknote": [
+      "finance",
+      "commerce"
+    ],
+    "Vegan": [
+      "food"
+    ],
+    "Flower": [
+      "weather"
+    ],
+    "VideoOff": [
+      "media"
+    ],
+    "Workflow": [
+      "development",
+      "data"
+    ],
+    "CalendarX": [
+      "time"
+    ],
+    "Route": [
+      "navigation",
+      "travel"
+    ],
+    "Kanban": [
+      "layout"
+    ],
+    "Factory": [
+      "places",
+      "commerce"
+    ],
+    "Footprints": [
+      "health",
+      "people"
+    ],
+    "Wallet": [
+      "finance",
+      "commerce"
+    ],
+    "BottleWine": [
+      "food"
+    ],
+    "Sunrise": [
+      "weather"
+    ],
+    "Atom": [
+      "education"
+    ],
+    "ShieldX": [
+      "security"
+    ],
+    "AudioLines": [
+      "media"
+    ],
+    "Projector": [
+      "devices",
+      "media"
+    ],
+    "Bug": [
+      "development"
+    ],
+    "PencilOff": [
+      "editing"
+    ],
+    "Clock1": [
+      "time"
+    ],
+    "Earth": [
+      "navigation",
+      "places"
+    ],
+    "BetweenVerticalEnd": [
+      "layout"
+    ],
+    "Castle": [
+      "places"
+    ],
+    "Pill": [
+      "health"
+    ],
+    "Calculator": [
+      "finance"
+    ],
+    "Ham": [
+      "food"
+    ],
+    "Sunset": [
+      "weather"
+    ],
+    "University": [
+      "education"
+    ],
+    "Sailboat": [
+      "travel"
+    ],
+    "KeySquare": [
+      "security"
+    ],
+    "Tablet": [
+      "devices"
+    ],
+    "Boxes": [
+      "development"
+    ],
+    "Pen": [
+      "editing"
+    ],
+    "AlarmClock": [
+      "time"
+    ],
+    "UserX": [
+      "people"
+    ],
+    "Locate": [
+      "navigation"
+    ],
+    "Blocks": [
+      "layout",
+      "development"
+    ],
+    "Trees": [
+      "places"
+    ],
+    "Tablets": [
+      "health"
+    ],
+    "Currency": [
+      "finance"
+    ],
+    "Salad": [
+      "food"
+    ],
+    "Tornado": [
+      "weather"
+    ],
+    "Backpack": [
+      "education"
+    ],
+    "Car": [
+      "travel"
+    ],
+    "TagX": [
+      "commerce"
+    ],
+    "Gavel": [
+      "security",
+      "status"
+    ],
+    "Cast": [
+      "media"
+    ],
+    "Usb": [
+      "devices"
+    ],
+    "Eraser": [
+      "editing"
+    ],
+    "HourglassCog": [
+      "time"
+    ],
+    "UsersRound": [
+      "people"
+    ],
+    "Map": [
+      "navigation",
+      "places"
+    ],
+    "Fullscreen": [
+      "layout",
+      "arrows"
+    ],
+    "Stethoscope": [
+      "health"
+    ],
+    "CreditCard": [
+      "finance",
+      "commerce"
+    ],
+    "Beef": [
+      "food"
+    ],
+    "Clover": [
+      "weather"
+    ],
+    "Microscope": [
+      "education",
+      "health"
+    ],
+    "Fuel": [
+      "travel",
+      "commerce"
+    ],
+    "Siren": [
+      "security",
+      "status"
+    ],
+    "Clapperboard": [
+      "media"
+    ],
+    "Database": [
+      "data",
+      "development"
+    ],
+    "Battery": [
+      "devices",
+      "status"
+    ],
+    "Heading1": [
+      "editing"
+    ],
+    "AlarmClockOff": [
+      "time"
+    ],
+    "HandFist": [
+      "people"
+    ],
+    "Navigation": [
+      "navigation"
+    ],
+    "Grid2x2": [
+      "layout"
+    ],
+    "Dam": [
+      "places"
+    ],
+    "PiggyBank": [
+      "finance",
+      "commerce"
+    ],
+    "Popcorn": [
+      "food"
+    ],
+    "Wind": [
+      "weather"
+    ],
+    "Orbit": [
+      "education"
+    ],
+    "Hotel": [
+      "travel",
+      "places"
+    ],
+    "LockOpen": [
+      "security"
+    ],
+    "Headset": [
+      "communication"
+    ],
+    "Images": [
+      "media"
+    ],
+    "TrendingUpDown": [
+      "data",
+      "arrows"
+    ],
+    "Keyboard": [
+      "devices"
+    ],
+    "Braces": [
+      "development"
+    ],
+    "Superscript": [
+      "editing"
+    ],
+    "CalendarOff": [
+      "time"
+    ],
+    "IdCard": [
+      "people",
+      "security"
+    ],
+    "GlobeBan": [
+      "navigation",
+      "places"
+    ],
+    "Split": [
+      "layout"
+    ],
+    "Accessibility": [
+      "health",
+      "people"
+    ],
+    "ReceiptPoundSterling": [
+      "finance",
+      "commerce"
+    ],
+    "Wine": [
+      "food"
+    ],
+    "Haze": [
+      "weather"
+    ],
+    "DraftingCompass": [
+      "education",
+      "design"
+    ],
+    "Luggage": [
+      "travel"
+    ],
+    "ShoppingBag": [
+      "commerce"
+    ],
+    "BellOff": [
+      "communication"
+    ],
+    "Pause": [
+      "media"
+    ],
+    "Binary": [
+      "data",
+      "development"
+    ],
+    "Wifi": [
+      "devices",
+      "status"
+    ],
+    "Box": [
+      "development"
+    ],
+    "SpellCheck": [
+      "editing"
+    ],
+    "ClockArrowDown": [
+      "time"
+    ],
+    "ThumbsDown": [
+      "people"
+    ],
+    "GlobeOff": [
+      "navigation",
+      "places"
+    ],
+    "PanelsTopLeft": [
+      "layout"
+    ],
+    "BriefcasePlus": [
+      "places"
+    ],
+    "Dumbbell": [
+      "health"
+    ],
+    "CreditCardX": [
+      "finance",
+      "commerce"
+    ],
+    "Coffee": [
+      "food"
+    ],
+    "Umbrella": [
+      "weather",
+      "travel"
+    ],
+    "TestTube": [
+      "education",
+      "health"
+    ],
+    "QrCode": [
+      "commerce",
+      "development"
+    ],
+    "EyeClosed": [
+      "security"
+    ],
+    "RadioOff": [
+      "communication",
+      "media"
+    ],
+    "Speaker": [
+      "media",
+      "devices"
+    ],
+    "Sigma": [
+      "data"
+    ],
+    "Brackets": [
+      "development"
+    ],
+    "Subscript": [
+      "editing"
+    ],
+    "Blend": [
+      "design"
+    ],
+    "ClockArrowUp": [
+      "time"
+    ],
+    "UserPen": [
+      "people",
+      "editing"
+    ],
+    "GlobeCheck": [
+      "navigation",
+      "places"
+    ],
+    "Expand": [
+      "layout",
+      "arrows"
+    ],
+    "BuildingComplexPlus": [
+      "places"
+    ],
+    "BanknoteX": [
+      "finance",
+      "commerce"
+    ],
+    "Soup": [
+      "food"
+    ],
+    "Cloud": [
+      "weather"
+    ],
+    "FlaskRound": [
+      "education"
+    ],
+    "Bike": [
+      "travel"
+    ],
+    "PackagePen": [
+      "commerce"
+    ],
+    "VenetianMask": [
+      "security",
+      "people"
+    ],
+    "Contact": [
+      "communication",
+      "people"
+    ],
+    "Airplay": [
+      "media"
+    ],
+    "NotepadText": [
+      "files"
+    ],
+    "Network": [
+      "data",
+      "development"
+    ],
+    "Laptop": [
+      "devices"
+    ],
+    "Command": [
+      "development"
+    ],
+    "Wand": [
+      "design"
+    ],
+    "ClockCheck": [
+      "time"
+    ],
+    "UserCog": [
+      "people"
+    ],
+    "LocateOff": [
+      "navigation"
+    ],
+    "PanelTop": [
+      "layout"
+    ],
+    "Church": [
+      "places"
+    ],
+    "Ear": [
+      "health"
+    ],
+    "BanknoteCheck": [
+      "finance",
+      "commerce"
+    ],
+    "Milk": [
+      "food"
+    ],
+    "WavesLadder": [
+      "weather"
+    ],
+    "BookX": [
+      "education"
+    ],
+    "Mountain": [
+      "travel",
+      "places"
+    ],
+    "PackageSearch": [
+      "commerce"
+    ],
+    "ShieldBan": [
+      "security"
+    ],
+    "Mails": [
+      "communication"
+    ],
+    "Captions": [
+      "media"
+    ],
+    "Scroll": [
+      "files"
+    ],
+    "ChartBar": [
+      "data"
+    ],
+    "Mouse": [
+      "devices"
+    ],
+    "Puzzle": [
+      "development"
+    ],
+    "Pilcrow": [
+      "editing"
+    ],
+    "Cuboid": [
+      "design"
+    ],
+    "CalendarCog": [
+      "time"
+    ],
+    "UserSearch": [
+      "people"
+    ],
+    "GlobePlus": [
+      "navigation",
+      "places"
+    ],
+    "Maximize": [
+      "layout",
+      "arrows"
+    ],
+    "ArrowUpZA": [
+      "arrows"
+    ],
+    "BrickWall": [
+      "places"
+    ],
+    "Thermometer": [
+      "health",
+      "weather"
+    ],
+    "CreditCardCheck": [
+      "finance",
+      "commerce"
+    ],
+    "Refrigerator": [
+      "food"
+    ],
+    "BookCheck": [
+      "education"
+    ],
+    "Anchor": [
+      "travel"
+    ],
+    "PackageX": [
+      "commerce"
+    ],
+    "ShieldOff": [
+      "security"
+    ],
+    "Megaphone": [
+      "communication"
+    ],
+    "Film": [
+      "media"
+    ],
+    "StickyNoteX": [
+      "files"
+    ],
+    "Crosshair": [
+      "data"
+    ],
+    "Printer": [
+      "devices",
+      "files"
+    ],
+    "Terminal": [
+      "development"
+    ],
+    "RemoveFormatting": [
+      "editing"
+    ],
+    "Signature": [
+      "design"
+    ],
+    "CalendarSearch": [
+      "time"
+    ],
+    "UserGroup": [
+      "people"
+    ],
+    "NavigationOff": [
+      "navigation"
+    ],
+    "Minimize": [
+      "layout",
+      "arrows"
+    ],
+    "ChevronsUp": [
+      "arrows"
+    ],
+    "DoorOpen": [
+      "places"
+    ],
+    "Baby": [
+      "health",
+      "people"
+    ],
+    "CreditCardPlus": [
+      "finance",
+      "commerce"
+    ],
+    "Sandwich": [
+      "food"
+    ],
+    "SunDim": [
+      "weather"
+    ],
+    "BookOpenCheck": [
+      "education",
+      "status"
+    ],
+    "TrainFront": [
+      "travel"
+    ],
+    "PackageCheck": [
+      "commerce"
+    ],
+    "ShieldQuestionMark": [
+      "security"
+    ],
+    "Speech": [
+      "communication"
+    ],
+    "Mic": [
+      "media"
+    ],
+    "Table": [
+      "data"
+    ],
+    "Router": [
+      "devices"
+    ],
+    "Webhook": [
+      "development"
+    ],
+    "Baseline": [
+      "editing"
+    ],
+    "Torus": [
+      "design"
+    ],
+    "AlarmClockCheck": [
+      "time"
+    ],
+    "UserRoundStar": [
+      "people"
+    ],
+    "SignpostBig": [
+      "navigation"
+    ],
+    "Scaling": [
+      "layout",
+      "arrows"
+    ],
+    "Move": [
+      "arrows"
+    ],
+    "SolarPanel": [
+      "places"
+    ],
+    "HeartX": [
+      "health"
+    ],
+    "WalletCards": [
+      "finance",
+      "commerce"
+    ],
+    "Beer": [
+      "food"
+    ],
+    "DropletOff": [
+      "weather"
+    ],
+    "BookAudio": [
+      "education",
+      "media"
+    ],
+    "TramFront": [
+      "travel"
+    ],
+    "PackageQuestionMark": [
+      "commerce"
+    ],
+    "ShieldEllipsis": [
+      "security"
+    ],
+    "Voicemail": [
+      "communication"
+    ],
+    "ArchiveX": [
+      "files"
+    ],
+    "DatabaseX": [
+      "data"
+    ],
+    "Server": [
+      "devices",
+      "development"
+    ],
+    "Ligature": [
+      "editing"
+    ],
+    "Pyramid": [
+      "design"
+    ],
+    "ClockPlus": [
+      "time"
+    ],
+    "UsersCollaboration": [
+      "people"
+    ],
+    "GlobeCode": [
+      "navigation",
+      "places"
+    ],
+    "Shrink": [
+      "layout",
+      "arrows"
+    ],
+    "ChevronLast": [
+      "arrows"
+    ],
+    "UtilityPole": [
+      "places"
+    ],
+    "Cigarette": [
+      "health"
+    ],
+    "CreditCardMinus": [
+      "finance",
+      "commerce"
+    ],
+    "Citrus": [
+      "food"
+    ],
+    "UmbrellaOff": [
+      "weather"
+    ],
+    "BookHeart": [
+      "education",
+      "status"
+    ],
+    "ParkingMeter": [
+      "travel"
+    ],
+    "PackagePlus": [
+      "commerce"
+    ],
+    "ShieldMinus": [
+      "security"
+    ],
+    "Mailbox": [
+      "communication"
+    ],
+    "Aperture": [
+      "media"
+    ],
+    "Files": [
+      "files"
+    ],
+    "DatabaseSearch": [
+      "data"
+    ],
+    "SmartphoneNfc": [
+      "devices"
+    ],
+    "Regex": [
+      "development"
+    ],
+    "Scissors": [
+      "editing"
+    ],
+    "Shapes": [
+      "design"
+    ],
+    "CalendarArrowUp": [
+      "time"
+    ],
+    "UserStar": [
+      "people"
+    ],
+    "MapPinPen": [
+      "navigation",
+      "places"
+    ],
+    "Rows2": [
+      "layout"
+    ],
+    "IterationCw": [
+      "arrows"
+    ],
+    "BicepsFlexed": [
+      "health"
+    ],
+    "HandCoins": [
+      "finance",
+      "commerce"
+    ],
+    "Croissant": [
+      "food"
+    ],
+    "WavesVertical": [
+      "weather"
+    ],
+    "BookKey": [
+      "education",
+      "security"
+    ],
+    "PlaneLanding": [
+      "travel"
+    ],
+    "PackageMinus": [
+      "commerce"
+    ],
+    "ShieldCog": [
+      "security"
+    ],
+    "MailX": [
+      "communication"
+    ],
+    "Volume": [
+      "media"
+    ],
+    "Clipboard": [
+      "files"
+    ],
+    "DatabaseZap": [
+      "data"
+    ],
+    "Bluetooth": [
+      "devices"
+    ],
+    "CodeXml": [
+      "development"
+    ],
+    "Type": [
+      "editing"
+    ],
+    "Cone": [
+      "design"
+    ],
+    "Clock12": [
+      "time"
+    ],
+    "UserRoundPen": [
+      "people",
+      "editing"
+    ],
+    "Navigation2Off": [
+      "navigation"
+    ],
+    "GalleryVertical": [
+      "layout"
+    ],
+    "CornerLeftUp": [
+      "arrows"
+    ],
+    "TreePine": [
+      "places"
+    ],
+    "PersonStanding": [
+      "health",
+      "people"
+    ],
+    "ReceiptText": [
+      "finance",
+      "commerce"
+    ],
+    "Menu": [
+      "food"
+    ],
+    "SunMoon": [
+      "weather"
+    ],
+    "BookCopy": [
+      "education",
+      "files"
+    ],
+    "TrafficCone": [
+      "travel"
+    ],
+    "ShoppingCartPlus": [
+      "commerce"
+    ],
+    "ShieldHalf": [
+      "security"
+    ],
+    "Forward": [
+      "communication"
+    ],
+    "Headphones": [
+      "media"
+    ],
+    "DatabaseCheck": [
+      "data"
+    ],
+    "HardDrive": [
+      "devices",
+      "files"
+    ],
+    "GitFork": [
+      "development"
+    ],
+    "Brush": [
+      "design"
+    ],
+    "CalendarArrowDown": [
+      "time"
+    ],
+    "UserRoundCog": [
+      "people"
+    ],
+    "HouseWifi": [
+      "navigation",
+      "places"
+    ],
+    "LayoutList": [
+      "layout"
+    ],
+    "ArrowDownUp": [
+      "arrows"
+    ],
+    "DoorClosedCog": [
+      "places"
+    ],
+    "BrainOff": [
+      "health"
+    ],
+    "CreditCardReader": [
+      "finance",
+      "commerce"
+    ],
+    "Microwave": [
+      "food"
+    ],
+    "WavesArrowDown": [
+      "weather"
+    ],
+    "BookPlus": [
+      "education"
+    ],
+    "TicketSlash": [
+      "travel"
+    ],
+    "ShoppingCartMinus": [
+      "commerce"
+    ],
+    "ShieldPlus": [
+      "security"
+    ],
+    "Satellite": [
+      "communication"
+    ],
+    "Webcam": [
+      "media"
+    ],
+    "DatabasePlus": [
+      "data"
+    ],
+    "MemoryStick": [
+      "devices"
+    ],
+    "BugOff": [
+      "development"
+    ],
+    "CopyX": [
+      "editing"
+    ],
+    "Diamond": [
+      "design"
+    ],
+    "CalendarArrowRight": [
+      "time"
+    ],
+    "UsersRoundCollaboration": [
+      "people"
+    ],
+    "HousePlus": [
+      "navigation",
+      "places"
+    ],
+    "StretchVertical": [
+      "layout",
+      "arrows"
+    ],
+    "ChevronsLeftRightEllipsis": [
+      "arrows"
+    ],
+    "DoorClosedLocked": [
+      "places"
+    ],
+    "BrainCog": [
+      "health"
+    ],
+    "BanknoteArrowUp": [
+      "finance",
+      "commerce"
+    ],
+    "Wheat": [
+      "food"
+    ],
+    "WavesHorizontal": [
+      "weather"
+    ],
+    "PencilRuler": [
+      "education"
+    ],
+    "TicketX": [
+      "travel"
+    ],
+    "Package2": [
+      "commerce"
+    ],
+    "BrickWallShield": [
+      "security",
+      "places"
+    ],
+    "Share": [
+      "communication"
+    ],
+    "Rewind": [
+      "media"
+    ],
+    "File": [
+      "files"
+    ],
+    "DatabaseBackup": [
+      "data"
+    ],
+    "Plug2": [
+      "devices"
+    ],
+    "BoxesLinked": [
+      "development"
+    ],
+    "ListX": [
+      "editing"
+    ],
+    "Group": [
+      "design",
+      "people"
+    ],
+    "CalendarChevronsLeft": [
+      "time"
+    ],
+    "HeartHandshake": [
+      "people",
+      "health"
+    ],
+    "HousePlug": [
+      "navigation",
+      "places"
+    ],
+    "SeparatorVertical": [
+      "layout"
+    ],
+    "TrashOff": [
+      "actions"
+    ],
+    "ArrowDownToLine": [
+      "arrows"
+    ],
+    "HouseHeart": [
+      "places",
+      "status"
+    ],
+    "BanknoteArrowDown": [
+      "finance",
+      "commerce"
+    ],
+    "Candy": [
+      "food"
+    ],
+    "WavesArrowUp": [
+      "weather"
+    ],
+    "NotebookPen": [
+      "education"
+    ],
+    "TicketPercent": [
+      "travel"
+    ],
+    "ShoppingCart": [
+      "commerce"
+    ],
+    "SirenOff": [
+      "security"
+    ],
+    "Phone": [
+      "communication"
+    ],
+    "ImageUp": [
+      "media"
+    ],
+    "Folder": [
+      "files"
+    ],
+    "DatabaseMinus": [
+      "data"
+    ],
+    "MonitorActivity": [
+      "devices",
+      "health"
+    ],
+    "WebhookOff": [
+      "development"
+    ],
+    "Highlighter": [
+      "editing"
+    ],
+    "Cylinder": [
+      "design"
+    ],
+    "Calendar1": [
+      "time"
+    ],
+    "HandHelping": [
+      "people"
+    ],
+    "LocateFixed": [
+      "navigation"
+    ],
+    "Columns3Cog": [
+      "layout"
+    ],
+    "XLineTop": [
+      "actions"
+    ],
+    "ArrowDownZA": [
+      "arrows"
+    ],
+    "DoorClosed": [
+      "places"
+    ],
+    "ReceiptCent": [
+      "finance",
+      "commerce"
+    ],
+    "Drumstick": [
+      "food"
+    ],
+    "SunSnow": [
+      "weather"
+    ],
+    "NotebookDot": [
+      "education"
+    ],
+    "RouteOff": [
+      "travel",
+      "navigation"
+    ],
+    "TagPlus": [
+      "commerce"
+    ],
+    "GlobeLock": [
+      "security",
+      "navigation"
+    ],
+    "Reply": [
+      "communication"
+    ],
+    "SkipBack": [
+      "media"
+    ],
+    "Save": [
+      "files"
+    ],
+    "DatabaseArrowUp": [
+      "data"
+    ],
+    "MonitorOff": [
+      "devices"
+    ],
+    "BugPlay": [
+      "development"
+    ],
+    "AlignEndVertical": [
+      "editing"
+    ],
+    "Paintbrush": [
+      "design"
+    ],
+    "ClockExclamationPoint": [
+      "time"
+    ],
+    "IdCardLanyard": [
+      "people"
+    ],
+    "BetweenHorizontalEnd": [
+      "layout"
+    ],
+    "StarX": [
+      "actions"
+    ],
+    "ArrowDownAZ": [
+      "arrows"
+    ],
+    "BriefcaseBusiness": [
+      "places"
+    ],
+    "EarOff": [
+      "health"
+    ],
+    "ReceiptEuro": [
+      "finance",
+      "commerce"
+    ],
+    "Grape": [
+      "food"
+    ],
+    "WindArrowUp": [
+      "weather"
+    ],
+    "NotebookTabs": [
+      "education"
+    ],
+    "ShipCargo": [
+      "travel"
+    ],
+    "ShoppingBasket": [
+      "commerce"
+    ],
+    "EarthLock": [
+      "security",
+      "navigation"
+    ],
+    "MessagesSquare": [
+      "communication"
+    ],
+    "FastForward": [
+      "media"
+    ],
+    "FileDatabase": [
+      "files"
+    ],
+    "ChartGantt": [
+      "data"
+    ],
+    "CpuAi": [
+      "devices",
+      "development"
+    ],
+    "GitGraph": [
+      "development"
+    ],
+    "WholeWord": [
+      "editing"
+    ],
+    "Ungroup": [
+      "design"
+    ],
+    "AlarmClockMinus": [
+      "time"
+    ],
+    "HandHeart": [
+      "people"
+    ],
+    "BetweenHorizontalStart": [
+      "layout"
+    ],
+    "SearchX": [
+      "actions"
+    ],
+    "ArrowUpAZ": [
+      "arrows"
+    ],
+    "TreeDeciduous": [
+      "places"
+    ],
+    "DnaOff": [
+      "health"
+    ],
+    "ReceiptSwissFranc": [
+      "finance",
+      "commerce"
+    ],
+    "Pizza": [
+      "food"
+    ],
+    "CloudExclamationPoint": [
+      "weather"
+    ],
+    "NotebookText": [
+      "education"
+    ],
+    "TicketCheck": [
+      "travel"
+    ],
+    "ReceiptIndianRupee": [
+      "commerce",
+      "finance"
+    ],
+    "FileKey": [
+      "security",
+      "files"
+    ],
+    "MessageCircle": [
+      "communication"
+    ],
+    "AudioLinesOff": [
+      "media"
+    ],
+    "StickyNoteOff": [
+      "files"
+    ],
+    "ChartCandlestick": [
+      "data"
+    ],
+    "MonitorCog": [
+      "devices"
+    ],
+    "GitPullRequestCreate": [
+      "development"
+    ],
+    "CaseLower": [
+      "editing"
+    ],
+    "Component": [
+      "design",
+      "development"
+    ],
+    "Clock10": [
+      "time"
+    ],
+    "HandGrab": [
+      "people"
+    ],
+    "Navigation2": [
+      "navigation"
+    ],
+    "Grid2x2X": [
+      "layout"
+    ],
+    "CircleOff": [
+      "actions"
+    ],
+    "CircleChevronsLeft": [
+      "arrows"
+    ],
+    "TreePalm": [
+      "places"
+    ],
+    "FlaskConicalOff": [
+      "health",
+      "education"
+    ],
+    "Banana": [
+      "food"
+    ],
+    "CloudDrizzle": [
+      "weather"
+    ],
+    "LibraryBig": [
+      "education"
+    ],
+    "MapPinOff": [
+      "travel",
+      "navigation"
+    ],
+    "ReceiptJapaneseYen": [
+      "commerce",
+      "finance"
+    ],
+    "BrickWallFire": [
+      "security",
+      "places"
+    ],
+    "SendToBack": [
+      "communication"
+    ],
+    "AudioLinesX": [
+      "media"
+    ],
+    "FolderUsers": [
+      "files"
+    ],
+    "ChartQuadrant": [
+      "data"
+    ],
+    "KeyboardMusic": [
+      "devices"
+    ],
+    "ALargeSmall": [
+      "editing"
+    ],
+    "Spline": [
+      "design"
+    ],
+    "Clock11": [
+      "time"
+    ],
+    "HandMetal": [
+      "people"
+    ],
+    "MapPinSearch": [
+      "navigation",
+      "travel"
+    ],
+    "BetweenVerticalStart": [
+      "layout"
+    ],
+    "Scan": [
+      "actions"
+    ],
+    "CircleChevronsUp": [
+      "arrows"
+    ],
+    "DoorClosedPackage": [
+      "places"
+    ],
+    "ScanHeart": [
+      "health"
+    ],
+    "Cherry": [
+      "food"
+    ],
+    "CloudFog": [
+      "weather"
+    ],
+    "RulerDimensionLine": [
+      "education",
+      "design"
+    ],
+    "ScanBarcode": [
+      "commerce"
+    ],
+    "ScanEye": [
+      "security"
+    ],
+    "MessageCircleOff": [
+      "communication"
+    ],
+    "TvMinimalPlay": [
+      "media"
+    ],
+    "FileScan": [
+      "files"
+    ],
+    "ScanSearch": [
+      "data"
+    ],
+    "KeyboardOff": [
+      "devices"
+    ],
+    "GitBranch": [
+      "development"
+    ],
+    "TextWrap": [
+      "editing"
+    ],
+    "Tangent": [
+      "design"
+    ],
+    "TimerReset": [
+      "time"
+    ],
+    "ScanFace": [
+      "people",
+      "security"
+    ],
+    "MapPinHouse": [
+      "navigation",
+      "travel"
+    ],
+    "Grid3x3Off": [
+      "layout"
+    ],
+    "BadgeX": [
+      "status"
+    ],
+    "PinOff": [
+      "actions"
+    ],
+    "ArrowDown01": [
+      "arrows"
+    ],
+    "BriefcaseConveyorBelt": [
+      "places"
+    ],
+    "CigaretteOff": [
+      "health"
+    ],
+    "BadgeEuro": [
+      "finance"
+    ],
+    "CookingPot": [
+      "food"
+    ],
+    "CloudHail": [
+      "weather"
+    ],
+    "FlaskConical": [
+      "education",
+      "health"
+    ],
+    "ScanLine": [
+      "commerce",
+      "data"
+    ],
+    "MessageSquareOff": [
+      "communication"
+    ],
+    "PlayOff": [
+      "media"
+    ],
+    "ClipboardPenLine": [
+      "files"
+    ],
+    "ScanBox": [
+      "data"
+    ],
+    "WifiOff": [
+      "devices"
+    ],
+    "GitBranchPlus": [
+      "development"
+    ],
+    "PenOff": [
+      "editing"
+    ],
+    "Stamp": [
+      "design"
+    ],
+    "AlarmClockPlus": [
+      "time"
+    ],
+    "HandPlatter": [
+      "people",
+      "food"
+    ],
+    "MapPinXInside": [
+      "navigation",
+      "travel"
+    ],
+    "PanelTopOpen": [
+      "layout"
+    ],
+    "ZapOff": [
+      "status"
+    ],
+    "BookmarkX": [
+      "actions"
+    ],
+    "ArrowDown10": [
+      "arrows"
+    ],
+    "TentTree": [
+      "places",
+      "travel"
+    ],
+    "BadgePercent": [
+      "finance"
+    ],
+    "CloudLightning": [
+      "weather"
+    ],
+    "ScanQrCode": [
+      "commerce"
+    ],
+    "LockKeyhole": [
+      "security"
+    ],
+    "MegaphoneOff": [
+      "communication"
+    ],
+    "TvMinimal": [
+      "media"
+    ],
+    "FolderDot": [
+      "files"
+    ],
+    "ChartRadar": [
+      "data"
+    ],
+    "SmartphoneUserRound": [
+      "devices"
+    ],
+    "GitCompare": [
+      "development"
+    ],
+    "PencilSparkles": [
+      "editing"
+    ],
+    "Triangle": [
+      "design"
+    ],
+    "ContactRound": [
+      "people",
+      "communication"
+    ],
+    "MapPinX": [
+      "navigation",
+      "travel"
+    ],
+    "PanelTopClose": [
+      "layout"
+    ],
+    "Flag": [
+      "status"
+    ],
+    "Grip": [
+      "actions"
+    ],
+    "ArrowUp01": [
+      "arrows"
+    ],
+    "MapPinCheck": [
+      "places",
+      "travel"
+    ],
+    "BrainCircuit": [
+      "health"
+    ],
+    "CircleEuro": [
+      "finance"
+    ],
+    "CupSoda": [
+      "food"
+    ],
+    "CloudMoon": [
+      "weather"
+    ],
+    "ReceiptTurkishLira": [
+      "commerce",
+      "finance"
+    ],
+    "LockKeyholeOpen": [
+      "security"
+    ],
+    "CaptionsOff": [
+      "media"
+    ],
+    "FilePenLine": [
+      "files"
+    ],
+    "ChartNetwork": [
+      "data"
+    ],
+    "WifiCog": [
+      "devices"
+    ],
+    "GitBranchMinus": [
+      "development"
+    ],
+    "PenLine": [
+      "editing"
+    ],
+    "SwatchBook": [
+      "design"
+    ],
+    "MapPinPlusInside": [
+      "navigation",
+      "travel"
+    ],
+    "Grid2x2Check": [
+      "layout"
+    ],
+    "Loader": [
+      "status"
+    ],
+    "Link2Off": [
+      "actions"
+    ],
+    "CircleChevronsRight": [
+      "arrows"
+    ],
+    "MountainSnow": [
+      "places",
+      "travel"
+    ],
+    "BoneFracture": [
+      "health"
+    ],
+    "IceCreamBowl": [
+      "food"
+    ],
+    "CloudRain": [
+      "weather"
+    ],
+    "TruckElectric": [
+      "commerce",
+      "travel"
+    ],
+    "EyeDashed": [
+      "security"
+    ],
+    "MailPen": [
+      "communication",
+      "editing"
+    ],
+    "MicOff": [
+      "media"
+    ],
+    "FileSearchCorner": [
+      "files"
+    ],
+    "ChartNoAxesGantt": [
+      "data"
+    ],
+    "MonitorCheck": [
+      "devices"
+    ],
+    "GitMerge": [
+      "development"
+    ],
+    "Pipette": [
+      "design"
+    ],
+    "PanelBottomOpen": [
+      "layout"
+    ],
+    "Medal": [
+      "status"
+    ],
+    "CheckLine": [
+      "actions"
+    ],
+    "CircleChevronsDown": [
+      "arrows"
+    ],
+    "BriefcaseMedical": [
+      "places",
+      "health"
+    ],
+    "BadgeJapaneseYen": [
+      "finance"
+    ],
+    "EggOff": [
+      "food"
+    ],
+    "CloudSnow": [
+      "weather"
+    ],
+    "WalletMinimal": [
+      "commerce",
+      "finance"
+    ],
+    "FileLock": [
+      "security"
+    ],
+    "BellElectric": [
+      "communication"
+    ],
+    "AudioWaveform": [
+      "media"
+    ],
+    "FileBox": [
+      "files"
+    ],
+    "ChartSpline": [
+      "data"
+    ],
+    "MouseOff": [
+      "devices"
+    ],
+    "GitMergeConflict": [
+      "development"
+    ],
+    "CopySlash": [
+      "editing"
+    ],
+    "Frame": [
+      "design"
+    ],
+    "PanelBottomClose": [
+      "layout"
+    ],
+    "SquareX": [
+      "status"
+    ],
+    "RefreshCcw": [
+      "actions",
+      "arrows"
+    ],
+    "SquareChevronsUp": [
+      "arrows"
+    ],
+    "SquareActivity": [
+      "health"
+    ],
+    "WineOff": [
+      "food"
+    ],
+    "SunMedium": [
+      "weather"
+    ],
+    "PhoneOff": [
+      "communication"
+    ],
+    "VolumeOff": [
+      "media"
+    ],
+    "ClipboardClock": [
+      "files"
+    ],
+    "SquareChartGantt": [
+      "data"
+    ],
+    "WifiLock": [
+      "devices"
+    ],
+    "ServerOff": [
+      "development",
+      "devices"
+    ],
+    "Heading5": [
+      "editing"
+    ],
+    "Hexagon": [
+      "design"
+    ],
+    "PanelRightOpen": [
+      "layout"
+    ],
+    "SignalLow": [
+      "status"
+    ],
+    "Redo": [
+      "actions",
+      "arrows"
+    ],
+    "SquareChevronUp": [
+      "arrows"
+    ],
+    "PillBottle": [
+      "health"
+    ],
+    "CirclePoundSterling": [
+      "finance"
+    ],
+    "BeefOff": [
+      "food"
+    ],
+    "WindArrowDown": [
+      "weather"
+    ],
+    "MailClock": [
+      "communication"
+    ],
+    "MicSignal": [
+      "media"
+    ],
+    "SaveOff": [
+      "files"
+    ],
+    "ChartBellCurve": [
+      "data"
+    ],
+    "ServerCog": [
+      "development",
+      "devices"
+    ],
+    "Heading6": [
+      "editing"
+    ],
+    "Contrast": [
+      "design"
+    ],
+    "PanelsLeftBottom": [
+      "layout"
+    ],
+    "FlagOff": [
+      "status"
+    ],
+    "Shuffle": [
+      "actions",
+      "arrows"
+    ],
+    "SquareChevronsDown": [
+      "arrows"
+    ],
+    "BookmarkOff": [
+      "actions"
+    ],
+    "StarOff": [
+      "actions"
+    ],
+    "CircleSlash": [
+      "actions"
+    ],
+    "RefreshCwOff": [
+      "actions",
+      "arrows"
+    ],
+    "BrushCleaning": [
+      "design"
+    ],
+    "SearchCheck": [
+      "actions"
+    ],
+    "SquareDashedXCorner": [
+      "actions"
+    ],
+    "SquareDashedX": [
+      "actions"
+    ],
+    "MilkOff": [
+      "food"
+    ],
+    "StarCheck": [
+      "actions"
+    ],
+    "WheatOff": [
+      "food"
+    ],
+    "CircleDollarSign": [
+      "finance"
+    ],
+    "CandyOff": [
+      "food"
+    ],
+    "SearchExclamationPoint": [
+      "actions"
+    ],
+    "StarPlus": [
+      "actions"
+    ],
+    "BeerOff": [
+      "food"
+    ],
+    "StarMinus": [
+      "actions"
+    ],
+    "BadgeInfo": [
+      "status"
+    ],
+    "BookmarkCheck": [
+      "actions"
+    ],
+    "SearchCode": [
+      "actions"
+    ],
+    "SearchSlash": [
+      "actions"
+    ],
+    "Printer3D": [
+      "devices"
+    ],
+    "SquareDashedSearch": [
+      "actions"
+    ],
+    "MonitorSmartphone": [
+      "devices"
+    ],
+    "PanelsRightBottom": [
+      "layout"
+    ],
+    "BadgePlus": [
+      "status"
+    ],
+    "BluetoothOff": [
+      "devices"
+    ],
+    "ImageOff": [
+      "media"
+    ],
+    "MonitorPlay": [
+      "devices"
+    ],
+    "TextSearch": [
+      "editing"
+    ],
+    "WebcamOff": [
+      "media"
+    ],
+    "WifiPen": [
+      "devices",
+      "editing"
+    ],
+    "GalleryVerticalEnd": [
+      "layout"
+    ],
+    "DiscAlbum": [
+      "media"
+    ],
+    "StarHalf": [
+      "actions"
+    ],
+    "Undo": [
+      "actions",
+      "arrows"
+    ],
+    "BadgeQuestionMark": [
+      "status"
+    ],
+    "MousePointer2Off": [
+      "devices"
+    ],
+    "BadgeMinus": [
+      "status"
+    ],
+    "ClipboardPen": [
+      "files"
+    ],
+    "FolderKey": [
+      "files"
+    ],
+    "Grid2x2Plus": [
+      "layout"
+    ],
+    "MailSearch": [
+      "communication"
+    ],
+    "SpellCheck2": [
+      "editing"
+    ],
+    "StickyNoteCheck": [
+      "files"
+    ],
+    "Crop": [
+      "design"
+    ],
+    "FolderKanban": [
+      "files"
+    ],
+    "Lasso": [
+      "design"
+    ],
+    "ListChecks": [
+      "editing"
+    ],
+    "Octagon": [
+      "design"
+    ],
+    "PlugZap": [
+      "devices"
+    ],
+    "Unlink": [
+      "actions"
+    ],
+    "WifiSync": [
+      "devices"
+    ],
+    "PanelRightClose": [
+      "layout"
+    ],
+    "FunnelX": [
+      "actions"
+    ],
+    "BookmarkPlus": [
+      "actions"
+    ],
+    "FilePen": [
+      "files"
+    ],
+    "FolderSearch": [
+      "files"
+    ],
+    "SavePen": [
+      "files"
+    ],
+    "ZoomIn": [
+      "actions"
+    ],
+    "GalleryHorizontalEnd": [
+      "layout"
+    ],
+    "FolderCog": [
+      "files"
+    ],
+    "Grid3x2": [
+      "layout"
+    ],
+    "MonitorPc": [
+      "devices"
+    ],
+    "Pointer": [
+      "actions"
+    ],
+    "Squircle": [
+      "design"
+    ],
+    "MessageCircleText": [
+      "communication"
+    ],
+    "BookmarkMinus": [
+      "actions"
+    ],
+    "Columns3": [
+      "layout"
+    ],
+    "FolderPen": [
+      "files"
+    ],
+    "Heading3": [
+      "editing"
+    ],
+    "Heading4": [
+      "editing"
+    ],
+    "ListClock": [
+      "editing"
+    ],
+    "MessageCircleX": [
+      "communication"
+    ],
+    "MessageSquareX": [
+      "communication"
+    ],
+    "MonitorDot": [
+      "devices"
+    ],
+    "StickyNotePlus": [
+      "files"
+    ],
+    "VectorSquare": [
+      "design"
+    ],
+    "MicAudioLines": [
+      "media"
+    ],
+    "ShipWheel": [
+      "travel"
+    ],
+    "NotepadTextDashed": [
+      "files"
+    ],
+    "ListSortAscending": [
+      "editing"
+    ],
+    "Columns2": [
+      "layout"
+    ],
+    "MailDot": [
+      "communication"
+    ],
+    "PrinterX": [
+      "devices"
+    ],
+    "ListSortDescending": [
+      "editing"
+    ],
+    "PanelTopBottomDashed": [
+      "layout"
+    ],
+    "StickyNoteMinus": [
+      "files"
+    ],
+    "AlignVerticalSpaceBetween": [
+      "editing"
+    ],
+    "FolderSync": [
+      "files"
+    ],
+    "LayoutPanelTop": [
+      "layout"
+    ],
+    "MailBadge": [
+      "communication"
+    ],
+    "PanelBottom": [
+      "layout"
+    ],
+    "LayoutGridCircles": [
+      "layout"
+    ],
+    "ChevronsDown": [
+      "arrows"
+    ],
+    "SaveCheck": [
+      "files"
+    ],
+    "TicketPlus": [
+      "travel"
+    ],
+    "CakeSlice": [
+      "food"
+    ],
+    "ListCollapse": [
+      "editing"
+    ],
+    "MessageCircleDashedCheck": [
+      "communication"
+    ],
+    "MessageSquareDiff": [
+      "communication"
+    ],
+    "BatteryPlus": [
+      "devices"
+    ],
+    "ClipboardX": [
+      "files"
+    ],
+    "HeartPlus": [
+      "health"
+    ],
+    "TicketMinus": [
+      "travel"
+    ],
+    "CarBattery": [
+      "travel"
+    ],
+    "LayoutFreeform": [
+      "layout"
+    ],
+    "TicketsPlane": [
+      "travel"
+    ],
+    "UtensilsCrossed": [
+      "food"
+    ],
+    "TabletSmartphone": [
+      "devices"
+    ],
+    "BellCheck": [
+      "communication"
+    ],
+    "ChevronsLeft": [
+      "arrows"
+    ],
+    "ClipboardCheck": [
+      "files"
+    ],
+    "Disc2": [
+      "media"
+    ],
+    "Disc3": [
+      "media"
+    ],
+    "PrinterCheck": [
+      "devices"
+    ],
+    "MicVocal": [
+      "media"
+    ],
+    "ServerNas": [
+      "devices",
+      "development"
+    ],
+    "SplinePointer": [
+      "design"
+    ],
+    "ListChevronsDownUp": [
+      "editing"
+    ],
+    "ListChevronsUpDown": [
+      "editing"
+    ],
+    "HardDriveDownload": [
+      "files",
+      "devices"
+    ],
+    "ChevronsRight": [
+      "arrows"
+    ],
+    "CopyCheck": [
+      "editing"
+    ],
+    "AlignEndHorizontal": [
+      "editing"
+    ],
+    "BadgePoundSterling": [
+      "finance"
+    ],
+    "AlignStartHorizontal": [
+      "editing"
+    ],
+    "LoaderPinwheel": [
+      "design",
+      "status"
+    ],
+    "TextCursor": [
+      "editing"
+    ],
+    "TypeOutline": [
+      "editing"
+    ],
+    "MessageSquareLock": [
+      "communication"
+    ],
+    "SmartphoneCharging": [
+      "devices"
+    ],
+    "ClipboardPlus": [
+      "files"
+    ],
+    "ListCheck": [
+      "editing"
+    ],
+    "PaintBucket": [
+      "design"
+    ],
+    "MailQuestionMark": [
+      "communication"
+    ],
+    "RectangleVertical": [
+      "design"
+    ],
+    "PhoneLog": [
+      "communication"
+    ],
+    "SignalZero": [
+      "status"
+    ],
+    "TextAlignStart": [
+      "editing"
+    ],
+    "TextInitial": [
+      "editing"
+    ],
+    "HardDriveUpload": [
+      "files",
+      "devices"
+    ],
+    "TableOfContents": [
+      "data"
+    ],
+    "AlignHorizontalSpaceBetween": [
+      "editing"
+    ],
+    "BellDot": [
+      "communication"
+    ],
+    "BellPlus": [
+      "communication"
+    ],
+    "ClipboardMinus": [
+      "files"
+    ],
+    "ImagePlay": [
+      "media"
+    ],
+    "Rows4": [
+      "layout"
+    ],
+    "AlignStartVertical": [
+      "editing"
+    ],
+    "ClipboardType": [
+      "files"
+    ],
+    "HeartPulse": [
+      "health",
+      "status"
+    ],
+    "SignalHigh": [
+      "status"
+    ],
+    "SignalMedium": [
+      "status"
+    ],
+    "UsbCPort": [
+      "devices"
+    ],
+    "Axis3D": [
+      "design",
+      "arrows"
+    ],
+    "BellMinus": [
+      "communication"
+    ],
+    "Rows3": [
+      "layout"
+    ],
+    "SatelliteDish": [
+      "communication"
+    ],
+    "TableProperties": [
+      "data"
+    ],
+    "Layers2": [
+      "design"
+    ],
+    "GalleryHorizontal": [
+      "layout"
+    ],
+    "PaintbrushVertical": [
+      "design"
+    ],
+    "MailMinus": [
+      "communication"
+    ],
+    "SavePlus": [
+      "files"
+    ],
+    "ServerPlus": [
+      "devices",
+      "development"
+    ],
+    "LayoutArrowDown": [
+      "layout"
+    ],
+    "ThermometerSnowflake": [
+      "health",
+      "weather"
+    ]
+  },
+  "uncategorized": []
+}

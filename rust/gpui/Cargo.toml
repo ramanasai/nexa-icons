@@ -1,0 +1,18 @@
+[package]
+name = "nexa-icons-gpui"
+version = "1.0.0"
+edition = "2021"
+rust-version = "1.85"
+license = "ISC"
+description = "Render Nexa Icons in GPUI (Zed's GPU-accelerated UI framework) windows"
+repository = "https://github.com/nexa-icons/nexa"
+keywords = ["icons", "svg", "gpui", "ui"]
+categories = ["gui", "graphics"]
+
+[dependencies]
+gpui = "0.2.2"
+nexa-icons = { path = "../" }
+
+[[example]]
+name = "icons"
+path = "examples/icons.rs"

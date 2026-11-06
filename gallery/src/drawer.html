@@ -1,0 +1,44 @@
+<dialog class="drawer" id="drawer" aria-labelledby="drawer-name">
+  <div class="drawer-panel">
+    <header class="drawer-head">
+      <div class="drawer-preview" id="drawer-preview"></div>
+      <div class="drawer-title"><h2 id="drawer-name">Icon</h2><p class="drawer-kebab"><code id="drawer-kebab">bell</code> <span class="drawer-sprite" id="drawer-sprite">#nexa-bell</span></p></div>
+      <button class="drawer-close" id="drawer-close" type="button" aria-label="Close details (Esc)">✕</button>
+    </header>
+    <div class="drawer-body" id="drawer-body">
+      <div class="proof" aria-label="Same glyph, six inherited colors">
+        <span class="proof-tile"></span>
+        <span class="proof-tile"></span>
+        <span class="proof-tile"></span>
+        <span class="proof-tile"></span>
+        <span class="proof-tile"></span>
+        <span class="proof-tile"></span>
+      </div>
+      <p class="proof-note" id="proof-note">Six identical <code>&lt;use href="#nexa-bell"/&gt;</code> nodes. Only each tile's inherited <code>color</code> differs — proof that the icon paints exclusively from <code>currentColor</code>.</p>
+      <dl class="meta">
+        <dt>Aliases</dt><dd><span class="chips" id="drawer-aliases"></span></dd>
+        <dt>Keywords</dt><dd><span class="chips" id="drawer-keywords"></span></dd>
+        <dt>Semantic</dt><dd><span class="chips"><span class="chip chip-preset" id="drawer-preset">pop</span><span class="chip" id="drawer-trigger">hover</span><span class="chip" id="drawer-size">24 px · stroke 1.5</span><span class="chip" id="drawer-fill" hidden>fillSafe</span></span></dd>
+      </dl>
+      <div class="meta-actions"><button class="btn" id="replay-btn" type="button" title="Replay preset with trigger=manual">▶ Replay preset</button></div>
+      <section class="swap-detail" id="swap-detail" hidden>
+        <h3>Swap / morph</h3>
+        <button class="swap-btn swap-btn-drawer" id="swap-toggle" type="button" aria-pressed="false" aria-label="Play semantic swap animation">
+          <span class="nexa-swap" id="drawer-swap" data-mode="fade" data-nexa-active="false" style="--nexa-swap-dur:280ms" aria-hidden="true"></span>
+          <span class="swap-name" id="drawer-swap-name">Bell ↔ X</span>
+        </button>
+      </section>
+      <h3>SVG source</h3>
+      <pre class="snippet-code"><code id="drawer-svg"></code></pre>
+      <h3>Copy usage</h3>
+      <div class="copy-grid" id="copy-grid">
+        <button class="copy-btn" type="button" data-copy="sprite"><span class="copy-label">HTML · sprite</span><span class="copy-hint">&lt;use href="#nexa-bell"/&gt;</span></button>
+        <button class="copy-btn" type="button" data-copy="inline"><span class="copy-label">HTML · inline SVG</span><span class="copy-hint">&lt;svg&gt;…&lt;/svg&gt;</span></button>
+        <button class="copy-btn" type="button" data-copy="react"><span class="copy-label">React / TS</span><span class="copy-hint">import { Bell } from "@nexa/icons"</span></button>
+        <button class="copy-btn" type="button" data-copy="js"><span class="copy-label">Vanilla JS</span><span class="copy-hint">svg("bell", { size: 20 })</span></button>
+        <button class="copy-btn" type="button" data-copy="go"><span class="copy-label">Go</span><span class="copy-hint">icons.Get("bell")</span></button>
+        <button class="copy-btn" type="button" data-copy="rust"><span class="copy-label">Rust</span><span class="copy-hint">nexa_icons::get("bell")</span></button>
+      </div>
+    </div>
+  </div>
+</dialog>

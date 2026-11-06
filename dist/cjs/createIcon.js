@@ -1,0 +1,209 @@
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var createIcon_exports = {};
+__export(createIcon_exports, {
+  PRESETS: () => PRESETS,
+  SIZE_PX: () => SIZE_PX,
+  STROKE_FOR_PX: () => STROKE_FOR_PX,
+  createIcon: () => createIcon,
+  strokeForSize: () => strokeForSize
+});
+module.exports = __toCommonJS(createIcon_exports);
+var import_react = require("react");
+const h = import_react.createElement;
+const SIZE_PX = { sm: 16, md: 20, lg: 24, xl: 40 };
+const PRESETS = [
+  "spin",
+  "pulse",
+  "ring",
+  "shake",
+  "wiggle",
+  "flip",
+  "bounce",
+  "float",
+  "tilt",
+  "heartbeat",
+  "pop",
+  "fade-in",
+  "nudge-up",
+  "nudge-down",
+  "nudge-left",
+  "nudge-right",
+  "nudge-up-right",
+  "nudge-down-right"
+];
+function strokeForSize(px) {
+  if (px <= 16) return 2;
+  if (px <= 20) return 1.75;
+  return 1.5;
+}
+const STROKE_FOR_PX = strokeForSize;
+const resolvePreset = (animate, fallback) => animate === true ? fallback : typeof animate === "string" ? animate : void 0;
+function createIcon(data) {
+  const NexaIcon = (0, import_react.forwardRef)(function NexaIcon2(props, ref) {
+    const {
+      size = 24,
+      strokeWidth,
+      animate,
+      trigger,
+      active,
+      label,
+      title,
+      className,
+      shape,
+      variant,
+      filled,
+      animateFill,
+      threeD,
+      glass,
+      gradient,
+      glassAnim,
+      glassTrigger,
+      glassBody,
+      gradientAnim,
+      ...rest
+    } = props;
+    const px = typeof size === "number" ? size : SIZE_PX[size] ?? 24;
+    const stroke = strokeWidth ?? strokeForSize(px);
+    const preset = resolvePreset(animate, data.preset);
+    const labelled = label != null || title != null;
+    const resolvedFill = filled === true ? "solid" : filled === "soft" ? "duotone" : variant ?? "outline";
+    const fillSafe = data.fillSafe !== false;
+    const fillState = resolvedFill === "outline" ? "false" : resolvedFill === "duotone" ? "soft" : "true";
+    const hasShape = shape != null && shape !== "none";
+    const glassConfig = glass && typeof glass === "object" ? glass : void 0;
+    const glassPreset = glass === true ? "frost" : typeof glass === "string" ? glass : glassConfig ? glassConfig.preset ?? "frost" : void 0;
+    const gradientConfig = gradient && typeof gradient === "object" ? gradient : void 0;
+    const gradientPreset = typeof gradient === "string" ? gradient : gradientConfig ? "custom" : void 0;
+    const reactId = (0, import_react.useId)();
+    const gradientId = `nexa-g${reactId.replace(/[^a-zA-Z0-9_-]/g, "")}`;
+    const hasGlass = Boolean(glassPreset);
+    const hasGradient = Boolean(gradientPreset);
+    const gradientAngle = (gradientConfig?.angle ?? 135) * Math.PI / 180;
+    const gx = Math.cos(gradientAngle) / 2;
+    const gy = Math.sin(gradientAngle) / 2;
+    const glassStyle = glassConfig ? {
+      ...glassConfig.blur != null ? { "--nexa-glass-blur": `${glassConfig.blur}px` } : {},
+      ...glassConfig.tintA ? { "--nexa-glass-a": glassConfig.tintA } : {},
+      ...glassConfig.tintB ? { "--nexa-glass-b": glassConfig.tintB } : {},
+      ...glassConfig.edge ? { "--nexa-glass-edge": glassConfig.edge } : {},
+      ...glassConfig.radius != null ? { "--nexa-glass-radius": `${glassConfig.radius}px` } : {},
+      ...gradientConfig ? { "--nexa-grad-a": gradientConfig.from, "--nexa-grad-b": gradientConfig.to } : {}
+    } : void 0;
+    const box = Math.round(px * 1.7);
+    const frameWidth = box;
+    const frameHeight = shape === "pill" ? Math.round(px * 1.25) : box;
+    const svgProps = {
+      ...rest,
+      ref,
+      xmlns: "http://www.w3.org/2000/svg",
+      width: px,
+      height: px,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: hasGradient ? `url(#${gradientId})` : "currentColor",
+      strokeWidth: stroke,
+      strokeLinecap: "round",
+      strokeLinejoin: "round",
+      className: ["nexa-icon", hasGradient ? `nexa-grad--${gradientPreset}` : "", className].filter(Boolean).join(" "),
+      role: labelled && !hasShape && !threeD && !hasGlass ? "img" : void 0,
+      "aria-hidden": labelled && !hasShape && !threeD && !hasGlass ? void 0 : true,
+      "aria-label": labelled && !hasShape && !threeD && !hasGlass ? label : void 0,
+      focusable: "false",
+      "data-nexa-icon": data.kebab,
+      style: hasGradient ? { stroke: `url(#${gradientId})` } : void 0,
+      "data-fill-state": resolvedFill === "outline" ? void 0 : fillSafe ? fillState : "soft",
+      "data-fill-anim": animateFill ? "true" : void 0,
+      "data-nexa-gradient-anim": hasGradient && gradientAnim ? gradientAnim : void 0,
+      "data-nexa-anim": preset,
+      "data-nexa-trigger": preset ? trigger ?? data.trigger : void 0,
+      "data-nexa-active": active ? "true" : void 0
+    };
+    const gradientDefs = hasGradient ? h(
+      "defs",
+      { key: "__grad" },
+      h(
+        "linearGradient",
+        gradientConfig ? {
+          id: gradientId,
+          x1: Number((0.5 - gx).toFixed(4)),
+          y1: Number((0.5 - gy).toFixed(4)),
+          x2: Number((0.5 + gx).toFixed(4)),
+          y2: Number((0.5 + gy).toFixed(4))
+        } : { id: gradientId, x1: "0", y1: "0", x2: "1", y2: "1" },
+        h("stop", {
+          offset: "0%",
+          style: { stopColor: gradientConfig ? gradientConfig.from : "var(--nexa-grad-a)" }
+        }),
+        h("stop", {
+          offset: "100%",
+          style: { stopColor: gradientConfig ? gradientConfig.to : "var(--nexa-grad-b)" }
+        })
+      )
+    ) : null;
+    const strokePaint = hasGradient ? `url(#${gradientId})` : "currentColor";
+    const bodyLayer = glassBody && hasGlass ? h(
+      "g",
+      {
+        key: "__body",
+        className: "nexa-icon-body",
+        fill: "none",
+        stroke: strokePaint,
+        strokeWidth: Math.max(5, stroke * 3.2),
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+      },
+      ...data.nodes.map(([tag, attrs], i) => h(tag, { ...attrs, key: i }))
+    ) : null;
+    const svgElement = h(
+      "svg",
+      svgProps,
+      gradientDefs,
+      bodyLayer,
+      title != null ? h("title", { key: "__title" }, title) : null,
+      ...data.nodes.map(([tag, attrs], i) => h(tag, { ...attrs, key: i }))
+    );
+    if (hasShape || threeD || hasGlass) {
+      return h(
+        "span",
+        {
+          className: [
+            "nexa-icon-frame",
+            hasShape ? `nexa-shape nexa-shape--${shape}` : "",
+            threeD ? "nexa-3d" : "",
+            hasGlass ? `nexa-glass nexa-glass--${glassPreset}` : "",
+            hasGradient ? `nexa-grad--${gradientPreset}` : ""
+          ].filter(Boolean).join(" "),
+          "data-nexa-3d": threeD || void 0,
+          "data-nexa-gradient": hasGradient ? gradientPreset : void 0,
+          "data-nexa-glass-anim": hasGlass && glassAnim ? glassAnim : void 0,
+          "data-nexa-glass-trigger": hasGlass && glassAnim ? glassTrigger ?? "always" : void 0,
+          style: hasShape || hasGlass ? { width: `${frameWidth}px`, height: `${frameHeight}px`, ...glassStyle } : glassStyle,
+          role: labelled ? "img" : void 0,
+          "aria-label": labelled ? label ?? title : void 0,
+          "aria-hidden": labelled ? void 0 : "true"
+        },
+        svgElement
+      );
+    }
+    return svgElement;
+  });
+  NexaIcon.displayName = data.name;
+  return NexaIcon;
+}

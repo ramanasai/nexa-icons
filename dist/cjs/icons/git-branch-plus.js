@@ -1,0 +1,32 @@
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var git_branch_plus_exports = {};
+__export(git_branch_plus_exports, {
+  GitBranchPlus: () => GitBranchPlus
+});
+module.exports = __toCommonJS(git_branch_plus_exports);
+var import_createIcon = require("../createIcon.js");
+const GitBranchPlus = /* @__PURE__ */ (0, import_createIcon.createIcon)({
+  name: "GitBranchPlus",
+  kebab: "git-branch-plus",
+  fillSafe: false,
+  preset: "pop",
+  trigger: "hover",
+  nodes: [["path", { d: "M6 3v12" }], ["path", { d: "M18 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" }], ["path", { d: "M6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" }], ["path", { d: "M15 6a9 9 0 0 0-9 9" }], ["path", { d: "M18 15v6" }], ["path", { d: "M21 18h-6" }]]
+});

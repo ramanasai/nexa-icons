@@ -1,0 +1,32 @@
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var scale_exports = {};
+__export(scale_exports, {
+  Scale: () => Scale
+});
+module.exports = __toCommonJS(scale_exports);
+var import_createIcon = require("../createIcon.js");
+const Scale = /* @__PURE__ */ (0, import_createIcon.createIcon)({
+  name: "Scale",
+  kebab: "scale",
+  fillSafe: false,
+  preset: "pop",
+  trigger: "hover",
+  nodes: [["path", { d: "M12 3v18" }], ["path", { d: "m19 8 3 8a5 5 0 0 1-6 0zV7" }], ["path", { d: "M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1" }], ["path", { d: "m5 8 3 8a5 5 0 0 1-6 0zV7" }], ["path", { d: "M7 21h10" }]]
+});

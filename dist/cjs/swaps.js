@@ -1,0 +1,35 @@
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var swaps_exports = {};
+__export(swaps_exports, {
+  SWAP: () => SWAP,
+  SWAP_PAIRS: () => SWAP_PAIRS,
+  swapModeFor: () => swapModeFor,
+  swapTarget: () => swapTarget
+});
+module.exports = __toCommonJS(swaps_exports);
+const SWAP_PAIRS = [["ArrowLeft", "ArrowRight", "mirror"], ["ArrowRight", "ArrowLeft", "mirror"], ["ArrowUp", "ArrowDown", "flip"], ["ArrowDown", "ArrowUp", "flip"], ["ChevronLeft", "ChevronRight", "mirror"], ["ChevronRight", "ChevronLeft", "mirror"], ["ChevronUp", "ChevronDown", "flip"], ["ChevronDown", "ChevronUp", "flip"], ["ChevronsLeftRight", "ChevronsUpDown", "rotate"], ["ChevronsUpDown", "ChevronsLeftRight", "rotate"], ["PanelLeftClose", "PanelLeftOpen", "fade"], ["PanelLeftOpen", "PanelLeftClose", "fade"], ["Plus", "Minus", "fade"], ["Minus", "Plus", "fade"], ["PlusCircle", "XCircle", "fade"], ["XCircle", "PlusCircle", "fade"], ["Check", "X", "fade"], ["X", "Check", "fade"], ["CheckCircle", "XCircle", "fade"], ["CheckCircle2", "XCircle", "fade"], ["Heart", "HeartOff", "fade"], ["HeartOff", "Heart", "fade"], ["Eye", "EyeOff", "fade"], ["EyeOff", "Eye", "fade"], ["Sun", "Moon", "rotate"], ["Moon", "Sun", "rotate"], ["Upload", "Download", "fade"], ["Download", "Upload", "fade"], ["ArrowUpRight", "ArrowDownRight", "flip"], ["ArrowDownRight", "ArrowUpRight", "flip"], ["TrendingUp", "TrendingDown", "flip"], ["TrendingDown", "TrendingUp", "flip"], ["MoreHorizontal", "MoreVertical", "rotate"], ["MoreVertical", "MoreHorizontal", "rotate"], ["Lock", "Key", "fade"], ["Key", "Lock", "fade"], ["Mail", "MailCheck", "fade"], ["MailCheck", "Mail", "fade"], ["Star", "Bookmark", "fade"], ["Bookmark", "Star", "fade"], ["Shield", "ShieldCheck", "fade"], ["ShieldCheck", "Shield", "fade"], ["MessageSquare", "Mail", "slide"], ["Filter", "SlidersHorizontal", "slide"], ["SlidersHorizontal", "Filter", "slide"], ["Square", "Circle", "fade"], ["Circle", "Square", "fade"], ["Bold", "Italic", "slide"], ["Italic", "Bold", "slide"]];
+const SWAP = { "arrowleft": { "to": "ArrowRight", "mode": "mirror" }, "arrowright": { "to": "ArrowLeft", "mode": "mirror" }, "arrowup": { "to": "ArrowDown", "mode": "flip" }, "arrowdown": { "to": "ArrowUp", "mode": "flip" }, "chevronleft": { "to": "ChevronRight", "mode": "mirror" }, "chevronright": { "to": "ChevronLeft", "mode": "mirror" }, "chevronup": { "to": "ChevronDown", "mode": "flip" }, "chevrondown": { "to": "ChevronUp", "mode": "flip" }, "chevronsleftright": { "to": "ChevronsUpDown", "mode": "rotate" }, "chevronsupdown": { "to": "ChevronsLeftRight", "mode": "rotate" }, "panelleftclose": { "to": "PanelLeftOpen", "mode": "fade" }, "panelleftopen": { "to": "PanelLeftClose", "mode": "fade" }, "plus": { "to": "Minus", "mode": "fade" }, "minus": { "to": "Plus", "mode": "fade" }, "pluscircle": { "to": "XCircle", "mode": "fade" }, "circleplus": { "to": "XCircle", "mode": "fade" }, "xcircle": { "to": "PlusCircle", "mode": "fade" }, "circlex": { "to": "PlusCircle", "mode": "fade" }, "check": { "to": "X", "mode": "fade" }, "x": { "to": "Check", "mode": "fade" }, "checkcircle": { "to": "XCircle", "mode": "fade" }, "circlecheckbig": { "to": "XCircle", "mode": "fade" }, "checkcircle2": { "to": "XCircle", "mode": "fade" }, "circlecheck": { "to": "XCircle", "mode": "fade" }, "heart": { "to": "HeartOff", "mode": "fade" }, "heartoff": { "to": "Heart", "mode": "fade" }, "eye": { "to": "EyeOff", "mode": "fade" }, "eyeoff": { "to": "Eye", "mode": "fade" }, "sun": { "to": "Moon", "mode": "rotate" }, "moon": { "to": "Sun", "mode": "rotate" }, "upload": { "to": "Download", "mode": "fade" }, "download": { "to": "Upload", "mode": "fade" }, "arrowupright": { "to": "ArrowDownRight", "mode": "flip" }, "arrowdownright": { "to": "ArrowUpRight", "mode": "flip" }, "trendingup": { "to": "TrendingDown", "mode": "flip" }, "trendingdown": { "to": "TrendingUp", "mode": "flip" }, "morehorizontal": { "to": "MoreVertical", "mode": "rotate" }, "ellipsis": { "to": "MoreVertical", "mode": "rotate" }, "morevertical": { "to": "MoreHorizontal", "mode": "rotate" }, "ellipsisvertical": { "to": "MoreHorizontal", "mode": "rotate" }, "lock": { "to": "Key", "mode": "fade" }, "key": { "to": "Lock", "mode": "fade" }, "mail": { "to": "MailCheck", "mode": "fade" }, "mailcheck": { "to": "Mail", "mode": "fade" }, "star": { "to": "Bookmark", "mode": "fade" }, "bookmark": { "to": "Star", "mode": "fade" }, "shield": { "to": "ShieldCheck", "mode": "fade" }, "shieldcheck": { "to": "Shield", "mode": "fade" }, "messagesquare": { "to": "Mail", "mode": "slide" }, "filter": { "to": "SlidersHorizontal", "mode": "slide" }, "funnel": { "to": "SlidersHorizontal", "mode": "slide" }, "slidershorizontal": { "to": "Filter", "mode": "slide" }, "square": { "to": "Circle", "mode": "fade" }, "circle": { "to": "Square", "mode": "fade" }, "bold": { "to": "Italic", "mode": "slide" }, "letterb": { "to": "Italic", "mode": "slide" }, "italic": { "to": "Bold", "mode": "slide" }, "xicon": { "to": "Check", "mode": "fade" } };
+const compact = (value) => String(value).toLowerCase().replace(/[\s_-]+/g, "");
+function swapTarget(name) {
+  return SWAP[compact(name)]?.to;
+}
+function swapModeFor(name) {
+  return SWAP[compact(name)]?.mode ?? "fade";
+}

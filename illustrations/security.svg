@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <circle cx="32" cy="32" r="24" fill="var(--nexa-ill-soft, currentColor)" fill-opacity=".07"/>
+  <path d="M32 10l15 6v11c0 10-6.4 17.6-15 20.8C23.4 44.6 17 37 17 27V16z" fill="var(--nexa-ill-soft, currentColor)" fill-opacity=".14" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M25 28l5 5 10-11" stroke="var(--nexa-ill-accent, currentColor)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M50 12l1.3 3.9 3.9 1.3-3.9 1.3L50 22.4l-1.3-3.9-3.9-1.3 3.9-1.3z" fill="currentColor" fill-opacity=".35"/>
+</svg>

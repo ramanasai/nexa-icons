@@ -1,0 +1,32 @@
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var keyboard_music_exports = {};
+__export(keyboard_music_exports, {
+  KeyboardMusic: () => KeyboardMusic
+});
+module.exports = __toCommonJS(keyboard_music_exports);
+var import_createIcon = require("../createIcon.js");
+const KeyboardMusic = /* @__PURE__ */ (0, import_createIcon.createIcon)({
+  name: "KeyboardMusic",
+  kebab: "keyboard-music",
+  fillSafe: false,
+  preset: "wiggle",
+  trigger: "hover",
+  nodes: [["rect", { width: "20", height: "16", x: "2", y: "4", rx: "2" }], ["path", { d: "M6 8h4" }], ["path", { d: "M14 8h.01" }], ["path", { d: "M18 8h.01" }], ["path", { d: "M2 12h20" }], ["path", { d: "M6 12v4" }], ["path", { d: "M10 12v4" }], ["path", { d: "M14 12v4" }], ["path", { d: "M18 12v4" }]]
+});

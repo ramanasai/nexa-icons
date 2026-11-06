@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <rect x="8" y="8" width="48" height="48" rx="11" fill="var(--nexa-ill-soft, currentColor)" fill-opacity=".07"/>
+  <rect x="13" y="16" width="34" height="23" rx="4" fill="var(--nexa-ill-soft, currentColor)" fill-opacity=".14" stroke="currentColor" stroke-width="2.5"/>
+  <path d="M32 21.5a5.4 5.4 0 0 1 5.4 5.4c0 4.6-5.4 9.3-5.4 9.3s-5.4-4.7-5.4-9.3A5.4 5.4 0 0 1 32 21.5z" fill="var(--nexa-ill-accent, currentColor)" fill-opacity=".2" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="32" cy="26.8" r="1.7" fill="currentColor"/>
+  <path d="M9 43h44l-3 5H12z" fill="var(--nexa-ill-soft, currentColor)" fill-opacity=".14" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M51 27a7 7 0 0 1 0 10M55 23a13 13 0 0 1 0 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-opacity=".6"/>
+</svg>

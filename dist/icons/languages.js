@@ -1,0 +1,12 @@
+import { createIcon } from "../createIcon.js";
+const Languages = /* @__PURE__ */ createIcon({
+  name: "Languages",
+  kebab: "languages",
+  fillSafe: false,
+  preset: "wiggle",
+  trigger: "hover",
+  nodes: [["path", { d: "m5 8 6 6" }], ["path", { d: "m4 14 6-6 2-3" }], ["path", { d: "M2 5h12" }], ["path", { d: "M7 2h1" }], ["path", { d: "m22 22-5-10-5 10" }], ["path", { d: "M14 18h6" }]]
+});
+export {
+  Languages
+};

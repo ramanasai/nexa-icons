@@ -1,0 +1,12 @@
+import { createIcon } from "../createIcon.js";
+const ListCheck = /* @__PURE__ */ createIcon({
+  name: "ListCheck",
+  kebab: "list-check",
+  fillSafe: false,
+  preset: "pop",
+  trigger: "hover",
+  nodes: [["path", { d: "M16 5H3" }], ["path", { d: "M16 12H3" }], ["path", { d: "M11 19H3" }], ["path", { d: "m15 18 2 2 4-4" }]]
+});
+export {
+  ListCheck
+};

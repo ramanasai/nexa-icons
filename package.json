@@ -1,0 +1,123 @@
+{
+  "name": "@nexa/icons",
+  "version": "1.0.0",
+  "description": "650 theme-aware, animated, ultra-light stroke icons for Nexa Icons: currentColor only, CSS-only animation, tree-shakeable React components, zero-dependency JS, Go and Rust packages, a Rust GPUI adapter, and a virtualized gallery.",
+  "keywords": [
+    "icons",
+    "svg",
+    "react",
+    "currentColor",
+    "tailwind",
+    "nextjs",
+    "nexa-icons",
+    "animation",
+    "go",
+    "rust"
+  ],
+  "license": "ISC",
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "dist",
+    "src",
+    "js",
+    "icons",
+    "sprite.svg",
+    "data/icons.json",
+    "go",
+    "rust",
+    "gallery/index.html",
+    "docs",
+    "skills",
+    "README.md",
+    "LICENSE",
+    "NOTICE",
+    "data/swaps.json",
+    "mise.toml",
+    "nexa-icon-styles-SKILL.md",
+    "bunfig.toml",
+    ".yarnrc.yml",
+    "AGENTS.md",
+    "rust/gpui",
+    "gallery/icons.data.js",
+    "gallery/app.js",
+    "data/categories.json",
+    "illustrations/preview.html",
+    "illustrations/*.svg",
+    "illustrations/manifest.json",
+    "illustrations/README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/index.js"
+    },
+    "./animations.css": "./dist/animations.css",
+    "./js": {
+      "types": "./js/index.d.ts",
+      "import": "./js/index.mjs",
+      "require": "./js/index.cjs"
+    },
+    "./sprite.svg": "./sprite.svg",
+    "./icons/*": "./icons/*",
+    "./data/icons.json": "./data/icons.json",
+    "./package.json": "./package.json",
+    "./react/*": {
+      "types": "./dist/icons/*.d.ts",
+      "import": "./dist/icons/*.js"
+    },
+    "./data/swaps.json": "./data/swaps.json",
+    "./*": {
+      "types": "./dist/categories/*.d.ts",
+      "import": "./dist/categories/*.js",
+      "require": "./dist/cjs/categories/*.js"
+    },
+    "./illustrations/*": "./illustrations/*",
+    "./data/categories.json": "./data/categories.json",
+    "./effects.css": "./dist/effects.css"
+  },
+  "scripts": {
+    "generate:data": "node scripts/generate-data.mjs",
+    "generate:react": "node scripts/generate-react.mjs",
+    "generate:js": "node scripts/generate-js.mjs",
+    "generate:go": "node scripts/generate-go.mjs",
+    "generate:rust": "node scripts/generate-rust.mjs",
+    "generate": "node scripts/generate-all.mjs",
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "gallery": "node gallery/build.mjs",
+    "bench": "node bench/bench.mjs",
+    "test": "node --test tests/",
+    "test:go": "cd go && go vet ./... && go test ./...",
+    "test:rust": "cd rust && cargo test",
+    "pm-check": "bash scripts/package-managers.sh",
+    "verify": "node scripts/verify.mjs",
+    "release": "node scripts/generate-all.mjs && npm test && node scripts/verify.mjs"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "esbuild": "^0.28.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "typescript": "^7.0.2"
+  },
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts"
+}

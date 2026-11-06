@@ -1,0 +1,12 @@
+import { createIcon } from "../createIcon.js";
+const SeparatorVertical = /* @__PURE__ */ createIcon({
+  name: "SeparatorVertical",
+  kebab: "separator-vertical",
+  fillSafe: false,
+  preset: "wiggle",
+  trigger: "hover",
+  nodes: [["path", { d: "M12 3v18" }], ["path", { d: "m16 16 4-4-4-4" }], ["path", { d: "m8 8-4 4 4 4" }]]
+});
+export {
+  SeparatorVertical
+};

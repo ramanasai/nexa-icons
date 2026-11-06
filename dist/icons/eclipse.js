@@ -1,0 +1,12 @@
+import { createIcon } from "../createIcon.js";
+const Eclipse = /* @__PURE__ */ createIcon({
+  name: "Eclipse",
+  kebab: "eclipse",
+  fillSafe: false,
+  preset: "float",
+  trigger: "hover",
+  nodes: [["circle", { cx: "12", cy: "12", r: "10" }], ["path", { d: "M12 2a7 7 0 1 0 10 10" }]]
+});
+export {
+  Eclipse
+};

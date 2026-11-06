@@ -1,0 +1,274 @@
+/*!
+ * Nexa Icons — optional glass + gradient effects
+ * ---------------------------------------------------------------------------
+ * Import this file once if you use `glass` / `gradient`:
+ *   import "@nexa/icons/effects.css";
+ *
+ * Everything is CSS-only and theme-aware: glass surfaces are derived from
+ * currentColor + white/black highlights so they work on #fafafa and #0c0c0e,
+ * and every gradient is exposed as CSS variables so an app can retheme it.
+ * No animation runs here; glass is static and reduced-motion-safe by design.
+ * ---------------------------------------------------------------------------
+ */
+
+/* ---- glass body (thick glyph behind the stroke) ------------------------- */
+.nexa-icon-body {
+  opacity: 0.86;
+  pointer-events: none;
+}
+.nexa-glass--jelly > .nexa-icon .nexa-icon-body,
+.nexa-glass--neon > .nexa-icon .nexa-icon-body {
+  opacity: 0.95;
+  filter: drop-shadow(0 0 3px color-mix(in srgb, var(--nexa-grad-a, currentColor) 45%, transparent));
+}
+
+/* ---- animated gradient stroke ------------------------------------------ */
+@keyframes nexa-grad-hue {
+  to { filter: hue-rotate(360deg); }
+}
+.nexa-icon[data-nexa-gradient-anim="hue"] {
+  animation: nexa-grad-hue 6s linear infinite;
+}
+
+/* ---- glass surfaces ----------------------------------------------------- */
+.nexa-icon-frame.nexa-glass {
+  --nexa-glass-a: color-mix(in srgb, currentColor 34%, transparent);
+  --nexa-glass-b: color-mix(in srgb, currentColor 10%, transparent);
+  --nexa-glass-edge: color-mix(in srgb, currentColor 30%, transparent);
+  --nexa-glass-blur: 12px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid var(--nexa-glass-edge);
+  background:
+    radial-gradient(120% 100% at 18% 0%, color-mix(in srgb, #ffffff 46%, transparent), transparent 52%),
+    linear-gradient(135deg, var(--nexa-glass-a), var(--nexa-glass-b));
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, #ffffff 62%, transparent),
+    inset 0 -1px 0 color-mix(in srgb, #000000 16%, transparent),
+    0 10px 24px -10px color-mix(in srgb, currentColor 42%, transparent);
+  backdrop-filter: blur(var(--nexa-glass-blur)) saturate(150%);
+  -webkit-backdrop-filter: blur(var(--nexa-glass-blur)) saturate(150%);
+}
+
+.nexa-glass::before,
+.nexa-glass::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* specular sheen */
+.nexa-glass::before {
+  z-index: 0;
+  background: linear-gradient(
+    118deg,
+    color-mix(in srgb, #ffffff 60%, transparent) 0%,
+    color-mix(in srgb, #ffffff 10%, transparent) 34%,
+    transparent 52%,
+    transparent 70%,
+    color-mix(in srgb, #ffffff 22%, transparent) 100%
+  );
+  opacity: var(--nexa-glass-sheen, 0.72);
+}
+
+/* frosted rim */
+.nexa-glass::after {
+  z-index: 0;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, #ffffff 26%, transparent);
+}
+
+.nexa-icon-frame.nexa-glass:not([class*="nexa-shape--"]) {
+  border-radius: var(--nexa-glass-radius, 27%);
+}
+
+.nexa-glass > .nexa-icon {
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+  .nexa-glass::before { opacity: calc(var(--nexa-glass-sheen, 0.72) * 0.7); }
+  .nexa-glass::after { box-shadow: inset 0 0 0 1px color-mix(in srgb, #ffffff 14%, transparent); }
+}
+
+/* glass presets */
+.nexa-icon-frame.nexa-glass--ice {
+  --nexa-glass-a: color-mix(in srgb, #bfdbfe 52%, transparent);
+  --nexa-glass-b: color-mix(in srgb, #60a5fa 34%, transparent);
+  --nexa-glass-edge: color-mix(in srgb, #bfdbfe 58%, transparent);
+  --nexa-glass-blur: 16px;
+}
+.nexa-icon-frame.nexa-glass--clear {
+  --nexa-glass-a: color-mix(in srgb, currentColor 16%, transparent);
+  --nexa-glass-b: color-mix(in srgb, currentColor 6%, transparent);
+  --nexa-glass-edge: color-mix(in srgb, currentColor 22%, transparent);
+  --nexa-glass-blur: 8px;
+}
+.nexa-icon-frame.nexa-glass--steel {
+  --nexa-glass-a: color-mix(in srgb, #94a3b8 44%, transparent);
+  --nexa-glass-b: color-mix(in srgb, #334155 22%, transparent);
+  --nexa-glass-edge: color-mix(in srgb, #cbd5e1 48%, transparent);
+  --nexa-glass-blur: 14px;
+}
+.nexa-icon-frame.nexa-glass--frost {
+  --nexa-glass-blur: 18px;
+}
+
+/* neon: dark translucent tile + coloured rim/glow (reference: neon glass set) */
+.nexa-icon-frame.nexa-glass--neon {
+  --nexa-glass-a: color-mix(in srgb, #0b1224 78%, transparent);
+  --nexa-glass-b: color-mix(in srgb, #1a2340 58%, transparent);
+  --nexa-glass-edge: color-mix(in srgb, var(--nexa-grad-a, #a78bfa) 55%, transparent);
+  --nexa-glass-blur: 10px;
+}
+.nexa-glass--neon > .nexa-icon {
+  fill: currentColor;
+  fill-opacity: 0.14;
+  filter:
+    drop-shadow(0 0 5px color-mix(in srgb, var(--nexa-grad-a, currentColor) 62%, transparent))
+    drop-shadow(0 0 14px color-mix(in srgb, var(--nexa-grad-b, currentColor) 34%, transparent));
+}
+.nexa-glass--neon::before { opacity: 0.4; }
+
+/* jelly: light glossy lavender body with specular top edge (reference 3) */
+.nexa-icon-frame.nexa-glass--jelly {
+  --nexa-glass-a: color-mix(in srgb, #ddd6fe 62%, transparent);
+  --nexa-glass-b: color-mix(in srgb, #a78bfa 30%, transparent);
+  --nexa-glass-edge: color-mix(in srgb, #f5f3ff 65%, transparent);
+  --nexa-glass-blur: 6px;
+  box-shadow:
+    inset 0 2px 1px color-mix(in srgb, #ffffff 88%, transparent),
+    inset 0 -3px 6px color-mix(in srgb, #7c3aed 22%, transparent),
+    0 12px 26px -12px color-mix(in srgb, #8b5cf6 55%, transparent);
+}
+.nexa-glass--jelly > .nexa-icon {
+  fill: currentColor;
+  fill-opacity: 0.12;
+  filter:
+    drop-shadow(0 1px 0 color-mix(in srgb, #ffffff 75%, transparent))
+    drop-shadow(0 2px 4px color-mix(in srgb, #7c3aed 30%, transparent));
+}
+
+/* aurora: glass tinted by the current gradient tokens */
+.nexa-icon-frame.nexa-glass--aurora {
+  --nexa-glass-a: color-mix(in srgb, var(--nexa-grad-a, #a78bfa) 40%, transparent);
+  --nexa-glass-b: color-mix(in srgb, var(--nexa-grad-b, #22d3ee) 28%, transparent);
+  --nexa-glass-edge: color-mix(in srgb, var(--nexa-grad-b, #22d3ee) 50%, transparent);
+  --nexa-glass-blur: 14px;
+}
+
+/* If the browser cannot blur, make the surface more opaque so it still reads. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .nexa-icon-frame.nexa-glass { background: var(--nexa-glass-a); }
+}
+
+/* ---- gradient presets (glyph strokes + optional glass tint) ------------- */
+.nexa-grad--aurora { --nexa-grad-a: #a78bfa; --nexa-grad-b: #22d3ee; }
+.nexa-grad--ice { --nexa-grad-a: #bfdbfe; --nexa-grad-b: #38bdf8; }
+.nexa-grad--sunset { --nexa-grad-a: #fb7185; --nexa-grad-b: #fbbf24; }
+.nexa-grad--emerald { --nexa-grad-a: #6ee7b7; --nexa-grad-b: #047857; }
+.nexa-grad--ocean { --nexa-grad-a: #38bdf8; --nexa-grad-b: #6366f1; }
+.nexa-grad--candy { --nexa-grad-a: #f0abfc; --nexa-grad-b: #f472b6; }
+.nexa-grad--gold { --nexa-grad-a: #fde68a; --nexa-grad-b: #f59e0b; }
+.nexa-grad--mono {
+  --nexa-grad-a: currentColor;
+  --nexa-grad-b: color-mix(in srgb, currentColor 45%, transparent);
+}
+
+/* Gradient glass: reuse the gradient tokens for the surface tint. */
+.nexa-icon-frame.nexa-glass[data-nexa-gradient] {
+  --nexa-glass-a: color-mix(in srgb, var(--nexa-grad-a) 44%, transparent);
+  --nexa-glass-b: color-mix(in srgb, var(--nexa-grad-b) 26%, transparent);
+  --nexa-glass-edge: color-mix(in srgb, var(--nexa-grad-a) 46%, transparent);
+}
+
+/* ---- fallbacks ---------------------------------------------------------- */
+@media (forced-colors: active) {
+  .nexa-icon-frame.nexa-glass {
+    background: Canvas;
+    border: 1px solid CanvasText;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .nexa-glass::before,
+  .nexa-glass::after {
+    display: none;
+  }
+}
+
+
+/* ---- animated glass (optional) ------------------------------------------ */
+@keyframes nexa-glass-sheen {
+  0% { transform: translateX(-130%) skewX(-12deg); }
+  100% { transform: translateX(130%) skewX(-12deg); }
+}
+@keyframes nexa-glass-rim {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 0.95; }
+}
+@keyframes nexa-glass-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+/* sheen: a specular highlight sweeps across the surface */
+.nexa-glass[data-nexa-glass-anim="sheen"]::before {
+  inset: 0 auto 0 -60%;
+  width: 45%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, #ffffff 55%, transparent),
+    transparent
+  );
+  opacity: 0.9;
+  animation: nexa-glass-sheen 2.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* pulse: the frosted rim breathes (opacity only) */
+.nexa-glass[data-nexa-glass-anim="pulse"]::after {
+  animation: nexa-glass-rim 3.2s ease-in-out infinite;
+}
+
+/* float: the whole glass tile drifts 2px */
+.nexa-glass[data-nexa-glass-anim="float"] {
+  animation: nexa-glass-float 4s ease-in-out infinite;
+}
+
+/* hover-triggered glass motion: stay still until hovered/focused */
+.nexa-glass[data-nexa-glass-trigger="hover"][data-nexa-glass-anim]::before,
+.nexa-glass[data-nexa-glass-trigger="hover"][data-nexa-glass-anim]::after,
+.nexa-glass[data-nexa-glass-trigger="hover"][data-nexa-glass-anim="float"] {
+  animation: none;
+}
+.nexa-glass[data-nexa-glass-trigger="hover"][data-nexa-glass-anim="sheen"]:hover::before,
+.nexa-glass[data-nexa-glass-trigger="hover"][data-nexa-glass-anim="sheen"]:focus-within::before {
+  animation: nexa-glass-sheen 2.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+.nexa-glass[data-nexa-glass-trigger="hover"][data-nexa-glass-anim="pulse"]:hover::after,
+.nexa-glass[data-nexa-glass-trigger="hover"][data-nexa-glass-anim="pulse"]:focus-within::after {
+  animation: nexa-glass-rim 3.2s ease-in-out infinite;
+}
+.nexa-glass[data-nexa-glass-trigger="hover"][data-nexa-glass-anim="float"]:hover,
+.nexa-glass[data-nexa-glass-trigger="hover"][data-nexa-glass-anim="float"]:focus-within {
+  animation: nexa-glass-float 4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nexa-glass[data-nexa-glass-anim]::before,
+  .nexa-glass[data-nexa-glass-anim]::after,
+  .nexa-glass[data-nexa-glass-anim="float"],
+  .nexa-icon[data-nexa-gradient-anim] {
+    animation: none !important;
+  }
+  .nexa-glass[data-nexa-glass-anim="sheen"]::before {
+    transform: none;
+    left: 0;
+    width: auto;
+    inset: 0;
+  }
+}

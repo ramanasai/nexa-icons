@@ -1,0 +1,5 @@
+# Bun configuration for nexa-icon contributors using `bun install`.
+# The package itself ships native ESM and needs no Bun-specific handling.
+[install]
+# Keep peer dependency resolution predictable in a library repo.
+peer = true

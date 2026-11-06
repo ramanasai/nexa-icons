@@ -1,0 +1,12 @@
+import { createIcon } from "../createIcon.js";
+const ChevronUp = /* @__PURE__ */ createIcon({
+  name: "ChevronUp",
+  kebab: "chevron-up",
+  fillSafe: false,
+  preset: "nudge-up",
+  trigger: "hover",
+  nodes: [["path", { d: "m18 15-6-6-6 6" }]]
+});
+export {
+  ChevronUp
+};

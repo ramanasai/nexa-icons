@@ -1,0 +1,12 @@
+import { createIcon } from "../createIcon.js";
+const Ungroup = /* @__PURE__ */ createIcon({
+  name: "Ungroup",
+  kebab: "ungroup",
+  fillSafe: true,
+  preset: "wiggle",
+  trigger: "hover",
+  nodes: [["rect", { x: "11", y: "14", width: "10", height: "7", rx: "2" }], ["rect", { x: "3", y: "3", width: "10", height: "7", rx: "2" }]]
+});
+export {
+  Ungroup
+};

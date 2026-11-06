@@ -1,0 +1,485 @@
+/*!
+ * Nexa Icons — animation layer
+ * ---------------------------------------------------------------------------
+ * Zero JavaScript. Every animation is transform/opacity only, so it runs on
+ * the compositor and never blocks the main thread or triggers layout.
+ *
+ * Works with any theme and any color: nothing here sets a color. The icons
+ * paint with currentColor and simply inherit whatever the surrounding theme
+ * says (Nexa light #fafafa, dark #0c0c0e, brand accents, forced-colors, ...).
+ *
+ * Usage:
+ *   <svg class="nexa-icon" data-nexa-anim="ring" data-nexa-trigger="hover">...</svg>
+ *   React: <Bell animate="ring" trigger="hover" />
+ *
+ * Triggers: hover | mount | always | manual (+ data-nexa-active="true")
+ * Presets:  spin pulse ring shake wiggle flip bounce float tilt heartbeat pop
+ *           nudge-up nudge-down nudge-left nudge-right
+ *           nudge-up-right nudge-down-right (and fade-in for mount reveals)
+ *
+ * Respect: prefers-reduced-motion: reduce disables every animation below.
+ * ---------------------------------------------------------------------------
+ */
+
+.nexa-icon {
+  display: inline-block;
+  flex: none;
+  vertical-align: -0.125em;
+  color: inherit;
+  overflow: visible;
+  /* No color, fill or background here: the icon inherits the theme. */
+}
+
+[data-nexa-anim] {
+  transform-origin: 50% 50%;
+  --nexa-dur: 480ms;
+  --nexa-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --nexa-iter: 1;
+  --nexa-delay: 0ms;
+  --nexa-fill: both;
+}
+
+/* ---- presets: token assignment only (no animation starts here) --------- */
+[data-nexa-anim="spin"]      { --nexa-kf: nexa-spin;      --nexa-dur: 720ms; --nexa-ease: linear; }
+[data-nexa-anim="pulse"]     { --nexa-kf: nexa-pulse;     --nexa-dur: 320ms; }
+[data-nexa-anim="ring"]      { --nexa-kf: nexa-ring;      --nexa-dur: 480ms; transform-origin: 50% 8%; }
+[data-nexa-anim="shake"]     { --nexa-kf: nexa-shake;     --nexa-dur: 320ms; }
+[data-nexa-anim="wiggle"]    { --nexa-kf: nexa-wiggle;    --nexa-dur: 300ms; }
+[data-nexa-anim="flip"]      { --nexa-kf: nexa-flip;      --nexa-dur: 360ms; }
+[data-nexa-anim="bounce"]    { --nexa-kf: nexa-bounce;    --nexa-dur: 380ms; }
+[data-nexa-anim="float"]     { --nexa-kf: nexa-float;     --nexa-dur: 520ms; --nexa-ease: ease-in-out; }
+[data-nexa-anim="tilt"]      { --nexa-kf: nexa-tilt;      --nexa-dur: 380ms; }
+[data-nexa-anim="heartbeat"] { --nexa-kf: nexa-heartbeat; --nexa-dur: 620ms; }
+[data-nexa-anim="pop"]       { --nexa-kf: nexa-pop;       --nexa-dur: 300ms; }
+[data-nexa-anim="fade-in"]   { --nexa-kf: nexa-fade-in;   --nexa-dur: 300ms; }
+[data-nexa-anim="nudge-up"]         { --nexa-kf: nexa-nudge-up; --nexa-dur: 260ms; }
+[data-nexa-anim="nudge-down"]       { --nexa-kf: nexa-nudge-down; --nexa-dur: 260ms; }
+[data-nexa-anim="nudge-left"]       { --nexa-kf: nexa-nudge-left; --nexa-dur: 260ms; }
+[data-nexa-anim="nudge-right"]      { --nexa-kf: nexa-nudge-right; --nexa-dur: 260ms; }
+[data-nexa-anim="nudge-up-right"]   { --nexa-kf: nexa-nudge-up-right; --nexa-dur: 260ms; }
+[data-nexa-anim="nudge-down-right"] { --nexa-kf: nexa-nudge-down-right; --nexa-dur: 260ms; }
+
+/* ---- triggers ---------------------------------------------------------- */
+[data-nexa-trigger="hover"][data-nexa-anim]:is(:hover, :focus-visible),
+:is(button, a, [role="button"]):focus-visible [data-nexa-anim][data-nexa-trigger="hover"],
+[data-nexa-trigger="focus"][data-nexa-anim]:focus-visible,
+[data-nexa-trigger="mount"][data-nexa-anim],
+[data-nexa-trigger="always"][data-nexa-anim],
+[data-nexa-trigger="manual"][data-nexa-anim][data-nexa-active="true"] {
+  animation-name: var(--nexa-kf);
+  animation-duration: var(--nexa-dur);
+  animation-timing-function: var(--nexa-ease);
+  animation-delay: var(--nexa-delay);
+  animation-iteration-count: var(--nexa-iter);
+  animation-fill-mode: var(--nexa-fill);
+}
+
+/* "always" means loop forever — for loading states and for demos such as the
+   gallery's "Play all". Hover/mount stay one-shot. */
+[data-nexa-trigger="always"][data-nexa-anim] {
+  animation-iteration-count: infinite;
+}
+
+/* ---- keyframes (transform/opacity only) -------------------------------- */
+@keyframes nexa-spin { to { transform: rotate(360deg); } }
+@keyframes nexa-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
+@keyframes nexa-ring {
+  0%, 100% { transform: rotate(0); }
+  15% { transform: rotate(14deg); }
+  30% { transform: rotate(-11deg); }
+  45% { transform: rotate(7deg); }
+  60% { transform: rotate(-4deg); }
+  75% { transform: rotate(2deg); }
+}
+@keyframes nexa-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-2px); }
+  40% { transform: translateX(2px); }
+  60% { transform: translateX(-1.5px); }
+  80% { transform: translateX(1.5px); }
+}
+@keyframes nexa-wiggle {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(-7deg); }
+  50% { transform: rotate(6deg); }
+  75% { transform: rotate(-3deg); }
+}
+@keyframes nexa-flip {
+  0% { transform: rotate(0); }
+  50% { transform: rotate(90deg); }
+  100% { transform: rotate(180deg); }
+}
+@keyframes nexa-bounce {
+  0%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-3px); }
+  50% { transform: translateY(0); }
+  70% { transform: translateY(-1.5px); }
+  85% { transform: translateY(0); }
+}
+@keyframes nexa-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+@keyframes nexa-tilt {
+  0%, 100% { transform: rotate(0); }
+  35% { transform: rotate(-10deg); }
+  65% { transform: rotate(7deg); }
+}
+@keyframes nexa-heartbeat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.16); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.1); }
+  56% { transform: scale(1); }
+}
+@keyframes nexa-pop {
+  0% { transform: scale(1); }
+  45% { transform: scale(1.18); }
+  100% { transform: scale(1); }
+}
+@keyframes nexa-fade-in {
+  0% { opacity: 0; transform: scale(0.94); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes nexa-nudge-up {
+  0%, 100% { transform: translateY(0); }
+  45% { transform: translateY(-2.5px); }
+}
+@keyframes nexa-nudge-down {
+  0%, 100% { transform: translateY(0); }
+  45% { transform: translateY(2.5px); }
+}
+@keyframes nexa-nudge-left {
+  0%, 100% { transform: translateX(0); }
+  45% { transform: translateX(-2.5px); }
+}
+@keyframes nexa-nudge-right {
+  0%, 100% { transform: translateX(0); }
+  45% { transform: translateX(2.5px); }
+}
+@keyframes nexa-nudge-up-right {
+  0%, 100% { transform: translate(0, 0); }
+  45% { transform: translate(2px, -2px); }
+}
+@keyframes nexa-nudge-down-right {
+  0%, 100% { transform: translate(0, 0); }
+  45% { transform: translate(2px, 2px); }
+}
+
+/* ---- respect the user's motion preference ------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  [data-nexa-anim] {
+    animation: none !important;
+  }
+}
+
+/* ---- high-contrast / forced-colors ------------------------------------- */
+@media (forced-colors: active) {
+  .nexa-icon {
+    forced-color-adjust: auto;
+  }
+}
+
+/* ==========================================================================
+   Swap / morph animation
+   Two glyphs stacked in one box; toggle data-nexa-active to transition.
+   <span class="nexa-swap" data-mode="mirror"><span class="nexa-swap__a">…</span>
+   <span class="nexa-swap__b">…</span></span>
+   Modes: mirror | flip | rotate | slide | fade
+   ========================================================================== */
+
+.nexa-swap {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  vertical-align: -0.125em;
+  line-height: 0;
+}
+
+.nexa-swap__a,
+.nexa-swap__b {
+  grid-area: 1 / 1;
+  display: inline-flex;
+  transition:
+    opacity var(--nexa-swap-dur, 260ms) var(--nexa-swap-ease, cubic-bezier(0.2, 0.8, 0.2, 1)),
+    transform var(--nexa-swap-dur, 260ms) var(--nexa-swap-ease, cubic-bezier(0.2, 0.8, 0.2, 1));
+  backface-visibility: hidden;
+}
+
+.nexa-swap__b {
+  opacity: 0;
+}
+
+.nexa-swap[data-nexa-active="true"] .nexa-swap__a {
+  opacity: 0;
+}
+
+.nexa-swap[data-nexa-active="true"] .nexa-swap__b {
+  opacity: 1;
+}
+
+/* fade (default): cross-fade + tiny scale */
+.nexa-swap[data-mode="fade"] .nexa-swap__a {
+  transform: scale(1);
+}
+.nexa-swap[data-mode="fade"] .nexa-swap__b {
+  transform: scale(0.72);
+}
+.nexa-swap[data-mode="fade"][data-nexa-active="true"] .nexa-swap__a {
+  transform: scale(0.72);
+}
+.nexa-swap[data-mode="fade"][data-nexa-active="true"] .nexa-swap__b {
+  transform: scale(1);
+}
+
+/* mirror: horizontal flip (arrows / chevrons / panels) */
+.nexa-swap[data-mode="mirror"] .nexa-swap__a {
+  transform: scaleX(1);
+}
+.nexa-swap[data-mode="mirror"] .nexa-swap__b {
+  transform: scaleX(-1);
+}
+.nexa-swap[data-mode="mirror"][data-nexa-active="true"] .nexa-swap__a {
+  transform: scaleX(-1);
+}
+.nexa-swap[data-mode="mirror"][data-nexa-active="true"] .nexa-swap__b {
+  transform: scaleX(1);
+}
+
+/* flip: vertical flip (up/down, upload/download) */
+.nexa-swap[data-mode="flip"] .nexa-swap__a {
+  transform: scaleY(1);
+}
+.nexa-swap[data-mode="flip"] .nexa-swap__b {
+  transform: scaleY(-1);
+}
+.nexa-swap[data-mode="flip"][data-nexa-active="true"] .nexa-swap__a {
+  transform: scaleY(-1);
+}
+.nexa-swap[data-mode="flip"][data-nexa-active="true"] .nexa-swap__b {
+  transform: scaleY(1);
+}
+
+/* rotate: quarter turn (more-horizontal/vertical, sun/moon, chevrons) */
+.nexa-swap[data-mode="rotate"] .nexa-swap__a {
+  transform: rotate(0deg) scale(1);
+}
+.nexa-swap[data-mode="rotate"] .nexa-swap__b {
+  transform: rotate(-90deg) scale(0.6);
+}
+.nexa-swap[data-mode="rotate"][data-nexa-active="true"] .nexa-swap__a {
+  transform: rotate(90deg) scale(0.6);
+}
+.nexa-swap[data-mode="rotate"][data-nexa-active="true"] .nexa-swap__b {
+  transform: rotate(0deg) scale(1);
+}
+
+/* slide: cross-slide (message/mail, filter/sliders, bold/italic) */
+.nexa-swap[data-mode="slide"] .nexa-swap__a {
+  transform: translateX(0);
+}
+.nexa-swap[data-mode="slide"] .nexa-swap__b {
+  transform: translateX(28%);
+}
+.nexa-swap[data-mode="slide"][data-nexa-active="true"] .nexa-swap__a {
+  transform: translateX(-28%);
+}
+.nexa-swap[data-mode="slide"][data-nexa-active="true"] .nexa-swap__b {
+  transform: translateX(0);
+}
+
+/* Accessible icon-only toggle button */
+.nexa-icon-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 40px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nexa-icon-toggle:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nexa-swap__a,
+  .nexa-swap__b {
+    transition: none !important;
+  }
+}
+
+/* ==========================================================================
+   Extra triggers + spring easing (progressive enhancement)
+   ========================================================================== */
+
+/* press: fire while the icon is held (pure CSS :active). `:active` does not
+   propagate to descendants, so a press icon inside a real button/link also
+   needs this ancestor rule — otherwise keyboard Space/Enter would be silent. */
+[data-nexa-trigger="press"][data-nexa-anim]:active,
+:is(button, a, [role="button"]):active [data-nexa-anim][data-nexa-trigger="press"] {
+  animation-name: var(--nexa-kf);
+  animation-duration: var(--nexa-dur);
+  animation-timing-function: var(--nexa-ease);
+  animation-iteration-count: var(--nexa-iter);
+  animation-fill-mode: both;
+}
+
+/* in-view: scroll-driven reveal, zero JavaScript. Browsers without
+   animation-timeline simply show the resting icon. */
+@supports (animation-timeline: view()) {
+  [data-nexa-trigger="inview"][data-nexa-anim] {
+    animation-name: var(--nexa-kf);
+    animation-duration: var(--nexa-dur);
+    animation-timing-function: var(--nexa-ease);
+    animation-fill-mode: both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 60%;
+  }
+}
+
+/* Spring easing for the bouncy presets; cubic-bezier fallback above. */
+[data-nexa-anim="pop"] {
+  --nexa-ease: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+[data-nexa-anim="bounce"] {
+  --nexa-ease: cubic-bezier(0.28, 1.4, 0.5, 1);
+}
+@supports (animation-timing-function: linear(0, 1)) {
+  [data-nexa-anim="pop"] {
+    --nexa-ease: linear(0, 0.62, 0.87, 1.02, 1.08, 1.1, 1.09, 1.06, 1.02, 1);
+  }
+  [data-nexa-anim="bounce"] {
+    --nexa-ease: linear(0, 0.37, 0.66, 0.84, 0.93, 0.97, 1, 1.01, 0.99, 1);
+  }
+}
+
+/* ==========================================================================
+   Shape containers, fill variants and CSS-3D presentation
+   ========================================================================== */
+
+/* ---- shape containers ---------------------------------------------------- */
+.nexa-icon-frame {
+  display: inline-grid;
+  place-items: center;
+  line-height: 0;
+  vertical-align: middle;
+  flex: none;
+}
+
+.nexa-shape {
+  box-sizing: border-box;
+  background: color-mix(in srgb, currentColor 14%, transparent);
+  border: 1px solid color-mix(in srgb, currentColor 26%, transparent);
+}
+
+.nexa-shape--square { border-radius: 6%; }
+.nexa-shape--rounded { border-radius: 22%; }
+.nexa-shape--circle { border-radius: 50%; }
+.nexa-shape--pill { border-radius: 999px; }
+.nexa-shape--squircle { border-radius: 32%; }
+.nexa-shape--diamond {
+  border-radius: 14%;
+  /* Rotated square would overflow a square box by √2; scale it back. */
+  transform: rotate(45deg) scale(0.72);
+}
+.nexa-shape--diamond > .nexa-icon { transform: rotate(-45deg) scale(1.39); }
+.nexa-shape--hexagon {
+  position: relative;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+/* clip-path hides a normal border; draw a 1px hexagon edge behind the glyph. */
+.nexa-shape--hexagon::before,
+.nexa-shape--hexagon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(25% 3%, 75% 3%, 100% 50%, 75% 97%, 25% 97%, 0 50%);
+}
+.nexa-shape--hexagon::before {
+  background: color-mix(in srgb, currentColor 26%, transparent);
+}
+.nexa-shape--hexagon::after {
+  inset: 1px;
+  background: color-mix(in srgb, currentColor 14%, transparent);
+}
+.nexa-shape--hexagon > .nexa-icon {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- fill variants (empty <-> filled animation is a CSS transition) ------ */
+.nexa-icon[data-fill-state="true"] {
+  fill: currentColor;
+  fill-opacity: 1;
+}
+.nexa-icon[data-fill-state="soft"] {
+  fill: currentColor;
+  fill-opacity: 0.16;
+}
+.nexa-icon[data-fill-anim="true"] {
+  transition: fill-opacity 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .nexa-icon[data-fill-anim="true"] { transition: none; }
+}
+
+/* ---- CSS 3D presentation ------------------------------------------------ */
+.nexa-3d {
+  display: inline-grid;
+  place-items: center;
+  perspective: 640px;
+  perspective-origin: 50% 50%;
+}
+
+.nexa-3d .nexa-icon {
+  transform-style: preserve-3d;
+  backface-visibility: visible;
+  transition: transform 520ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: auto;
+}
+
+.nexa-3d[data-nexa-3d="tilt"]:is(:hover, :focus-within) .nexa-icon {
+  transform: rotateX(18deg) rotateY(-22deg) scale(1.06);
+}
+
+.nexa-3d[data-nexa-3d="flip"]:is(:hover, :focus-within) .nexa-icon {
+  transform: rotateY(360deg) scale(1.04);
+}
+
+.nexa-3d[data-nexa-3d="orbit"]:is(:hover, :focus-within) .nexa-icon {
+  transform: rotateX(26deg) rotateY(-32deg) translateZ(14px) scale(1.08);
+}
+
+.nexa-3d[data-nexa-3d="extrude"]:is(:hover, :focus-within) .nexa-icon {
+  transform: translateZ(12px) rotateX(14deg) rotateY(-8deg);
+  filter:
+    drop-shadow(1px 1px 0 color-mix(in srgb, currentColor 32%, transparent))
+    drop-shadow(2px 2px 0 color-mix(in srgb, currentColor 22%, transparent))
+    drop-shadow(3px 3px 0 color-mix(in srgb, currentColor 14%, transparent))
+    drop-shadow(4px 5px 3px color-mix(in srgb, currentColor 10%, transparent));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nexa-3d .nexa-icon { transition: none; }
+  /* Must outrank the [data-nexa-3d] hover rules above. */
+  .nexa-3d:is(:hover, :focus-within) .nexa-icon {
+    transform: none !important;
+    filter: none !important;
+  }
+  .nexa-3d[data-nexa-3d]:is(:hover, :focus-within) .nexa-icon {
+    transform: none !important;
+    filter: none !important;
+  }
+}

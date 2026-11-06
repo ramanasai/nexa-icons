@@ -1,0 +1,12 @@
+import { createIcon } from "../createIcon.js";
+const Undo = /* @__PURE__ */ createIcon({
+  name: "Undo",
+  kebab: "undo",
+  fillSafe: false,
+  preset: "nudge-up",
+  trigger: "hover",
+  nodes: [["path", { d: "M3 7v6h6" }], ["path", { d: "M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13" }]]
+});
+export {
+  Undo
+};

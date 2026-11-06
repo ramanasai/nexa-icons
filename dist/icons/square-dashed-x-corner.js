@@ -1,0 +1,12 @@
+import { createIcon } from "../createIcon.js";
+const SquareDashedXCorner = /* @__PURE__ */ createIcon({
+  name: "SquareDashedXCorner",
+  kebab: "square-dashed-x-corner",
+  fillSafe: false,
+  preset: "pulse",
+  trigger: "hover",
+  nodes: [["path", { d: "M14 3h1" }], ["path", { d: "m16 16 5 5" }], ["path", { d: "M19 3a2 2 0 012 2" }], ["path", { d: "m21 16-5 5" }], ["path", { d: "M21 9v1" }], ["path", { d: "M3 14v1" }], ["path", { d: "M3 9v1" }], ["path", { d: "M5 21a2 2 0 01-2-2" }], ["path", { d: "M5 3a2 2 0 00-2 2" }], ["path", { d: "M9 21h1" }], ["path", { d: "M9 3h1" }]]
+});
+export {
+  SquareDashedXCorner
+};

@@ -1,0 +1,471 @@
+/* ==========================================================================
+   Nexa Icons gallery — component styles, injected by app.js after the shell
+   has painted. Keep this out of the critical shell so first paint stays tiny.
+   ========================================================================== */
+
+/* ---- virtual grid rows -------------------------------------------------- */
+.gspacer { height: 0; }
+.grows { display: flex; flex-direction: column; gap: var(--row-gap); }
+.row { display: grid; grid-template-columns: repeat(var(--cols), minmax(0, 1fr)); gap: var(--row-gap); }
+
+.card {
+  min-width: 0;
+  height: var(--card-h);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  transition: border-color 120ms ease, background-color 120ms ease;
+}
+.card:hover { border-color: var(--border-strong); }
+.icon-btn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  height: 100%;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 10px 8px;
+  border: 0;
+  border-radius: var(--radius-card);
+  background: transparent;
+  color: var(--icon-color);
+  text-align: center;
+  cursor: pointer;
+}
+.icon-btn:hover { color: var(--icon-hover); }
+.icon-btn:hover .nexa-icon { color: var(--accent); }
+.icon-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.icon-btn[aria-current="true"] { background: var(--accent-soft); }
+.card-name {
+  display: block;
+  max-width: 100%;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.icon-btn:hover .card-name { color: var(--text); }
+.card-name mark { padding: 0 1px; border-radius: 3px; background: var(--accent-soft); color: var(--accent); font-weight: 650; }
+.card-hit { display: block; max-width: 100%; margin-top: -4px; font-size: 9.5px; color: var(--text-subtle); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.card[data-swap] .icon-btn::after {
+  content: "\21c4";
+  position: absolute;
+  top: 5px;
+  right: 7px;
+  font-size: 10px;
+  line-height: 1;
+  color: var(--text-subtle);
+  opacity: 0.85;
+}
+.card[data-swap]:hover .icon-btn::after { color: var(--accent); opacity: 1; }
+
+/* rainbow mode: each card supplies its own inherited currentColor */
+html[data-color="rainbow"] .card[data-h="0"] .nexa-icon { color: var(--c-blue); }
+html[data-color="rainbow"] .card[data-h="1"] .nexa-icon { color: var(--c-green); }
+html[data-color="rainbow"] .card[data-h="2"] .nexa-icon { color: var(--c-amber); }
+html[data-color="rainbow"] .card[data-h="3"] .nexa-icon { color: var(--c-red); }
+html[data-color="rainbow"] .card[data-h="4"] .nexa-icon { color: var(--c-violet); }
+html[data-color="rainbow"] .card[data-h="5"] .nexa-icon { color: var(--c-teal); }
+
+/* ---- chips -------------------------------------------------------------- */
+.chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 7px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-2);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.chip-preset { border-color: var(--accent-line); background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.chip[hidden] { display: none; }
+
+/* ---- lazy section content ----------------------------------------------- */
+.lazy-body .section-note { font-size: 11.5px; color: var(--text-subtle); margin-top: 8px; max-width: 100ch; }
+.cat-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+.cat-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 56px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+}
+.cat-card:hover { border-color: var(--border-strong); background: var(--surface-2); }
+.cat-card[aria-pressed="true"] { border-color: var(--accent-line); background: var(--accent-soft); }
+.cat-card .cat-icon { display: grid; place-items: center; width: 34px; height: 34px; flex: none; border-radius: 9px; background: color-mix(in srgb, currentColor 10%, transparent); color: var(--text-muted); }
+.cat-card[aria-pressed="true"] .cat-icon { color: var(--accent); }
+.cat-card .cat-text { min-width: 0; display: flex; flex-direction: column; }
+.cat-card .cat-text b { font-size: 12.5px; font-weight: 650; }
+.cat-card .cat-text span { font-size: 11px; color: var(--text-subtle); }
+.cat-card .cat-icon .nexa-icon { width: 18px; height: 18px; stroke-width: 1.75; }
+
+.shapes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: 10px; }
+.shape-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  color: var(--text-muted);
+  cursor: default;
+}
+.shape-tile .nexa-icon-frame { width: 56px; height: 56px; color: var(--text-muted); }
+.shape-tile .nexa-icon-frame .nexa-icon { width: 26px; height: 26px; stroke-width: 1.5; }
+.shape-tile span.shape-name { font-family: var(--mono); font-size: 10.5px; color: var(--text-subtle); }
+
+.fill-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+.fill-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+}
+.fill-tile .nexa-icon { width: 32px; height: 32px; stroke-width: 1.5; color: var(--text-muted); }
+.fill-tile span.fill-name { font-family: var(--mono); font-size: 10.5px; color: var(--text-subtle); }
+.fill-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+
+.td-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+.td-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 18px 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.td-tile:hover, .td-tile:focus-visible { border-color: var(--accent-line); color: var(--accent); }
+.td-tile .nexa-3d { width: 48px; height: 48px; }
+.td-tile .nexa-3d .nexa-icon { width: 32px; height: 32px; stroke-width: 1.5; }
+.td-tile span.td-name { font-family: var(--mono); font-size: 10.5px; color: var(--text-subtle); }
+
+.illus-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; }
+.illus-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+}
+.illus-card .illus-art { display: grid; place-items: center; min-height: 110px; border-radius: 10px; background: var(--surface-2); color: var(--text-muted); }
+.illus-card .illus-art svg { max-width: 100%; height: auto; max-height: 110px; }
+.illus-card .illus-art img { max-width: 100%; max-height: 110px; height: auto; }
+.illus-card b { font-size: 12.5px; }
+.illus-card span { font-size: 11px; color: var(--text-subtle); }
+
+/* swap / morph lazy section */
+.swaps { display: grid; grid-template-columns: repeat(auto-fill, minmax(168px, 1fr)); gap: 10px; }
+.swap-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 56px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  color: var(--icon-color);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 140ms ease, color 140ms ease, background 140ms ease;
+}
+.swap-btn:hover { color: var(--icon-hover); border-color: var(--border-strong); background: var(--surface-2); }
+.swap-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.swap-btn .nexa-swap .nexa-icon { width: 28px; height: 28px; stroke-width: 1.5; }
+.swap-name { font-size: 12px; line-height: 1.35; color: var(--text-muted); min-width: 0; overflow-wrap: anywhere; }
+.swap-btn[aria-pressed="true"] .swap-name { color: var(--text); }
+
+/* ---- drawer ------------------------------------------------------------- */
+.render-unstyled { display: none; }
+.drawer {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  overflow: visible;
+}
+.drawer::backdrop { background: rgba(9, 9, 11, 0.5); }
+.drawer[open] { display: block; }
+html:has(dialog.drawer[open]) { overflow: hidden; }
+.drawer-panel {
+  position: absolute;
+  inset: 0 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: min(560px, 100%);
+  height: 100%;
+  border-left: 1px solid var(--border);
+  background: var(--bg);
+  box-shadow: -24px 0 60px -36px rgba(0, 0, 0, 0.55);
+  animation: nexa-drawer-in 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+@keyframes nexa-drawer-in { from { opacity: 0; transform: translateX(14px); } to { opacity: 1; transform: translateX(0); } }
+.drawer-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: var(--s2) var(--s3);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+.drawer-preview {
+  display: grid;
+  place-items: center;
+  width: 64px; height: 64px;
+  flex: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: var(--surface-2);
+  color: var(--text);
+}
+.drawer-preview .nexa-icon { width: 40px; height: 40px; stroke-width: 1.5; }
+.drawer-title { min-width: 0; flex: 1; }
+.drawer-title h2 { font-size: 17px; font-weight: 700; overflow-wrap: anywhere; }
+.drawer-kebab { margin-top: 2px; font-size: 11.5px; color: var(--text-subtle); }
+.drawer-kebab code { font-size: 11.5px; color: var(--text-muted); }
+.drawer-sprite { margin-left: 6px; font-family: var(--mono); font-size: 10.5px; color: var(--text-subtle); }
+.drawer-close {
+  display: grid;
+  place-items: center;
+  width: 36px; height: 36px;
+  flex: none;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-size: 15px;
+  cursor: pointer;
+}
+.drawer-close:hover { background: var(--surface-3); color: var(--text); }
+.drawer-body { flex: 1; overflow-y: auto; padding: var(--s2) var(--s3) var(--s4); }
+.drawer-body h3 { margin: var(--s3) 0 10px; font-size: 11px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text-subtle); }
+.proof { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; }
+.proof-tile { display: grid; place-items: center; height: 48px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
+.proof-tile .nexa-icon { width: 20px; height: 20px; stroke-width: 1.75; }
+.proof-tile:nth-child(1) { color: var(--c-blue); }
+.proof-tile:nth-child(2) { color: var(--c-green); }
+.proof-tile:nth-child(3) { color: var(--c-amber); }
+.proof-tile:nth-child(4) { color: var(--c-red); }
+.proof-tile:nth-child(5) { color: var(--c-violet); }
+.proof-tile:nth-child(6) { color: var(--c-teal); }
+.proof-note { margin-top: 8px; font-size: 11.5px; color: var(--text-subtle); }
+.proof-note code { font-size: 11px; color: var(--text-muted); }
+.meta { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 8px 12px; margin-top: var(--s3); font-size: 12.5px; }
+.meta dt { color: var(--text-subtle); font-size: 11.5px; padding-top: 1px; }
+.meta dd { margin: 0; color: var(--text); min-width: 0; }
+.meta-actions { display: flex; align-items: center; gap: 8px; margin-top: 4px; flex-wrap: wrap; }
+.snippet-code {
+  margin: 0;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: 11px;
+  line-height: 1.6;
+  overflow-x: auto;
+  white-space: pre;
+  tab-size: 2;
+}
+.copy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.copy-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  min-height: 48px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 120ms ease, background-color 120ms ease;
+}
+.copy-btn:hover { border-color: var(--border-strong); background: var(--surface-2); }
+.copy-btn .copy-label { font-size: 12px; font-weight: 600; }
+.copy-btn .copy-hint { font-family: var(--mono); font-size: 10px; color: var(--text-subtle); max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.copy-btn.copied { border-color: var(--accent-line); background: var(--accent-soft); }
+.copy-btn.copied .copy-label { color: var(--accent); }
+.copy-btn.copied .copy-label::after { content: " ✓"; }
+.swap-detail { margin-top: var(--s3); }
+.swap-detail h3 { margin-top: var(--s3); }
+.swap-btn-drawer { max-width: 100%; }
+.swap-btn-drawer .swap-name { font-size: 12.5px; font-weight: 600; }
+html.reduce-motion .nexa-swap__a,
+html.reduce-motion .nexa-swap__b { transition: none !important; }
+html.reduce-motion .drawer-panel { animation: none; }
+@media (prefers-reduced-motion: reduce) {
+  .nexa-swap__a, .nexa-swap__b { transition: none !important; }
+  .drawer-panel { animation: none; }
+  .swap-btn, .cat-card, .copy-btn, .card { transition: none; }
+}
+
+/* ---- responsive -------------------------------------------------------- */
+@media (max-width: 679px) {
+  .cat-list, .shapes-grid, .fill-grid, .td-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+  .illus-grid { grid-template-columns: 1fr; }
+  .copy-grid { grid-template-columns: 1fr; }
+  .proof { grid-template-columns: repeat(3, 1fr); }
+  .meta { grid-template-columns: 80px minmax(0, 1fr); }
+  .drawer-preview { width: 56px; height: 56px; }
+  .drawer-preview .nexa-icon { width: 34px; height: 34px; }
+}
+
+
+/* ---- moved from the critical shell (below-the-fold / post-boot) ---- */
+/* ---- lazy sections ----------------------------------------------------- */
+.lazy { margin-top: var(--s4); content-visibility: auto; contain-intrinsic-size: auto 220px; }
+.lazy[hidden] { display: none; }
+.lazy-body { display: grid; gap: 10px; min-height: 96px; }
+.lazy .sk-line { height: 16px; }
+
+/* ---- HUD --------------------------------------------------------------- */
+.hud {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 18px;
+  margin-top: var(--s4);
+  padding-top: var(--s2);
+  border-top: 1px dashed var(--border);
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-subtle);
+}
+.hud b { color: var(--text); font-weight: 600; font-variant-numeric: tabular-nums; }
+.hud-ok { display: inline-flex; align-items: center; gap: 5px; color: #15803d; }
+html[data-theme="dark"] .hud-ok { color: #4ade80; }
+@media (prefers-color-scheme: dark) { html[data-theme="system"] .hud-ok { color: #4ade80; } }
+.hud-ok::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.hud-note { margin-top: 8px; max-width: 98ch; font-size: 11px; color: var(--text-subtle); }
+
+/* ---- footer ------------------------------------------------------------ */
+.foot {
+  margin-top: var(--s3);
+  padding: var(--s2) 0 0;
+  border-top: 1px solid var(--border);
+  font-size: 11.5px;
+  color: var(--text-subtle);
+  display: grid;
+  gap: 8px;
+}
+.foot code { font-size: 11px; color: var(--text-muted); }
+.foot p { max-width: 92ch; }
+.foot-keys { display: flex; flex-wrap: wrap; gap: 14px; font-size: 11px; }
+.foot-keys kbd {
+  display: inline-block;
+  min-width: 18px;
+  padding: 1px 5px;
+  border: 1px solid var(--border);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 10.5px;
+  text-align: center;
+}
+.empty {
+  margin: var(--s3) 0;
+  padding: var(--s4) var(--s2);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+  text-align: center;
+  color: var(--text-muted);
+}
+.empty[hidden] { display: none; }
+
+
+/* 3D tiles are buttons: preview on hover, and on keyboard focus / Enter-Space
+   toggle, because the .nexa-3d wrapper itself is not focusable. */
+.td-tile:is(:hover, :focus-visible) .nexa-3d[data-nexa-3d="tilt"] .nexa-icon,
+.td-tile.is-preview .nexa-3d[data-nexa-3d="tilt"] .nexa-icon {
+  transform: rotateX(18deg) rotateY(-22deg) scale(1.06);
+}
+.td-tile:is(:hover, :focus-visible) .nexa-3d[data-nexa-3d="flip"] .nexa-icon,
+.td-tile.is-preview .nexa-3d[data-nexa-3d="flip"] .nexa-icon {
+  transform: rotateY(360deg) scale(1.04);
+}
+.td-tile:is(:hover, :focus-visible) .nexa-3d[data-nexa-3d="orbit"] .nexa-icon,
+.td-tile.is-preview .nexa-3d[data-nexa-3d="orbit"] .nexa-icon {
+  transform: rotateX(26deg) rotateY(-32deg) translateZ(14px) scale(1.08);
+}
+.td-tile:is(:hover, :focus-visible) .nexa-3d[data-nexa-3d="extrude"] .nexa-icon,
+.td-tile.is-preview .nexa-3d[data-nexa-3d="extrude"] .nexa-icon {
+  transform: translateZ(12px) rotateX(14deg) rotateY(-8deg);
+  filter:
+    drop-shadow(1px 1px 0 color-mix(in srgb, currentColor 32%, transparent))
+    drop-shadow(2px 2px 0 color-mix(in srgb, currentColor 22%, transparent))
+    drop-shadow(3px 3px 0 color-mix(in srgb, currentColor 14%, transparent))
+    drop-shadow(4px 5px 3px color-mix(in srgb, currentColor 10%, transparent));
+}
+@media (prefers-reduced-motion: reduce) {
+  .td-tile:is(:hover, :focus-visible) .nexa-3d .nexa-icon,
+  .td-tile.is-preview .nexa-3d .nexa-icon {
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
+
+/* Glass & gradient showcase */
+.fx-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(148px, 1fr)); gap: 12px; }
+.fx-tile { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; min-height: 128px; padding: 14px 10px; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); }
+.fx-label { font-family: var(--mono); font-size: 10.5px; color: var(--text-subtle); text-align: center; overflow-wrap: anywhere; }
+.fx-tile .nexa-icon { color: var(--text); }
+
+
+/* Glass toggle applies a frosted surface to every icon card */
+.grid[data-glass] .icon-btn {
+  border-radius: 13px;
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 8px 18px -12px rgba(15, 23, 42, 0.35);
+}
+.grid[data-glass="frost"] .icon-btn { background: color-mix(in srgb, currentColor 8%, transparent); border-color: color-mix(in srgb, currentColor 18%, transparent); }
+.grid[data-glass="ice"] .icon-btn { background: color-mix(in srgb, #bfdbfe 32%, transparent); border-color: #bfdbfe; }
+.grid[data-glass="neon"] .icon-btn { background: color-mix(in srgb, #0b1224 72%, transparent); border-color: color-mix(in srgb, #a78bfa 55%, transparent); color: #e9d5ff; }
+.grid[data-glass="jelly"] .icon-btn { background: color-mix(in srgb, #ddd6fe 46%, transparent); border-color: #ede9fe; }
+.grid[data-glass] .card-name { color: inherit; opacity: 0.85; }
+
+
+/* keep illustration cards compact */
+.ill-card .ill-desc, .ill-card p { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }

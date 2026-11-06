@@ -1,0 +1,32 @@
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var building_exports = {};
+__export(building_exports, {
+  Building: () => Building
+});
+module.exports = __toCommonJS(building_exports);
+var import_createIcon = require("../createIcon.js");
+const Building = /* @__PURE__ */ (0, import_createIcon.createIcon)({
+  name: "Building",
+  kebab: "building",
+  fillSafe: false,
+  preset: "pop",
+  trigger: "hover",
+  nodes: [["path", { d: "M12 10h.01" }], ["path", { d: "M12 14h.01" }], ["path", { d: "M12 6h.01" }], ["path", { d: "M16 10h.01" }], ["path", { d: "M16 14h.01" }], ["path", { d: "M16 6h.01" }], ["path", { d: "M8 10h.01" }], ["path", { d: "M8 14h.01" }], ["path", { d: "M8 6h.01" }], ["path", { d: "M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3" }], ["rect", { x: "4", y: "2", width: "16", height: "20", rx: "2" }]]
+});

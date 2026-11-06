@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en" data-theme="system" data-size="24" data-color="blue">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nexa Icons — shell-first gallery for __NEXA_COUNT__ icons</title>
+<meta name="description" content="Shell-first Nexa Icons gallery: the chrome paints before any gallery JS runs, icons render in a virtualized grid, lazy sections for categories, shapes, fills, 3D and illustrations. Local files only, works from file://.">
+<meta name="nexa-gallery" content="__NEXA_META__">
+<style>
+/* Critical shell styles. Component styles ship inside app.js. */
+/*@SHELL_CSS@*/
+</style>
+<script>
+/* ~0.3 KB boot: time origin + paint observer only. No DOM work, no rendering. */
+window.__NEXA_T0__=performance.now();window.__NEXA_PAINT__={};
+try{new PerformanceObserver(function(l){l.getEntries().forEach(function(e){window.__NEXA_PAINT__[e.name]=e.startTime;});window.dispatchEvent(new Event('nexa:paint'));}).observe({type:'paint',buffered:true});}catch(e){}
+</script>
+</head>
+<body>
+<a class="skip" href="#grid">Skip to icons</a>
+<div id="sprite-host" aria-hidden="true"></div>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">NX</span>
+      <div>
+        <h1>Nexa Icons</h1>
+        <p class="tagline">__NEXA_COUNT__ icons · shell paints first · windowed grid · local data only</p>
+      </div>
+    </div>
+    <div class="hero-badges">
+      <span class="badge" title="Icon set version"><b>v__NEXA_VERSION__</b></span>
+      <span class="badge" title="Shell bytes on disk"><b id="hud-shell-hero">…</b> shell</span>
+      <span class="badge" title="Data + app are local deferred files"><b id="hud-data-hero">…</b> data</span>
+      <span class="badge badge-accent" title="Local files only — 0 third-party requests (2 local scripts)"><b>0</b> external</span>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section class="panel" aria-label="Gallery controls">
+    <div class="panel-row search-row">
+      <div class="search-wrap">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+        <label class="sr-only" for="q">Search icons by name, alias or keyword</label>
+        <input id="q" class="search" type="search" placeholder="Search __NEXA_COUNT__ icons — name, alias or keyword…" autocomplete="off" spellcheck="false">
+        <kbd class="search-kbd" aria-hidden="true">/</kbd>
+        <button class="clear" id="clear-search" type="button" aria-label="Clear search" hidden>×</button>
+      </div>
+      <p id="result-count" class="result-count" role="status" aria-live="polite" aria-atomic="true"><b>__NEXA_COUNT__</b> icons</p>
+    </div>
+
+    <div class="panel-row">
+      <div class="group" role="group" aria-labelledby="lbl-size">
+        <span class="group-label" id="lbl-size">Size · stroke</span>
+        <div class="seg" id="size-seg">
+          <button type="button" data-size="16" aria-pressed="false" title="16 px · stroke 2">16</button>
+          <button type="button" data-size="20" aria-pressed="false" title="20 px · stroke 1.75">20</button>
+          <button type="button" data-size="24" aria-pressed="true" title="24 px · stroke 1.5">24</button>
+          <button type="button" data-size="32" aria-pressed="false" title="32 px · stroke 1.5">32</button>
+          <button type="button" data-size="48" aria-pressed="false" title="48 px · stroke 1.5">48</button>
+        </div>
+      </div>
+      <div class="group" role="group" aria-labelledby="lbl-theme">
+        <span class="group-label" id="lbl-theme">Theme</span>
+        <div class="seg" id="theme-seg">
+          <button type="button" data-theme="light" aria-pressed="false">Light</button>
+          <button type="button" data-theme="dark" aria-pressed="false">Dark</button>
+          <button type="button" data-theme="system" aria-pressed="true">System</button>
+        </div>
+      </div>
+      <div class="group" role="group" aria-labelledby="lbl-color">
+        <span class="group-label" id="lbl-color">Accent · currentColor</span>
+        <div class="swatches" id="color-seg">
+          <button class="swatch" type="button" data-color="blue" aria-pressed="true" aria-label="Blue accent"><span class="sw-dot sw-blue" aria-hidden="true"></span><span class="sw-name">Blue</span></button>
+          <button class="swatch" type="button" data-color="green" aria-pressed="false" aria-label="Green accent"><span class="sw-dot sw-green" aria-hidden="true"></span><span class="sw-name">Green</span></button>
+          <button class="swatch" type="button" data-color="amber" aria-pressed="false" aria-label="Amber accent"><span class="sw-dot sw-amber" aria-hidden="true"></span><span class="sw-name">Amber</span></button>
+          <button class="swatch" type="button" data-color="red" aria-pressed="false" aria-label="Red accent"><span class="sw-dot sw-red" aria-hidden="true"></span><span class="sw-name">Red</span></button>
+          <button class="swatch" type="button" data-color="violet" aria-pressed="false" aria-label="Violet accent"><span class="sw-dot sw-violet" aria-hidden="true"></span><span class="sw-name">Violet</span></button>
+          <button class="swatch" type="button" data-color="teal" aria-pressed="false" aria-label="Teal accent"><span class="sw-dot sw-teal" aria-hidden="true"></span><span class="sw-name">Teal</span></button>
+          <button class="swatch" type="button" data-color="rainbow" aria-pressed="false" aria-label="Rainbow currentColor demo"><span class="sw-dot sw-rainbow" aria-hidden="true"></span><span class="sw-name">Rainbow</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel-row">
+      <label class="field" for="glass-filter">
+          <span class="group-label">Glass — all icons</span>
+          <select class="select" id="glass-filter">
+            <option value="">off</option>
+            <option value="frost">frost</option>
+            <option value="ice">ice</option>
+            <option value="neon">neon</option>
+            <option value="jelly">jelly</option>
+          </select>
+        </label>
+        <label class="field" for="preset-filter">
+        <span class="group-label">Preset</span>
+        <select class="select" id="preset-filter"><option value="">All presets</option></select>
+      </label>
+      <label class="field" for="trigger-filter">
+        <span class="group-label">Trigger</span>
+        <select class="select" id="trigger-filter"><option value="">All triggers</option></select>
+      </label>
+      <label class="field" id="category-group" for="category-filter" hidden>
+        <span class="group-label">Category</span>
+        <select class="select" id="category-filter"><option value="">All categories</option></select>
+      </label>
+      <label class="toggle" title="Every icon ships a semantic preset; keeps icons that define one">
+        <input type="checkbox" id="animated-only"><span>Animated only</span>
+      </label>
+      <button class="btn btn-primary" id="play-all" type="button" aria-pressed="false" title="Temporarily set every icon to trigger=always">▶ Play all</button>
+      <label class="toggle" title="Adds html.reduce-motion, mirroring prefers-reduced-motion"><input type="checkbox" id="reduce-toggle"><span>Reduced motion</span></label>
+      <p class="motion-state" id="motion-state">Shell painted. Waiting for local icon data…</p>
+    </div>
+
+    <div class="panel-row">
+      <div class="group" style="flex:1 1 100%" role="group" aria-labelledby="lbl-triggers">
+        <span class="group-label" id="lbl-triggers">Triggers — live demo</span>
+        <div class="trigger-demo" id="trigger-demo">
+          <div class="trigger-tile"><span class="sk sk-icon" aria-hidden="true"></span><span class="trigger-label"><b>loading</b><span>data</span></span></div>
+          <div class="trigger-tile"><span class="sk sk-icon" aria-hidden="true"></span><span class="trigger-label"><b>loading</b><span>data</span></span></div>
+          <div class="trigger-tile"><span class="sk sk-icon" aria-hidden="true"></span><span class="trigger-label"><b>loading</b><span>data</span></span></div>
+          <div class="trigger-tile"><span class="sk sk-icon" aria-hidden="true"></span><span class="trigger-label"><b>loading</b><span>data</span></span></div>
+        </div>
+        <p class="trigger-note"><code>hover</code>/<code>always</code>/<code>press</code>/<code>inview</code> are CSS triggers from the shipped animation layer. Press is a real button (<code>:active</code>); inview uses scroll-driven <code>animation-timeline</code> behind <code>@supports</code>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid-wrap" aria-labelledby="grid-title">
+    <div class="section-head">
+      <h2 id="grid-title">All icons</h2>
+      <p class="section-sub" id="grid-sub">Shell ready · waiting for icons.data.js</p>
+    </div>
+    <p class="empty" id="grid-error" hidden>Could not load <code>icons.data.js</code>. Open the gallery from the folder that contains the generated data + app files.</p>
+    <div id="grid" class="grid" role="list" aria-label="Icon grid" aria-busy="true">
+      <div class="grid-skeleton" aria-hidden="true"><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span><span class="sk sk-card"></span></div>
+    </div>
+  </section>
+
+  <noscript>
+    <p class="empty" role="status"><b>JavaScript is off.</b> The shell still paints; enable JavaScript to browse all 1,000 icons, or open <a href="icons.data.js">icons.data.js</a> for the raw dataset.</p>
+  </noscript>
+  <section class="lazy" id="sec-swaps" aria-labelledby="swaps-title">
+    <div class="section-head"><h2 id="swaps-title">Swap / morph</h2><p class="section-sub">26 semantic pairs from data/swaps.json — click or press Enter; CSS-only cross-fade/flip/rotate/slide</p></div>
+    <div class="lazy-body" data-body><div class="sk sk-line"></div><div class="sk sk-line"></div><div class="sk sk-line"></div></div>
+  </section>
+
+  <section class="lazy" id="sec-categories" aria-labelledby="categories-title">
+    <div class="section-head"><h2 id="categories-title">Categories</h2><p class="section-sub" id="categories-sub">Rendered lazily when scrolled into view</p></div>
+    <div class="lazy-body" data-body><div class="sk sk-line"></div><div class="sk sk-line"></div></div>
+  </section>
+
+  <section class="lazy" id="sec-shapes" aria-labelledby="shapes-title">
+    <div class="section-head"><h2 id="shapes-title">Shape variants</h2><p class="section-sub">Container presets from animations.css — tint follows currentColor</p></div>
+    <div class="lazy-body" data-body><div class="sk sk-line"></div><div class="sk sk-line"></div></div>
+  </section>
+
+  <section class="lazy" id="sec-fills" aria-labelledby="fills-title">
+    <div class="section-head"><h2 id="fills-title">Fill · duotone · fill animation</h2><p class="section-sub">Only closed-geometry icons (fillSafe) fill cleanly</p></div>
+    <div class="lazy-body" data-body><div class="sk sk-line"></div><div class="sk sk-line"></div></div>
+  </section>
+
+  <section class="lazy" id="sec-3d" aria-labelledby="three-d-title">
+    <div class="section-head"><h2 id="three-d-title">CSS 3D presets</h2><p class="section-sub">tilt · flip · orbit · extrude — CSS transforms only, no WebGL</p></div>
+    <div class="lazy-body" data-body><div class="sk sk-line"></div><div class="sk sk-line"></div></div>
+  </section>
+
+  <section class="lazy" id="sec-effects" aria-labelledby="effects-title">
+    <div class="section-head"><h2 id="effects-title">Glass &amp; gradients</h2><p class="section-sub">Optional frosted-glass surfaces and gradient strokes — import <code>@nexa/icons/effects.css</code></p></div>
+    <div class="lazy-body" data-body><div class="sk sk-line"></div><div class="sk sk-line"></div><div class="sk sk-line"></div></div>
+  </section>
+
+  <section class="lazy" id="sec-illustrations" aria-labelledby="illustrations-title">
+    <div class="section-head"><h2 id="illustrations-title">Illustrated set</h2><p class="section-sub" id="illustrations-sub">Appears automatically when illustrations/manifest.json exists</p></div>
+    <div class="lazy-body" data-body><div class="sk sk-line"></div><div class="sk sk-line"></div></div>
+  </section>
+
+  <section class="hud" aria-label="Performance readout">
+    <span>shell <b id="hud-shell">…</b></span>
+    <span>data <b id="hud-data">…</b></span>
+    <span>app <b id="hud-app">…</b></span>
+    <span>script load+eval <b id="hud-eval">…</b></span>
+    <span>JS→first row <b id="hud-firstrow">…</b></span>
+    <span>render <b id="hud-render">…</b></span>
+    <span>grid nodes <b id="hud-nodes">…</b></span>
+    <span>FP <b id="hud-fp">…</b></span>
+    <span>FCP <b id="hud-fcp">…</b></span>
+    <span>icons <b id="hud-icons">…</b></span>
+    <span class="hud-ok">local files only · 0 third-party</span>
+  </section>
+  <p class="hud-note" id="hud-note">Gallery JS before first paint: <b>0 ms</b> — the shell only registers a paint observer, then loads data + app after the first painted frame. Eval/JS→first-row use <code>performance.now()</code>; FP/FCP use <code>PerformanceObserver</code>. 0.01 ms render / 0.2 ms first paint is below the browser paint floor; the numbers above are the honest ones.</p>
+
+  <footer class="foot">
+    <p><b>How this is fast:</b> static shell → deferred local <code>icons.data.js</code> (dataset + inline path markup) → deferred local <code>app.js</code> that renders only the visible grid window (~2–3 viewports), then lazy-renders below-the-fold sections via IntersectionObserver. No frameworks, no external requests, no blocking JS.</p>
+    <p><b>Browser paint floor:</b> paint alone costs &gt;10 ms in headless Chromium (honest FCP ≈ 36–45 ms here) and a 0.2 ms first paint is not physically achievable; the numbers in the HUD are measured, not promised. Gallery JS work before that paint is zero.</p>
+    <p><b>currentColor:</b> every icon paints with <code>stroke="currentColor"</code>; the page only sets <code>color</code> on containers. Open an icon for its source and copy-ready snippets (HTML, JS, React, Go, Rust).</p>
+    <p><b>Motion:</b> the canonical <code>@media (prefers-reduced-motion: reduce)</code> rule disables presets, swaps, fills and 3D; the toggle adds <code>html.reduce-motion</code>, the class equivalent. <b>Forced colors:</b> the shipped layer sets <code>forced-color-adjust: auto</code>; enable a Contrast theme or DevTools → Rendering → Emulate forced colors.</p>
+    <p><b>Illustrations:</b> inlined from <code>illustrations/manifest.json</code> at build time (currentColor, light/dark). Geometry: Lucide 1.70 (ISC) + Feather (MIT); Nexa layer ISC.</p>
+    <div class="foot-keys" aria-label="Keyboard shortcuts">
+      <span><kbd>/</kbd> search</span><span><kbd>Esc</kbd> close / clear</span><span><kbd>←</kbd> <kbd>→</kbd> move selection</span><span><kbd>Enter</kbd> open details</span>
+    </div>
+  </footer>
+</main>
+
+
+
+<div class="sr-only" id="announcer" role="status" aria-live="polite" aria-atomic="true"></div>
+
+<script>
+/* Shell paints first; only then load the local data + app. Double rAF waits for
+   at least one painted frame, so deferred files can never delay first paint. */
+(function(){
+  var shown=false;
+  function fail(src){ if(shown) return; shown=true;
+    var label = src || 'icons.data.js';
+    var err=document.getElementById('grid-error'); if(err){ err.hidden=false; err.textContent=label + ' failed to load. Open the gallery from the folder that contains the generated data + app files.'; }
+    var g=document.getElementById('grid'); if(g) g.setAttribute('aria-busy','false');
+    var m=document.getElementById('motion-state'); if(m) m.textContent=label + ' failed to load — shell and skeleton are painted; details in the grid area.';
+    var a=document.getElementById('announcer'); if(a) a.textContent=label + ' failed to load.';
+    try{var m=document.querySelector('meta[name="nexa-gallery"]'); var c=m&&m.getAttribute('content')||''; var kv={}; c.split(';').forEach(function(p){var i=p.indexOf('=');if(i>0)kv[p.slice(0,i)]=p.slice(i+1);}); var f=function(n){var b=kv[n];return b?((b/1024).toFixed(1)+' KB'):'n/a';}; ['hud-shell','hud-shell-hero'].forEach(function(id){var e=document.getElementById(id); if(e) e.textContent=f('shellBytes');}); ['hud-data','hud-data-hero'].forEach(function(id){var e=document.getElementById(id); if(e) e.textContent=f('dataBytes');});}catch(e){}
+  }
+  function load(src,next){ if(!window.__NEXA_LOAD_T0__) window.__NEXA_LOAD_T0__=performance.now(); var s=document.createElement('script');s.src=src;s.onload=next;s.onerror=function(){ fail(src); };document.body.appendChild(s); }
+  function boot(){ load('icons.data.js', function(){ load('app.js'); }); }
+  var started=false;
+  function start(){ if(started) return; started=true; requestAnimationFrame(function(){ requestAnimationFrame(boot); }); }
+  if(document.readyState==='complete') start();
+  else { window.addEventListener('load', start, {once:true}); setTimeout(start, 1200); }
+})();
+</script>
+</body>
+</html>

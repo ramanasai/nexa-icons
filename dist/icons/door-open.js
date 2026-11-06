@@ -1,0 +1,12 @@
+import { createIcon } from "../createIcon.js";
+const DoorOpen = /* @__PURE__ */ createIcon({
+  name: "DoorOpen",
+  kebab: "door-open",
+  fillSafe: false,
+  preset: "wiggle",
+  trigger: "hover",
+  nodes: [["path", { d: "M10 21H2" }], ["path", { d: "M10 3H7a2 2 0 00-2 2v16" }], ["path", { d: "M14 12h.01" }], ["path", { d: "M19 21V5a2 2 0 00-1.675-1.974l-6.163-1.013A1 1 0 0010 3v18a1 1 0 001.124.992z" }], ["path", { d: "M22 21h-3" }]]
+});
+export {
+  DoorOpen
+};

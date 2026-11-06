@@ -1,0 +1,32 @@
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var umbrella_off_exports = {};
+__export(umbrella_off_exports, {
+  UmbrellaOff: () => UmbrellaOff
+});
+module.exports = __toCommonJS(umbrella_off_exports);
+var import_createIcon = require("../createIcon.js");
+const UmbrellaOff = /* @__PURE__ */ (0, import_createIcon.createIcon)({
+  name: "UmbrellaOff",
+  kebab: "umbrella-off",
+  fillSafe: false,
+  preset: "shake",
+  trigger: "hover",
+  nodes: [["path", { d: "M12 13v7a2 2 0 0 0 4 0" }], ["path", { d: "M12 2v2" }], ["path", { d: "M18.656 13h2.336a1 1 0 0 0 .97-1.274 10.284 10.284 0 0 0-12.07-7.51" }], ["path", { d: "m2 2 20 20" }], ["path", { d: "M5.961 5.957a10.28 10.28 0 0 0-3.922 5.769A1 1 0 0 0 3 13h10" }]]
+});

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <rect x="8" y="8" width="48" height="48" rx="11" fill="var(--nexa-ill-soft, currentColor)" fill-opacity=".07"/>
+  <path d="M23 13h14l8 8v28a4 4 0 0 1-4 4H23a4 4 0 0 1-4-4V17a4 4 0 0 1 4-4z" fill="var(--nexa-ill-soft, currentColor)" fill-opacity=".14" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M37 13l8 8h-8z" fill="var(--nexa-ill-accent, currentColor)" fill-opacity=".2"/>
+  <path d="M37 13v8h8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M32 43V29" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M26 35l6-6 6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M25 47h14M25 22h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-opacity=".4"/>
+  <path d="M50 12l1.3 3.9 3.9 1.3-3.9 1.3L50 22.4l-1.3-3.9-3.9-1.3 3.9-1.3z" fill="currentColor" fill-opacity=".35"/>
+</svg>

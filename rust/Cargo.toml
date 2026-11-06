@@ -1,0 +1,17 @@
+[package]
+exclude = ["gpui"]
+name = "nexa-icons"
+version = "1.0.0"
+edition = "2021"
+rust-version = "1.70"
+license = "ISC"
+description = "650 stroke-only Nexa icons (Lucide 1.70 derived) with animation metadata, rendered as inline SVG strings"
+repository = "https://github.com/nexa-icons/nexa"
+keywords = ["icons", "svg", "lucide", "ui"]
+categories = ["graphics", "web-programming"]
+
+[dependencies]
+
+[lib]
+name = "nexa_icons"
+path = "src/lib.rs"

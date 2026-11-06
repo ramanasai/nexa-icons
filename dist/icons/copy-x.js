@@ -1,0 +1,12 @@
+import { createIcon } from "../createIcon.js";
+const CopyX = /* @__PURE__ */ createIcon({
+  name: "CopyX",
+  kebab: "copy-x",
+  fillSafe: false,
+  preset: "wiggle",
+  trigger: "hover",
+  nodes: [["path", { d: "M4 16a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2" }], ["rect", { x: "8", y: "8", width: "14", height: "14", rx: "2" }], ["path", { d: "m12.5 12.5 5 5" }], ["path", { d: "m12.5 17.5 5-5" }]]
+});
+export {
+  CopyX
+};

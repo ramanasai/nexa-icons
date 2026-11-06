@@ -1,0 +1,74 @@
+# Mise — local development environment for nexa-icon
+# Docs: https://mise.jdx.dev/
+#
+#   curl https://mise.run | sh          # install mise (if missing)
+#   echo 'eval "$(mise activate zsh)"' >> ~/.zshrc
+#   mise install                        # install the exact tool versions
+#   mise run setup                      # deps + generate + build everything
+#   mise run dev                        # rebuild the gallery page
+#   mise run verify                     # full verification suite
+#
+# Everything runs from the repo root; no global installs required.
+
+[tools]
+node = "26.9.0"
+go = "1.27.1"
+rust = "1.98.1"
+bun = "1.4.0"
+
+[env]
+# Keep npm quiet in task output; override locally if you need more detail.
+NODE_NO_WARNINGS = "1"
+
+[tasks.setup]
+description = "Install npm deps, generate every target, build the gallery"
+run = "npm ci && node scripts/generate-all.mjs"
+
+[tasks.generate]
+description = "Regenerate data, React, JS, Go and Rust sources from data/icons.json"
+run = "node scripts/generate-all.mjs"
+
+[tasks.build]
+description = "Build dist (ESM + CJS + .d.ts + animations.css) with size budgets"
+run = "node scripts/build.mjs"
+
+[tasks.gallery]
+description = "Rebuild the single-file icon gallery"
+run = "node gallery/build.mjs"
+
+[tasks.dev]
+description = "Alias for gallery rebuild (the gallery is a static single file)"
+run = "node gallery/build.mjs"
+
+[tasks.typecheck]
+description = "TypeScript strict check of src/"
+run = "npx tsc -p tsconfig.json --noEmit"
+
+[tasks.test]
+description = "Run JS, Go and Rust test suites"
+run = "npm test && (cd go && go vet ./... && go test ./...) && (cd rust && cargo test)"
+
+[tasks.bench]
+description = "Micro-benchmarks and bundle-size report"
+run = "node bench/bench.mjs"
+
+[tasks.verify]
+description = "Independent verification: dataset, parity, sizes, a11y, docs"
+run = "node scripts/verify.mjs"
+
+[tasks.lint]
+description = "Check formatting/lint for Go, Rust and generated files"
+run = "cd go && gofmt -l . && cd ../rust && cargo fmt --check"
+
+[tasks.release]
+description = "Full release gate: generate, build, gallery, tests, verify"
+depends = ["generate", "build", "gallery"]
+run = "npm test && node scripts/verify.mjs"
+
+[tasks.pm-check]
+description = "Verify install + build under npm, yarn, pnpm and bun"
+run = "bash scripts/package-managers.sh"
+
+[tasks.clean]
+description = "Remove non-tracked tool output (keeps dist/, gallery and sources)"
+run = "rm -rf bench/out tests/out review/**/tools/node_modules .tmp"

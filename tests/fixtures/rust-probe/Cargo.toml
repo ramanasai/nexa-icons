@@ -1,0 +1,12 @@
+[package]
+name = "qa-probe"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[[bin]]
+name = "qa-probe"
+path = "src/main.rs"
+
+[dependencies]
+nexa-icons = { path = "../../../rust" }

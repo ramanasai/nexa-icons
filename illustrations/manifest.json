@@ -1,0 +1,122 @@
+[
+  {
+    "id": "no-jobs",
+    "title": "No open roles",
+    "description": "An empty briefcase with a dashed empty badge — use when a job search or pipeline returns nothing.",
+    "tags": ["jobs", "empty-state", "briefcase", "no-results", "hiring"],
+    "file": "no-jobs.svg",
+    "viewBox": "0 0 64 64",
+    "themes": ["light", "dark"],
+    "usage": "empty-state"
+  },
+  {
+    "id": "search",
+    "title": "No results found",
+    "description": "A magnifier over an empty document with an accent cross — search and filter empty states.",
+    "tags": ["search", "empty-state", "no-results", "magnifier", "filters"],
+    "file": "search.svg",
+    "viewBox": "0 0 64 64",
+    "themes": ["light", "dark"],
+    "usage": "empty-state"
+  },
+  {
+    "id": "resume-upload",
+    "title": "Upload your resume",
+    "description": "A document with an upload arrow and folded corner — resume builders, profile setup and application flows.",
+    "tags": ["resume", "upload", "onboarding", "profile", "applications"],
+    "file": "resume-upload.svg",
+    "viewBox": "0 0 64 64",
+    "themes": ["light", "dark"],
+    "usage": "onboarding"
+  },
+  {
+    "id": "interview",
+    "title": "Interview conversation",
+    "description": "Two stacked speech bubbles with accent typing dots — interview prep, messaging and recruiter contact.",
+    "tags": ["interview", "conversation", "chat", "messages", "recruiter"],
+    "file": "interview.svg",
+    "viewBox": "0 0 64 64",
+    "themes": ["light", "dark"],
+    "usage": "feature"
+  },
+  {
+    "id": "offer",
+    "title": "Offer letter",
+    "description": "A signed offer letter with an accent check and a spark of celebration — offer received, accepted and congratulations states.",
+    "tags": ["offer", "celebrate", "success", "letter", "accepted"],
+    "file": "offer.svg",
+    "viewBox": "0 0 64 64",
+    "themes": ["light", "dark"],
+    "usage": "feature"
+  },
+  {
+    "id": "remote",
+    "title": "Remote workspace",
+    "description": "A laptop with a location pin and signal waves — remote roles, hybrid work and distributed teams.",
+    "tags": ["remote", "laptop", "location", "hybrid", "distributed"],
+    "file": "remote.svg",
+    "viewBox": "0 0 64 64",
+    "themes": ["light", "dark"],
+    "usage": "feature"
+  },
+  {
+    "id": "analytics",
+    "title": "Analytics report",
+    "description": "A chart card with a trending line, soft area and accent data point — metrics, insights and weekly reports.",
+    "tags": ["analytics", "report", "chart", "insights", "metrics"],
+    "file": "analytics.svg",
+    "viewBox": "0 0 64 64",
+    "themes": ["light", "dark"],
+    "usage": "feature"
+  },
+  {
+    "id": "security",
+    "title": "Security and privacy",
+    "description": "A shield with an accent check — account security, privacy, verified employers and data protection.",
+    "tags": ["security", "privacy", "shield", "verified", "protection"],
+    "file": "security.svg",
+    "viewBox": "0 0 64 64",
+    "themes": ["light", "dark"],
+    "usage": "feature"
+  },
+  {
+    "id": "empty-inbox",
+    "title": "Empty inbox",
+    "description": "An empty inbox tray with a floating accent dot — zero notifications, cleared messages and caught-up states.",
+    "tags": ["inbox", "empty-state", "messages", "notifications", "caught-up"],
+    "file": "empty-inbox.svg",
+    "viewBox": "0 0 64 64",
+    "themes": ["light", "dark"],
+    "usage": "empty-state"
+  },
+  {
+    "id": "welcome",
+    "title": "Welcome aboard",
+    "description": "A paper plane on an accent dotted flight path — onboarding welcome, start-here and first-run screens.",
+    "tags": ["welcome", "onboarding", "start", "plane", "journey"],
+    "file": "welcome.svg",
+    "viewBox": "0 0 64 64",
+    "themes": ["light", "dark"],
+    "usage": "onboarding"
+  },
+  {
+    "id": "verified",
+    "title": "Verified success",
+    "description": "A check medal with ribbon tails — verified profiles, completed steps and confirmed applications.",
+    "tags": ["verified", "success", "award", "medal", "completed"],
+    "file": "verified.svg",
+    "viewBox": "0 0 64 64",
+    "themes": ["light", "dark"],
+    "usage": "feature"
+  },
+  {
+    "id": "team",
+    "title": "Team and hiring",
+    "description": "Three people connected by an accent dotted arc — teams, hiring, referrals and people-first marketing.",
+    "tags": ["team", "hiring", "people", "referrals", "recruiting"],
+    "file": "team.svg",
+    "viewBox": "0 0 64 64",
+    "themes": ["light", "dark"],
+    "usage": "feature"
+  }
+]

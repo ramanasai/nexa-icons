@@ -1,0 +1,32 @@
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var globe_ban_exports = {};
+__export(globe_ban_exports, {
+  GlobeBan: () => GlobeBan
+});
+module.exports = __toCommonJS(globe_ban_exports);
+var import_createIcon = require("../createIcon.js");
+const GlobeBan = /* @__PURE__ */ (0, import_createIcon.createIcon)({
+  name: "GlobeBan",
+  kebab: "globe-ban",
+  fillSafe: false,
+  preset: "shake",
+  trigger: "hover",
+  nodes: [["path", { d: "M12 22a14.48 14.48 0 01-4.008-10C7.993 9.136 9 5.258 11 2.05A10 10 0 0012 22" }], ["path", { d: "m15.172 3.172 5.656 5.656" }], ["path", { d: "M15.86 14a14.5 14.5 0 01-3.859 8 10 10 0 009.949-9" }], ["path", { d: "M2 12h10.5" }], ["circle", { cx: "18", cy: "6", r: "4" }]]
+});

@@ -1,0 +1,12 @@
+import { createIcon } from "../createIcon.js";
+const PanelBottom = /* @__PURE__ */ createIcon({
+  name: "PanelBottom",
+  kebab: "panel-bottom",
+  fillSafe: false,
+  preset: "shake",
+  trigger: "hover",
+  nodes: [["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2" }], ["path", { d: "M3 15h18" }]]
+});
+export {
+  PanelBottom
+};

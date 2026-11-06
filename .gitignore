@@ -1,0 +1,54 @@
+# --- never committed -------------------------------------------------------
+node_modules/
+.DS_Store
+*.log
+
+# research/ and benchmarks are local artefacts, deliberately not pushed
+research/
+bench/out/
+tests/out/
+
+
+# tool caches
+.mise.local.toml
+.tmp/
+
+# reviewer tooling caches (reports are committed, node_modules is not)
+review/**/node_modules/
+review/**/tools/node_modules/
+
+# WASM prototype build cache (perf review artefact; binaries are reproducible)
+bench/wasm/*/target/
+bench/wasm/out/
+bench/wasm/**/*.wasm
+
+# build caches from review/perf prototypes and parity harnesses
+**/target/
+**/node_modules/
+review/**/pkg/
+review/**/consumers/
+
+# GPUI integration build artefacts
+rust/gpui/target/
+
+# generated gallery evidence (re-created by verify scripts)
+gallery/screenshots/
+gallery/*.png
+gallery/verify-browser-report.json
+illustrations/screenshots/
+bench/results.json
+bench/out/
+bench/wasm/
+
+# review harness outputs (reports + scripts stay, artefacts are regenerable)
+review/**/shots/
+review/**/out/
+review/**/final/
+review/**/logs/
+review/**/consumers/
+review/**/tools/node_modules/
+review/api/pack/*.tgz
+review/api/pack/pack.json
+review/api/pack/pack-dryrun.*
+review/api/pack/pack.stderr
+review/api/pack/webpack-test/
