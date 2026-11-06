@@ -1,0 +1,12 @@
+import { createIcon } from "../createIcon.js";
+const StageInterview = /* @__PURE__ */ createIcon({
+  name: "StageInterview",
+  kebab: "stage-interview",
+  fillSafe: false,
+  preset: "pop",
+  trigger: "hover",
+  nodes: [["path", { d: "M4 5h8a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H8l-4 3V7a2 2 0 0 1 2-2Z" }], ["path", { d: "M15 8h4a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2l-3 2" }], ["path", { d: "M7 9h4M7 12h2" }]]
+});
+export {
+  StageInterview
+};

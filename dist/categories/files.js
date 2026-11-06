@@ -2,6 +2,7 @@ import { Archive } from "../icons/archive.js";
 import { ArchiveX } from "../icons/archive-x.js";
 import { BookCopy } from "../icons/book-copy.js";
 import { BookUser } from "../icons/book-user.js";
+import { Certificate } from "../icons/certificate.js";
 import { Clipboard } from "../icons/clipboard.js";
 import { ClipboardCheck } from "../icons/clipboard-check.js";
 import { ClipboardClock } from "../icons/clipboard-clock.js";
@@ -12,6 +13,7 @@ import { ClipboardPlus } from "../icons/clipboard-plus.js";
 import { ClipboardType } from "../icons/clipboard-type.js";
 import { ClipboardX } from "../icons/clipboard-x.js";
 import { Copy } from "../icons/copy.js";
+import { CoverLetter } from "../icons/cover-letter.js";
 import { Download } from "../icons/download.js";
 import { File } from "../icons/file.js";
 import { FileBox } from "../icons/file-box.js";
@@ -47,6 +49,7 @@ import { NotepadTextDashed } from "../icons/notepad-text-dashed.js";
 import { Package } from "../icons/package.js";
 import { Paperclip } from "../icons/paperclip.js";
 import { Printer } from "../icons/printer.js";
+import { Resume } from "../icons/resume.js";
 import { Save } from "../icons/save.js";
 import { SaveCheck } from "../icons/save-check.js";
 import { SaveOff } from "../icons/save-off.js";
@@ -60,6 +63,7 @@ import { StickyNoteMinus } from "../icons/sticky-note-minus.js";
 import { StickyNoteOff } from "../icons/sticky-note-off.js";
 import { StickyNotePlus } from "../icons/sticky-note-plus.js";
 import { StickyNoteX } from "../icons/sticky-note-x.js";
+import { Transcript } from "../icons/transcript.js";
 import { Trash2 } from "../icons/trash.js";
 import { Upload } from "../icons/upload.js";
 import { UploadCloud } from "../icons/cloud-upload.js";
@@ -68,6 +72,7 @@ export {
   ArchiveX,
   BookCopy,
   BookUser,
+  Certificate,
   Clipboard,
   ClipboardCheck,
   ClipboardClock,
@@ -78,6 +83,7 @@ export {
   ClipboardType,
   ClipboardX,
   Copy,
+  CoverLetter,
   Download,
   File,
   FileBox,
@@ -113,6 +119,7 @@ export {
   Package,
   Paperclip,
   Printer,
+  Resume,
   Save,
   SaveCheck,
   SaveOff,
@@ -126,6 +133,7 @@ export {
   StickyNoteOff,
   StickyNotePlus,
   StickyNoteX,
+  Transcript,
   Trash2,
   Upload,
   UploadCloud

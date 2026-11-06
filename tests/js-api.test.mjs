@@ -46,7 +46,7 @@ test("metadata, categories, names/ids and alias-aware lookup cover all 650 icons
   assert.deepEqual(js.ids(), CATALOG_KEBABS.slice().sort());
   assert.deepEqual(js.names(), ICONS.map((icon) => icon.name).sort());
   for (const preset of DATA_PRESETS) assert.ok(js.PRESETS.includes(preset), `PRESETS missing ${preset}`);
-  assert.equal(Object.keys(js.CATEGORIES).length, 24);
+  assert.equal(Object.keys(js.CATEGORIES).length, 26);
   assert.equal(js.categories("communication").id, "communication");
 
   for (const icon of ICONS) {

@@ -1,6 +1,6 @@
 {
-  "requested": 1015,
-  "unique": 1015,
+  "requested": 1033,
+  "unique": 1033,
   "duplicates": [],
   "animation": {
     "bounce": [
@@ -391,6 +391,7 @@
       "SpellCheck",
       "SpellCheck2",
       "TextAlignStart",
+      "Stamp",
       "Wand",
       "AlarmClockCheck",
       "AlarmClockPlus",
@@ -466,7 +467,25 @@
       "ResidencePermit",
       "FlagIreland",
       "Crest",
-      "Invoice"
+      "Invoice",
+      "GradIreland",
+      "IrishJobs",
+      "JobsIE",
+      "StageApplied",
+      "StageInterview",
+      "StageOffer",
+      "StageRejected",
+      "StageWithdrawn",
+      "Resume",
+      "CoverLetter",
+      "Transcript",
+      "Certificate",
+      "Sponsor",
+      "VisaStamp",
+      "Subscription",
+      "Hybrid",
+      "Onsite",
+      "Remote"
     ],
     "pulse": [
       "Activity",
@@ -1009,7 +1028,6 @@
       "Spline",
       "SplinePointer",
       "Squircle",
-      "Stamp",
       "SwatchBook",
       "Tangent",
       "Torus",
@@ -1054,9 +1072,9 @@
     ]
   },
   "sizes": {
-    "datasetBytes": 819522,
-    "svgTotalBytes": 403078,
-    "svgAvgBytes": 397,
-    "spriteBytes": 351756
+    "datasetBytes": 829642,
+    "svgTotalBytes": 409136,
+    "svgAvgBytes": 396,
+    "spriteBytes": 356896
   }
 }

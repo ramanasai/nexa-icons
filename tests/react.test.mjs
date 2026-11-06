@@ -162,7 +162,7 @@ test("IconSwap / IconToggle: nexa markup, aria contract, toggle state", () => {
   assert.notEqual(on, off);
 });
 
-test("dist layout: ESM+CJS icon modules, 24 category barrels, CSS copied", () => {
+test("dist layout: ESM+CJS icon modules, 26 category barrels, CSS copied", () => {
   const esmIcons = fs.readdirSync(p("dist/icons")).filter((file) => file.endsWith(".js"));
   const cjsIcons = fs.readdirSync(p("dist/cjs/icons")).filter((file) => file.endsWith(".js"));
   assert.equal(esmIcons.length, ICONS.length);
@@ -170,7 +170,7 @@ test("dist layout: ESM+CJS icon modules, 24 category barrels, CSS copied", () =>
   assert.equal(JSON.parse(read("dist/cjs/package.json")).type, "commonjs", "dist/cjs package marker must be valid CommonJS");
   assert.equal(read("dist/animations.css"), read("src/animations.css"));
   const categories = fs.readdirSync(p("dist/categories")).filter((file) => file.endsWith(".js"));
-  assert.equal(categories.length, 25, "24 category barrels + catalog");
+  assert.equal(categories.length, 27, "26 category barrels + catalog");
   for (const icon of ICONS) {
     assert.ok(fs.existsSync(p("dist/icons", `${icon.kebab}.js`)), `missing dist/icons/${icon.kebab}.js`);
     assert.ok(fs.existsSync(p("dist/cjs/icons", `${icon.kebab}.js`)), `missing cjs ${icon.kebab}`);

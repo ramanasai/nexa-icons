@@ -70,14 +70,14 @@ check("required artefacts exist", () => {
 });
 
 /* --------------------------------------------------------------- dataset */
-check("dataset: catalog icons in 24 categories, unique aliases", () => {
+check("dataset: catalog icons in 26 categories, unique aliases", () => {
   const aliases = ICONS.flatMap((icon) => icon.aliases);
   const uniqueCategories = new Set(ICONS.flatMap((icon) => icon.categories));
   const ok = COUNT >= 900 && COUNT <= 1100
     && DATA.meta.count === COUNT
     && CATEGORIES.total === COUNT
-    && CATEGORIES.categories.length === 24
-    && uniqueCategories.size === 24
+    && CATEGORIES.categories.length === 26
+    && uniqueCategories.size === 26
     && new Set(aliases).size === aliases.length
     && ICONS.every((icon) => Array.isArray(icon.categories) && icon.categories.length >= 1 && new Set(icon.categories).size === icon.categories.length);
   return { ok, actual: `${COUNT} icons / ${CATEGORIES.categories.length} categories` };
@@ -137,7 +137,7 @@ check("largest dist icon module ≤ 2 KB raw / 1 KB brotli", () => {
 check("dist/icons + dist/categories cover the catalog", () => {
   const icons = fs.readdirSync(p("dist/icons")).filter((file) => file.endsWith(".js")).length;
   const categories = fs.readdirSync(p("dist/categories")).filter((file) => file.endsWith(".js")).length;
-  return { ok: icons === COUNT && categories === 25, actual: `${icons} icon modules / ${categories} category modules` };
+  return { ok: icons === COUNT && categories === 27, actual: `${icons} icon modules / ${categories} category modules` };
 });
 
 /* ------------------------------------------------------------------- js */

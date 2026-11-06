@@ -18,7 +18,6 @@ var __copyProps = (to, from, except, desc) => {
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 var commerce_exports = {};
 __export(commerce_exports, {
-  Apple: () => import_apple.Apple,
   Banknote: () => import_banknote.Banknote,
   BanknoteArrowDown: () => import_banknote_arrow_down.BanknoteArrowDown,
   BanknoteArrowUp: () => import_banknote_arrow_up.BanknoteArrowUp,
@@ -34,16 +33,10 @@ __export(commerce_exports, {
   CreditCardPlus: () => import_credit_card_plus.CreditCardPlus,
   CreditCardReader: () => import_credit_card_reader.CreditCardReader,
   CreditCardX: () => import_credit_card_x.CreditCardX,
-  Facebook: () => import_facebook.Facebook,
   Factory: () => import_factory.Factory,
   Fuel: () => import_fuel.Fuel,
   Gift: () => import_gift.Gift,
-  GitHub: () => import_github.GitHub,
-  Google: () => import_google.Google,
   HandCoins: () => import_hand_coins.HandCoins,
-  Indeed: () => import_indeed.Indeed,
-  LinkedIn: () => import_linkedin.LinkedIn,
-  Microsoft: () => import_microsoft.Microsoft,
   Package: () => import_package.Package,
   Package2: () => import_package_2.Package2,
   PackageCheck: () => import_package_check.PackageCheck,
@@ -83,12 +76,9 @@ __export(commerce_exports, {
   Wallet: () => import_wallet.Wallet,
   WalletCards: () => import_wallet_cards.WalletCards,
   WalletMinimal: () => import_wallet_minimal.WalletMinimal,
-  Warehouse: () => import_warehouse.Warehouse,
-  WhatsApp: () => import_whatsapp.WhatsApp,
-  XLogo: () => import_x_logo.XLogo
+  Warehouse: () => import_warehouse.Warehouse
 });
 module.exports = __toCommonJS(commerce_exports);
-var import_apple = require("../icons/apple.js");
 var import_banknote = require("../icons/banknote.js");
 var import_banknote_arrow_down = require("../icons/banknote-arrow-down.js");
 var import_banknote_arrow_up = require("../icons/banknote-arrow-up.js");
@@ -104,16 +94,10 @@ var import_credit_card_minus = require("../icons/credit-card-minus.js");
 var import_credit_card_plus = require("../icons/credit-card-plus.js");
 var import_credit_card_reader = require("../icons/credit-card-reader.js");
 var import_credit_card_x = require("../icons/credit-card-x.js");
-var import_facebook = require("../icons/facebook.js");
 var import_factory = require("../icons/factory.js");
 var import_fuel = require("../icons/fuel.js");
 var import_gift = require("../icons/gift.js");
-var import_github = require("../icons/github.js");
-var import_google = require("../icons/google.js");
 var import_hand_coins = require("../icons/hand-coins.js");
-var import_indeed = require("../icons/indeed.js");
-var import_linkedin = require("../icons/linkedin.js");
-var import_microsoft = require("../icons/microsoft.js");
 var import_package = require("../icons/package.js");
 var import_package_2 = require("../icons/package-2.js");
 var import_package_check = require("../icons/package-check.js");
@@ -154,5 +138,3 @@ var import_wallet = require("../icons/wallet.js");
 var import_wallet_cards = require("../icons/wallet-cards.js");
 var import_wallet_minimal = require("../icons/wallet-minimal.js");
 var import_warehouse = require("../icons/warehouse.js");
-var import_whatsapp = require("../icons/whatsapp.js");
-var import_x_logo = require("../icons/x-logo.js");

@@ -64,7 +64,6 @@ __export(design_exports, {
   SplinePointer: () => import_spline_pointer.SplinePointer,
   Square: () => import_square.Square,
   Squircle: () => import_squircle.Squircle,
-  Stamp: () => import_stamp.Stamp,
   Strikethrough: () => import_strikethrough.Strikethrough,
   Sun: () => import_sun.Sun,
   SwatchBook: () => import_swatch_book.SwatchBook,
@@ -124,7 +123,6 @@ var import_spline = require("../icons/spline.js");
 var import_spline_pointer = require("../icons/spline-pointer.js");
 var import_square = require("../icons/square.js");
 var import_squircle = require("../icons/squircle.js");
-var import_stamp = require("../icons/stamp.js");
 var import_strikethrough = require("../icons/strikethrough.js");
 var import_sun = require("../icons/sun.js");
 var import_swatch_book = require("../icons/swatch-book.js");

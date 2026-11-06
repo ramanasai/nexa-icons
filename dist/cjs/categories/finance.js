@@ -58,6 +58,7 @@ __export(finance_exports, {
   ReceiptText: () => import_receipt_text.ReceiptText,
   ReceiptTurkishLira: () => import_receipt_turkish_lira.ReceiptTurkishLira,
   Scale: () => import_scale.Scale,
+  Subscription: () => import_subscription.Subscription,
   SwissFranc: () => import_swiss_franc.SwissFranc,
   Vault: () => import_vault.Vault,
   Wallet: () => import_wallet.Wallet,
@@ -105,6 +106,7 @@ var import_receipt_swiss_franc = require("../icons/receipt-swiss-franc.js");
 var import_receipt_text = require("../icons/receipt-text.js");
 var import_receipt_turkish_lira = require("../icons/receipt-turkish-lira.js");
 var import_scale = require("../icons/scale.js");
+var import_subscription = require("../icons/subscription.js");
 var import_swiss_franc = require("../icons/swiss-franc.js");
 var import_vault = require("../icons/vault.js");
 var import_wallet = require("../icons/wallet.js");

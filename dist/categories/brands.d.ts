@@ -1,0 +1,12 @@
+export { Apple } from "../icons/apple.js";
+export { Facebook } from "../icons/facebook.js";
+export { GitHub } from "../icons/github.js";
+export { Google } from "../icons/google.js";
+export { GradIreland } from "../icons/gradireland.js";
+export { Indeed } from "../icons/indeed.js";
+export { IrishJobs } from "../icons/irishjobs.js";
+export { JobsIE } from "../icons/jobsie.js";
+export { LinkedIn } from "../icons/linkedin.js";
+export { Microsoft } from "../icons/microsoft.js";
+export { WhatsApp } from "../icons/whatsapp.js";
+export { XLogo } from "../icons/x-logo.js";

@@ -108,8 +108,8 @@ def main() -> int:
               data["paths"] > 0 and data["uses"] == 0, (data["paths"], data["uses"]))
         check(f"all {EXPECTED} icons are in the dataset", data["count"].startswith(EXPECTED), data["count"])
         check(f"count label covers all {EXPECTED} icons", EXPECTED in data["count"], data["count"])
-        check("category filter populated (24 categories + all)",
-              data["categoryOptions"] == 25 and not data["categoryGroupHidden"], data["categoryOptions"])
+        check("category filter populated (26 categories + all)",
+              data["categoryOptions"] == 27 and not data["categoryGroupHidden"], data["categoryOptions"])
         check("trigger demos rendered", data["triggerDemoTiles"] == 4, data["triggerDemoTiles"])
         check("shell meta carries byte counts",
               "shellBytes=" in data["shellBytesMeta"] and "dataBytes=" in data["shellBytesMeta"],
@@ -306,7 +306,7 @@ def main() -> int:
         }""")
         check("all lazy sections rendered after scroll",
               all(v["done"] and not v["hidden"] for v in lazy["sections"].values()), lazy["sections"])
-        check("categories browser has 24 cards", lazy["catCards"] == 24, lazy["catCards"])
+        check("categories browser has 26 cards", lazy["catCards"] == 26, lazy["catCards"])
         check("shapes section shows 7 container presets", lazy["shapeTiles"] == 7, lazy["shapeTiles"])
         check("fill section demos outline/duotone/solid/animated", lazy["fillTiles"] == 4 and lazy["fillToggle"], lazy)
         check("3D section shows 4 presets", lazy["tdTiles"] == 4, lazy["tdTiles"])

@@ -3,7 +3,7 @@
     "name": "Google",
     "kebab": "google",
     "categories": [
-      "commerce"
+      "brands"
     ],
     "keywords": [
       "google",
@@ -31,7 +31,7 @@
     "name": "LinkedIn",
     "kebab": "linkedin",
     "categories": [
-      "commerce"
+      "brands"
     ],
     "keywords": [
       "linkedin",
@@ -59,7 +59,7 @@
     "name": "GitHub",
     "kebab": "github",
     "categories": [
-      "commerce"
+      "brands"
     ],
     "keywords": [
       "github",
@@ -87,7 +87,7 @@
     "name": "Apple",
     "kebab": "apple",
     "categories": [
-      "commerce"
+      "brands"
     ],
     "keywords": [
       "apple",
@@ -115,7 +115,7 @@
     "name": "Microsoft",
     "kebab": "microsoft",
     "categories": [
-      "commerce"
+      "brands"
     ],
     "keywords": [
       "microsoft",
@@ -143,7 +143,7 @@
     "name": "XLogo",
     "kebab": "x-logo",
     "categories": [
-      "commerce"
+      "brands"
     ],
     "keywords": [
       "xlogo",
@@ -172,7 +172,7 @@
     "name": "Facebook",
     "kebab": "facebook",
     "categories": [
-      "commerce"
+      "brands"
     ],
     "keywords": [
       "facebook",
@@ -201,7 +201,7 @@
     "name": "WhatsApp",
     "kebab": "whatsapp",
     "categories": [
-      "commerce"
+      "brands"
     ],
     "keywords": [
       "whatsapp",
@@ -229,7 +229,7 @@
     "name": "Indeed",
     "kebab": "indeed",
     "categories": [
-      "commerce"
+      "brands"
     ],
     "keywords": [
       "indeed",
@@ -258,7 +258,7 @@
     "name": "Passport",
     "kebab": "passport",
     "categories": [
-      "security"
+      "government"
     ],
     "keywords": [
       "passport",
@@ -303,7 +303,7 @@
     "name": "Visa",
     "kebab": "visa",
     "categories": [
-      "security"
+      "government"
     ],
     "keywords": [
       "visa",
@@ -354,7 +354,7 @@
     "name": "ResidencePermit",
     "kebab": "residence-permit",
     "categories": [
-      "security"
+      "government"
     ],
     "keywords": [
       "residencepermit",
@@ -405,7 +405,7 @@
     "name": "FlagIreland",
     "kebab": "flag-ireland",
     "categories": [
-      "travel"
+      "government"
     ],
     "keywords": [
       "flagireland",
@@ -508,6 +508,783 @@
         "path",
         {
           "d": "M9 13h6M9 16h4"
+        }
+      ]
+    ]
+  },
+  {
+    "name": "GradIreland",
+    "kebab": "gradireland",
+    "categories": [
+      "brands"
+    ],
+    "keywords": [
+      "gradireland",
+      "brand",
+      "source",
+      "job board",
+      "ireland"
+    ],
+    "preset": "pop",
+    "trigger": "hover",
+    "fillSafe": false,
+    "description": "Generic source-badge monogram (not the official logo).",
+    "nodes": [
+      [
+        "rect",
+        {
+          "x": "2.5",
+          "y": "2.5",
+          "width": "19",
+          "height": "19",
+          "rx": "5"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M7.2 10a3 3 0 1 0 0 4h2.4"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M7.2 12h2.4"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M12.2 10v4"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M12.2 10h2.2M12.2 14h2.2"
+        }
+      ]
+    ]
+  },
+  {
+    "name": "IrishJobs",
+    "kebab": "irishjobs",
+    "categories": [
+      "brands"
+    ],
+    "keywords": [
+      "irishjobs",
+      "brand",
+      "source",
+      "job board",
+      "ireland"
+    ],
+    "preset": "pop",
+    "trigger": "hover",
+    "fillSafe": false,
+    "description": "Generic source-badge monogram (not the official logo).",
+    "nodes": [
+      [
+        "rect",
+        {
+          "x": "2.5",
+          "y": "2.5",
+          "width": "19",
+          "height": "19",
+          "rx": "5"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M7.2 10v4"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M7.2 10h2.2M7.2 14h2.2"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M12.2 10v3.2a1.8 1.8 0 0 1-3.2 1.2"
+        }
+      ]
+    ]
+  },
+  {
+    "name": "JobsIE",
+    "kebab": "jobsie",
+    "categories": [
+      "brands"
+    ],
+    "keywords": [
+      "jobsie",
+      "brand",
+      "source",
+      "job board",
+      "ireland"
+    ],
+    "preset": "pop",
+    "trigger": "hover",
+    "fillSafe": false,
+    "description": "Generic source-badge monogram (not the official logo).",
+    "nodes": [
+      [
+        "rect",
+        {
+          "x": "2.5",
+          "y": "2.5",
+          "width": "19",
+          "height": "19",
+          "rx": "5"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M7.2 10v3.2a1.8 1.8 0 0 1-3.2 1.2"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M12.2 10h3M12.2 12h2.2M12.2 14h3"
+        }
+      ]
+    ]
+  },
+  {
+    "name": "StageApplied",
+    "kebab": "stage-applied",
+    "categories": [
+      "status"
+    ],
+    "keywords": [
+      "application",
+      "applied",
+      "sent",
+      "tracker",
+      "status"
+    ],
+    "preset": "pop",
+    "trigger": "hover",
+    "fillSafe": false,
+    "description": "Application submitted / applied stage.",
+    "nodes": [
+      [
+        "path",
+        {
+          "d": "M21 3 10.5 13.5"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "m21 3-6.5 18-4-8-8-4L21 3Z"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "m4 17 3-3"
+        }
+      ]
+    ]
+  },
+  {
+    "name": "StageInterview",
+    "kebab": "stage-interview",
+    "categories": [
+      "status"
+    ],
+    "keywords": [
+      "interview",
+      "stage",
+      "conversation",
+      "tracker"
+    ],
+    "preset": "pop",
+    "trigger": "hover",
+    "fillSafe": false,
+    "description": "",
+    "nodes": [
+      [
+        "path",
+        {
+          "d": "M4 5h8a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H8l-4 3V7a2 2 0 0 1 2-2Z"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M15 8h4a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2l-3 2"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M7 9h4M7 12h2"
+        }
+      ]
+    ]
+  },
+  {
+    "name": "StageOffer",
+    "kebab": "stage-offer",
+    "categories": [
+      "status"
+    ],
+    "keywords": [
+      "offer",
+      "stage",
+      "accepted",
+      "contract",
+      "tracker"
+    ],
+    "preset": "pop",
+    "trigger": "hover",
+    "fillSafe": false,
+    "description": "",
+    "nodes": [
+      [
+        "path",
+        {
+          "d": "M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M14 3v5h5"
+        }
+      ],
+      [
+        "circle",
+        {
+          "cx": "12",
+          "cy": "15",
+          "r": "3"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "m10.8 15 1 1 1.7-1.9"
+        }
+      ]
+    ]
+  },
+  {
+    "name": "StageRejected",
+    "kebab": "stage-rejected",
+    "categories": [
+      "status"
+    ],
+    "keywords": [
+      "rejected",
+      "declined",
+      "stage",
+      "tracker",
+      "closed"
+    ],
+    "preset": "pop",
+    "trigger": "hover",
+    "fillSafe": false,
+    "description": "",
+    "nodes": [
+      [
+        "circle",
+        {
+          "cx": "12",
+          "cy": "12",
+          "r": "8"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "m9 9 6 6M15 9l-6 6"
+        }
+      ]
+    ]
+  },
+  {
+    "name": "StageWithdrawn",
+    "kebab": "stage-withdrawn",
+    "categories": [
+      "status"
+    ],
+    "keywords": [
+      "withdrawn",
+      "cancelled",
+      "stage",
+      "tracker",
+      "undo"
+    ],
+    "preset": "pop",
+    "trigger": "hover",
+    "fillSafe": false,
+    "description": "",
+    "nodes": [
+      [
+        "path",
+        {
+          "d": "M9 14 4 9l5-5"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M4 9h9a7 7 0 0 1 0 14h-1"
+        }
+      ]
+    ]
+  },
+  {
+    "name": "Resume",
+    "kebab": "resume",
+    "categories": [
+      "files"
+    ],
+    "keywords": [
+      "resume",
+      "cv",
+      "document",
+      "file",
+      "candidate"
+    ],
+    "preset": "pop",
+    "trigger": "hover",
+    "fillSafe": false,
+    "description": "",
+    "nodes": [
+      [
+        "path",
+        {
+          "d": "M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M14 3v5h5"
+        }
+      ],
+      [
+        "circle",
+        {
+          "cx": "10",
+          "cy": "12",
+          "r": "2"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M7.5 17c.4-1.4 1.4-2.2 2.5-2.2s2.1.8 2.5 2.2"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M14 11h3M14 14h3"
+        }
+      ]
+    ]
+  },
+  {
+    "name": "CoverLetter",
+    "kebab": "cover-letter",
+    "categories": [
+      "files"
+    ],
+    "keywords": [
+      "cover letter",
+      "letter",
+      "document",
+      "application",
+      "file"
+    ],
+    "preset": "pop",
+    "trigger": "hover",
+    "fillSafe": false,
+    "description": "",
+    "nodes": [
+      [
+        "path",
+        {
+          "d": "M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M14 3v5h5"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M8 12h8M8 15h8M8 18h5"
+        }
+      ]
+    ]
+  },
+  {
+    "name": "Transcript",
+    "kebab": "transcript",
+    "categories": [
+      "files"
+    ],
+    "keywords": [
+      "transcript",
+      "grades",
+      "academic",
+      "document",
+      "file"
+    ],
+    "preset": "pop",
+    "trigger": "hover",
+    "fillSafe": false,
+    "description": "",
+    "nodes": [
+      [
+        "path",
+        {
+          "d": "M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M14 3v5h5"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M8 12h8M8 15h8M8 18h5"
+        }
+      ],
+      [
+        "circle",
+        {
+          "cx": "16",
+          "cy": "18",
+          "r": "2"
+        }
+      ]
+    ]
+  },
+  {
+    "name": "Certificate",
+    "kebab": "certificate",
+    "categories": [
+      "files"
+    ],
+    "keywords": [
+      "certificate",
+      "award",
+      "diploma",
+      "document",
+      "file",
+      "education"
+    ],
+    "preset": "pop",
+    "trigger": "hover",
+    "fillSafe": false,
+    "description": "",
+    "nodes": [
+      [
+        "path",
+        {
+          "d": "M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h5"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M14 3v5h5"
+        }
+      ],
+      [
+        "circle",
+        {
+          "cx": "17",
+          "cy": "16",
+          "r": "3"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "m15.5 18.5 1 3 1.5-1 1.5 1 1-3"
+        }
+      ]
+    ]
+  },
+  {
+    "name": "Sponsor",
+    "kebab": "sponsor",
+    "categories": [
+      "government"
+    ],
+    "keywords": [
+      "sponsor",
+      "visa sponsorship",
+      "permit",
+      "employer",
+      "immigration"
+    ],
+    "preset": "pop",
+    "trigger": "hover",
+    "fillSafe": false,
+    "description": "",
+    "nodes": [
+      [
+        "path",
+        {
+          "d": "M12 3 5 6v5c0 4.2 2.8 7.4 7 9 4.2-1.6 7-4.8 7-9V6l-7-3Z"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M12 8v6M9 11h6"
+        }
+      ]
+    ]
+  },
+  {
+    "name": "VisaStamp",
+    "kebab": "visa-stamp",
+    "categories": [
+      "government"
+    ],
+    "keywords": [
+      "stamp",
+      "visa stamp",
+      "permit",
+      "immigration",
+      "ireland",
+      "approval"
+    ],
+    "preset": "pop",
+    "trigger": "hover",
+    "fillSafe": false,
+    "description": "",
+    "nodes": [
+      [
+        "circle",
+        {
+          "cx": "12",
+          "cy": "12",
+          "r": "7"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M8 12h8M8 15h5"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M9 5V3M15 5V3"
+        }
+      ]
+    ]
+  },
+  {
+    "name": "Subscription",
+    "kebab": "subscription",
+    "categories": [
+      "finance"
+    ],
+    "keywords": [
+      "subscription",
+      "recurring",
+      "billing",
+      "plan",
+      "pro"
+    ],
+    "preset": "pop",
+    "trigger": "hover",
+    "fillSafe": false,
+    "description": "",
+    "nodes": [
+      [
+        "rect",
+        {
+          "x": "2.5",
+          "y": "5",
+          "width": "19",
+          "height": "14",
+          "rx": "2"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M6 9h4M6 12h2"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M15 13a3 3 0 0 1 5-2"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "m20 8v3h-3"
+        }
+      ]
+    ]
+  },
+  {
+    "name": "Hybrid",
+    "kebab": "hybrid",
+    "categories": [
+      "places"
+    ],
+    "keywords": [
+      "hybrid",
+      "work mode",
+      "office",
+      "home",
+      "remote",
+      "policy"
+    ],
+    "preset": "pop",
+    "trigger": "hover",
+    "fillSafe": false,
+    "description": "",
+    "nodes": [
+      [
+        "rect",
+        {
+          "x": "3",
+          "y": "7",
+          "width": "8",
+          "height": "10",
+          "rx": "1.5"
+        }
+      ],
+      [
+        "rect",
+        {
+          "x": "13",
+          "y": "3",
+          "width": "8",
+          "height": "12",
+          "rx": "1.5"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M6 10h2M6 13h2M16 6h2M16 9h2M16 12h2"
+        }
+      ]
+    ]
+  },
+  {
+    "name": "Onsite",
+    "kebab": "onsite",
+    "categories": [
+      "places"
+    ],
+    "keywords": [
+      "onsite",
+      "office",
+      "work mode",
+      "location",
+      "building"
+    ],
+    "preset": "pop",
+    "trigger": "hover",
+    "fillSafe": false,
+    "description": "",
+    "nodes": [
+      [
+        "path",
+        {
+          "d": "M4 21h16"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M6 21V8l6-4 6 4v13"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M10 21v-5h4v5"
+        }
+      ],
+      [
+        "circle",
+        {
+          "cx": "12",
+          "cy": "10",
+          "r": "1.5"
+        }
+      ]
+    ]
+  },
+  {
+    "name": "Remote",
+    "kebab": "remote",
+    "categories": [
+      "places"
+    ],
+    "keywords": [
+      "remote",
+      "work mode",
+      "home",
+      "wifi",
+      "laptop",
+      "distributed"
+    ],
+    "preset": "pop",
+    "trigger": "hover",
+    "fillSafe": false,
+    "description": "",
+    "nodes": [
+      [
+        "rect",
+        {
+          "x": "4",
+          "y": "5",
+          "width": "16",
+          "height": "9",
+          "rx": "1.5"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M2 18h20"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M8 8c2-2 6-2 8 0"
+        }
+      ],
+      [
+        "path",
+        {
+          "d": "M10 10c1.2-1.2 2.8-1.2 4 0"
         }
       ]
     ]

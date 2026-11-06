@@ -2,18 +2,18 @@
 
 [![Live gallery](https://img.shields.io/badge/live%20gallery-nexa--icons-5b8def?style=flat-square)](https://ramanasai.github.io/nexa-icons/)
 
-**[Open the live icon gallery →](https://ramanasai.github.io/nexa-icons/)** — browse all 1,015 icons, shapes, fills, 3D, glass/gradients, swaps and illustrations, entirely client-side.
+**[Open the live icon gallery →](https://ramanasai.github.io/nexa-icons/)** — browse all 1,033 icons, shapes, fills, 3D, glass/gradients, swaps and illustrations, entirely client-side.
 
 **The Nexa icon system** — one stroke-first visual language for navigation,
 actions, empty states and status, shipped for React/TypeScript, vanilla JS,
 plain HTML, Go and Rust. CurrentColor-only, CSS-only motion, **zero runtime
 dependencies beyond the optional React peer**.
 
-> **Catalog status:** **1,015 icons in 24 categories**, plus **12 illustrated
+> **Catalog status:** **1,033 icons in 26 categories**, plus **12 illustrated
 > duotone illustrations** and a **Rust GPUI integration crate** — all shipping in
 > this release.
 
-- **1,015 icons** in **24 categories**, plus legacy aliases `XIcon === X`,
+- **1,033 icons** in **26 categories**, plus legacy aliases `XIcon === X`,
   `TriangleAlert === AlertTriangle`.
 - **Category imports** — `import { Bell } from "@nexa/icons/communication"` (24
   tree-shakeable category entry points; metadata via `CATEGORIES`).
@@ -81,7 +81,7 @@ CJS root build; `@nexa/icons/js` has both too. Contributors use the pinned
 toolchain in [`mise.toml`](mise.toml): `mise install && mise run setup` (see
 [docs/development.md](docs/development.md)).
 
-Browse all 1,015 icons, 24 categories, 26 swap pairs and 12 illustrations in the
+Browse all 1,033 icons, 26 categories, 26 swap pairs and 12 illustrations in the
 shell-first [gallery](gallery/index.html) (virtualized; 0 ms gallery JS before
 first paint, all local files/0 network).
 
@@ -141,7 +141,7 @@ console.log(names().length); // 650
 
 No dependencies; ESM (`@nexa/icons/js`) and CJS are both shipped. The runtime
 payload is lean: `getIcon()`/`ICONS` omit search `keywords` (they stay in
-`data/icons.json`), which keeps the whole API at ~41.3 KB brotli for all 1,015 icons.
+`data/icons.json`), which keeps the whole API at ~41.3 KB brotli for all 1,033 icons.
 
 ### TypeScript / React
 
@@ -236,7 +236,7 @@ See [AGENTS.md](AGENTS.md), [docs/api.md](docs/api.md) and
 
 ## Categories
 
-**1,015 icons in 24 categories**, with tree-shakeable category entry points:
+**1,033 icons in 26 categories**, with tree-shakeable category entry points:
 
 ```tsx
 import { Bell } from "@nexa/icons/communication"; // category subpath
@@ -259,7 +259,7 @@ categories("communication");  // { id, label, description, icons }
 
 Ids: navigation, arrows, actions, communication, media, files, data, finance,
 people, security, status, time, weather, devices, design, travel, places,
-education, health, food, development, commerce, editing, layout.
+education, health, food, development, commerce, editing, layout, brands, government.
 
 ## Illustrations and GPUI
 
@@ -280,7 +280,7 @@ education, health, food, development, commerce, editing, layout.
 Brotli quality 11 on the shipped files; method and commands in
 [docs/performance.md](docs/performance.md)
 - [docs/effects.md](docs/effects.md) — glass & gradient presets
-- [docs/inventory.md](docs/inventory.md) — full inventory of the 1,015 icons, variants, categories and differentiators.
+- [docs/inventory.md](docs/inventory.md) — full inventory of the 1,033 icons, variants, categories and differentiators.
 - [Fair comparison vs Lucide](docs/performance.md#fair-comparison-nexa-vs-lucide) — same bundler/settings: Nexa is smaller at 1, 10, 30 and 168 icons.
 
 | Asset | Raw | Brotli |
@@ -288,22 +288,22 @@ Brotli quality 11 on the shipped files; method and commands in
 | One standalone SVG (`icons/bell.svg`) | 384 B | **221 B** |
 | One React icon module (`dist/icons/bell.js`) | 407 B | **258 B** |
 | One-icon tree-shaken app bundle (incl. shape/fill/3D) | 3,500 B | **1,544 B** |
-| Full sprite, all 1,015 icons (`sprite.svg`) | 351,756 B | **43,623 B** |
+| Full sprite, all 1,033 icons (`sprite.svg`) | 356,896 B | **44,142 B** |
 | Animation + shape/fill/3D layer (`dist/animations.css`) | 16,198 B | **3,270 B** |
-| React barrel (`dist/index.js`) | 67,002 B | **11,720 B** |
+| React barrel (`dist/index.js`) | 68,176 B | **11,935 B** |
 | CJS root bundle (`dist/cjs/index.js`) | 68,490 B | **11,336 B** |
-| Vanilla JS with all data (`js/index.mjs`) | 367,036 B | **60,064 B** |
+| Vanilla JS with all data (`js/index.mjs`) | 372,288 B | **60,824 B** |
 | Gallery shell (`gallery/index.html`) | 30,402 B | **7,234 B** |
-| Gallery data (`gallery/icons.data.js`) | 451,911 B | **73,917 B** |
+| Gallery data (`gallery/icons.data.js`) | 456,839 B | **74,772 B** |
 | Gallery app (`gallery/app.js`) | 87,603 B | **18,645 B** |
 | Illustrated set, 12 SVGs (`illustrations/`) | 10,634 B | — |
 
 ## Project structure
 
 ```text
-data/icons.json          canonical dataset: 1,015 icons, geometry, keywords, presets
+data/icons.json          canonical dataset: 1,033 icons, geometry, keywords, presets
 data/swaps.json          semantic swap pairs + modes (ships as @nexa/icons/data/swaps.json)
-data/categories.json     24 categories + icon membership (source for category APIs)
+data/categories.json     26 categories + icon membership (source for category APIs)
 data/report.json         dedupe report, preset groups, raw byte sizes
 icons/<kebab>.svg        one standalone optimized SVG per icon
 sprite.svg               all icons as <symbol id="nexa-<kebab>">
@@ -358,7 +358,7 @@ Swap/morph is available in every binding (pairs live in `data/swaps.json`:
 | `filled` | `false`, `true`, `"soft"` | React, JS |
 | `animateFill` | `boolean` | React, JS |
 | `threeD` | `tilt`, `flip`, `extrude`, `orbit`, `false` | React, JS |
-| category import | `@nexa/icons/<category>` | React, JS (24 categories) |
+| category import | `@nexa/icons/<category>` | React, JS (26 categories) |
 
 Deep import one React icon without the barrel:
 

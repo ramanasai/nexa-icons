@@ -99,6 +99,7 @@ export const CATEGORIES: readonly NexaCategory[] = [
       "ReceiptText",
       "ReceiptTurkishLira",
       "Scale",
+      "Subscription",
       "SwissFranc",
       "Vault",
       "Wallet",
@@ -268,7 +269,6 @@ export const CATEGORIES: readonly NexaCategory[] = [
       "CarBattery",
       "Caravan",
       "Compass",
-      "FlagIreland",
       "Fuel",
       "Hotel",
       "Luggage",
@@ -317,7 +317,6 @@ export const CATEGORIES: readonly NexaCategory[] = [
     "label": "Shopping & Commerce",
     "description": "Shopping, products, orders, delivery, tags, discounts and gifts.",
     "icons": [
-      "Apple",
       "Banknote",
       "BanknoteArrowDown",
       "BanknoteArrowUp",
@@ -333,16 +332,10 @@ export const CATEGORIES: readonly NexaCategory[] = [
       "CreditCardPlus",
       "CreditCardReader",
       "CreditCardX",
-      "Facebook",
       "Factory",
       "Fuel",
       "Gift",
-      "GitHub",
-      "Google",
       "HandCoins",
-      "Indeed",
-      "LinkedIn",
-      "Microsoft",
       "Package",
       "Package2",
       "PackageCheck",
@@ -382,9 +375,7 @@ export const CATEGORIES: readonly NexaCategory[] = [
       "Wallet",
       "WalletCards",
       "WalletMinimal",
-      "Warehouse",
-      "WhatsApp",
-      "XLogo"
+      "Warehouse"
     ]
   },
   {
@@ -416,9 +407,7 @@ export const CATEGORIES: readonly NexaCategory[] = [
       "LockKeyhole",
       "LockKeyholeOpen",
       "LockOpen",
-      "Passport",
       "Radiation",
-      "ResidencePermit",
       "Scale",
       "ScanEye",
       "ScanFace",
@@ -437,8 +426,7 @@ export const CATEGORIES: readonly NexaCategory[] = [
       "Siren",
       "SirenOff",
       "Vault",
-      "VenetianMask",
-      "Visa"
+      "VenetianMask"
     ]
   },
   {
@@ -574,6 +562,7 @@ export const CATEGORIES: readonly NexaCategory[] = [
       "ArchiveX",
       "BookCopy",
       "BookUser",
+      "Certificate",
       "Clipboard",
       "ClipboardCheck",
       "ClipboardClock",
@@ -584,6 +573,7 @@ export const CATEGORIES: readonly NexaCategory[] = [
       "ClipboardType",
       "ClipboardX",
       "Copy",
+      "CoverLetter",
       "Download",
       "File",
       "FileBox",
@@ -619,6 +609,7 @@ export const CATEGORIES: readonly NexaCategory[] = [
       "Package",
       "Paperclip",
       "Printer",
+      "Resume",
       "Save",
       "SaveCheck",
       "SaveOff",
@@ -632,6 +623,7 @@ export const CATEGORIES: readonly NexaCategory[] = [
       "StickyNoteOff",
       "StickyNotePlus",
       "StickyNoteX",
+      "Transcript",
       "Trash2",
       "Upload",
       "UploadCloud"
@@ -938,7 +930,6 @@ export const CATEGORIES: readonly NexaCategory[] = [
       "SplinePointer",
       "Square",
       "Squircle",
-      "Stamp",
       "Strikethrough",
       "Sun",
       "SwatchBook",
@@ -1208,6 +1199,11 @@ export const CATEGORIES: readonly NexaCategory[] = [
       "Siren",
       "Sparkles",
       "SquareX",
+      "StageApplied",
+      "StageInterview",
+      "StageOffer",
+      "StageRejected",
+      "StageWithdrawn",
       "ThumbsUp",
       "Trophy",
       "UserCheck",
@@ -1397,6 +1393,7 @@ export const CATEGORIES: readonly NexaCategory[] = [
       "HousePlug",
       "HousePlus",
       "HouseWifi",
+      "Hybrid",
       "Landmark",
       "Map",
       "MapPin",
@@ -1404,7 +1401,9 @@ export const CATEGORIES: readonly NexaCategory[] = [
       "MapPinPen",
       "Mountain",
       "MountainSnow",
+      "Onsite",
       "Pin",
+      "Remote",
       "School",
       "SolarPanel",
       "Store",
@@ -1416,6 +1415,39 @@ export const CATEGORIES: readonly NexaCategory[] = [
       "Trees",
       "UtilityPole",
       "Warehouse"
+    ]
+  },
+  {
+    "id": "brands",
+    "label": "Brands & Sources",
+    "description": "Third-party brand marks and source badges (sign-in, job boards, social).",
+    "icons": [
+      "Apple",
+      "Facebook",
+      "GitHub",
+      "Google",
+      "GradIreland",
+      "Indeed",
+      "IrishJobs",
+      "JobsIE",
+      "LinkedIn",
+      "Microsoft",
+      "WhatsApp",
+      "XLogo"
+    ]
+  },
+  {
+    "id": "government",
+    "label": "Government & Immigration",
+    "description": "Passports, visas, permits, stamps and sponsorship for civic/immigration flows.",
+    "icons": [
+      "FlagIreland",
+      "Passport",
+      "ResidencePermit",
+      "Sponsor",
+      "Stamp",
+      "Visa",
+      "VisaStamp"
     ]
   }
 ];

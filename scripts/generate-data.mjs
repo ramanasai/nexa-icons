@@ -352,6 +352,14 @@ let categoryMeta = [];
 const byDisplayName = new Map(built.map((icon) => [icon.name, icon]));
 const aliasToName = new Map();
 for (const icon of built) for (const alias of icon.aliases) aliasToName.set(alias, icon.name);
+// Custom icons own their category membership (they are not listed in the
+// catalog category lists); rebuild category membership from the dataset so a
+// moved icon cannot linger in its old category.
+for (const def of customIcons) {
+  const icon = byDisplayName.get(def.name);
+  if (icon) icon.categories = [...def.categories];
+}
+const customNames = new Set(customIcons.map((def) => def.name));
 const categoriesPath = path.join(ROOT, "data/categories.json");
 if (fs.existsSync(categoriesPath)) {
   const raw = JSON.parse(fs.readFileSync(categoriesPath, "utf8"));
@@ -365,11 +373,43 @@ if (fs.existsSync(categoriesPath)) {
     if (!names.length) continue;
     categoryMeta.push({ id: category.id, label: category.label, description: category.description ?? "", icons: names });
     for (const name of names) {
+      if (customNames.has(name)) continue;
       const icon = byDisplayName.get(name);
       if (!icon) continue;
       icon.categories ??= [];
       if (!icon.categories.includes(category.id)) icon.categories.push(category.id);
     }
+  }
+}
+
+// Rebuild each category from the final icon.categories (custom icons are not
+// listed in the catalog category lists, and moved icons must not linger).
+for (const category of categoryMeta) {
+  category.icons = built
+    .filter((icon) => (icon.categories ?? []).includes(category.id))
+    .map((icon) => icon.name)
+    .sort();
+}
+
+// Final source-of-truth sync: category totals + per-icon category map must
+// mirror the dataset exactly (this also covers moved/renamed memberships).
+{
+  const finalCategoriesPath = path.join(ROOT, "data/categories.json");
+  if (fs.existsSync(finalCategoriesPath)) {
+    const finalRaw = JSON.parse(fs.readFileSync(finalCategoriesPath, "utf8"));
+    finalRaw.total = built.length;
+    for (const category of finalRaw.categories ?? []) {
+      category.icons = built
+        .filter((icon) => (icon.categories ?? []).includes(category.id))
+        .map((icon) => icon.name)
+        .sort();
+    }
+    finalRaw.iconCategories = Object.fromEntries(
+      built.map((icon) => [icon.name, [...(icon.categories ?? [])].sort()])
+    );
+    const categorized = new Set(finalRaw.categories.flatMap((category) => category.icons ?? []));
+    finalRaw.uncategorized = built.filter((icon) => !categorized.has(icon.name)).map((icon) => icon.name);
+    fs.writeFileSync(finalCategoriesPath, JSON.stringify(finalRaw, null, 2) + "\n");
   }
 }
 

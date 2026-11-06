@@ -15,7 +15,7 @@ export { CATEGORIES } from "./categories/catalog.js";
 export type { NexaCategory } from "./categories/catalog.js";
 export { ICON_NAMES, resolveKebab } from "./registry.js";
 
-/* 1015 icons */
+/* 1033 icons */
 export { Activity } from "./icons/activity.js";
 export { AlertCircle } from "./icons/circle-exclamation-point.js";
 export { AlertTriangle } from "./icons/triangle-exclamation-point.js";
@@ -1031,6 +1031,24 @@ export { ResidencePermit } from "./icons/residence-permit.js";
 export { FlagIreland } from "./icons/flag-ireland.js";
 export { Crest } from "./icons/crest.js";
 export { Invoice } from "./icons/invoice.js";
+export { GradIreland } from "./icons/gradireland.js";
+export { IrishJobs } from "./icons/irishjobs.js";
+export { JobsIE } from "./icons/jobsie.js";
+export { StageApplied } from "./icons/stage-applied.js";
+export { StageInterview } from "./icons/stage-interview.js";
+export { StageOffer } from "./icons/stage-offer.js";
+export { StageRejected } from "./icons/stage-rejected.js";
+export { StageWithdrawn } from "./icons/stage-withdrawn.js";
+export { Resume } from "./icons/resume.js";
+export { CoverLetter } from "./icons/cover-letter.js";
+export { Transcript } from "./icons/transcript.js";
+export { Certificate } from "./icons/certificate.js";
+export { Sponsor } from "./icons/sponsor.js";
+export { VisaStamp } from "./icons/visa-stamp.js";
+export { Subscription } from "./icons/subscription.js";
+export { Hybrid } from "./icons/hybrid.js";
+export { Onsite } from "./icons/onsite.js";
+export { Remote } from "./icons/remote.js";
 
 /* Duplicate requested names kept as aliases: XIcon === X, TriangleAlert === AlertTriangle */
 export { AlertTriangle as TriangleAlert } from "./icons/triangle-exclamation-point.js";

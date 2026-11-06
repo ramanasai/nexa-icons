@@ -1020,6 +1020,24 @@ import { ResidencePermit } from "./icons/residence-permit.js";
 import { FlagIreland } from "./icons/flag-ireland.js";
 import { Crest } from "./icons/crest.js";
 import { Invoice } from "./icons/invoice.js";
+import { GradIreland } from "./icons/gradireland.js";
+import { IrishJobs } from "./icons/irishjobs.js";
+import { JobsIE } from "./icons/jobsie.js";
+import { StageApplied } from "./icons/stage-applied.js";
+import { StageInterview } from "./icons/stage-interview.js";
+import { StageOffer } from "./icons/stage-offer.js";
+import { StageRejected } from "./icons/stage-rejected.js";
+import { StageWithdrawn } from "./icons/stage-withdrawn.js";
+import { Resume } from "./icons/resume.js";
+import { CoverLetter } from "./icons/cover-letter.js";
+import { Transcript } from "./icons/transcript.js";
+import { Certificate } from "./icons/certificate.js";
+import { Sponsor } from "./icons/sponsor.js";
+import { VisaStamp } from "./icons/visa-stamp.js";
+import { Subscription } from "./icons/subscription.js";
+import { Hybrid } from "./icons/hybrid.js";
+import { Onsite } from "./icons/onsite.js";
+import { Remote } from "./icons/remote.js";
 import { AlertTriangle as AlertTriangle2 } from "./icons/triangle-exclamation-point.js";
 import { X as X2 } from "./icons/x.js";
 export {
@@ -1197,6 +1215,7 @@ export {
   CaseLower,
   Cast,
   Castle,
+  Certificate,
   ChartBar,
   ChartBellCurve,
   ChartCandlestick,
@@ -1293,6 +1312,7 @@ export {
   CopySlash,
   CopyX,
   CornerLeftUp,
+  CoverLetter,
   Cpu,
   CpuAi,
   CreditCard,
@@ -1431,6 +1451,7 @@ export {
   GlobePlus,
   GlobeX,
   Google,
+  GradIreland,
   GraduationCap,
   Grape,
   Grid2x2,
@@ -1483,6 +1504,7 @@ export {
   HousePlug,
   HousePlus,
   HouseWifi,
+  Hybrid,
   ICON_NAMES,
   IceCreamBowl,
   Icon,
@@ -1501,8 +1523,10 @@ export {
   IndianRupee,
   Info,
   Invoice,
+  IrishJobs,
   Italic,
   IterationCw,
+  JobsIE,
   Kanban,
   Key,
   KeyRound,
@@ -1646,6 +1670,7 @@ export {
   NotepadText,
   NotepadTextDashed,
   Octagon,
+  Onsite,
   Orbit,
   PRESETS,
   Package,
@@ -1747,10 +1772,12 @@ export {
   RefreshCwOff,
   Refrigerator,
   Regex,
+  Remote,
   RemoveFormatting,
   Repeat,
   Reply,
   ResidencePermit,
+  Resume,
   Rewind,
   Road,
   Rocket,
@@ -1861,6 +1888,7 @@ export {
   Spline,
   SplinePointer,
   Split,
+  Sponsor,
   Sprout,
   Square,
   SquareActivity,
@@ -1873,6 +1901,11 @@ export {
   SquareDashedXCorner,
   SquareX,
   Squircle,
+  StageApplied,
+  StageInterview,
+  StageOffer,
+  StageRejected,
+  StageWithdrawn,
   Stamp,
   Star,
   StarCheck,
@@ -1892,6 +1925,7 @@ export {
   StretchVertical,
   Strikethrough,
   Subscript,
+  Subscription,
   Sun,
   SunDim,
   SunMedium,
@@ -1946,6 +1980,7 @@ export {
   TrafficCone,
   TrainFront,
   TramFront,
+  Transcript,
   Trash2,
   TrashOff,
   TreeDeciduous,
@@ -2006,6 +2041,7 @@ export {
   Video,
   VideoOff,
   Visa,
+  VisaStamp,
   Voicemail,
   Volume,
   VolumeOff,

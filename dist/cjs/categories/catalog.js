@@ -119,6 +119,7 @@ const CATEGORIES = [
       "ReceiptText",
       "ReceiptTurkishLira",
       "Scale",
+      "Subscription",
       "SwissFranc",
       "Vault",
       "Wallet",
@@ -288,7 +289,6 @@ const CATEGORIES = [
       "CarBattery",
       "Caravan",
       "Compass",
-      "FlagIreland",
       "Fuel",
       "Hotel",
       "Luggage",
@@ -337,7 +337,6 @@ const CATEGORIES = [
     "label": "Shopping & Commerce",
     "description": "Shopping, products, orders, delivery, tags, discounts and gifts.",
     "icons": [
-      "Apple",
       "Banknote",
       "BanknoteArrowDown",
       "BanknoteArrowUp",
@@ -353,16 +352,10 @@ const CATEGORIES = [
       "CreditCardPlus",
       "CreditCardReader",
       "CreditCardX",
-      "Facebook",
       "Factory",
       "Fuel",
       "Gift",
-      "GitHub",
-      "Google",
       "HandCoins",
-      "Indeed",
-      "LinkedIn",
-      "Microsoft",
       "Package",
       "Package2",
       "PackageCheck",
@@ -402,9 +395,7 @@ const CATEGORIES = [
       "Wallet",
       "WalletCards",
       "WalletMinimal",
-      "Warehouse",
-      "WhatsApp",
-      "XLogo"
+      "Warehouse"
     ]
   },
   {
@@ -436,9 +427,7 @@ const CATEGORIES = [
       "LockKeyhole",
       "LockKeyholeOpen",
       "LockOpen",
-      "Passport",
       "Radiation",
-      "ResidencePermit",
       "Scale",
       "ScanEye",
       "ScanFace",
@@ -457,8 +446,7 @@ const CATEGORIES = [
       "Siren",
       "SirenOff",
       "Vault",
-      "VenetianMask",
-      "Visa"
+      "VenetianMask"
     ]
   },
   {
@@ -594,6 +582,7 @@ const CATEGORIES = [
       "ArchiveX",
       "BookCopy",
       "BookUser",
+      "Certificate",
       "Clipboard",
       "ClipboardCheck",
       "ClipboardClock",
@@ -604,6 +593,7 @@ const CATEGORIES = [
       "ClipboardType",
       "ClipboardX",
       "Copy",
+      "CoverLetter",
       "Download",
       "File",
       "FileBox",
@@ -639,6 +629,7 @@ const CATEGORIES = [
       "Package",
       "Paperclip",
       "Printer",
+      "Resume",
       "Save",
       "SaveCheck",
       "SaveOff",
@@ -652,6 +643,7 @@ const CATEGORIES = [
       "StickyNoteOff",
       "StickyNotePlus",
       "StickyNoteX",
+      "Transcript",
       "Trash2",
       "Upload",
       "UploadCloud"
@@ -958,7 +950,6 @@ const CATEGORIES = [
       "SplinePointer",
       "Square",
       "Squircle",
-      "Stamp",
       "Strikethrough",
       "Sun",
       "SwatchBook",
@@ -1228,6 +1219,11 @@ const CATEGORIES = [
       "Siren",
       "Sparkles",
       "SquareX",
+      "StageApplied",
+      "StageInterview",
+      "StageOffer",
+      "StageRejected",
+      "StageWithdrawn",
       "ThumbsUp",
       "Trophy",
       "UserCheck",
@@ -1417,6 +1413,7 @@ const CATEGORIES = [
       "HousePlug",
       "HousePlus",
       "HouseWifi",
+      "Hybrid",
       "Landmark",
       "Map",
       "MapPin",
@@ -1424,7 +1421,9 @@ const CATEGORIES = [
       "MapPinPen",
       "Mountain",
       "MountainSnow",
+      "Onsite",
       "Pin",
+      "Remote",
       "School",
       "SolarPanel",
       "Store",
@@ -1436,6 +1435,39 @@ const CATEGORIES = [
       "Trees",
       "UtilityPole",
       "Warehouse"
+    ]
+  },
+  {
+    "id": "brands",
+    "label": "Brands & Sources",
+    "description": "Third-party brand marks and source badges (sign-in, job boards, social).",
+    "icons": [
+      "Apple",
+      "Facebook",
+      "GitHub",
+      "Google",
+      "GradIreland",
+      "Indeed",
+      "IrishJobs",
+      "JobsIE",
+      "LinkedIn",
+      "Microsoft",
+      "WhatsApp",
+      "XLogo"
+    ]
+  },
+  {
+    "id": "government",
+    "label": "Government & Immigration",
+    "description": "Passports, visas, permits, stamps and sponsorship for civic/immigration flows.",
+    "icons": [
+      "FlagIreland",
+      "Passport",
+      "ResidencePermit",
+      "Sponsor",
+      "Stamp",
+      "Visa",
+      "VisaStamp"
     ]
   }
 ];

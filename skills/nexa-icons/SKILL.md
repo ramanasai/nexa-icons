@@ -12,7 +12,7 @@ description: >-
 
 # Nexa Icons
 
-One stroke-first icon language for Nexa: **1,015 icons in 24 categories**, plus 12
+One stroke-first icon language for Nexa: **1,033 icons in 26 categories**, plus 12
 duotone illustrations and a Rust GPUI adapter. 24×24 grid, 2px padding,
 stroke-first, `currentColor`, round caps/joins, 17 CSS-only animation presets,
 CSS swap/morph transitions, shape containers, fill variants and CSS 3D
@@ -160,7 +160,7 @@ Aliases that must keep working: `XIcon` → `X`, `TriangleAlert` → `AlertTrian
 
 ## Categories, illustrations, GPUI
 
-**1,015 icons in 24 categories** with tree-shakeable category imports:
+**1,033 icons in 26 categories** with tree-shakeable category imports:
 
 ```tsx
 import { Bell } from "@nexa/icons/communication"; // React/JS
@@ -226,7 +226,7 @@ non-button swaps (or add your own accessible wrapper).
    `icons/*.svg`, `sprite.svg`, `data/report.json`.
 4. Regenerate consumers: `generate-react.mjs`, `generate-js.mjs`,
    `generate-go.mjs`, `generate-rust.mjs`; rebuild `gallery/build.mjs`.
-5. Verify: 650/650/0 counts, 24 categories, sprite XML, no hex colors, `go test`, `cargo test`, GPUI crate tests.
+5. Verify: 650/650/0 counts, 26 categories, sprite XML, no hex colors, `go test`, `cargo test`, GPUI crate tests.
    Full checklist: `docs/adding-icons.md`. Never hand-edit generated files.
 
 ## Review checklist

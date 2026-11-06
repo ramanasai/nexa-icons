@@ -77,7 +77,7 @@ small module (the barrel is tree-shaken anyway, ~694 B brotli for one icon).
 
 | Prop | Type | Default | Behaviour |
 |---|---|---|---|
-| `size` | `"sm" \| "md" \| "lg" \| "xl" \| number` | **24** (`lg`) | 16 / 20 / 24 / 40px (numbers are px) |
+| `size` | `"sm" \| "md" \| "lg" \| "xl" \| number` | **26** (`lg`) | 16 / 20 / 24 / 40px (numbers are px) |
 | `strokeWidth` | `number` | auto by size | 16→2, 20→1.75, 24+→1.5 |
 | `animate` | `NexaPreset \| boolean` | off | `true` = the icon's semantic preset; a string = that preset |
 | `trigger` | `"hover" \| "focus" \| "press" \| "mount" \| "always" \| "manual" \| "inview"` | icon's default (`hover`; `Loader2` is `always`) | only used when `animate` is set; see [animations.md](animations.md) |

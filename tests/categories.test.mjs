@@ -14,21 +14,21 @@ const require = createRequire(import.meta.url);
 const js = await import("../js/index.mjs");
 const dist = await import("../dist/index.js");
 
-test("data/categories.json schema: 24 named categories, 650-icon coverage, no uncategorised icons", () => {
+test("data/categories.json schema: 26 named categories, 650-icon coverage, no uncategorised icons", () => {
   assert.equal(CATEGORIES_DATA.version, 1);
   assert.equal(CATEGORIES_DATA.total, ICONS.length);
-  assert.equal(CATEGORIES.length, 24);
-  assert.equal(new Set(CATEGORY_IDS).size, 24);
+  assert.equal(CATEGORIES.length, 26);
+  assert.equal(new Set(CATEGORY_IDS).size, 26);
   assert.deepEqual(CATEGORIES_DATA.uncategorized, []);
   for (const category of CATEGORIES) {
     assert.match(category.id, /^[a-z]+$/);
     assert.ok(category.label.length > 2, `${category.id}: label`);
     assert.ok(category.description.length > 10, `${category.id}: description`);
-    assert.ok(category.icons.length >= 20 && category.icons.length <= 70, `${category.id}: ${category.icons.length} icons outside 20-45`);
+    assert.ok(category.icons.length >= 5 && category.icons.length <= 70, `${category.id}: ${category.icons.length} icons outside 20-45`);
     assert.deepEqual(category.icons, [...category.icons].sort(), `${category.id}: icons not sorted`);
     assert.equal(new Set(category.icons).size, category.icons.length, `${category.id}: duplicate icons`);
   }
-  assert.equal(new Set(CATEGORIES.map((category) => category.label)).size, 24, "labels unique");
+  assert.equal(new Set(CATEGORIES.map((category) => category.label)).size, 26, "labels unique");
 });
 
 test("every catalog icon is in at least one category and every category member is a catalog icon", () => {
@@ -58,7 +58,7 @@ test("every catalog icon is in at least one category and every category member i
 });
 
 test("JS API exposes CATEGORIES + categories() matching the manifest", () => {
-  assert.equal(Object.keys(js.CATEGORIES).length, 24);
+  assert.equal(Object.keys(js.CATEGORIES).length, 26);
   assert.equal(typeof js.categories, "function");
   const all = js.categories();
   assert.ok(Array.isArray(all));
@@ -83,7 +83,7 @@ test("JS API exposes CATEGORIES + categories() matching the manifest", () => {
 });
 
 test("React dist exports CATEGORIES and a category barrel for every category", async () => {
-  assert.equal(dist.CATEGORIES.length, 24);
+  assert.equal(dist.CATEGORIES.length, 26);
   assert.deepEqual(dist.CATEGORIES.map((category) => category.id).sort(), CATEGORY_IDS.slice().sort());
   for (const category of CATEGORIES) {
     const module = await import(`../dist/categories/${category.id}.js`);

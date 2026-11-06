@@ -42,6 +42,11 @@ import { SignalZero } from "../icons/signal-zero.js";
 import { Siren } from "../icons/siren.js";
 import { Sparkles } from "../icons/sparkles.js";
 import { SquareX } from "../icons/square-x.js";
+import { StageApplied } from "../icons/stage-applied.js";
+import { StageInterview } from "../icons/stage-interview.js";
+import { StageOffer } from "../icons/stage-offer.js";
+import { StageRejected } from "../icons/stage-rejected.js";
+import { StageWithdrawn } from "../icons/stage-withdrawn.js";
 import { ThumbsUp } from "../icons/thumbs-up.js";
 import { Trophy } from "../icons/trophy.js";
 import { UserCheck } from "../icons/user-check.js";
@@ -94,6 +99,11 @@ export {
   Siren,
   Sparkles,
   SquareX,
+  StageApplied,
+  StageInterview,
+  StageOffer,
+  StageRejected,
+  StageWithdrawn,
   ThumbsUp,
   Trophy,
   UserCheck,

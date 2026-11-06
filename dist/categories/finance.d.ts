@@ -38,6 +38,7 @@ export { ReceiptSwissFranc } from "../icons/receipt-swiss-franc.js";
 export { ReceiptText } from "../icons/receipt-text.js";
 export { ReceiptTurkishLira } from "../icons/receipt-turkish-lira.js";
 export { Scale } from "../icons/scale.js";
+export { Subscription } from "../icons/subscription.js";
 export { SwissFranc } from "../icons/swiss-franc.js";
 export { Vault } from "../icons/vault.js";
 export { Wallet } from "../icons/wallet.js";

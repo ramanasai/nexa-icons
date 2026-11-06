@@ -35,6 +35,7 @@ import { HouseHeart } from "../icons/house-heart.js";
 import { HousePlug } from "../icons/house-plug.js";
 import { HousePlus } from "../icons/house-plus.js";
 import { HouseWifi } from "../icons/house-wifi.js";
+import { Hybrid } from "../icons/hybrid.js";
 import { Landmark } from "../icons/landmark.js";
 import { Map } from "../icons/map.js";
 import { MapPin } from "../icons/map-pin.js";
@@ -42,7 +43,9 @@ import { MapPinCheck } from "../icons/map-pin-check.js";
 import { MapPinPen } from "../icons/map-pin-pen.js";
 import { Mountain } from "../icons/mountain.js";
 import { MountainSnow } from "../icons/mountain-snow.js";
+import { Onsite } from "../icons/onsite.js";
 import { Pin } from "../icons/pin.js";
+import { Remote } from "../icons/remote.js";
 import { School } from "../icons/school.js";
 import { SolarPanel } from "../icons/solar-panel.js";
 import { Store } from "../icons/store.js";
@@ -92,6 +95,7 @@ export {
   HousePlug,
   HousePlus,
   HouseWifi,
+  Hybrid,
   Landmark,
   Map,
   MapPin,
@@ -99,7 +103,9 @@ export {
   MapPinPen,
   Mountain,
   MountainSnow,
+  Onsite,
   Pin,
+  Remote,
   School,
   SolarPanel,
   Store,

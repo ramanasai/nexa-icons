@@ -1,4 +1,3 @@
-import { Apple } from "../icons/apple.js";
 import { Banknote } from "../icons/banknote.js";
 import { BanknoteArrowDown } from "../icons/banknote-arrow-down.js";
 import { BanknoteArrowUp } from "../icons/banknote-arrow-up.js";
@@ -14,16 +13,10 @@ import { CreditCardMinus } from "../icons/credit-card-minus.js";
 import { CreditCardPlus } from "../icons/credit-card-plus.js";
 import { CreditCardReader } from "../icons/credit-card-reader.js";
 import { CreditCardX } from "../icons/credit-card-x.js";
-import { Facebook } from "../icons/facebook.js";
 import { Factory } from "../icons/factory.js";
 import { Fuel } from "../icons/fuel.js";
 import { Gift } from "../icons/gift.js";
-import { GitHub } from "../icons/github.js";
-import { Google } from "../icons/google.js";
 import { HandCoins } from "../icons/hand-coins.js";
-import { Indeed } from "../icons/indeed.js";
-import { LinkedIn } from "../icons/linkedin.js";
-import { Microsoft } from "../icons/microsoft.js";
 import { Package } from "../icons/package.js";
 import { Package2 } from "../icons/package-2.js";
 import { PackageCheck } from "../icons/package-check.js";
@@ -64,10 +57,7 @@ import { Wallet } from "../icons/wallet.js";
 import { WalletCards } from "../icons/wallet-cards.js";
 import { WalletMinimal } from "../icons/wallet-minimal.js";
 import { Warehouse } from "../icons/warehouse.js";
-import { WhatsApp } from "../icons/whatsapp.js";
-import { XLogo } from "../icons/x-logo.js";
 export {
-  Apple,
   Banknote,
   BanknoteArrowDown,
   BanknoteArrowUp,
@@ -83,16 +73,10 @@ export {
   CreditCardPlus,
   CreditCardReader,
   CreditCardX,
-  Facebook,
   Factory,
   Fuel,
   Gift,
-  GitHub,
-  Google,
   HandCoins,
-  Indeed,
-  LinkedIn,
-  Microsoft,
   Package,
   Package2,
   PackageCheck,
@@ -132,7 +116,5 @@ export {
   Wallet,
   WalletCards,
   WalletMinimal,
-  Warehouse,
-  WhatsApp,
-  XLogo
+  Warehouse
 };

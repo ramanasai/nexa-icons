@@ -22,9 +22,7 @@ import { Lock } from "../icons/lock.js";
 import { LockKeyhole } from "../icons/lock-keyhole.js";
 import { LockKeyholeOpen } from "../icons/lock-keyhole-open.js";
 import { LockOpen } from "../icons/lock-open.js";
-import { Passport } from "../icons/passport.js";
 import { Radiation } from "../icons/radiation.js";
-import { ResidencePermit } from "../icons/residence-permit.js";
 import { Scale } from "../icons/scale.js";
 import { ScanEye } from "../icons/scan-eye.js";
 import { ScanFace } from "../icons/scan-face.js";
@@ -44,7 +42,6 @@ import { Siren } from "../icons/siren.js";
 import { SirenOff } from "../icons/siren-off.js";
 import { Vault } from "../icons/vault.js";
 import { VenetianMask } from "../icons/venetian-mask.js";
-import { Visa } from "../icons/visa.js";
 export {
   Ban,
   Biohazard,
@@ -70,9 +67,7 @@ export {
   LockKeyhole,
   LockKeyholeOpen,
   LockOpen,
-  Passport,
   Radiation,
-  ResidencePermit,
   Scale,
   ScanEye,
   ScanFace,
@@ -91,6 +86,5 @@ export {
   Siren,
   SirenOff,
   Vault,
-  VenetianMask,
-  Visa
+  VenetianMask
 };

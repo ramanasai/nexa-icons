@@ -16,7 +16,7 @@ Non-React projects use `@nexa/icons/js` (below) — the root entry requires Reac
 
 | Prop | Type | Default | Notes |
 |---|---|---|---|
-| `size` | `"sm" \| "md" \| "lg" \| "xl" \| number` | **24** (`lg`) | 16/20/24/40px; numbers are px |
+| `size` | `"sm" \| "md" \| "lg" \| "xl" \| number` | **26** (`lg`) | 16/20/24/40px; numbers are px |
 | `strokeWidth` | `number` | auto by size | 16→2, 20→1.75, 24+→1.5 |
 | `animate` | `NexaPreset \| boolean` | off | `true` = icon's semantic preset |
 | `trigger` | `"hover" \| "focus" \| "press" \| "mount" \| "always" \| "manual" \| "inview"` | icon default (`hover`; `Loader2` = `always`) | only with `animate` |

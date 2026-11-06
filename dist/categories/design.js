@@ -44,7 +44,6 @@ import { Spline } from "../icons/spline.js";
 import { SplinePointer } from "../icons/spline-pointer.js";
 import { Square } from "../icons/square.js";
 import { Squircle } from "../icons/squircle.js";
-import { Stamp } from "../icons/stamp.js";
 import { Strikethrough } from "../icons/strikethrough.js";
 import { Sun } from "../icons/sun.js";
 import { SwatchBook } from "../icons/swatch-book.js";
@@ -103,7 +102,6 @@ export {
   SplinePointer,
   Square,
   Squircle,
-  Stamp,
   Strikethrough,
   Sun,
   SwatchBook,

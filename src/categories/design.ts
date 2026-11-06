@@ -45,7 +45,6 @@ export { Spline } from "../icons/spline.js";
 export { SplinePointer } from "../icons/spline-pointer.js";
 export { Square } from "../icons/square.js";
 export { Squircle } from "../icons/squircle.js";
-export { Stamp } from "../icons/stamp.js";
 export { Strikethrough } from "../icons/strikethrough.js";
 export { Sun } from "../icons/sun.js";
 export { SwatchBook } from "../icons/swatch-book.js";
