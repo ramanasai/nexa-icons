@@ -180,6 +180,7 @@ that (ESM, minified, React external, brotli q11 / gzip 9). Measured on this repo
 | 2 | **1,599 B** | 1,685 B | **1,745 B** | 1,874 B |
 | 5 | **1,790 B** | 1,913 B | **1,942 B** | 2,130 B |
 | 10 | **1,957 B** | 2,138 B | **2,121 B** | 2,392 B |
+| 13 (authenticated page: 2 layout + 11 nav) | **2,415 B** | 2,672 B | **2,707 B** | 2,980 B |
 | 20 | **2,488 B** | 2,810 B | **2,752 B** | 3,177 B |
 | 30 | **3,048 B** | 3,566 B | **3,425 B** | 4,119 B |
 | 168 (original catalog) | **9,606 B** (11,329 gzip) | 12,147 B (14,575 gzip) | | |

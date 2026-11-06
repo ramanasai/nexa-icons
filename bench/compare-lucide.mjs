@@ -78,7 +78,7 @@ async function main() {
     return;
   }
   const rows = [];
-  for (const count of [1, 2, 5, 10, 20, 30]) {
+  for (const count of [1, 2, 5, 10, 13, 20, 30]) {
     const names = realistic.slice(0, count);
     const nexa = await measure.bundle(nexaEntry(names));
     const lucide = await measure.bundle(lucideEntrySource(names), { "lucide-react": lucideEntry });
