@@ -31,8 +31,8 @@ for (const icon of data.icons) {
 lines.push("");
 for (const icon of data.icons) {
   lines.push(`export const ${icon.name}: LucideIcon = forwardRef<SVGSVGElement, NexaIconProps>(function ${icon.name}(props, ref) {`);
-  lines.push("  const { size = 24, strokeWidth = 2, className, ...rest } = props;");
-  lines.push(`  return <${icon.name}Base ref={ref} {...rest} size={size} strokeWidth={strokeWidth} className={["lucide", "lucide-${icon.kebab}", className].filter(Boolean).join(" ")} />;`);
+  lines.push("  const { className, ...rest } = props;");
+  lines.push(`  return <${icon.name}Base ref={ref} {...rest} className={["lucide", "lucide-${icon.kebab}", className].filter(Boolean).join(" ")} />;`);
   lines.push("});");
   lines.push(`${icon.name}.displayName = "${icon.name}";`);
   lines.push("");

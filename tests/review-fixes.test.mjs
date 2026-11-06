@@ -76,6 +76,7 @@ test("Lucide-compatible entry point exists and matches the contract", () => {
   const html = ssr(lucide.Bell);
   assert.match(html, /class="nexa-icon lucide lucide-bell"/);
   assert.match(html, /stroke-width="2"/);
+  assert.match(html, /stroke-width:var\(--nexa-stroke/);
   const styled = ssr(lucide.Bell, { color: "red", width: 20, height: 20 });
   assert.match(styled, /width="20"/);
   assert.match(styled, /height="20"/);

@@ -4,7 +4,7 @@
 [![npm downloads](https://img.shields.io/npm/dm/@sairamanapb/icons?style=flat-square)](https://www.npmjs.com/package/@sairamanapb/icons)
 [![Live gallery](https://img.shields.io/badge/live%20gallery-nexa--icons-5b8def?style=flat-square)](https://ramanasai.github.io/nexa-icons/)
 
-**Published on npm:** [`@sairamanapb/icons@1.0.0`](https://www.npmjs.com/package/@sairamanapb/icons)
+**Published on npm:** [`@sairamanapb/icons`](https://www.npmjs.com/package/@sairamanapb/icons)
 
 **[Open the live icon gallery →](https://ramanasai.github.io/nexa-icons/)** — browse all 1,034 icons, shapes, fills, 3D, glass/gradients, swaps and illustrations, entirely client-side.
 
@@ -60,8 +60,26 @@ dependencies beyond the optional React peer**.
 import { Bell } from "@sairamanapb/icons/lucide";
 ```
 
-Stroke 2 by default, `lucide lucide-bell` classes, `color`/`width`/`height`
-props and `LucideIcon` type — a Lucide codebase only changes the import path.
+Stroke 2 by default (from the core size-less default), `lucide lucide-bell`
+classes, `color`/`width`/`height` props and `LucideIcon` type — a Lucide codebase
+only changes the import path. `--nexa-stroke` still wins.
+
+## Tailwind v4 and cascade layers
+
+The package CSS lives in `@layer nexa`. Layer priority is fixed by the **first**
+declaration, so import it into `base` (or declare the order first) or Tailwind
+utilities can still lose to it:
+
+```css
+/* globals.css */
+@import "@sairamanapb/icons/animations.css" layer(base);
+
+/* or, if you import it later: */
+@layer nexa, theme, base, components, utilities;
+```
+
+Without that ordering, importing the package CSS after `globals.css` makes
+`nexa` come after `utilities`, and `hidden` can lose again.
 
 ## Global styling (no wrapper)
 

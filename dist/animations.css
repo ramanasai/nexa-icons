@@ -21,7 +21,8 @@
  * ---------------------------------------------------------------------------
  */
 
-/* Zero-specificity base: app utilities (hidden, block, shrink, size) win. */
+/* Zero-specificity base. App utilities win once the file is imported into a
+   lower-priority layer (see README: layer(base) for Tailwind v4). */
 @layer nexa {
 :where(.nexa-icon) {
   display: inline-block;

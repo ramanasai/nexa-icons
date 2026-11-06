@@ -242,11 +242,15 @@ turns preset animations into a no-op (or a one-shot opacity change) in
 
 ## Cascade layers and Tailwind v4
 
-The package CSS is wrapped in `@layer nexa`, so unlayered app rules win. With
-Tailwind v4, import it into the base layer so utilities always override it:
+The package CSS is wrapped in `@layer nexa`. Layer priority is determined by the
+first appearance of the layer, so with Tailwind v4 import it into `base` (or
+declare the order first) so utilities always override it:
 
 ```css
 @import "@sairamanapb/icons/animations.css" layer(base);
+
+/* or, if the import comes later in the cascade: */
+@layer nexa, theme, base, components, utilities;
 ```
 
 Global fill switches only affect icons without an explicit fill state. Pin a
