@@ -450,6 +450,7 @@ Full list: [docs/troubleshooting.md](docs/troubleshooting.md).
 | [docs/gpui.md](docs/gpui.md) | Rust GPUI adapter (`nexa-icons-gpui`) |
 | [illustrations/README.md](illustrations/README.md) | duotone illustration system |
 | [docs/development.md](docs/development.md) | mise, package managers, gates |
+| [PUBLISHING.md](PUBLISHING.md) | npm release checklist (scope, 2FA, provenance, CI) |
 | [docs/languages/go.md](docs/languages/go.md) · [docs/languages/rust.md](docs/languages/rust.md) | language guides |
 | [skills/nexa-icons/SKILL.md](skills/nexa-icons/SKILL.md) | agent skill (`nexa-icons`) + references |
 | [nexa-icon-styles-SKILL.md](nexa-icon-styles-SKILL.md) | app-level icon style guide |

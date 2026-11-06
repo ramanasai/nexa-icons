@@ -44,6 +44,12 @@ dependencies beyond the optional React peer**.
 - [`AGENTS.md`](AGENTS.md) — canonical implementation guide
 - [`skills/nexa-icons/SKILL.md`](skills/nexa-icons/SKILL.md) — installable agent skill
 
+## Publish / contribute
+
+- npm package: [`@nexa/icons`](https://www.npmjs.com/package/@nexa/icons) — release steps in [PUBLISHING.md](PUBLISHING.md)
+- Live gallery: https://ramanasai.github.io/nexa-icons/
+- Issues: https://github.com/ramanasai/nexa-icons/issues
+
 ## Install
 
 Two entry points — pick the one that matches your stack:

@@ -1,18 +1,24 @@
 {
   "name": "@nexa/icons",
   "version": "1.0.0",
-  "description": "650 theme-aware, animated, ultra-light stroke icons for Nexa Icons: currentColor only, CSS-only animation, tree-shakeable React components, zero-dependency JS, Go and Rust packages, a Rust GPUI adapter, and a virtualized gallery.",
+  "description": "1,034 theme-aware, tree-shakeable stroke icons in 26 categories for React/TypeScript, vanilla JS, HTML, Go and Rust. currentColor-only, zero-dependency JS, semantic CSS animations, swaps, shapes, fill/duotone, glass/gradient effects, CSS-3D, 12 duotone illustrations and a Rust GPUI adapter.",
   "keywords": [
     "icons",
     "svg",
     "react",
+    "typescript",
+    "javascript",
     "currentColor",
     "tailwind",
     "nextjs",
-    "nexa-icons",
+    "design-system",
+    "icon-set",
     "animation",
+    "accessibility",
     "go",
-    "rust"
+    "rust",
+    "gpui",
+    "nexa-icons"
   ],
   "license": "ISC",
   "type": "module",
@@ -24,7 +30,6 @@
   },
   "files": [
     "dist",
-    "src",
     "js",
     "icons",
     "sprite.svg",
@@ -51,7 +56,8 @@
     "illustrations/*.svg",
     "illustrations/manifest.json",
     "illustrations/README.md",
-    "llms.txt"
+    "llms.txt",
+    "llm.txt"
   ],
   "exports": {
     ".": {
@@ -101,7 +107,8 @@
     "pm-check": "bash scripts/package-managers.sh",
     "verify": "node scripts/verify.mjs",
     "release": "node scripts/generate-all.mjs && npm test && node scripts/verify.mjs",
-    "bench:compare": "node bench/compare-lucide.mjs"
+    "bench:compare": "node bench/compare-lucide.mjs",
+    "prepublishOnly": "npm run release && node gallery/build.mjs && npm pack --dry-run"
   },
   "peerDependencies": {
     "react": ">=18"
@@ -121,5 +128,19 @@
   },
   "main": "./dist/cjs/index.js",
   "module": "./dist/index.js",
-  "types": "./dist/index.d.ts"
+  "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramanasai/nexa-icons.git"
+  },
+  "homepage": "https://ramanasai.github.io/nexa-icons/",
+  "bugs": {
+    "url": "https://github.com/ramanasai/nexa-icons/issues"
+  },
+  "author": {
+    "name": "Nexa Icons contributors"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }
