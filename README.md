@@ -1,5 +1,9 @@
 # Nexa Icons
 
+[![Live gallery](https://img.shields.io/badge/live%20gallery-nexa--icons-5b8def?style=flat-square)](https://ramanasai.github.io/nexa-icons/)
+
+**[Open the live icon gallery →](https://ramanasai.github.io/nexa-icons/)** — browse all 1,000 icons, shapes, fills, 3D, glass/gradients, swaps and illustrations, entirely client-side.
+
 **The Nexa icon system** — one stroke-first visual language for navigation,
 actions, empty states and status, shipped for React/TypeScript, vanilla JS,
 plain HTML, Go and Rust. CurrentColor-only, CSS-only motion, **zero runtime
