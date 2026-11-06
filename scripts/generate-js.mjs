@@ -66,8 +66,21 @@ for (const category of data.meta.categories ?? []) {
   };
 }
 
+const serializeAttrs = (attrs) =>
+  Object.entries(attrs)
+    .map(([key, value]) => `${key}="${String(value).replace(/"/g, '&quot;')}"`)
+    .join(' ');
+const isClosedNode = (node) => {
+  if (node[0] === 'circle' || node[0] === 'ellipse' || node[0] === 'rect' || node[0] === 'polygon') return true;
+  if (node[0] !== 'path') return false;
+  return /[Zz]/.test((node[1] && node[1].d) || '');
+};
+
 const ICONS = {};
 for (const icon of data.icons) {
+  const inner = icon.nodes
+    .map(([tag, attrs]) => `<${tag} ${serializeAttrs({ ...attrs, 'data-closed': icon.fillSafe === true || isClosedNode([tag, attrs]) ? 'true' : 'false' })}/>`)
+    .join('');
   // `keywords` stay in data/icons.json (search metadata) but are not shipped
   // in the runtime payload: nothing in the JS API reads them at runtime.
   ICONS[icon.kebab] = {
@@ -76,7 +89,7 @@ for (const icon of data.icons) {
     preset: icon.anim.preset,
     trigger: icon.anim.trigger,
     fillSafe: icon.fillSafe !== false,
-    inner: icon.inner,
+    inner,
   };
 }
 
@@ -177,8 +190,11 @@ function svg(name, options = {}) {
   const icon = getIcon(name);
   if (!icon) throw new RangeError('[nexa-icons] Unknown icon: "' + name + '"');
   const {
-    size = 24,
+    size,
     strokeWidth,
+    absoluteStrokeWidth,
+    ariaHidden,
+    "aria-label": ariaLabelOption,
     animate,
     trigger,
     active,
@@ -201,8 +217,10 @@ function svg(name, options = {}) {
     ...rest
   } = options;
 
+  const explicitSize = size !== undefined;
   const px = typeof size === 'string' ? SIZE_PX[size] || 24 : Number(size) || 24;
-  const stroke = strokeWidth == null ? strokeForSize(px) : Number(strokeWidth);
+  const baseStroke = strokeWidth == null ? (explicitSize ? strokeForSize(px) : 2) : Number(strokeWidth);
+  const stroke = absoluteStrokeWidth ? (strokeWidth == null ? 2 : Number(strokeWidth)) * (24 / px) : baseStroke;
   const glassConfig = glass && typeof glass === 'object' ? glass : null;
   const glassPreset =
     glass === true ? 'frost' : typeof glass === 'string' ? glass : glassConfig ? glassConfig.preset || 'frost' : null;
@@ -226,14 +244,15 @@ function svg(name, options = {}) {
   }
   const preset = animate === true ? icon.preset : typeof animate === 'string' ? animate : null;
   const when = preset ? trigger || icon.trigger : null;
-  const labelled = label != null || title != null;
+  const accessibleLabel = label != null ? label : title != null ? title : ariaLabelOption;
+  const labelled = accessibleLabel != null;
   const hasShape = shape != null && shape !== 'none';
   const wrapped = hasShape || Boolean(threeD) || Boolean(glassPreset);
 
   const attrs = [];
   attrs.push('xmlns="http://www.w3.org/2000/svg"');
-  attrs.push('width="' + px + '"');
-  attrs.push('height="' + px + '"');
+  attrs.push('width="' + (options.width != null ? esc(options.width) : px) + '"');
+  attrs.push('height="' + (options.height != null ? esc(options.height) : px) + '"');
   attrs.push('viewBox="0 0 24 24"');
   attrs.push('fill="none"');
   attrs.push('stroke="' + (gradientId ? 'url(#' + gradientId + ')' : 'currentColor') + '"');
@@ -253,12 +272,14 @@ function svg(name, options = {}) {
   }
   if (labelled && !wrapped) {
     attrs.push('role="img"');
-    if (label != null) attrs.push('aria-label="' + esc(label) + '"');
-  } else {
+    attrs.push('aria-label="' + esc(accessibleLabel) + '"');
+    if (ariaHidden === false) attrs.push('aria-hidden="false"');
+  } else if (ariaHidden !== false) {
     attrs.push('aria-hidden="true"');
   }
   attrs.push('focusable="false"');
   attrs.push('data-nexa-icon="' + icon.kebab + '"');
+  attrs.push('data-nexa-fill-safe="' + (icon.fillSafe === false ? 'false' : 'true') + '"');
   if (gradientPreset && gradientAnim) attrs.push('data-nexa-gradient-anim="' + esc(gradientAnim) + '"');
   if (preset) {
     attrs.push('data-nexa-anim="' + esc(preset) + '"');
@@ -314,10 +335,18 @@ function svg(name, options = {}) {
     frameAttrs.push('data-nexa-glass-trigger="' + esc(glassTrigger || 'always') + '"');
   }
   const frameStyle = [];
-  if (hasShape || glassPreset) frameStyle.push('width:' + box + 'px', 'height:' + frameHeight + 'px');
+  if (hasShape || glassPreset) {
+    frameStyle.push('width:' + (box / px).toFixed(2) + 'em', 'height:' + (frameHeight / px).toFixed(2) + 'em');
+    frameStyle.push('font-size:' + (explicitSize ? px + 'px' : 'var(--nexa-icon-size, 1em)'));
+  }
   for (var si = 0; si < glassStyle.length; si++) frameStyle.push(glassStyle[si]);
   if (frameStyle.length) frameAttrs.push('style="' + frameStyle.join(';') + '"');
-  frameAttrs.push(labelled ? 'role="img" aria-label="' + esc(label || title) + '"' : 'aria-hidden="true"');
+  if (labelled) {
+    frameAttrs.push('role="img" aria-label="' + esc(accessibleLabel) + '"');
+    if (ariaHidden === false) frameAttrs.push('aria-hidden="false"');
+  } else if (ariaHidden !== false) {
+    frameAttrs.push('aria-hidden="true"');
+  }
   return '<span ' + frameAttrs.join(' ') + '>' + svgMarkup + '</span>';
 }
 

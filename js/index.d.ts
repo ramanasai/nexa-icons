@@ -20,7 +20,7 @@ export type NexaPreset =
   | "nudge-up-right"
   | "nudge-down-right";
 
-export type NexaTrigger = "hover" | "focus" | "press" | "mount" | "always" | "manual" | "inview";
+export type NexaTrigger = "hover" | "focus" | "press" | "mount" | "always" | "manual" | "inview" | "parent";
 
 export type SwapMode = "mirror" | "flip" | "rotate" | "slide" | "fade";
 
@@ -56,8 +56,15 @@ export interface IconData {
 export interface SvgOptions {
   /** Named step ("sm"|"md"|"lg"|"xl") or pixels. Default 24. */
   size?: NexaSize | number;
-  /** Default: 16px => 2, 20px => 1.75, 24px+ => 1.5. */
+  /** Size-less (CSS-sized) icons default to 2; explicit size maps 16=>2, 20=>1.75, 24+=>1.5. */
   strokeWidth?: number;
+  /** Keep the rendered stroke at strokeWidth * 24 / size. */
+  absoluteStrokeWidth?: boolean;
+  /** Explicit SVG width/height (Lucide compatibility). */
+  width?: number | string;
+  height?: number | string;
+  /** Force aria-hidden on/off. */
+  ariaHidden?: boolean;
   /** Preset name, or `true` for the icon's semantic default. CSS-only. */
   animate?: NexaPreset | boolean;
   /** When the animation runs. Defaults to the icon's semantic trigger. */

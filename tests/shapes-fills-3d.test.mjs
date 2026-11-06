@@ -21,13 +21,13 @@ test("shape containers: every documented shape gets the frame + class, label mov
     const html = ssr(dist.Bell, { shape });
     assert.match(html, /^<span class="nexa-icon-frame nexa-shape nexa-shape--/, `${shape}: frame markup`);
     assert.ok(html.includes(`nexa-shape--${shape}`), `${shape}: shape class`);
-    assert.match(html, /style="width:\d+px;height:\d+px"/, `${shape}: frame size`);
+    assert.match(html, /style="width:1\.71em;height:(1\.71|1\.25)em;font-size:(var\(--nexa-icon-size, 1em\)|24px)"/, `${shape}: frame size`);
     assert.match(html, /aria-hidden="true"/, `${shape}: decorative frame`);
     assert.ok(!/role="img"/.test(html), `${shape}: unlabelled frame must not have role=img`);
   }
   // Default 24px icon → 41px frame (round(24 × 1.7)); inner SVG keeps 24px.
   const framed = ssr(dist.Bell, { shape: "circle", size: 24 });
-  assert.match(framed, /width:41px;height:41px/);
+  assert.match(framed, /width:1\.71em;height:1\.71em;font-size:24px/);
   assert.match(framed, /<svg[^>]*width="24"[^>]*height="24"/);
   // Meaningful icons put the accessible name on the frame; the glyph stays decorative.
   const labelled = ssr(dist.Bell, { shape: "circle", label: "Alerts" });
@@ -61,11 +61,12 @@ test("fill variants: outline default, duotone/solid state, fillSafe degradation,
   assert.match(ssr(dist.Bell, { variant: "solid" }), /data-fill-state="soft"/, "solid degrades on open glyph");
   const animated = ssr(dist.Heart, { filled: true, animateFill: true });
   assert.match(animated, /data-fill-anim="true"/);
-  assert.match(ssr(dist.Heart, { filled: true }), /data-fill-anim="false"|data-fill-state="soft"/);
-  // Fill is painted with currentColor and opacity in CSS only.
-  assert.match(CSS, /\.nexa-icon\[data-fill-state="true"\]\s*\{[^}]*fill:\s*currentColor/s);
-  assert.match(CSS, /\.nexa-icon\[data-fill-state="soft"\]\s*\{[^}]*fill-opacity:\s*0\.16/s);
-  assert.match(CSS, /data-fill-anim="true"[^}]*transition:\s*fill-opacity/s);
+  assert.match(ssr(dist.Heart, { filled: true }), /data-fill-state="true"/);
+  // Fill is painted with currentColor and opacity in CSS only, on closed nodes.
+  assert.ok(CSS.includes('.nexa-icon[data-fill-state="true"] [data-closed="true"]'), "solid fill targets closed nodes");
+  assert.ok(CSS.includes('.nexa-icon[data-fill-state="soft"] [data-closed="true"]'), "soft fill targets closed nodes");
+  assert.match(CSS, /fill-opacity:\s*0\.16/s);
+  assert.match(CSS, /data-fill-anim="true"\][^{]*\{[^}]*transition:\s*fill-opacity/s);
 });
 
 test("CSS 3D presets: frame markup, data attributes, transform-only and reduced-motion safe", () => {

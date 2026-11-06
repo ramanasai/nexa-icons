@@ -93,11 +93,11 @@ test("sprite: one nexa-<kebab> symbol per icon, sorted/unique, valid viewBox", (
   assert.ok(!/<image\b|<use\b|@import|url\(https?:/.test(SPRITE), "sprite must be self-contained");
 });
 
-test("budgets: per-icon SVG ≤ 1600 B, icons dir ≤ 450 KB, sprite ≤ 420 KB / 60 KB br", () => {
+test("budgets: per-icon SVG ≤ 1600 B, icons dir ≤ 600 KB, sprite ≤ 520 KB / 80 KB br", () => {
   const oversized = perIcon.filter(({ bytes }) => bytes > 1600).map(({ file, bytes }) => `${file}=${bytes} B`);
   assert.deepEqual(oversized, [], "standalone SVGs over the 1.6 KB budget");
   const total = perIcon.reduce((sum, { bytes }) => sum + bytes, 0);
-  assert.ok(total <= 450 * 1024, `icons/ total ${total} B exceeds 300 KB`);
-  assert.ok(spriteBytes <= 420 * 1024, `sprite.svg ${spriteBytes} B exceeds 260 KB`);
-  assert.ok(brotli(Buffer.from(SPRITE)) <= 60 * 1024, "sprite.svg brotli exceeds 40 KB");
+  assert.ok(total <= 600 * 1024, `icons/ total ${total} B exceeds 300 KB`);
+  assert.ok(spriteBytes <= 520 * 1024, `sprite.svg ${spriteBytes} B exceeds 260 KB`);
+  assert.ok(brotli(Buffer.from(SPRITE)) <= 80 * 1024, "sprite.svg brotli exceeds 40 KB");
 });

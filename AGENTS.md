@@ -48,6 +48,7 @@ Two entry points in one package:
 | Go | `github.com/nexa-icons/nexa/go` | No |
 | Rust | `nexa-icons` (crate) | No |
 | Rust + GPUI | `nexa-icons-gpui` (`rust/gpui/`) | No — needs GPUI 0.2.2 |
+| Lucide-compatible | `@sairamanapb/icons/lucide` | Yes (`react`) |
 | Illustrations | `@sairamanapb/icons/illustrations/*` / `illustrations/` | No |
 
 Contributors use the pinned toolchain:
@@ -67,7 +68,7 @@ MISE_DISABLE_TOOLS=1 mise run verify   # use system tools if mise has no install
 import { Bell, Loader2, IconToggle, ArrowLeft, ArrowRight } from "@sairamanapb/icons";
 import "@sairamanapb/icons/animations.css"; // once, app entry
 
-<Bell />                                  // 24px, stroke 1.5 (default), static
+<Bell />                                  // 24px, stroke 2 (CSS-sized default), static
 <Bell animate />                          // semantic preset (ring) on hover
 <Loader2 animate />                       // spinner, trigger="always"
 <IconToggle from={ArrowLeft} to={ArrowRight} label="Next page" />
@@ -147,9 +148,11 @@ sprite, swap and category APIs. Native Rust UIs can use the GPUI adapter
 | `lg` | 24 | 1.5 |
 | `xl` | 40 | 1.5 |
 
-Default is **24px / stroke 1.5** in React, JS, Go and Rust. Numeric sizes are
-allowed; stroke derives as `≤16 → 2`, `≤20 → 1.75`, `>20 → 1.5`. `strokeWidth`
-overrides deliberately. Go/Rust take pixels (no named tokens).
+Default is **24px**. When no `size` prop is given (CSS-sized icons such as
+`className="h-4 w-4"`), the stroke is **2**; when an explicit size is passed,
+stroke derives as `≤16 → 2`, `≤20 → 1.75`, `>20 → 1.5`. `strokeWidth` and
+`absoluteStrokeWidth` override deliberately. Go/Rust take pixels (no named
+tokens) and default to the explicit-size mapping.
 
 ## 4. Shape containers
 
@@ -218,9 +221,11 @@ svg("Bell", { filled: "soft", animateFill: true });
 - Only **closed-geometry** icons (`fillSafe` in `data/icons.json`) fill cleanly.
   `solid` on an open glyph automatically degrades to `duotone`, so it never
   produces a broken shape.
-- Fill uses `fill="currentColor"` with `fill-opacity: 1` (solid) or `0.16`
-  (duotone); the rendered SVG carries `data-fill-state="true|soft"` and
-  `data-fill-anim="true"` when animated.
+- Fill only targets **closed nodes** (`data-closed="true"`), so open paths
+  (checks, chevrons, arrows) never get stray fill marks. The SVG carries
+  `data-fill-state="true|soft"`, `data-fill-safe="true|false"` and
+  `data-fill-anim="true"` when animated; `solid` on a non-fill-safe icon degrades
+  to duotone.
 - Reduced motion disables the fill transition; the state still changes.
 - Do not animate fill and another preset on the same icon at once.
 
@@ -257,9 +262,10 @@ on the frame).
 `nudge-down-right`, `nudge-down`, `nudge-left`, and `fade-in`.
 
 Triggers: `hover` (default; includes keyboard `:focus-visible` and parent
-button/link focus), `focus`, `press` (`:active`), `inview` (CSS scroll-driven,
-progressive enhancement), `mount`, `always` (loops for `spin`/`pulse`), `manual`
-(+ `active`). Motion is opt-in: `<Bell />` is static, `<Bell animate />` plays
+button/link focus), `parent` (plays when the nearest `<a>`, `<button>` or
+`[role=button]` is hovered/focused), `focus`, `press` (`:active`), `inview`
+(CSS scroll-driven, progressive enhancement), `mount`, `always` (loops for
+`spin`/`pulse`), `manual` (+ `active`). Motion is opt-in: `<Bell />` is static, `<Bell animate />` plays
 Bell's own preset. `prefers-reduced-motion: reduce` disables all preset/fill/
 swap/3D motion.
 
@@ -294,7 +300,7 @@ import { CATEGORIES } from "@sairamanapb/icons"; // array of NexaCategory
 
 ```js
 import { CATEGORIES, categories, ICONS } from "@sairamanapb/icons/js";
-Object.keys(CATEGORIES);      // 24 ids (record)
+Object.keys(CATEGORIES);      // 26 ids (record)
 categories("communication");  // { id, label, description, icons }
 ICONS;                        // flat map, unchanged
 ```
@@ -373,13 +379,17 @@ div().text_color(rgb(0x27272a)).child(icon("bell"))
 
 ## 13. Accessibility
 
-- Decorative icons: `aria-hidden="true"` (default in every API).
+- Decorative icons: `aria-hidden="true"` (default in every API). An explicit
+  `aria-label` makes the icon labelled (drops `aria-hidden`); explicit
+  `aria-hidden={false}` is respected.
 - Meaningful icons: pass `label`/`title` → `role="img"` + `aria-label`
   (with shape/3D the labelled element is the wrapper).
 - Icon-only buttons: `aria-label` + tooltip, hit area ≥40×40px; use
   `IconToggle` for click-to-toggle glyphs (`aria-pressed`).
 - Never encode status in the glyph/color alone; pair with text.
 - Fill/shape/3D are decoration: state must also exist in text/`aria-*`.
+- Global switches: `[data-nexa-fill="duotone|solid"]`, `[data-nexa-motion="off"]`
+  and `--nexa-stroke` on an ancestor let an app style every icon without a wrapper.
 - Reduced motion and forced-colors are handled by `animations.css`.
 
 ## 14. Performance budgets
@@ -388,13 +398,13 @@ Measured baseline for the **1,034-icon catalog**:
 
 | Asset | Budget | Current |
 |---|---|---|
-| One tree-shaken React icon (incl. shape/fill/3D) | < 1.5 KB brotli | ~1,544 B brotli |
-| 8 tree-shaken icons | — | ~2,036 B brotli |
-| 13 tree-shaken icons (typical authenticated page) | — | ~2,091 B brotli (≈161 B/icon average) |
-| Full sprite, 1,034 icons | — | 357,126 B raw / 44,154 B brotli |
-| `animations.css` (incl. shape/fill/3D/swap) | ≤ 18 KB raw / ≤ 4 KB brotli | 16,198 B / 3,270 B |
-| React barrel / JS ESM | — | barrel 68,230 B raw / 11,953 B br; JS ESM 372,496 B raw / 60,896 B br |
-| Gallery (shell-first) | 0 ms gallery JS before first paint (observer only); FP/FCP ~44 ms browser floor | 30,402 B shell + 457,027 B data + 87,603 B app; ~136-card virtual window, 976 DOM nodes |
+| One tree-shaken React icon (incl. shape/fill/3D) | < 2 KB brotli | ~1,828 B brotli |
+| 8 tree-shaken icons | — | ~2,308 B brotli |
+| 13 tree-shaken icons (typical authenticated page) | — | ~2,368 B brotli (≈182 B/icon average) |
+| Full sprite, 1,034 icons | — | 441,985 B raw / 45,246 B brotli |
+| `animations.css` (incl. shape/fill/3D/swap) | ≤ 18 KB raw / ≤ 4 KB brotli | 17,290 B / 3,583 B |
+| React barrel / JS ESM | — | barrel 68,230 B raw / 11,953 B br; JS ESM 466,816 B raw / 62,744 B br |
+| Gallery (shell-first) | 0 ms gallery JS before first paint (observer only); FP/FCP ~44 ms browser floor | 30,409 B shell + 550,458 B data + 88,175 B app; ~136-card virtual window, 976 DOM nodes |
 
 Why it is fast: static precomputed node/string data, per-icon tree-shakeable
 modules, one cached sprite request, CSS-only animation/fill/swap/3D, no runtime

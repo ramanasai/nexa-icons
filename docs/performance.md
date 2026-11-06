@@ -14,42 +14,42 @@ the current snapshot.
 |---|---:|---:|---:|
 | One standalone SVG (`icons/bell.svg`) | 384 B | 264 B | **221 B** |
 | One React icon module (`dist/icons/bell.js`) | 407 B | 295 B | **258 B** |
-| One-icon tree-shaken bundle (React external, incl. shape/fill/3D) | 3,500 B | 1,691 B | **1,544 B** |
-| Eight-icon tree-shaken bundle | 5,191 B | 2,247 B | **2,036 B** |
+| One-icon tree-shaken bundle (React external, incl. shape/fill/3D) | 4,155 B | 1,981 B | **1,828 B** |
+| Eight-icon tree-shaken bundle | 5,191 B | 2,247 B | **2,308 B** |
 | Fifty-icon tree-shaken bundle | 13,304 B | 3,799 B | **3,347 B** |
-| Full sprite, all 1,034 icons (`sprite.svg`) | 357,126 B | 52,152 B | **44,154 B** |
-| Animation + shape/fill/3D layer (`dist/animations.css`) | 16,198 B | 3,903 B | **3,270 B** |
-| React barrel (`dist/index.js`, re-exports only) | 68,230 B | 13,951 B | **11,953 B** |
+| Full sprite, all 1,034 icons (`sprite.svg`) | 441,985 B | 57,721 B | **45,246 B** |
+| Animation + shape/fill/3D layer (`dist/animations.css`) | 17,290 B | 4,259 B | **3,583 B** |
+| React barrel (`dist/index.js`, re-exports only) | 68,230 B | 14,243 B | **11,953 B** |
 | CJS root entry (`dist/cjs/index.js`) | 68,490 B | 13,399 B | **11,336 B** |
-| Vanilla JS ESM, lean runtime (`js/index.mjs`) | 372,496 B | 77,284 B | **60,896 B** |
+| Vanilla JS ESM, lean runtime (`js/index.mjs`) | 466,816 B | 80,407 B | **62,744 B** |
 | JS type declarations (`js/index.d.ts`) | 5,706 B | 2,185 B | **1,846 B** |
 | Canonical dataset (`data/icons.json`) | 511,657 B | 92,167 B | **67,563 B** |
 | Category manifest (`data/categories.json`) | 51,666 B | 9,031 B | **7,540 B** |
 | Swap pairs dataset (`data/swaps.json`) | 2,047 B | 591 B | **518 B** |
 | Illustrated set, 12 SVGs (`illustrations/*.svg`) | 10,634 B | — | — |
-| Gallery shell (`gallery/index.html`) | 30,402 B | 8,407 B | **7,234 B** |
-| Gallery data (`gallery/icons.data.js`) | 457,027 B | 94,711 B | **74,806 B** |
-| Gallery app (`gallery/app.js`) | 87,603 B | 21,032 B | **18,645 B** |
+| Gallery shell (`gallery/index.html`) | 30,409 B | 8,407 B | **7,234 B** |
+| Gallery data (`gallery/icons.data.js`) | 550,458 B | 97,437 B | **76,041 B** |
+| Gallery app (`gallery/app.js`) | 88,175 B | 21,126 B | **18,757 B** |
 
 Reference combinations:
 
 | Goal | Payload |
 |---|---|
-| One icon in React, tree-shaken | **1,544 B brotli** |
-| One icon + animations | 1,544 B + 3,270 B ≈ **4.0 KB brotli** |
-| Every icon in the app, one sprite request | **44,154 B brotli** |
+| One icon in React, tree-shaken | **1,828 B brotli** |
+| One icon + animations | 1,828 B + 3,270 B ≈ **4.0 KB brotli** |
+| Every icon in the app, one sprite request | **45,246 B brotli** |
 | Every icon + animation/shape/fill/3D layer | ≈ **32.5 KB brotli** |
-| Whole gallery (650 cards + data + app) | **≈ 74.9 KB brotli** (shell 6,957 + data 74,806 + app 18,645) |
+| Whole gallery (650 cards + data + app) | **≈ 74.9 KB brotli** (shell 6,957 + data 76,041 + app 18,757) |
 
 The sprite is the cheapest way to make the whole set available: one cached
 request for all 1,034 icons. Named React imports are the cheapest way to ship a few
-icons: one module per icon, ~1,544 B brotli for the first (includes the shared
+icons: one module per icon, ~1,828 B brotli for the first (includes the shared
 shape/fill/3D factory), ~40–49 B per extra icon.
 
 **Lean JS runtime.** `js/index.mjs` does not ship search `keywords`; icon records
 are `{name, aliases, preset, trigger, inner}` plus `kebab` from `getIcon()`.
-Keywords stay in `data/icons.json`. The 1,034-icon API is **372,496 B raw /
-60,896 B brotli** with all category metadata included.
+Keywords stay in `data/icons.json`. The 1,034-icon API is **466,816 B raw /
+62,744 B brotli** with all category metadata included.
 
 **CJS mirror.** `dist/cjs/` mirrors every ESM module for `require()` consumers;
 the CJS tree is larger because CommonJS cannot share modules. This is **package
@@ -85,9 +85,9 @@ then the grid is virtualized. Current measured build:
 
 | Part | Raw | Gzip | Brotli |
 |---|---:|---:|---:|
-| Shell `index.html` | 30,402 B | 8,407 B | **7,234 B** |
-| Data `icons.data.js` | 457,027 B | 94,711 B | **74,806 B** |
-| App `app.js` | 87,603 B | 21,032 B | **18,645 B** |
+| Shell `index.html` | 30,409 B | 8,407 B | **7,234 B** |
+| Data `icons.data.js` | 550,458 B | 97,437 B | **76,041 B** |
+| App `app.js` | 88,175 B | 21,126 B | **18,757 B** |
 
 All local files, **0 third-party requests (2 local deferred scripts)**. QA: 97/97 Playwright checks pass —
 shell < 40 KB, virtualized window ≈136 cards / 976 DOM nodes (bounded < 1.2k),
@@ -146,7 +146,7 @@ heavy.
 5. **Zero runtime dependencies beyond the optional React peer.** Plain JS, Go,
    Rust and the GPUI adapter carry no web runtime at all.
 6. **Small geometry.** 1,034 icons average 393 B of SVG markup (max 896 B,
-   `brain-cog`); total 409,421 B raw as individual files; sprite 357,126 B raw.
+   `brain-cog`); total 494,280 B raw as individual files; sprite 441,985 B raw.
 7. **Illustrations are small and static.** 12 duotone illustrations total
    ~10.6 KB raw (~1.1 KB each), inline-friendly, no external assets.
 
@@ -176,22 +176,23 @@ that (ESM, minified, React external, brotli q11 / gzip 9). Measured on this repo
 
 | Icons imported | Nexa brotli | Lucide brotli | Nexa gzip | Lucide gzip |
 |---:|---:|---:|---:|---:|
-| 1 | **1,512 B** | 1,571 B | **1,656 B** | 1,756 B |
-| 2 | **1,599 B** | 1,685 B | **1,745 B** | 1,874 B |
-| 5 | **1,790 B** | 1,913 B | **1,942 B** | 2,130 B |
-| 10 | **1,957 B** | 2,138 B | **2,121 B** | 2,392 B |
-| 13 (authenticated page: 2 layout + 11 nav) | **2,091 B** | 2,332 B | **2,296 B** | 2,600 B |
-| 20 | **2,488 B** | 2,810 B | **2,752 B** | 3,177 B |
-| 30 | **3,048 B** | 3,566 B | **3,425 B** | 4,119 B |
-| 168 (original catalog) | **9,606 B** (11,329 gzip) | 12,147 B (14,575 gzip) | | |
+| 1 | 1,789 B | **1,571 B** | 1,946 B | **1,756 B** |
+| 2 | **1,874 B** | 1,685 B | **2,032 B** | 1,874 B |
+| 5 | **2,062 B** | 1,913 B | **2,226 B** | 2,130 B |
+| 10 | 2,225 B | **2,138 B** | 2,407 B | **2,392 B** |
+| 13 (authenticated page: 2 layout + 11 nav) | 2,368 B | **2,332 B** | 2,581 B | **2,600 B** |
+| 20 | **2,750 B** | 2,810 B | **3,040 B** | 3,177 B |
+| 30 | **3,310 B** | 3,566 B | **3,718 B** | 4,119 B |
+| 168 (original catalog) | **9,854 B** (11,634 gzip) | 12,147 B (14,575 gzip) | | |
 
 - Marginal cost per extra icon is **~33–87 B brotli** for Nexa vs **~45–114 B**
   for Lucide in the same setup — both are rounding errors on a real page.
-- The 168-name catalog is **~22% lighter with Nexa** on gzip.
+- The 168-name catalog is **~20% lighter with Nexa** on gzip; per-page (13 icons) costs are within ~2%.
 - A “392 B gzip per Lucide icon” figure is the *icon module alone / incremental
   icon*, not the first-icon bundle. The like-for-like first-icon bundle includes
-  the shared factory on both sides: **~1.5 KB brotli either way** (Nexa 1,512 B,
-  Lucide 1,571 B). Comparing that bundle to Lucide’s per-icon module compares a
+  the shared factory on both sides: **~1.6–1.8 KB brotli** (Nexa 1,789 B,
+  Lucide 1,571 B); the added accessibility/fill/frame logic makes the first icon
+  ~14% larger now, while the 168-icon catalog is still ~19% lighter. Comparing that bundle to Lucide’s per-icon module compares a
   whole chunk to one leaf module.
 - Nexa’s first-icon factory still includes shape/fill/3D/glass/gradient props;
   the optional `animations.css` / `effects.css` layers are separate and not paid
@@ -228,7 +229,7 @@ cost per icon after import.
 | Approach | Cost | Best for |
 |---|---|---|
 | `<use href="#nexa-bell">` + inline sprite | one 29.4 KB brotli request for all 1,034 icons (fixed stroke 2) | app shells, galleries, SSR pages |
-| Named React import / deep import / category import | ~1,544 B brotli for the first icon, ~41–49 B/extra | React apps with a few icons |
+| Named React import / deep import / category import | ~1,828 B brotli for the first icon, ~41–49 B/extra | React apps with a few icons |
 | Per-icon `icons/*.svg` file | ~221 B brotli per icon, one request each | static sites, `<img>`, email, docs |
 | `svg()` from `@sairamanapb/icons/js` | 41.3 KB brotli ESM includes all icon + category data; zero fetch | no-build pages, Node scripts, server render |
 
@@ -242,13 +243,13 @@ Bundle a named import with esbuild, minified ESM, React marked external
 printf 'import { Bell } from "@sairamanapb/icons";\nconsole.log(Bell);\n' \
   | ./node_modules/.bin/esbuild --bundle --minify --format=esm --platform=neutral \
       --external:react --outfile=/tmp/one.js --log-level=error
-# => 3,500 B raw / 1,544 B brotli (React itself not included)
+# => 4,155 B raw / 1,828 B brotli (React itself not included)
 
 # eight icons
 printf 'import { Bell, Loader2, Briefcase, Search, Sparkles, Bookmark, Send, Mail } from "@sairamanapb/icons";\nconsole.log(Bell, Loader2, Briefcase, Search, Sparkles, Bookmark, Send, Mail);\n' \
   | ./node_modules/.bin/esbuild --bundle --minify --format=esm --platform=neutral \
       --external:react --outfile=/tmp/many.js --log-level=error
-# => 4,8 raw / 2,036 B brotli (8 icons)
+# => 4,8 raw / 2,308 B brotli (8 icons)
 ```
 
 The one-icon bundle contains one icon component plus the shared factory; the
@@ -280,13 +281,36 @@ node scripts/verify.mjs  # release verification (dataset, parity, sizes, a11y, d
 | Asset | Budget | Actual |
 |---|---|---|
 | Individual SVG | ≤ 1.0 KB raw | max 896 B (`brain-cog.svg`) |
-| Sprite | < 260 KB raw | 357,126 B |
+| Sprite | < 260 KB raw | 441,985 B |
 | One-icon React bundle | < 1.5 KB brotli | 953 B |
-| Animation + shape/fill/3D/swap CSS | ≤ 18 KB raw / ≤ 4 KB brotli | 16,198 B / 3,270 B |
-| Gallery shell | 0 ms gallery JS before first paint (observer only); shell < 40 KB | 30,402 B shell (build-report budget 40,960 B) |
-| `js/index.mjs` | < 60 KB gzip | 77,284 B gzip for 1,034 icons |
+| Animation + shape/fill/3D/swap CSS | ≤ 18 KB raw / ≤ 4 KB brotli | 17,290 B / 3,583 B |
+| Gallery shell | 0 ms gallery JS before first paint (observer only); shell < 40 KB | 30,409 B shell (build-report budget 40,960 B) |
+| `js/index.mjs` | < 60 KB gzip | 80,407 B gzip for 1,034 icons |
 
 The dataset is regenerated deterministically; these sizes are stable unless
 icons, categories, swap pairs or the presentation layer change. The gallery is
 the largest artefact set because it contains all 1,034 icons plus the virtualized
 viewer; it is split into shell/data/app for first-paint speed.
+
+
+## Bundler setup (Next.js, Vite, Webpack)
+
+The root entry is a barrel, so the bundler must tree-shake it. For Next.js 13.5+:
+
+```js
+// next.config.js
+module.exports = {
+  experimental: { optimizePackageImports: ["@sairamanapb/icons"] },
+};
+```
+
+Prefer per-icon leaf imports when you want to be explicit:
+
+```tsx
+import { Bell } from "@sairamanapb/icons/react/bell";
+```
+
+Avoid the dynamic registry (`Icon`, `getIcon`, `ICONS`, `NEXA_MAP`) in client
+bundles: it intentionally pulls all 1,034 icon records (~12 KB brotli). The
+Lucide-compatible entry is at `@sairamanapb/icons/lucide`; it is tree-shakeable
+in the same way.

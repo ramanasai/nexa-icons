@@ -21,13 +21,15 @@
  * ---------------------------------------------------------------------------
  */
 
-.nexa-icon {
+/* Zero-specificity base: app utilities (hidden, block, shrink, size) win. */
+:where(.nexa-icon) {
   display: inline-block;
-  flex: none;
   vertical-align: -0.125em;
   color: inherit;
-  overflow: visible;
-  /* No color, fill or background here: the icon inherits the theme. */
+  /* If a global --nexa-stroke is set (e.g. on <html>), it wins over the
+     per-icon stroke-width attribute; otherwise this declaration is invalid
+     and the attribute applies. */
+  stroke-width: var(--nexa-stroke);
 }
 
 [data-nexa-anim] {
@@ -62,6 +64,7 @@
 /* ---- triggers ---------------------------------------------------------- */
 [data-nexa-trigger="hover"][data-nexa-anim]:is(:hover, :focus-visible),
 :is(button, a, [role="button"]):focus-visible [data-nexa-anim][data-nexa-trigger="hover"],
+:is(button, a, [role="button"]):is(:hover, :focus-visible) [data-nexa-anim][data-nexa-trigger="parent"],
 [data-nexa-trigger="focus"][data-nexa-anim]:focus-visible,
 [data-nexa-trigger="mount"][data-nexa-anim],
 [data-nexa-trigger="always"][data-nexa-anim],
@@ -419,20 +422,24 @@
   z-index: 1;
 }
 
-/* ---- fill variants (empty <-> filled animation is a CSS transition) ------ */
-.nexa-icon[data-fill-state="true"] {
+/* ---- fill variants (empty <-> filled animation is a CSS transition) ------
+   Only closed nodes are filled; open strokes (checks, arrows, chevrons) keep
+   their fill="none" so they never grow stray triangles. */
+.nexa-icon[data-fill-state="true"] [data-closed="true"],
+[data-nexa-fill="solid"] .nexa-icon [data-closed="true"] {
   fill: currentColor;
   fill-opacity: 1;
 }
-.nexa-icon[data-fill-state="soft"] {
+.nexa-icon[data-fill-state="soft"] [data-closed="true"],
+[data-nexa-fill="duotone"] .nexa-icon [data-closed="true"] {
   fill: currentColor;
   fill-opacity: 0.16;
 }
-.nexa-icon[data-fill-anim="true"] {
+.nexa-icon[data-fill-anim="true"] [data-closed="true"] {
   transition: fill-opacity 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 @media (prefers-reduced-motion: reduce) {
-  .nexa-icon[data-fill-anim="true"] { transition: none; }
+  .nexa-icon[data-fill-anim="true"] [data-closed="true"] { transition: none; }
 }
 
 /* ---- CSS 3D presentation ------------------------------------------------ */
@@ -483,3 +490,15 @@
     filter: none !important;
   }
 }
+
+
+/* ---- global parent switches -------------------------------------------- */
+/* <div data-nexa-motion="off"> disables every preset, swap, fill and 3D transition */
+[data-nexa-motion="off"] .nexa-icon,
+[data-nexa-motion="off"] .nexa-icon *,
+[data-nexa-motion="off"] .nexa-swap,
+[data-nexa-motion="off"] .nexa-swap * {
+  animation: none !important;
+  transition: none !important;
+}
+/* <html style="--nexa-stroke: 1.75"> sets the stroke globally. */

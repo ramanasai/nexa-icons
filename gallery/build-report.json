@@ -1,6 +1,6 @@
 {
   "generatedBy": "gallery/build.mjs",
-  "builtAt": "2026-11-06T13:55:26.666Z",
+  "builtAt": "2026-11-06T15:01:45.643Z",
   "icons": 1034,
   "swaps": 26,
   "categories": 26,
@@ -9,20 +9,20 @@
   "files": {
     "index.html": {
       "raw": 30409,
-      "brotli": 7244,
-      "gzip": 8464
+      "brotli": 7247,
+      "gzip": 8413
     },
     "icons.data.js": {
-      "raw": 457027,
-      "brotli": 74806,
-      "gzip": 93980
+      "raw": 550458,
+      "brotli": 76041,
+      "gzip": 97437
     },
     "app.js": {
-      "raw": 87631,
-      "brotli": 18673,
-      "gzip": 21110
+      "raw": 88175,
+      "brotli": 18757,
+      "gzip": 21126
     }
   },
   "shellBudget": 40960,
-  "buildMs": 737.9
+  "buildMs": 1019.2
 }

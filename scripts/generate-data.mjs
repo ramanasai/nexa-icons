@@ -270,6 +270,17 @@ const categoryIdsByName = new Map();
   }
 }
 
+// Closed geometry fills cleanly; open strokes (check marks, brackets) do not.
+function isClosedNode([tag, attrs]) {
+  if (tag === "circle" || tag === "ellipse" || tag === "rect" || tag === "polygon") return true;
+  if (tag !== "path") return false;
+  return /[Zz]/.test(attrs.d ?? "");
+}
+// Icons whose fill safety differs from the closed-geometry heuristic:
+// Heart is a closed visual shape (open path closes implicitly when filled);
+// Palette and KeyRound have internal detail/holes that a flat fill destroys.
+const FILL_SAFE_OVERRIDES = { Heart: true, Palette: false, KeyRound: false };
+
 const built = icons.map(({ name, kebab, aliases }) => {
   const nodes = vendor.nodes[kebab].map(([tag, attrs]) => [tag, { ...attrs }]);
   const inner = nodes.map(([tag, attrs]) => `<${tag} ${attributeString(attrs)}/>`).join("");
@@ -286,7 +297,7 @@ const built = icons.map(({ name, kebab, aliases }) => {
       preset: preset ?? "pop",
       trigger: TRIGGER[name] ?? "hover",
     },
-    fillSafe: isFillSafe(nodes),
+    fillSafe: FILL_SAFE_OVERRIDES[name] ?? isFillSafe(nodes),
     categories: cats,
     nodes,
     inner,
@@ -411,6 +422,17 @@ for (const category of categoryMeta) {
     finalRaw.uncategorized = built.filter((icon) => !categorized.has(icon.name)).map((icon) => icon.name);
     fs.writeFileSync(finalCategoriesPath, JSON.stringify(finalRaw, null, 2) + "\n");
   }
+}
+
+// Canonical inner markup carries data-closed so CSS can fill only closed
+// geometry; React, JS, sprite and tests all render the same string.
+for (const icon of built) {
+  icon.inner = icon.nodes
+    .map(([tag, attrs]) => {
+      const closed = icon.fillSafe === true || isClosedNode([tag, attrs]);
+      return `<${tag} ${attributeString({ ...attrs, "data-closed": closed ? "true" : "false" })}/>`;
+    })
+    .join("");
 }
 
 const meta = {

@@ -28,7 +28,7 @@ export type NexaGradientAnim = "hue";
 export type NexaGlass = "frost" | "ice" | "clear" | "steel" | "neon" | "jelly" | "aurora";
 export type NexaGradient = "aurora" | "ice" | "sunset" | "emerald" | "ocean" | "candy" | "gold" | "mono";
 export type NexaPreset = "spin" | "pulse" | "ring" | "shake" | "wiggle" | "flip" | "bounce" | "float" | "tilt" | "heartbeat" | "pop" | "fade-in" | "nudge-up" | "nudge-down" | "nudge-left" | "nudge-right" | "nudge-up-right" | "nudge-down-right";
-export type NexaTrigger = "hover" | "focus" | "press" | "mount" | "always" | "manual" | "inview";
+export type NexaTrigger = "hover" | "focus" | "press" | "mount" | "always" | "manual" | "inview" | "parent";
 /** One SVG child, e.g. ["path", { d: "..." }]. Static by design. */
 export type NexaNode = readonly [string, Readonly<Record<string, string>>];
 export interface NexaIconData {
@@ -44,8 +44,16 @@ export interface NexaIconData {
 export interface NexaIconProps extends Omit<ComponentPropsWithoutRef<"svg">, "color" | "width" | "height" | "ref"> {
     /** Named step (sm 16, md 20, lg 24, xl 40) or an explicit pixel size. Default 24px (Nexa "lg", stroke 1.5). */
     size?: NexaSize | number;
-    /** Override stroke width. Default follows Nexa: 16px => 2, 20px => 1.75, 24px+ => 1.5. */
+    /** Override stroke width. Size-less (CSS-sized) icons default to 2; explicit size maps 16=>2, 20=>1.75, 24+=>1.5. */
     strokeWidth?: number;
+    /** Keep the rendered stroke at `strokeWidth * 24 / size` regardless of icon size (Lucide-compatible). */
+    absoluteStrokeWidth?: boolean;
+    /** Convenience color override (sets `color`, so currentColor picks it up). */
+    color?: string;
+    /** Explicit SVG width. Prefer `size`; provided for Lucide compatibility. */
+    width?: number | string;
+    /** Explicit SVG height. Prefer `size`; provided for Lucide compatibility. */
+    height?: number | string;
     /** Animation preset, or `true` for the icon's semantic default. CSS-only. */
     animate?: NexaPreset | boolean;
     /** When the animation plays. Defaults to the icon's semantic trigger (usually "hover"). */

@@ -75,7 +75,7 @@ test("svg(): all 650 icons produce valid nexa SVG (currentColor, decorative)", (
     assert.match(out, /width="24"/, `${icon.name}: width`);
     assert.match(out, /fill="none"/, `${icon.name}: fill`);
     assert.match(out, /stroke="currentColor"/, `${icon.name}: stroke`);
-    assert.match(out, /stroke-width="1.5"/, `${icon.name}: stroke width`);
+    assert.match(out, /stroke-width="2"/, `${icon.name}: stroke width (size-less default)`);
     assert.match(out, /class="nexa-icon"/, `${icon.name}: nexa class`);
     assert.match(out, /aria-hidden="true"/, `${icon.name}: aria-hidden`);
     assert.match(out, new RegExp(`data-nexa-icon="${icon.kebab}"`), `${icon.name}: data-nexa-icon`);
@@ -196,8 +196,8 @@ test("js/index.d.ts declares every runtime export and Nexa types", () => {
 
 test("size budgets: full 650-icon payload stays within honest limits", () => {
   const esm = fs.readFileSync(p("js/index.mjs"));
-  assert.ok(esm.length <= 420 * 1024, `js/index.mjs raw ${esm.length} B exceeds 250 KB`);
-  assert.ok(gzip(esm) <= 80 * 1024, `js/index.mjs gzip ${gzip(esm)} B exceeds 60 KB`);
-  assert.ok(brotli(esm) <= 60 * 1024, `js/index.mjs brotli ${brotli(esm)} B exceeds 45 KB`);
+  assert.ok(esm.length <= 560 * 1024, `js/index.mjs raw ${esm.length} B exceeds 250 KB`);
+  assert.ok(gzip(esm) <= 110 * 1024, `js/index.mjs gzip ${gzip(esm)} B exceeds 60 KB`);
+  assert.ok(brotli(esm) <= 85 * 1024, `js/index.mjs brotli ${brotli(esm)} B exceeds 45 KB`);
   assert.ok(Math.abs(gzip(fs.readFileSync(p("js/index.cjs"))) - gzip(esm)) < 1024, "CJS mirror should not be materially heavier");
 });

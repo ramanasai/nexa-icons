@@ -222,3 +222,19 @@ turns preset animations into a no-op (or a one-shot opacity change) in
 3. Accent reserved for primary/active/status; status paired with text.
 4. Container tint follows the 10% / 15% rule and doesn't carry meaning alone.
 5. Forced-colors mode still distinguishes active/focus states.
+
+
+## Global switches (no wrapper component needed)
+
+```html
+<div data-nexa-fill="duotone" data-nexa-motion="off" style="--nexa-stroke: 1.75">
+  <svg class="nexa-icon" data-nexa-icon="bell">…</svg>
+</div>
+```
+
+- `[data-nexa-fill="duotone|solid"]` fills closed nodes only
+  (`data-closed="true"`); the SVG always exposes `data-nexa-fill-safe`.
+- `[data-nexa-motion="off"]` disables presets, fill, swap and 3D transitions.
+- `--nexa-stroke` inherits to every icon and overrides the stroke width.
+- Frames use `em` units, so a CSS-sized icon (`h-4 w-4`) gets a correctly scaled
+  frame; set `--nexa-icon-size` when the frame is not next to a known font size.

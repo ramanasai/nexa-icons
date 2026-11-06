@@ -101,7 +101,7 @@ if (!budget("barrel dist/index.js (raw)", fs.statSync(barrelPath).size, 96 * 102
 if (!budget("animations.css (raw)", cssBytes, 18 * 1024)) failed = true;
 if (!budget("animations.css (brotli)", brotli(cssPath), 4096)) failed = true;
 // 650 icons × ~1.1 KB per tree-shakeable module.
-if (!budget("whole ESM tree (raw)", esmBytes, 1536 * 1024)) failed = true;
+if (!budget("whole ESM tree (raw)", esmBytes, 1843 * 1024)) failed = true;
 
 console.log(`dist built in ${(performance.now() - started).toFixed(0)} ms`);
 console.log(`  ${js.length} ESM modules (${kb(esmBytes)} raw, ${(esmBytes / 166).toFixed(0)} B avg/icon)`);

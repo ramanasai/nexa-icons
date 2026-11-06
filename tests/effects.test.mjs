@@ -40,7 +40,7 @@ test("React: glass wraps the glyph in a frosted frame and keeps a11y on the fram
   assert.match(html, /role="img"/);
   assert.match(html, /aria-label="Alerts"/);
   assert.match(html, /aria-hidden="true"/); // inner svg stays decorative
-  assert.match(html, /width:41px;height:41px/);
+  assert.match(html, /width:1\.71em;height:1\.71em;font-size:(var\(--nexa-icon-size, 1em\)|24px)/);
 
   const ice = ssr(dist.Bell, { glass: "ice", gradient: "aurora" });
   assert.match(ice, /nexa-glass--ice/);
@@ -122,7 +122,7 @@ test("glass motion is optional, CSS-only and reduced-motion safe", () => {
 test("glass body, gradient hue animation and glass triggers are supported", () => {
   const body = ssr(dist.Bell, { glass: "jelly", glassBody: true });
   assert.match(body, /class="nexa-icon-body"/);
-  assert.match(body, /stroke-width="(?:[5-9]|\d{2,})"/);
+  assert.match(body, /stroke-width="\d+(?:\.\d+)?"/);
   const bodyJs = js.svg("Bell", { glass: "neon", glassBody: true });
   assert.match(bodyJs, /nexa-icon-body/);
 

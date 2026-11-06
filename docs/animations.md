@@ -326,3 +326,15 @@ Glass and gradient effects are **static** — they add no animation. They compos
 with presets, fills, shapes and CSS-3D (`<Crown glass="steel" gradient="gold"
 threeD="tilt" />`). Import `@sairamanapb/icons/effects.css` once; see
 [effects.md](effects.md) for presets, tokens and fallbacks.
+
+
+## Parent trigger and global motion switch
+
+```tsx
+<button className="nav-item"><Bell animate trigger="parent" /></button>
+```
+
+`trigger="parent"` starts the preset when the nearest `<a>`, `<button>` or
+`[role="button"]` is hovered or `:focus-visible`. For app-wide control, put
+`data-nexa-motion="off"` on a container to disable presets, fill, swap and 3D
+transitions inside it.

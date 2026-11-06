@@ -54,6 +54,25 @@ dependencies beyond the optional React peer**.
 - Live gallery: https://ramanasai.github.io/nexa-icons/
 - Issues: https://github.com/ramanasai/nexa-icons/issues
 
+## Drop-in Lucide path
+
+```tsx
+import { Bell } from "@sairamanapb/icons/lucide";
+```
+
+Stroke 2 by default, `lucide lucide-bell` classes, `color`/`width`/`height`
+props and `LucideIcon` type — a Lucide codebase only changes the import path.
+
+## Global styling (no wrapper)
+
+```html
+<div data-nexa-fill="duotone" data-nexa-motion="off" style="--nexa-stroke: 1.75">
+```
+
+`[data-nexa-fill="duotone|solid"]`, `[data-nexa-motion="off"]` and
+`--nexa-stroke` apply app-wide; `trigger="parent"` animates when the surrounding
+link/button is hovered or focused.
+
 ## Install
 
 Two entry points — pick the one that matches your stack:
@@ -163,7 +182,7 @@ import "@sairamanapb/icons/animations.css"; // once, app entry
 export function AlertsButton() {
   return (
     <button type="button" aria-label="Alerts">
-      <Bell animate />                  {/* 24px, stroke 1.5; ring on hover */}
+      <Bell animate />                  {/* 24px, stroke 2 (CSS-sized default); ring on hover */}
       <Bell size="sm" />                {/* 16px, stroke 2 */}
       <Loader2 animate />               {/* spinner, trigger="always" */}
     </button>
@@ -180,7 +199,7 @@ export function Pager() {
 <Crown threeD="tilt" />
 ```
 
-Tree-shaken cost: ~1,544 B brotli for the first icon (includes the shape/fill/3D factory), ~41–49 B per extra icon.
+Tree-shaken cost: ~1,828 B brotli for the first icon (includes the shape/fill/3D factory), ~41–49 B per extra icon.
 
 ### Go
 
@@ -256,7 +275,7 @@ import { CATEGORIES } from "@sairamanapb/icons";         // metadata array
 ```js
 import { CATEGORIES, categories } from "@sairamanapb/icons/js";
 
-Object.keys(CATEGORIES);      // 24 ids
+Object.keys(CATEGORIES);      // 26 ids
 categories("communication");  // { id, label, description, icons }
 ```
 
@@ -291,21 +310,21 @@ Brotli quality 11 on the shipped files; method and commands in
 [docs/performance.md](docs/performance.md)
 - [docs/effects.md](docs/effects.md) — glass & gradient presets
 - [docs/inventory.md](docs/inventory.md) — full inventory of the 1,034 icons, variants, categories and differentiators.
-- [Fair comparison vs Lucide](docs/performance.md#fair-comparison-nexa-vs-lucide) — same bundler/settings: Nexa is smaller at 1, 10, 30 and 168 icons.
+- [Fair comparison vs Lucide](docs/performance.md#fair-comparison-nexa-vs-lucide) — same bundler/settings: per-page costs are within ~2% and Nexa is ~19% lighter at 168 icons.
 
 | Asset | Raw | Brotli |
 |---|---:|---:|
 | One standalone SVG (`icons/bell.svg`) | 384 B | **221 B** |
 | One React icon module (`dist/icons/bell.js`) | 407 B | **258 B** |
-| One-icon tree-shaken app bundle (incl. shape/fill/3D) | 3,500 B | **1,544 B** |
-| Full sprite, all 1,034 icons (`sprite.svg`) | 357,126 B | **44,154 B** |
-| Animation + shape/fill/3D layer (`dist/animations.css`) | 16,198 B | **3,270 B** |
+| One-icon tree-shaken app bundle (incl. shape/fill/3D) | 4,155 B | **1,828 B** |
+| Full sprite, all 1,034 icons (`sprite.svg`) | 441,985 B | **45,246 B** |
+| Animation + shape/fill/3D layer (`dist/animations.css`) | 17,290 B | **3,583 B** |
 | React barrel (`dist/index.js`) | 68,230 B | **11,953 B** |
 | CJS root bundle (`dist/cjs/index.js`) | 68,490 B | **11,336 B** |
-| Vanilla JS with all data (`js/index.mjs`) | 372,496 B | **60,896 B** |
-| Gallery shell (`gallery/index.html`) | 30,402 B | **7,234 B** |
-| Gallery data (`gallery/icons.data.js`) | 457,027 B | **74,806 B** |
-| Gallery app (`gallery/app.js`) | 87,603 B | **18,645 B** |
+| Vanilla JS with all data (`js/index.mjs`) | 466,816 B | **62,744 B** |
+| Gallery shell (`gallery/index.html`) | 30,409 B | **7,247 B** |
+| Gallery data (`gallery/icons.data.js`) | 550,458 B | **76,041 B** |
+| Gallery app (`gallery/app.js`) | 88,175 B | **18,757 B** |
 | Illustrated set, 12 SVGs (`illustrations/`) | 10,634 B | — |
 
 ## Project structure

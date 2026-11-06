@@ -34,23 +34,13 @@
     "icons",
     "sprite.svg",
     "data/icons.json",
-    "go",
-    "rust",
-    "gallery/index.html",
     "docs",
-    "skills",
     "README.md",
     "LICENSE",
     "NOTICE",
     "data/swaps.json",
-    "mise.toml",
     "nexa-icon-styles-SKILL.md",
-    "bunfig.toml",
-    ".yarnrc.yml",
     "AGENTS.md",
-    "rust/gpui",
-    "gallery/icons.data.js",
-    "gallery/app.js",
     "data/categories.json",
     "illustrations/preview.html",
     "illustrations/*.svg",
@@ -88,7 +78,13 @@
     },
     "./illustrations/*": "./illustrations/*",
     "./data/categories.json": "./data/categories.json",
-    "./effects.css": "./dist/effects.css"
+    "./effects.css": "./dist/effects.css",
+    "./lucide": {
+      "types": "./dist/lucide.d.ts",
+      "import": "./dist/lucide.js",
+      "require": "./dist/cjs/lucide.js",
+      "default": "./dist/lucide.js"
+    }
   },
   "scripts": {
     "generate:data": "node scripts/generate-data.mjs",

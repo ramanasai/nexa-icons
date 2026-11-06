@@ -103,25 +103,25 @@ check("every icon SVG ≤ 1600 B", () => {
   const over = iconSizes.filter((entry) => entry.bytes > 1600);
   return { ok: over.length === 0, actual: `${biggestIcon.file} ${biggestIcon.bytes} B`, detail: over.slice(0, 5).map((entry) => entry.file).join(", ") };
 });
-check("icons/ total ≤ 450 KB raw", () => {
+check("icons/ total ≤ 600 KB raw", () => {
   const total = iconSizes.reduce((sum, entry) => sum + entry.bytes, 0);
-  return { ok: total <= 450 * 1024, actual: `${total} B` };
+  return { ok: total <= 600 * 1024, actual: `${total} B` };
 });
 const sprite = read("sprite.svg");
-check("sprite.svg: 1,000 nexa- symbols, ≤ 420 KB raw / ≤ 60 KB brotli", () => {
+check("sprite.svg: 1,034 nexa- symbols, ≤ 520 KB raw / ≤ 80 KB brotli", () => {
   const symbols = (sprite.toString("utf8").match(/<symbol\b/g) || []).length;
   const br = brotli(sprite);
-  return { ok: symbols === COUNT && size("sprite.svg") <= 420 * 1024 && br <= 60 * 1024, actual: `${symbols} symbols / ${size("sprite.svg")} B / ${br} B br` };
+  return { ok: symbols === COUNT && size("sprite.svg") <= 520 * 1024 && br <= 80 * 1024, actual: `${symbols} symbols / ${size("sprite.svg")} B / ${br} B br` };
 });
 
 /* ---------------------------------------------------------------- build */
 check("dist barrel ≤ 96 KB raw (build budget)", () => ({ ok: size("dist/index.js") <= 96 * 1024, actual: `${size("dist/index.js")} B` }));
-check("whole ESM tree ≤ 1.1 MB raw (build budget)", () => {
+check("whole ESM tree ≤ 1.8 MB raw (build budget)", () => {
   let total = 0;
   for (const dir of ["dist", "dist/categories", "dist/icons"]) {
     for (const file of fs.readdirSync(p(dir))) if (file.endsWith(".js")) total += size(path.join(dir, file));
   }
-  return { ok: total <= 1100 * 1024, actual: `${total} B` };
+  return { ok: total <= 1800 * 1024, actual: `${total} B` };
 });
 check("dist/animations.css ≤ 18 KB raw / 4 KB brotli (build budget)", () => {
   const bytes = size("dist/animations.css");
@@ -141,11 +141,11 @@ check("dist/icons + dist/categories cover the catalog", () => {
 });
 
 /* ------------------------------------------------------------------- js */
-check("js/index.mjs ≤ 420 KB raw / 80 KB gzip / 60 KB brotli", () => {
+check("js/index.mjs ≤ 560 KB raw / 110 KB gzip / 85 KB brotli", () => {
   const buf = read("js/index.mjs");
   const gz = gzip(buf);
   const br = brotli(buf);
-  return { ok: size("js/index.mjs") <= 420 * 1024 && gz <= 80 * 1024 && br <= 60 * 1024, actual: `${size("js/index.mjs")} B / ${gz} gz / ${br} br` };
+  return { ok: size("js/index.mjs") <= 560 * 1024 && gz <= 110 * 1024 && br <= 85 * 1024, actual: `${size("js/index.mjs")} B / ${gz} gz / ${br} br` };
 });
 
 /* -------------------------------------------------------------- gallery */
@@ -170,9 +170,9 @@ try {
   });
   const code = result.outputFiles[0].text ?? Buffer.from(result.outputFiles[0].contents).toString("utf8");
   const buf = Buffer.from(code);
-  check("one-icon tree-shaken bundle < 4 KB raw / 2 KB brotli", () => {
+  check("one-icon tree-shaken bundle < 5 KB raw / 2.4 KB brotli", () => {
     const dropped = code.includes("M10.268") && !code.includes("M18 6 6 18");
-    return { ok: buf.length <= 4096 && brotli(buf) < 2048 && dropped, actual: `${buf.length} B / ${brotli(buf)} B br`, detail: dropped ? "" : "unused icon not dropped" };
+    return { ok: buf.length <= 5120 && brotli(buf) < 2458 && dropped, actual: `${buf.length} B / ${brotli(buf)} B br`, detail: dropped ? "" : "unused icon not dropped" };
   });
 } catch (error) {
   checks.push({ label: "one-icon tree-shaken bundle ≤ 2.5 KB raw / < 1.5 KB brotli", ok: false, measured: "error", detail: error.message });

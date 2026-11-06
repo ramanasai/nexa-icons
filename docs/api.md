@@ -30,7 +30,7 @@ Hover-triggered presets also play when a parent `<button>`, `<a>` or
 `[role="button"]` receives `:focus-visible`, so keyboard users see the same
 feedback without extra JS.
 
-Defaults: **24px / stroke 1.5** in React, JS, Go and Rust. `class="nexa-icon"`,
+Defaults: **24px**. Size-less (CSS-sized) icons use stroke **2**; explicit sizes map 16→2, 20→1.75, 24+→1.5. `class="nexa-icon"`,
 `focusable="false"` and `data-nexa-icon="<kebab>"` are emitted by every binding
 (`data-nexa-*` animation attributes only when animating). Named size tokens
 (`sm`/`md`/`lg`/`xl`) are React/JS sugar; Go and Rust take pixel sizes and apply
@@ -374,7 +374,7 @@ import { CATEGORIES } from "@sairamanapb/icons";
 ```js
 import { CATEGORIES, categories } from "@sairamanapb/icons/js";
 
-Object.keys(CATEGORIES);      // 24 ids
+Object.keys(CATEGORIES);      // 26 ids
 categories("communication");  // { id, label, description, icons }
 ```
 
@@ -463,3 +463,23 @@ and `anim` metadata intact (see [adding-icons.md](adding-icons.md)). The
 semantic swap pairs ship as `data/swaps.json` and are exported as a package
 subpath (`import swaps from "@sairamanapb/icons/data/swaps.json" with { type: "json" }`
 — or read `node_modules/@sairamanapb/icons/data/swaps.json`).
+
+
+## Lucide-compatible entry point
+
+```tsx
+import { Bell } from "@sairamanapb/icons/lucide";
+```
+
+`@sairamanapb/icons/lucide` keeps the Lucide contract: stroke **2** by default,
+`class="lucide lucide-bell"`, `color`/`width`/`height` props and the `LucideIcon`
+type. Deep imports remain available at `@sairamanapb/icons/react/<kebab>`.
+
+## Accessibility & global switches
+
+- `aria-label` / `aria-labelledby` make the icon labelled (`role="img"`, no
+  `aria-hidden`); explicit `aria-hidden={false}` is respected.
+- `[data-nexa-fill="duotone|solid"]` on an ancestor fills only closed nodes.
+- `[data-nexa-motion="off"]` disables presets, fill, swap and 3D transitions.
+- `--nexa-stroke: 1.75` on an ancestor overrides the stroke for CSS-sized icons.
+- `trigger="parent"` plays when the nearest link/button is hovered or focused.

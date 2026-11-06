@@ -58,6 +58,13 @@ export function strokeForSize(px: number): number {
 /** Alias kept for tree-shakeable named imports. */
 export const STROKE_FOR_PX = strokeForSize;
 
+/** A node can be filled safely when it is closed geometry. */
+function isClosedNode([tag, attrs]: NexaIconData["nodes"][number]): boolean {
+  if (tag === "circle" || tag === "ellipse" || tag === "rect" || tag === "polygon") return true;
+  if (tag !== "path") return false;
+  return /[Zz]/.test(attrs.d ?? "");
+}
+
 const resolvePreset = (
   animate: NexaIconProps["animate"],
   fallback: NexaPreset
@@ -72,8 +79,12 @@ const resolvePreset = (
 export function createIcon(data: NexaIconData): NexaIconComponent {
   const NexaIcon = forwardRef<SVGSVGElement, NexaIconProps>(function NexaIcon(props, ref) {
     const {
-      size = 24,
+      size,
       strokeWidth,
+      absoluteStrokeWidth,
+      color,
+      width,
+      height,
       animate,
       trigger,
       active,
@@ -91,13 +102,28 @@ export function createIcon(data: NexaIconData): NexaIconComponent {
       glassTrigger,
       glassBody,
       gradientAnim,
-      ...rest
+      ...restProps
     } = props;
 
-    const px = typeof size === "number" ? size : SIZE_PX[size] ?? 24;
-    const stroke = strokeWidth ?? strokeForSize(px);
+    const {
+      "aria-label": ariaLabelProp,
+      "aria-labelledby": ariaLabelledByProp,
+      "aria-hidden": ariaHiddenProp,
+      ...rest
+    } = restProps as {
+      "aria-label"?: string;
+      "aria-labelledby"?: string;
+      "aria-hidden"?: boolean | "true" | "false";
+      [key: string]: unknown;
+    };
+
+    const explicitSize = size !== undefined;
+    const px = typeof size === "number" ? size : size ? SIZE_PX[size] : 24;
+    const baseStroke = strokeWidth ?? (explicitSize ? strokeForSize(px) : 2);
+    const stroke = absoluteStrokeWidth ? (strokeWidth ?? 2) * (24 / px) : baseStroke;
     const preset = resolvePreset(animate, data.preset);
-    const labelled = label != null || title != null;
+    const accessibleLabel = label ?? title ?? ariaLabelProp;
+    const labelled = accessibleLabel != null || ariaLabelledByProp != null;
     const resolvedFill: "outline" | "duotone" | "solid" =
       filled === true ? "solid" : filled === "soft" ? "duotone" : variant ?? "outline";
     const fillSafe = data.fillSafe !== false;
@@ -142,8 +168,8 @@ export function createIcon(data: NexaIconData): NexaIconComponent {
       ...rest,
       ref,
       xmlns: "http://www.w3.org/2000/svg",
-      width: px,
-      height: px,
+      width: width ?? px,
+      height: height ?? px,
       viewBox: "0 0 24 24",
       fill: "none",
       stroke: hasGradient ? `url(#${gradientId})` : "currentColor",
@@ -154,11 +180,14 @@ export function createIcon(data: NexaIconData): NexaIconComponent {
         .filter(Boolean)
         .join(" "),
       role: labelled && !hasShape && !threeD && !hasGlass ? "img" : undefined,
-      "aria-hidden": labelled && !hasShape && !threeD && !hasGlass ? undefined : true,
-      "aria-label": labelled && !hasShape && !threeD && !hasGlass ? label : undefined,
+      "aria-hidden":
+        ariaHiddenProp ?? (labelled && !hasShape && !threeD && !hasGlass ? undefined : true),
+      "aria-label": labelled && !hasShape && !threeD && !hasGlass ? accessibleLabel : undefined,
+      "aria-labelledby": labelled && !hasShape && !threeD && !hasGlass ? ariaLabelledByProp : undefined,
       focusable: "false",
       "data-nexa-icon": data.kebab,
-      style: hasGradient ? { stroke: `url(#${gradientId})` } : undefined,
+      "data-nexa-fill-safe": fillSafe ? "true" : "false",
+      style: hasGradient ? { stroke: `url(#${gradientId})`, ...(color ? { color } : {}) } : color ? { color } : undefined,
       "data-fill-state": resolvedFill === "outline" ? undefined : fillSafe ? fillState : "soft",
       "data-fill-anim": animateFill ? "true" : undefined,
       "data-nexa-gradient-anim": hasGradient && gradientAnim ? gradientAnim : undefined,
@@ -195,6 +224,10 @@ export function createIcon(data: NexaIconData): NexaIconComponent {
       : null;
 
     const strokePaint = hasGradient ? `url(#${gradientId})` : "currentColor";
+    const renderNodes = data.nodes.map(([tag, attrs]) => {
+      const closed = data.fillSafe === true || isClosedNode([tag, attrs]);
+      return { tag, attrs: { ...attrs, "data-closed": closed ? "true" : "false" } };
+    });
     const bodyLayer =
       glassBody && hasGlass
         ? h(
@@ -208,7 +241,7 @@ export function createIcon(data: NexaIconData): NexaIconComponent {
               strokeLinecap: "round",
               strokeLinejoin: "round",
             },
-            ...data.nodes.map(([tag, attrs], i) => h(tag, { ...attrs, key: i }))
+            ...renderNodes.map((node, i) => h(node.tag, { ...node.attrs, key: i }))
           )
         : null;
 
@@ -218,7 +251,7 @@ export function createIcon(data: NexaIconData): NexaIconComponent {
       gradientDefs,
       bodyLayer,
       title != null ? h("title", { key: "__title" }, title) : null,
-      ...data.nodes.map(([tag, attrs], i) => h(tag, { ...attrs, key: i }))
+      ...renderNodes.map((node, i) => h(node.tag, { ...node.attrs, key: i }))
     );
 
     if (hasShape || threeD || hasGlass) {
@@ -240,11 +273,17 @@ export function createIcon(data: NexaIconData): NexaIconComponent {
           "data-nexa-glass-trigger": hasGlass && glassAnim ? glassTrigger ?? "always" : undefined,
           style:
             hasShape || hasGlass
-              ? { width: `${frameWidth}px`, height: `${frameHeight}px`, ...glassStyle }
+              ? {
+                  width: `${((frameWidth / px) || 1.7).toFixed(2)}em`,
+                  height: `${((frameHeight / px) || 1.7).toFixed(2)}em`,
+                  fontSize: explicitSize ? `${px}px` : "var(--nexa-icon-size, 1em)",
+                  ...glassStyle,
+                }
               : glassStyle,
           role: labelled ? "img" : undefined,
-          "aria-label": labelled ? label ?? title : undefined,
-          "aria-hidden": labelled ? undefined : "true",
+          "aria-label": labelled ? accessibleLabel : undefined,
+          "aria-labelledby": labelled ? ariaLabelledByProp : undefined,
+          "aria-hidden": ariaHiddenProp ?? (labelled ? undefined : "true"),
         },
         svgElement
       );

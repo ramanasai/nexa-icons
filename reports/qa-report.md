@@ -8,7 +8,7 @@ adapter.
 
 | Gate | Command | Result |
 |---|---|---|
-| Unit/integration suite | `npm test` | **90/90 pass** |
+| Unit/integration suite | `npm test` | **96/96 pass** |
 | Release verification | `node scripts/verify.mjs` | **OK** — all size/asset budgets |
 | Gallery browser checks | `python3 gallery/verify-browser.py` | **98/98 pass** (Chromium) |
 | Cross-browser checks | `python3 gallery/verify-cross-browser.py` | **26/26 pass** (Chromium + WebKit; Firefox launcher unavailable in this environment) |

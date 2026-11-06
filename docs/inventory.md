@@ -34,8 +34,8 @@ estimated.
 |---|---:|---|
 | Outline (default / "empty") | **1,034** | stroke-only, the shipped base |
 | Duotone (soft fill) | **1,034** | `variant="duotone"` / `filled="soft"` — theme-safe at 16 % opacity |
-| Solid ("filled") | **67** | only **closed-geometry** glyphs fill cleanly (`fillSafe`) |
-| Solid request on open geometry | **966** | automatically degrades to duotone — never produces a broken blob |
+| Solid ("filled") | **66** | only **closed-geometry** glyphs fill cleanly (`fillSafe`) |
+| Solid request on open geometry | **968** | automatically degrades to duotone — never produces a broken blob |
 | Fill ↔ empty animation | **1,034** | `animateFill` — 320 ms `fill-opacity` transition, reduced-motion safe |
 
 ```tsx
@@ -157,15 +157,15 @@ Total 10.6 KB of SVG; currentColor + 3 optional CSS variables; light/dark/graysc
 
 | Artefact | Raw | Brotli |
 |---|---:|---:|
-| One tree-shaken React icon (incl. shape/fill/3D code) | 3,500 B | **1,544 B** |
-| 8 icons / 50 icons | — | 2,036 B / 3,347 B |
-| Full sprite (1,034 symbols) | 357,126 B | 44,154 B |
-| Animation + shape/fill/3D CSS | 16,198 B | 3,270 B |
-| Vanilla JS ESM (all 1,034, zero-dep) | 372,496 B | 60,896 B |
-| Gallery shell / data / app (local files, 0 third-party) | 30,402 / 457,027 / 87,603 B | 7,054 / 74,806 / 18,645 B |
+| One tree-shaken React icon (incl. shape/fill/3D code) | 4,155 B | **1,828 B** |
+| 8 icons / 50 icons | — | 2,308 B / 3,347 B |
+| Full sprite (1,034 symbols) | 441,985 B | 45,246 B |
+| Animation + shape/fill/3D CSS | 17,290 B | 3,583 B |
+| Vanilla JS ESM (all 1,034, zero-dep) | 466,816 B | 62,744 B |
+| Gallery shell / data / app (local files, 0 third-party) | 30,409 / 550,458 / 88,175 B | 7,247 / 76,041 / 18,757 B |
 
 Reference point measured in the same harness: one Lucide icon tree-shaken =
-1,782 B brotli — Nexa is **1,544 B** for the same job.
+Lucide 1,571 B brotli in the same harness; Nexa is **1,828 B** for the first icon (the extra accessibility, closed-fill and em-frame logic). At 168 icons Nexa is still ~19% lighter (9.9 KB vs 12.1 KB br).
 
 ## 10. What makes this different from typical icon packages
 
@@ -175,7 +175,7 @@ Reference point measured in the same harness: one Lucide icon tree-shaken =
 | **Presentation layer is part of the library** | 17 semantic animations with 7 triggers, 49 swap/morph edges, 7 shape containers, outline/duotone/solid fill with animation, 4 CSS-3D presets, 7 frosted-glass surfaces and 8 gradient presets — all CSS/SVG only, reduced-motion/forced-colours safe | Usually static SVGs; animation is left to the app or a JS animation library |
 | **Semantic motion, not generic effects** | Each of the 1,034 icons is mapped to a meaning-appropriate preset (bell rings, heart beats, arrows nudge in their direction, loaders spin) | Uniform “hover scale/rotate” or nothing |
 | **Category-first imports** | `@sairamanapb/icons/communication` (and matching metadata in JS/Go/Rust) with 24 curated categories | Flat names only, or categories only in docs |
-| **Tiny per-icon payload** | 1,544 B brotli for one icon incl. the whole presentation factory; no icon font, no sprite fetch needed | Icon fonts (hundreds of KB), or ~1.8 KB per icon |
+| **Tiny incremental payload** | ~48 B brotli per extra icon after the first; 13-icon page ≈2.37 KB br; no icon font or sprite fetch | Icon fonts (hundreds of KB), or per-icon modules |
 | **Zero runtime dependencies** | JS path has none; React is an optional peer; Go/Rust have zero deps | Often a runtime/helper dependency |
 | **Native Rust UI support** | `nexa-icons-gpui` — actual GPUI element, asset source, text-color inheritance, size-aware stroke | Icon packages rarely ship native GUI adapters |
 | **Illustrated set built in** | 12 duotone illustrations in the same system as the UI icons (empty states, onboarding, features) | Separate illustration pack with a different visual language |
