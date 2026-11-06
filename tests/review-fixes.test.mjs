@@ -55,7 +55,10 @@ test("global switches: fill, motion, stroke and parent trigger are shipped", () 
   assert.ok(!/\.nexa-icon\s*\{[^}]*overflow:\s*visible/s.test(CSS), "base CSS must not force overflow:visible");
   assert.match(CSS, /\[data-nexa-fill="solid"\]\s*\.nexa-icon:not\(\[data-fill-state\]\)\s*\[data-closed="true"\]/);
   assert.match(CSS, /\[data-nexa-fill="duotone"\]\s*\.nexa-icon:not\(\[data-fill-state\]\)\s*\[data-closed="true"\]/);
-  assert.match(CSS, /\[data-nexa-motion="off"\]/);
+  assert.match(CSS, /\[data-nexa-motion="off"\] \[data-nexa-anim\]/);
+  assert.match(CSS, /\[data-nexa-motion="off"\] \.nexa-swap/);
+  // Must not suppress app-level animation on the generic icon class.
+  assert.ok(!/\[data-nexa-motion="off"\]\s*\.nexa-icon\s*[,{]/.test(CSS), "motion off must be scoped to Nexa-owned animation");
   assert.ok(!CSS.includes('stroke-width: var(--nexa-stroke)'));
   assert.match(js.svg('Bell'), /style="stroke-width:var\(--nexa-stroke,2\)"/);
   assert.match(ssr(dist.Bell), /stroke-width:var\(--nexa-stroke, 2\)/);

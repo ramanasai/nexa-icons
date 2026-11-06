@@ -335,7 +335,7 @@ Brotli quality 11 on the shipped files; method and commands in
 | One standalone SVG (`icons/bell.svg`) | 384 B | **221 B** |
 | One React icon module (`dist/icons/bell.js`) | 407 B | **258 B** |
 | One-icon tree-shaken app bundle (incl. shape/fill/3D) | 4,190 B | **1,834 B** |
-| Full sprite, all 1,034 icons (`sprite.svg`) | 441,995 B | **45,290 B** |
+| Full sprite, all 1,034 icons (`sprite.svg`, shipped) | 441,995 B | **45,290 B** |
 | Animation + shape/fill/3D layer (`dist/animations.css`) | 17,301 B | **3,558 B** |
 | React barrel (`dist/index.js`) | 68,230 B | **11,953 B** |
 | CJS root bundle (`dist/cjs/index.js`) | 68,490 B | **11,336 B** |
@@ -375,6 +375,14 @@ bench/                   reproducible size/tree-shaking/runtime benchmark (resul
 skills/nexa-icons/        reusable agent skill (SKILL.md + references)
 nexa-icon-styles-SKILL.md Nexa app-level icon style guide
 ```
+
+## Package contents
+
+The npm tarball is runtime-focused: `dist/` (ESM + CJS + types), `js/`,
+`sprite.svg`, data manifests, illustrations, `AGENTS.md` and `README.md`.
+Raw per-icon SVGs and the full docs site live in the
+[GitHub repo](https://github.com/ramanasai/nexa-icons) (they are not duplicated
+in the tarball).
 
 ## API at a glance
 

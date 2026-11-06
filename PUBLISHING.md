@@ -1,6 +1,6 @@
 # Publishing @sairamanapb/icons to npm
 
-> **Published:** `1.0.2` is live. This tree is **1.0.3** with the Lucide `--nexa-stroke` fix and Tailwind layer-order docs; run `npm publish --access public` (with OTP) to release it.
+> **Published:** `1.0.2` is live. This tree is **1.0.4** with scoped motion switches, a runtime-only tarball and the 1.0.3 Lucide/layer fixes; run `npm publish --access public` (with OTP) to release it.
 
 > **Status:** `1.0.0` is published on npm — https://www.npmjs.com/package/@sairamanapb/icons
 > (`npm view @sairamanapb/icons version` → `1.0.0`). Use this guide for the next release.
@@ -79,7 +79,7 @@ on npmjs.com and switch the workflow to `npm publish --provenance` with
 ## Gotchas
 
 - `dist/` is committed and also rebuilt by `prepublishOnly`; never hand-edit it.
-- The package is ~1.13 MB packed / ~7.87 MB unpacked (4,291 files) (1,034 icon modules × ESM+CJS);
+- The package is ~0.9 MB packed / ~5.9 MB unpacked (runtime-only — raw SVG/docs excluded) (1,034 icon modules × ESM+CJS);
   scoped npm has no per-package size limit, but keep an eye on it.
 - License: ISC; Lucide/Feather notices ship in `NOTICE` and must stay.
 - Brand marks in `brands` are trademarks of their owners; see `NOTICE`.

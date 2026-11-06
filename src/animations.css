@@ -498,11 +498,17 @@
 
 
 /* ---- global parent switches -------------------------------------------- */
-/* <div data-nexa-motion="off"> disables every preset, swap, fill and 3D transition */
-[data-nexa-motion="off"] .nexa-icon,
-[data-nexa-motion="off"] .nexa-icon *,
+/* Disable only Nexa's own motion — app spinners/rotations on .nexa-icon stay. */
+[data-nexa-motion="off"] [data-nexa-anim],
 [data-nexa-motion="off"] .nexa-swap,
-[data-nexa-motion="off"] .nexa-swap * {
+[data-nexa-motion="off"] .nexa-swap__a,
+[data-nexa-motion="off"] .nexa-swap__b {
+  animation: none !important;
+  transition: none !important;
+}
+[data-nexa-motion="off"] .nexa-3d,
+[data-nexa-motion="off"] .nexa-3d > .nexa-icon,
+[data-nexa-motion="off"] [data-fill-anim="true"] [data-closed="true"] {
   animation: none !important;
   transition: none !important;
 }
