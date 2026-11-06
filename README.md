@@ -40,7 +40,7 @@ dependencies beyond the optional React peer**.
 
 ## For AI agents
 
-- [`llms.txt`](llms.txt) — compact, link-rich summary for LLM/agent tooling
+- [`llms.txt`](llms.txt) — compact, link-rich summary for LLM/agent tooling (`llm.txt` alias included)
 - [`AGENTS.md`](AGENTS.md) — canonical implementation guide
 - [`skills/nexa-icons/SKILL.md`](skills/nexa-icons/SKILL.md) — installable agent skill
 

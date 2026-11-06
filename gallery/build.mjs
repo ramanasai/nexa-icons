@@ -280,6 +280,9 @@ const drawerHtml = read(join(SRC, 'drawer.html')).trim();
 const llmsSrc = join(ROOT, 'llms.txt');
 const llmsOut = join(ROOT, 'gallery', 'llms.txt');
 if (existsSync(llmsSrc)) copyFileSync(llmsSrc, llmsOut);
+// accepted alias for tools that look for llm.txt
+const llmSrc = join(ROOT, 'llm.txt');
+if (existsSync(llmSrc)) copyFileSync(llmSrc, join(ROOT, 'gallery', 'llm.txt'));
 
 const injectedCss = minifyCss(animCss) + '\n' + minifyCss(effectsCss) + '\n' + minifyCss(componentsCss);
 let appSource = read(join(SRC, 'app.js')).trim();

@@ -1,0 +1,46 @@
+# Nexa Icons
+
+> Open-source icon system: 1,000 stroke icons in 24 categories, shipped as
+> tree-shakeable React/TypeScript, zero-dependency JavaScript, HTML sprites,
+> Go and Rust packages. Every icon is currentColor-only, theme-safe, and can
+> optionally use shapes, outline/duotone/solid fill, semantic animations,
+> swap/morph, frosted glass + gradient effects and CSS-3D presets.
+
+## Live gallery
+- [Icon gallery](https://ramanasai.github.io/nexa-icons/): search, categories, shape/fill/3D/glass demos, copy-ready snippets for HTML, JS, React, Go and Rust.
+
+## Installation
+- npm / Yarn / pnpm / bun: `npm install @nexa/icons` (developers can also use `npm ci && npm test`)
+- React: `import { Bell } from "@nexa/icons"` (+ optional `@nexa/icons/animations.css`)
+- JavaScript (zero dependencies): `import { svg, sprite } from "@nexa/icons/js"`
+- HTML: inline `sprite.svg`, then `<svg><use href="#nexa-bell"/></svg>`
+- Go: `import nexaicons "github.com/nexa-icons/nexa/go"`
+- Rust: `use nexa_icons::{get, SvgOptions};`
+- Rust + GPUI: crate `nexa-icons-gpui` in `rust/gpui/`
+
+## Core docs
+- [AGENTS.md](https://github.com/ramanasai/nexa-icons/blob/main/AGENTS.md): canonical end-user and coding-agent guide (install, imports, sizing, shapes, fill, 3D, animations, swaps, categories, illustrations, GPUI, accessibility, budgets, regeneration).
+- [README.md](https://github.com/ramanasai/nexa-icons/blob/main/README.md): overview, quick starts, measured sizes.
+- [API reference](https://github.com/ramanasai/nexa-icons/blob/main/docs/api.md): React/JS/Go/Rust APIs.
+- [Animations](https://github.com/ramanasai/nexa-icons/blob/main/docs/animations.md): 17 semantic presets, 7 triggers, fill/swap/3D motion.
+- [Glass & gradients](https://github.com/ramanasai/nexa-icons/blob/main/docs/effects.md): 7 glass presets, glass body, motion, triggers, 8 gradients + hue animation, CSS variables.
+- [Design rules](https://github.com/ramanasai/nexa-icons/blob/main/docs/design.md) · [Theming](https://github.com/ramanasai/nexa-icons/blob/main/docs/theming.md)
+- [Performance](https://github.com/ramanasai/nexa-icons/blob/main/docs/performance.md): measured bundles and budgets.
+- [Inventory](https://github.com/ramanasai/nexa-icons/blob/main/docs/inventory.md): 1,000 icons, 24 categories, variant counts.
+- [Illustrations](https://github.com/ramanasai/nexa-icons/blob/main/illustrations/README.md): 12 duotone illustrations.
+- [Adding icons](https://github.com/ramanasai/nexa-icons/blob/main/docs/adding-icons.md) · [Troubleshooting](https://github.com/ramanasai/nexa-icons/blob/main/docs/troubleshooting.md) · [Migration from Lucide](https://github.com/ramanasai/nexa-icons/blob/main/docs/migration-from-lucide.md)
+
+## Machine-readable data
+- Dataset: https://raw.githubusercontent.com/ramanasai/nexa-icons/main/data/icons.json (geometry, keywords, categories, presets, fill-safety, aliases)
+- Categories: https://raw.githubusercontent.com/ramanasai/nexa-icons/main/data/categories.json
+- Swap pairs: https://raw.githubusercontent.com/ramanasai/nexa-icons/main/data/swaps.json
+- One SVG per icon: https://github.com/ramanasai/nexa-icons/tree/main/icons
+- Sprite: https://raw.githubusercontent.com/ramanasai/nexa-icons/main/sprite.svg
+
+## Quick facts
+- 1,000 icons, 24 categories, 26 swap pairs (49 directed edges).
+- Defaults: 24×24 grid, 24 px, stroke 1.5; size→stroke 16→2, 20→1.75, 24+→1.5.
+- One tree-shaken React icon: ~1,544 B brotli (React external).
+- No runtime dependencies for the JS path; React is an optional peer.
+- 90/90 tests, release budgets and docs checks pass; gallery verified in Chromium and WebKit.
+- License: ISC; icon geometry derives from Lucide 1.70 (ISC) and Feather (MIT), attribution in NOTICE.
