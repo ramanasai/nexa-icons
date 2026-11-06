@@ -53,7 +53,7 @@ test("React: gradient emits unique SVG defs per instance and applies the stroke"
   const id = html.match(/linearGradient id="([^"]+)"/)?.[1];
   assert.ok(id, "no linearGradient id");
   assert.match(html, new RegExp(`stroke="url\\(#${id}\\)"`));
-  assert.match(html, /style="stroke:url\(#/);
+  assert.match(html, /style="[^"]*stroke:url\(#/);
   assert.match(html, /stop-color:var\(--nexa-grad-a\)/);
   const tree = createElement("div", null,
     createElement(dist.Bell, { gradient: "aurora" }),
@@ -72,7 +72,7 @@ test("JS API matches React for glass and gradients", () => {
   for (const gradient of ["aurora", "ice", "sunset", "emerald", "ocean", "candy", "gold", "mono"]) {
     const out = js.svg("Bell", { gradient });
     assert.match(out, new RegExp(`nexa-grad--${gradient}`));
-    assert.match(out, /style="stroke:url\(#/);
+    assert.match(out, /style="[^"]*stroke:url\(#/);
   }
   const combined = js.svg("Bell", { glass: "frost", gradient: "sunset" });
   assert.match(combined, /nexa-glass--frost/);

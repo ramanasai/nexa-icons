@@ -46,12 +46,12 @@ test("fill variants: outline default, duotone/solid state, fillSafe degradation,
   assert.ok(!/data-fill-state/.test(outline), "outline is the default (no state attr)");
   for (const filled of [true, "soft", false]) {
     const html = ssr(dist.Bell, { filled });
-    if (filled === false) assert.ok(!/data-fill-state/.test(html), "filled=false is outline");
+    if (filled === false) assert.match(html, /data-fill-state="false"/, "filled=false pins outline");
     else assert.match(html, /data-fill-state="soft"/, `open glyph filled=${filled} must degrade to duotone`);
   }
   for (const variant of FILL_VARIANTS) {
     const html = ssr(dist.Bell, { variant });
-    if (variant === "outline") assert.ok(!/data-fill-state/.test(html));
+    if (variant === "outline") assert.match(html, /data-fill-state="false"/);
     else assert.match(html, /data-fill-state="soft"/, `variant ${variant} on open glyph`);
   }
   // Closed geometry (fillSafe) fills solid; open geometry never does.

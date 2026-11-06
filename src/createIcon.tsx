@@ -62,7 +62,9 @@ export const STROKE_FOR_PX = strokeForSize;
 function isClosedNode([tag, attrs]: NexaIconData["nodes"][number]): boolean {
   if (tag === "circle" || tag === "ellipse" || tag === "rect" || tag === "polygon") return true;
   if (tag !== "path") return false;
-  return /[Zz]/.test(attrs.d ?? "");
+  const d = attrs.d ?? "";
+  const subpaths = d.match(/[Mm][^Mm]*/g) ?? [];
+  return subpaths.length > 0 && subpaths.every((subpath) => /[Zz]/.test(subpath));
 }
 
 const resolvePreset = (
@@ -126,8 +128,10 @@ export function createIcon(data: NexaIconData): NexaIconComponent {
     const labelled = accessibleLabel != null || ariaLabelledByProp != null;
     const resolvedFill: "outline" | "duotone" | "solid" =
       filled === true ? "solid" : filled === "soft" ? "duotone" : variant ?? "outline";
+    const fillExplicit = variant !== undefined || filled !== undefined;
     const fillSafe = data.fillSafe !== false;
-    const fillState = resolvedFill === "outline" ? "false" : resolvedFill === "duotone" ? "soft" : "true";
+    const fillState =
+      resolvedFill === "outline" ? "false" : resolvedFill === "duotone" ? "soft" : "true";
     const hasShape = shape != null && shape !== "none";
     const glassConfig = glass && typeof glass === "object" ? glass : undefined;
     const glassPreset =
@@ -148,6 +152,14 @@ export function createIcon(data: NexaIconData): NexaIconComponent {
     const gradientAngle = ((gradientConfig?.angle ?? 135) * Math.PI) / 180;
     const gx = Math.cos(gradientAngle) / 2;
     const gy = Math.sin(gradientAngle) / 2;
+    const svgStyle: CSSProperties = {};
+    if (strokeWidth == null && !absoluteStrokeWidth) {
+      // Inline style (not the attribute) so --nexa-stroke can override safely;
+      // inline styles support a fallback, CSS custom-property rules do not.
+      svgStyle.strokeWidth = `var(--nexa-stroke, ${baseStroke})`;
+    }
+    if (color) svgStyle.color = color;
+    if (gradientPreset) svgStyle.stroke = `url(#nexa-g${reactId.replace(/[^a-zA-Z0-9_-]/g, "")})`;
     const glassStyle = glassConfig
       ? ({
           ...(glassConfig.blur != null ? { "--nexa-glass-blur": `${glassConfig.blur}px` } : {}),
@@ -187,8 +199,8 @@ export function createIcon(data: NexaIconData): NexaIconComponent {
       focusable: "false",
       "data-nexa-icon": data.kebab,
       "data-nexa-fill-safe": fillSafe ? "true" : "false",
-      style: hasGradient ? { stroke: `url(#${gradientId})`, ...(color ? { color } : {}) } : color ? { color } : undefined,
-      "data-fill-state": resolvedFill === "outline" ? undefined : fillSafe ? fillState : "soft",
+      style: Object.keys(svgStyle).length ? svgStyle : undefined,
+      "data-fill-state": fillExplicit ? (resolvedFill === "outline" ? "false" : fillSafe ? fillState : "soft") : undefined,
       "data-fill-anim": animateFill ? "true" : undefined,
       "data-nexa-gradient-anim": hasGradient && gradientAnim ? gradientAnim : undefined,
       "data-nexa-anim": preset,

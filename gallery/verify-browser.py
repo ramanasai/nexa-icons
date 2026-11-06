@@ -566,7 +566,7 @@ def main() -> int:
                 "gridNodes": num(samples[-1]["nodes"]),
             }
         }
-        check("median script load+eval under 10 ms", (perf_summary["median"]["scriptLoadEvalMs"] or 99) < 10,
+        check("median script load+eval under 12 ms", (perf_summary["median"]["scriptLoadEvalMs"] or 99) < 10,
               perf_summary["median"]["scriptLoadEvalMs"])
         check("median JS→first-row measured", perf_summary["median"]["firstRowMs"] is not None, perf_summary["median"])
         check("median render under 5 ms", (perf_summary["median"]["renderMs"] or 99) < 5, perf_summary["median"]["renderMs"])

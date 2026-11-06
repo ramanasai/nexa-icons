@@ -73,7 +73,9 @@ const serializeAttrs = (attrs) =>
 const isClosedNode = (node) => {
   if (node[0] === 'circle' || node[0] === 'ellipse' || node[0] === 'rect' || node[0] === 'polygon') return true;
   if (node[0] !== 'path') return false;
-  return /[Zz]/.test((node[1] && node[1].d) || '');
+  const d = (node[1] && node[1].d) || '';
+  const subpaths = d.match(/[Mm][^Mm]*/g) || [];
+  return subpaths.length > 0 && subpaths.every((subpath) => /[Zz]/.test(subpath));
 };
 
 const ICONS = {};
@@ -243,6 +245,9 @@ function svg(name, options = {}) {
     glassStyle.push('--nexa-grad-a:' + esc(gradientConfig.from));
     glassStyle.push('--nexa-grad-b:' + esc(gradientConfig.to));
   }
+  const fill =
+    filled === true ? 'solid' : filled === 'soft' ? 'duotone' : variant || 'outline';
+  const fillExplicit = variant !== undefined || filled !== undefined;
   const preset = animate === true ? icon.preset : typeof animate === 'string' ? animate : null;
   const when = preset ? trigger || icon.trigger : null;
   const accessibleLabel = label != null ? label : title != null ? title : ariaLabelOption;
@@ -265,11 +270,12 @@ function svg(name, options = {}) {
       .filter(Boolean)
       .join(' ')
   ) + '"');
-  if (color != null || gradientId) {
+  {
     var styleBits = [];
+    if (strokeWidth == null && !absoluteStrokeWidth) styleBits.push('stroke-width:var(--nexa-stroke,' + baseStroke + ')');
     if (color != null) styleBits.push('color:' + esc(color));
     if (gradientId) styleBits.push('stroke:url(#' + gradientId + ')');
-    attrs.push('style="' + styleBits.join(';') + '"');
+    if (styleBits.length) attrs.push('style="' + styleBits.join(';') + '"');
   }
   if (labelled && !wrapped) {
     attrs.push('role="img"');
@@ -293,12 +299,10 @@ function svg(name, options = {}) {
   }
 
   const titleMarkup = title != null ? '<title>' + esc(title) + '</title>' : '';
-  const fill =
-    filled === true ? 'solid' : filled === 'soft' ? 'duotone' : variant || 'outline';
-  if (fill !== 'outline') {
-    attrs.push('data-fill-state="' + (fill === 'solid' ? (icon.fillSafe === false ? 'soft' : 'true') : 'soft') + '"');
-    if (animateFill) attrs.push('data-fill-anim="true"');
+  if (fillExplicit) {
+    attrs.push('data-fill-state="' + (fill === 'outline' ? 'false' : fill === 'solid' ? (icon.fillSafe === false ? 'soft' : 'true') : 'soft') + '"');
   }
+  if (fillExplicit && fill !== 'outline' && animateFill) attrs.push('data-fill-anim="true"');
   const gradientStops = gradientConfig
     ? '<stop offset="0%" style="stop-color:' + esc(gradientConfig.from) + '"/>' +
       '<stop offset="100%" style="stop-color:' + esc(gradientConfig.to) + '"/>'

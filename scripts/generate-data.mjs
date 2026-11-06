@@ -274,7 +274,9 @@ const categoryIdsByName = new Map();
 function isClosedNode([tag, attrs]) {
   if (tag === "circle" || tag === "ellipse" || tag === "rect" || tag === "polygon") return true;
   if (tag !== "path") return false;
-  return /[Zz]/.test(attrs.d ?? "");
+  const d = attrs.d ?? "";
+  const subpaths = d.match(/[Mm][^Mm]*/g) ?? [];
+  return subpaths.length > 0 && subpaths.every((subpath) => /[Zz]/.test(subpath));
 }
 // Icons whose fill safety differs from the closed-geometry heuristic:
 // Heart is a closed visual shape (open path closes implicitly when filled);

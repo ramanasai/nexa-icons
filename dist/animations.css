@@ -22,14 +22,11 @@
  */
 
 /* Zero-specificity base: app utilities (hidden, block, shrink, size) win. */
+@layer nexa {
 :where(.nexa-icon) {
   display: inline-block;
   vertical-align: -0.125em;
   color: inherit;
-  /* If a global --nexa-stroke is set (e.g. on <html>), it wins over the
-     per-icon stroke-width attribute; otherwise this declaration is invalid
-     and the attribute applies. */
-  stroke-width: var(--nexa-stroke);
 }
 
 [data-nexa-anim] {
@@ -425,13 +422,20 @@
 /* ---- fill variants (empty <-> filled animation is a CSS transition) ------
    Only closed nodes are filled; open strokes (checks, arrows, chevrons) keep
    their fill="none" so they never grow stray triangles. */
-.nexa-icon[data-fill-state="true"] [data-closed="true"],
-[data-nexa-fill="solid"] .nexa-icon [data-closed="true"] {
+.nexa-icon[data-fill-state="true"] [data-closed="true"] {
   fill: currentColor;
   fill-opacity: 1;
 }
-.nexa-icon[data-fill-state="soft"] [data-closed="true"],
-[data-nexa-fill="duotone"] .nexa-icon [data-closed="true"] {
+.nexa-icon[data-fill-state="soft"] [data-closed="true"] {
+  fill: currentColor;
+  fill-opacity: 0.16;
+}
+/* Parent switch applies only to icons that did NOT set an explicit fill. */
+[data-nexa-fill="solid"] .nexa-icon:not([data-fill-state]) [data-closed="true"] {
+  fill: currentColor;
+  fill-opacity: 1;
+}
+[data-nexa-fill="duotone"] .nexa-icon:not([data-fill-state]) [data-closed="true"] {
   fill: currentColor;
   fill-opacity: 0.16;
 }
@@ -502,3 +506,5 @@
   transition: none !important;
 }
 /* <html style="--nexa-stroke: 1.75"> sets the stroke globally. */
+
+}

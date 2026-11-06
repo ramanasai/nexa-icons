@@ -2537,7 +2537,7 @@ var generatedIcons = []Icon{
 		Trigger:  "hover",
 		Aliases:  []string{"Utensils"},
 		Keywords: []string{"fork", "knife", "cutlery", "flatware", "tableware", "silverware", "food", "restaurant", "meal", "breakfast", "dinner", "supper"},
-		Inner:    `<path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" data-closed="false"/><path d="M7 2v20" data-closed="false"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" data-closed="true"/>`,
+		Inner:    `<path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" data-closed="false"/><path d="M7 2v20" data-closed="false"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" data-closed="false"/>`,
 	},
 	{
 		Name:     "UtensilsCrossed",
@@ -2546,7 +2546,7 @@ var generatedIcons = []Icon{
 		Trigger:  "hover",
 		Aliases:  []string{"UtensilsCrossed"},
 		Keywords: []string{"fork", "knife", "cutlery", "flatware", "tableware", "silverware", "food", "restaurant", "meal", "breakfast", "dinner", "supper"},
-		Inner:    `<path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8" data-closed="false"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7" data-closed="true"/><path d="m2.1 21.8 6.4-6.3" data-closed="false"/><path d="m19 5-7 7" data-closed="false"/>`,
+		Inner:    `<path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8" data-closed="false"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7" data-closed="false"/><path d="m2.1 21.8 6.4-6.3" data-closed="false"/><path d="m19 5-7 7" data-closed="false"/>`,
 	},
 	{
 		Name:     "Vegan",
@@ -4085,7 +4085,7 @@ var generatedIcons = []Icon{
 		Trigger:  "hover",
 		Aliases:  []string{"Headset"},
 		Keywords: []string{"music", "audio", "sound", "gaming", "headphones", "headset", "call", "center", "phone", "telephone", "voip", "video"},
-		Inner:    `<path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z" data-closed="true"/><path d="M21 16v2a4 4 0 0 1-4 4h-5" data-closed="false"/>`,
+		Inner:    `<path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z" data-closed="false"/><path d="M21 16v2a4 4 0 0 1-4 4h-5" data-closed="false"/>`,
 	},
 	{
 		Name:     "MailBadge",

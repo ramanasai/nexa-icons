@@ -53,10 +53,12 @@ test("global switches: fill, motion, stroke and parent trigger are shipped", () 
   assert.match(CSS, /:where\(\.nexa-icon\)/, "base CSS has zero specificity");
   assert.ok(!/\.nexa-icon\s*\{[^}]*flex:\s*none/s.test(CSS), "base CSS must not force flex:none");
   assert.ok(!/\.nexa-icon\s*\{[^}]*overflow:\s*visible/s.test(CSS), "base CSS must not force overflow:visible");
-  assert.match(CSS, /\[data-nexa-fill="solid"\]\s*\.nexa-icon\s*\[data-closed="true"\]/);
-  assert.match(CSS, /\[data-nexa-fill="duotone"\]\s*\.nexa-icon\s*\[data-closed="true"\]/);
+  assert.match(CSS, /\[data-nexa-fill="solid"\]\s*\.nexa-icon:not\(\[data-fill-state\]\)\s*\[data-closed="true"\]/);
+  assert.match(CSS, /\[data-nexa-fill="duotone"\]\s*\.nexa-icon:not\(\[data-fill-state\]\)\s*\[data-closed="true"\]/);
   assert.match(CSS, /\[data-nexa-motion="off"\]/);
-  assert.match(CSS, /stroke-width:\s*var\(--nexa-stroke\)/);
+  assert.ok(!CSS.includes('stroke-width: var(--nexa-stroke)'));
+  assert.match(js.svg('Bell'), /style="stroke-width:var\(--nexa-stroke,2\)"/);
+  assert.match(ssr(dist.Bell), /stroke-width:var\(--nexa-stroke, 2\)/);
   assert.match(CSS, /data-nexa-trigger="parent"/);
   assert.match(ssr(dist.Bell, { animate: true, trigger: "parent" }), /data-nexa-trigger="parent"/);
   assert.match(js.svg("Bell"), /data-nexa-fill-safe="false"/);

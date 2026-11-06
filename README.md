@@ -199,7 +199,7 @@ export function Pager() {
 <Crown threeD="tilt" />
 ```
 
-Tree-shaken cost: ~1,828 B brotli for the first icon (includes the shape/fill/3D factory), ~41–49 B per extra icon.
+Tree-shaken cost: ~1,834 B brotli for the first icon (includes the shape/fill/3D factory), ~41–49 B per extra icon.
 
 ### Go
 
@@ -316,14 +316,14 @@ Brotli quality 11 on the shipped files; method and commands in
 |---|---:|---:|
 | One standalone SVG (`icons/bell.svg`) | 384 B | **221 B** |
 | One React icon module (`dist/icons/bell.js`) | 407 B | **258 B** |
-| One-icon tree-shaken app bundle (incl. shape/fill/3D) | 4,155 B | **1,828 B** |
-| Full sprite, all 1,034 icons (`sprite.svg`) | 441,992 B | **45,293 B** |
-| Animation + shape/fill/3D layer (`dist/animations.css`) | 17,290 B | **3,583 B** |
+| One-icon tree-shaken app bundle (incl. shape/fill/3D) | 4,190 B | **1,834 B** |
+| Full sprite, all 1,034 icons (`sprite.svg`) | 441,995 B | **45,290 B** |
+| Animation + shape/fill/3D layer (`dist/animations.css`) | 17,301 B | **3,558 B** |
 | React barrel (`dist/index.js`) | 68,230 B | **11,953 B** |
 | CJS root bundle (`dist/cjs/index.js`) | 68,490 B | **11,336 B** |
-| Vanilla JS with all data (`js/index.mjs`) | 486,467 B | **62,847 B** |
+| Vanilla JS with all data (`js/index.mjs`) | 486,713 B | **62,895 B** |
 | Gallery shell (`gallery/index.html`) | 30,409 B | **7,247 B** |
-| Gallery data (`gallery/icons.data.js`) | 550,465 B | **76,020 B** |
+| Gallery data (`gallery/icons.data.js`) | 550,468 B | **76,039 B** |
 | Gallery app (`gallery/app.js`) | 88,175 B | **18,757 B** |
 | Illustrated set, 12 SVGs (`illustrations/`) | 10,634 B | — |
 

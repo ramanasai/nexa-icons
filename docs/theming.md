@@ -238,3 +238,18 @@ turns preset animations into a no-op (or a one-shot opacity change) in
 - `--nexa-stroke` inherits to every icon and overrides the stroke width.
 - Frames use `em` units, so a CSS-sized icon (`h-4 w-4`) gets a correctly scaled
   frame; set `--nexa-icon-size` when the frame is not next to a known font size.
+
+
+## Cascade layers and Tailwind v4
+
+The package CSS is wrapped in `@layer nexa`, so unlayered app rules win. With
+Tailwind v4, import it into the base layer so utilities always override it:
+
+```css
+@import "@sairamanapb/icons/animations.css" layer(base);
+```
+
+Global fill switches only affect icons without an explicit fill state. Pin a
+stateful icon with `variant="outline"` (renders `data-fill-state="false"`) so an
+app-owned `fill-current` class cannot be overridden by a parent
+`[data-nexa-fill]` switch.

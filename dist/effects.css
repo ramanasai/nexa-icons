@@ -11,6 +11,7 @@
  * ---------------------------------------------------------------------------
  */
 
+@layer nexa {
 /* ---- glass body (thick glyph behind the stroke) ------------------------- */
 .nexa-icon-body {
   opacity: 0.86;
@@ -271,4 +272,6 @@
     width: auto;
     inset: 0;
   }
+}
+
 }

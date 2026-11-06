@@ -57,7 +57,9 @@ const STROKE_FOR_PX = strokeForSize;
 function isClosedNode([tag, attrs]) {
   if (tag === "circle" || tag === "ellipse" || tag === "rect" || tag === "polygon") return true;
   if (tag !== "path") return false;
-  return /[Zz]/.test(attrs.d ?? "");
+  const d = attrs.d ?? "";
+  const subpaths = d.match(/[Mm][^Mm]*/g) ?? [];
+  return subpaths.length > 0 && subpaths.every((subpath) => /[Zz]/.test(subpath));
 }
 const resolvePreset = (animate, fallback) => animate === true ? fallback : typeof animate === "string" ? animate : void 0;
 function createIcon(data) {
@@ -102,6 +104,7 @@ function createIcon(data) {
     const accessibleLabel = label ?? title ?? ariaLabelProp;
     const labelled = accessibleLabel != null || ariaLabelledByProp != null;
     const resolvedFill = filled === true ? "solid" : filled === "soft" ? "duotone" : variant ?? "outline";
+    const fillExplicit = variant !== void 0 || filled !== void 0;
     const fillSafe = data.fillSafe !== false;
     const fillState = resolvedFill === "outline" ? "false" : resolvedFill === "duotone" ? "soft" : "true";
     const hasShape = shape != null && shape !== "none";
@@ -116,6 +119,12 @@ function createIcon(data) {
     const gradientAngle = (gradientConfig?.angle ?? 135) * Math.PI / 180;
     const gx = Math.cos(gradientAngle) / 2;
     const gy = Math.sin(gradientAngle) / 2;
+    const svgStyle = {};
+    if (strokeWidth == null && !absoluteStrokeWidth) {
+      svgStyle.strokeWidth = `var(--nexa-stroke, ${baseStroke})`;
+    }
+    if (color) svgStyle.color = color;
+    if (gradientPreset) svgStyle.stroke = `url(#nexa-g${reactId.replace(/[^a-zA-Z0-9_-]/g, "")})`;
     const glassStyle = glassConfig ? {
       ...glassConfig.blur != null ? { "--nexa-glass-blur": `${glassConfig.blur}px` } : {},
       ...glassConfig.tintA ? { "--nexa-glass-a": glassConfig.tintA } : {},
@@ -147,8 +156,8 @@ function createIcon(data) {
       focusable: "false",
       "data-nexa-icon": data.kebab,
       "data-nexa-fill-safe": fillSafe ? "true" : "false",
-      style: hasGradient ? { stroke: `url(#${gradientId})`, ...color ? { color } : {} } : color ? { color } : void 0,
-      "data-fill-state": resolvedFill === "outline" ? void 0 : fillSafe ? fillState : "soft",
+      style: Object.keys(svgStyle).length ? svgStyle : void 0,
+      "data-fill-state": fillExplicit ? resolvedFill === "outline" ? "false" : fillSafe ? fillState : "soft" : void 0,
       "data-fill-anim": animateFill ? "true" : void 0,
       "data-nexa-gradient-anim": hasGradient && gradientAnim ? gradientAnim : void 0,
       "data-nexa-anim": preset,
