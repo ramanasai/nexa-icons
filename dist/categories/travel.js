@@ -5,6 +5,7 @@ import { Car } from "../icons/car.js";
 import { CarBattery } from "../icons/car-battery.js";
 import { Caravan } from "../icons/caravan.js";
 import { Compass } from "../icons/compass.js";
+import { FlagIreland } from "../icons/flag-ireland.js";
 import { Fuel } from "../icons/fuel.js";
 import { Hotel } from "../icons/hotel.js";
 import { Luggage } from "../icons/luggage.js";
@@ -54,6 +55,7 @@ export {
   CarBattery,
   Caravan,
   Compass,
+  FlagIreland,
   Fuel,
   Hotel,
   Luggage,

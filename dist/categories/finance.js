@@ -23,6 +23,7 @@ import { DollarSign } from "../icons/dollar-sign.js";
 import { Euro } from "../icons/euro.js";
 import { HandCoins } from "../icons/hand-coins.js";
 import { IndianRupee } from "../icons/indian-rupee.js";
+import { Invoice } from "../icons/invoice.js";
 import { Landmark } from "../icons/landmark.js";
 import { Percent } from "../icons/percent.js";
 import { PiggyBank } from "../icons/piggy-bank.js";
@@ -68,6 +69,7 @@ export {
   Euro,
   HandCoins,
   IndianRupee,
+  Invoice,
   Landmark,
   Percent,
   PiggyBank,

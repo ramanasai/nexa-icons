@@ -11,6 +11,7 @@ export { BookOpenCheck } from "../icons/book-open-check.js";
 export { BookPlus } from "../icons/book-plus.js";
 export { BookX } from "../icons/book-x.js";
 export { Brain } from "../icons/brain.js";
+export { Crest } from "../icons/crest.js";
 export { Dna } from "../icons/dna.js";
 export { DraftingCompass } from "../icons/drafting-compass.js";
 export { FlaskConical } from "../icons/flask-conical.js";

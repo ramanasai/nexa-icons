@@ -10,6 +10,7 @@ import { BookOpenCheck } from "../icons/book-open-check.js";
 import { BookPlus } from "../icons/book-plus.js";
 import { BookX } from "../icons/book-x.js";
 import { Brain } from "../icons/brain.js";
+import { Crest } from "../icons/crest.js";
 import { Dna } from "../icons/dna.js";
 import { DraftingCompass } from "../icons/drafting-compass.js";
 import { FlaskConical } from "../icons/flask-conical.js";
@@ -48,6 +49,7 @@ export {
   BookPlus,
   BookX,
   Brain,
+  Crest,
   Dna,
   DraftingCompass,
   FlaskConical,

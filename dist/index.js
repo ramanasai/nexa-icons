@@ -1005,6 +1005,21 @@ import { TreePine } from "./icons/tree-pine.js";
 import { Trees } from "./icons/trees.js";
 import { UtilityPole } from "./icons/utility-pole.js";
 import { Warehouse } from "./icons/warehouse.js";
+import { Google } from "./icons/google.js";
+import { LinkedIn } from "./icons/linkedin.js";
+import { GitHub } from "./icons/github.js";
+import { Apple } from "./icons/apple.js";
+import { Microsoft } from "./icons/microsoft.js";
+import { XLogo } from "./icons/x-logo.js";
+import { Facebook } from "./icons/facebook.js";
+import { WhatsApp } from "./icons/whatsapp.js";
+import { Indeed } from "./icons/indeed.js";
+import { Passport } from "./icons/passport.js";
+import { Visa } from "./icons/visa.js";
+import { ResidencePermit } from "./icons/residence-permit.js";
+import { FlagIreland } from "./icons/flag-ireland.js";
+import { Crest } from "./icons/crest.js";
+import { Invoice } from "./icons/invoice.js";
 import { AlertTriangle as AlertTriangle2 } from "./icons/triangle-exclamation-point.js";
 import { X as X2 } from "./icons/x.js";
 export {
@@ -1028,6 +1043,7 @@ export {
   Ambulance,
   Anchor,
   Aperture,
+  Apple,
   Archive,
   ArchiveX,
   ArrowDown,
@@ -1285,6 +1301,7 @@ export {
   CreditCardPlus,
   CreditCardReader,
   CreditCardX,
+  Crest,
   Croissant,
   Crop,
   Crosshair,
@@ -1341,6 +1358,7 @@ export {
   EyeClosed,
   EyeDashed,
   EyeOff,
+  Facebook,
   Factory,
   FastForward,
   Fence,
@@ -1363,6 +1381,7 @@ export {
   Filter,
   Fingerprint,
   Flag,
+  FlagIreland,
   FlagOff,
   Flame,
   FlaskConical,
@@ -1399,6 +1418,7 @@ export {
   GitCompare,
   GitFork,
   GitGraph,
+  GitHub,
   GitMerge,
   GitMergeConflict,
   GitPullRequestCreate,
@@ -1410,6 +1430,7 @@ export {
   GlobeOff,
   GlobePlus,
   GlobeX,
+  Google,
   GraduationCap,
   Grape,
   Grid2x2,
@@ -1476,8 +1497,10 @@ export {
   ImageUp,
   Images,
   Inbox,
+  Indeed,
   IndianRupee,
   Info,
+  Invoice,
   Italic,
   IterationCw,
   Kanban,
@@ -1508,6 +1531,7 @@ export {
   Link2,
   Link2Off,
   LinkIcon,
+  LinkedIn,
   List,
   ListCheck,
   ListChecks,
@@ -1579,6 +1603,7 @@ export {
   MicSignal,
   MicVocal,
   Microscope,
+  Microsoft,
   Microwave,
   Milestone,
   Milk,
@@ -1652,6 +1677,7 @@ export {
   PanelsTopLeft,
   Paperclip,
   ParkingMeter,
+  Passport,
   Pause,
   Pen,
   PenLine,
@@ -1724,6 +1750,7 @@ export {
   RemoveFormatting,
   Repeat,
   Reply,
+  ResidencePermit,
   Rewind,
   Road,
   Rocket,
@@ -1978,6 +2005,7 @@ export {
   Vibrate,
   Video,
   VideoOff,
+  Visa,
   Voicemail,
   Volume,
   VolumeOff,
@@ -1998,6 +2026,7 @@ export {
   WebcamOff,
   Webhook,
   WebhookOff,
+  WhatsApp,
   Wheat,
   WheatOff,
   WholeWord,
@@ -2018,6 +2047,7 @@ export {
   XCircle,
   X2 as XIcon,
   XLineTop,
+  XLogo,
   Zap,
   ZapOff,
   ZoomIn,

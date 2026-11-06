@@ -201,3 +201,29 @@ and your app's visual regression pass for both themes.
 - **Keep the geometry.** Icons are 24×24 / 2px padding / stroke-only /
   `currentColor`; the generator enforces root attributes, so edit `raw/vendor.json`
   only if you truly need custom geometry, and document why.
+
+
+## Non-Lucide icons (`raw/custom-icons.json`)
+
+Icons that do not exist in the vendored Lucide snapshot (brand marks, identity
+documents, invoice, crest) are authored in `raw/custom-icons.json` and merged by
+`scripts/generate-data.mjs` after the Lucide set. Each entry is:
+
+```json
+{
+  "name": "Passport",
+  "kebab": "passport",
+  "categories": ["security"],
+  "keywords": ["passport", "identity", "travel"],
+  "preset": "pop",
+  "trigger": "hover",
+  "fillSafe": false,
+  "nodes": [["path", { "d": "M7 3.5h10v17H7z" }]]
+}
+```
+
+Filled brand marks use `{"fill": "currentColor", "stroke": "none"}` on their
+paths and `fillSafe: true`. Categories are persisted into
+`data/categories.json` automatically. Brand geometry is CC0 via Simple Icons but
+the marks remain trademarks of their owners (see NOTICE); only add marks you
+have the right to redistribute.

@@ -134,7 +134,7 @@ test("documented Nexa imports resolve (root, /js and category entry points)", as
 
 test("docs state the real catalog size and use Nexa naming (legacy names only in the migration guide)", () => {
   const readme = fs.readFileSync(p("README.md"), "utf8");
-  assert.match(readme, /1,000|1000/);
+  assert.match(readme, /1,015/);
   assert.match(readme, /24 categor/i);
   const legacy = [];
   for (const file of FILES) {

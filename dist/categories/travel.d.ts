@@ -5,6 +5,7 @@ export { Car } from "../icons/car.js";
 export { CarBattery } from "../icons/car-battery.js";
 export { Caravan } from "../icons/caravan.js";
 export { Compass } from "../icons/compass.js";
+export { FlagIreland } from "../icons/flag-ireland.js";
 export { Fuel } from "../icons/fuel.js";
 export { Hotel } from "../icons/hotel.js";
 export { Luggage } from "../icons/luggage.js";

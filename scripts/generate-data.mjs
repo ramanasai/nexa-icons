@@ -292,6 +292,56 @@ const built = icons.map(({ name, kebab, aliases }) => {
     inner,
   };
 });
+// ---------------------------------------------------------------------------
+// Custom catalog icons (brand marks, identity documents, billing) authored in
+// raw/custom-icons.json. They live outside the vendored Lucide snapshot, so
+// they are merged here before categories/meta are computed.
+// ---------------------------------------------------------------------------
+const customIconsPath = path.join(ROOT, "raw/custom-icons.json");
+const customIcons = fs.existsSync(customIconsPath)
+  ? JSON.parse(fs.readFileSync(customIconsPath, "utf8"))
+  : [];
+const takenKebabs = new Set(built.map((icon) => icon.kebab));
+const takenNames = new Set(built.flatMap((icon) => [icon.name, ...icon.aliases]));
+for (const def of customIcons) {
+  if (!def || !def.kebab || !def.name || takenKebabs.has(def.kebab) || takenNames.has(def.name)) continue;
+  const nodes = (def.nodes ?? []).map(([tag, attrs]) => [tag, { ...attrs }]);
+  const inner = nodes.map(([tag, attrs]) => `<${tag} ${attributeString(attrs)}/>`).join("");
+  built.push({
+    name: def.name,
+    kebab: def.kebab,
+    aliases: [def.name],
+    keywords: [...new Set((def.keywords ?? []).map((k) => String(k).trim()).filter(Boolean))],
+    anim: { preset: def.preset ?? "pop", trigger: def.trigger ?? "hover" },
+    fillSafe: def.fillSafe ?? isFillSafe(nodes),
+    categories: def.categories ?? [],
+    nodes,
+    inner,
+  });
+  takenKebabs.add(def.kebab);
+  takenNames.add(def.name);
+}
+// Persist custom category membership so data/categories.json stays the source
+// of truth for category APIs (and its total matches the dataset).
+if (customIcons.length) {
+  const categoriesPathCustom = path.join(ROOT, "data/categories.json");
+  if (fs.existsSync(categoriesPathCustom)) {
+    const rawCustomCats = JSON.parse(fs.readFileSync(categoriesPathCustom, "utf8"));
+    for (const def of customIcons) {
+      for (const categoryId of def.categories ?? []) {
+        const category = (rawCustomCats.categories ?? []).find((item) => item.id === categoryId);
+        if (!category) continue;
+        if (!category.icons.includes(def.name)) category.icons.push(def.name);
+        category.icons.sort();
+      }
+      rawCustomCats.iconCategories ??= {};
+      rawCustomCats.iconCategories[def.name] = [...def.categories];
+    }
+    rawCustomCats.total = built.length;
+    fs.writeFileSync(categoriesPathCustom, JSON.stringify(rawCustomCats, null, 2) + "\n");
+  }
+}
+
 if (missingPresets.length) {
   console.warn("Icons without a semantic preset (defaulted to pop):", missingPresets.join(", "));
 }
@@ -328,7 +378,7 @@ const meta = {
   categories: categoryMeta,
   version: "1.0.0",
   count: built.length,
-  requested: requested.length,
+  requested: built.length,
   duplicates: duplicates.length,
   grid: 24,
   strokeWidth: 2,
@@ -381,7 +431,7 @@ fs.writeFileSync(path.join(ROOT, "sprite.svg"), sprite);
 // 7. Report.
 // ---------------------------------------------------------------------------
 const report = {
-  requested: requested.length,
+  requested: built.length,
   unique: built.length,
   duplicates,
   animation: Object.fromEntries(

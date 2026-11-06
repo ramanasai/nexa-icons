@@ -104,6 +104,7 @@ const CATEGORIES = [
       "Euro",
       "HandCoins",
       "IndianRupee",
+      "Invoice",
       "Landmark",
       "Percent",
       "PiggyBank",
@@ -247,6 +248,7 @@ const CATEGORIES = [
       "BookPlus",
       "BookX",
       "Brain",
+      "Crest",
       "Dna",
       "DraftingCompass",
       "FlaskConical",
@@ -286,6 +288,7 @@ const CATEGORIES = [
       "CarBattery",
       "Caravan",
       "Compass",
+      "FlagIreland",
       "Fuel",
       "Hotel",
       "Luggage",
@@ -334,6 +337,7 @@ const CATEGORIES = [
     "label": "Shopping & Commerce",
     "description": "Shopping, products, orders, delivery, tags, discounts and gifts.",
     "icons": [
+      "Apple",
       "Banknote",
       "BanknoteArrowDown",
       "BanknoteArrowUp",
@@ -349,10 +353,16 @@ const CATEGORIES = [
       "CreditCardPlus",
       "CreditCardReader",
       "CreditCardX",
+      "Facebook",
       "Factory",
       "Fuel",
       "Gift",
+      "GitHub",
+      "Google",
       "HandCoins",
+      "Indeed",
+      "LinkedIn",
+      "Microsoft",
       "Package",
       "Package2",
       "PackageCheck",
@@ -392,7 +402,9 @@ const CATEGORIES = [
       "Wallet",
       "WalletCards",
       "WalletMinimal",
-      "Warehouse"
+      "Warehouse",
+      "WhatsApp",
+      "XLogo"
     ]
   },
   {
@@ -424,7 +436,9 @@ const CATEGORIES = [
       "LockKeyhole",
       "LockKeyholeOpen",
       "LockOpen",
+      "Passport",
       "Radiation",
+      "ResidencePermit",
       "Scale",
       "ScanEye",
       "ScanFace",
@@ -443,7 +457,8 @@ const CATEGORIES = [
       "Siren",
       "SirenOff",
       "Vault",
-      "VenetianMask"
+      "VenetianMask",
+      "Visa"
     ]
   },
   {

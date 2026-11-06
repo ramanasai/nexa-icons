@@ -25,6 +25,7 @@ __export(travel_exports, {
   CarBattery: () => import_car_battery.CarBattery,
   Caravan: () => import_caravan.Caravan,
   Compass: () => import_compass.Compass,
+  FlagIreland: () => import_flag_ireland.FlagIreland,
   Fuel: () => import_fuel.Fuel,
   Hotel: () => import_hotel.Hotel,
   Luggage: () => import_luggage.Luggage,
@@ -75,6 +76,7 @@ var import_car = require("../icons/car.js");
 var import_car_battery = require("../icons/car-battery.js");
 var import_caravan = require("../icons/caravan.js");
 var import_compass = require("../icons/compass.js");
+var import_flag_ireland = require("../icons/flag-ireland.js");
 var import_fuel = require("../icons/fuel.js");
 var import_hotel = require("../icons/hotel.js");
 var import_luggage = require("../icons/luggage.js");

@@ -4,7 +4,7 @@ Every number below was **measured in this repo**, not estimated: sizes with
 Node's `zlib` (brotli quality 11, gzip level 9), runtime with
 `node bench/bench.mjs` (`bench/results.json`). Re-run both commands to reproduce.
 
-**1,000-icon catalog baseline** (24 categories, 12 illustrations, shape/fill/3D +
+**1,015-icon catalog baseline** (24 categories, 12 illustrations, shape/fill/3D +
 swap layers). Numbers move when the catalog/features change; treat the table as
 the current snapshot.
 
@@ -17,18 +17,18 @@ the current snapshot.
 | One-icon tree-shaken bundle (React external, incl. shape/fill/3D) | 3,500 B | 1,691 B | **1,544 B** |
 | Eight-icon tree-shaken bundle | 5,191 B | 2,247 B | **2,036 B** |
 | Fifty-icon tree-shaken bundle | 13,304 B | 3,799 B | **3,347 B** |
-| Full sprite, all 1,000 icons (`sprite.svg`) | 343,455 B | 52,152 B | **41,198 B** |
+| Full sprite, all 1,015 icons (`sprite.svg`) | 351,756 B | 52,152 B | **43,623 B** |
 | Animation + shape/fill/3D layer (`dist/animations.css`) | 16,198 B | 3,903 B | **3,270 B** |
-| React barrel (`dist/index.js`, re-exports only) | 66,126 B | 13,740 B | **11,530 B** |
+| React barrel (`dist/index.js`, re-exports only) | 67,002 B | 13,951 B | **11,720 B** |
 | CJS root entry (`dist/cjs/index.js`) | 68,490 B | 13,399 B | **11,336 B** |
-| Vanilla JS ESM, lean runtime (`js/index.mjs`) | 359,069 B | 73,075 B | **57,507 B** |
+| Vanilla JS ESM, lean runtime (`js/index.mjs`) | 367,036 B | 76,253 B | **60,064 B** |
 | JS type declarations (`js/index.d.ts`) | 5,706 B | 2,185 B | **1,846 B** |
 | Canonical dataset (`data/icons.json`) | 511,657 B | 92,167 B | **67,563 B** |
 | Category manifest (`data/categories.json`) | 51,666 B | 9,031 B | **7,540 B** |
 | Swap pairs dataset (`data/swaps.json`) | 2,047 B | 591 B | **518 B** |
 | Illustrated set, 12 SVGs (`illustrations/*.svg`) | 10,634 B | — | — |
 | Gallery shell (`gallery/index.html`) | 30,402 B | 8,407 B | **7,234 B** |
-| Gallery data (`gallery/icons.data.js`) | 444,244 B | 90,502 B | **71,291 B** |
+| Gallery data (`gallery/icons.data.js`) | 451,911 B | 93,556 B | **73,917 B** |
 | Gallery app (`gallery/app.js`) | 87,603 B | 21,032 B | **18,645 B** |
 
 Reference combinations:
@@ -37,26 +37,26 @@ Reference combinations:
 |---|---|
 | One icon in React, tree-shaken | **1,544 B brotli** |
 | One icon + animations | 1,544 B + 3,270 B ≈ **4.0 KB brotli** |
-| Every icon in the app, one sprite request | **41,198 B brotli** |
+| Every icon in the app, one sprite request | **43,623 B brotli** |
 | Every icon + animation/shape/fill/3D layer | ≈ **32.5 KB brotli** |
-| Whole gallery (650 cards + data + app) | **≈ 74.9 KB brotli** (shell 6,957 + data 71,291 + app 18,645) |
+| Whole gallery (650 cards + data + app) | **≈ 74.9 KB brotli** (shell 6,957 + data 73,917 + app 18,645) |
 
 The sprite is the cheapest way to make the whole set available: one cached
-request for all 1,000 icons. Named React imports are the cheapest way to ship a few
+request for all 1,015 icons. Named React imports are the cheapest way to ship a few
 icons: one module per icon, ~1,544 B brotli for the first (includes the shared
 shape/fill/3D factory), ~40–49 B per extra icon.
 
 **Lean JS runtime.** `js/index.mjs` does not ship search `keywords`; icon records
 are `{name, aliases, preset, trigger, inner}` plus `kebab` from `getIcon()`.
-Keywords stay in `data/icons.json`. The 1,000-icon API is **359,069 B raw /
-57,507 B brotli** with all category metadata included.
+Keywords stay in `data/icons.json`. The 1,015-icon API is **367,036 B raw /
+60,064 B brotli** with all category metadata included.
 
 **CJS mirror.** `dist/cjs/` mirrors every ESM module for `require()` consumers;
 the CJS tree is larger because CommonJS cannot share modules. This is **package
 weight only**: browsers/bundlers resolve the ESM build and never download
 `dist/cjs`; Node loads only the modules a `require()` chain touches.
 
-**ESM tree.** `dist/index.js` (barrel) is 66,126 B raw / 11,530 B brotli;
+**ESM tree.** `dist/index.js` (barrel) is 67,002 B raw / 11,720 B brotli;
 the tree-shakeable icon modules are 650 separate ESM files (`dist/icons/*.js`)
 that bundlers select from. The published ESM tree is ~688 KB raw (~672 KiB) —
 package weight, not per-page weight.
@@ -86,7 +86,7 @@ then the grid is virtualized. Current measured build:
 | Part | Raw | Gzip | Brotli |
 |---|---:|---:|---:|
 | Shell `index.html` | 30,402 B | 8,407 B | **7,234 B** |
-| Data `icons.data.js` | 444,244 B | 90,502 B | **71,291 B** |
+| Data `icons.data.js` | 451,911 B | 93,556 B | **73,917 B** |
 | App `app.js` | 87,603 B | 21,032 B | **18,645 B** |
 
 All local files, **0 third-party requests (2 local deferred scripts)**. QA: 97/97 Playwright checks pass —
@@ -145,8 +145,8 @@ heavy.
    `inview` uses CSS scroll-driven animation and degrades to static.
 5. **Zero runtime dependencies beyond the optional React peer.** Plain JS, Go,
    Rust and the GPUI adapter carry no web runtime at all.
-6. **Small geometry.** 1,000 icons average 393 B of SVG markup (max 896 B,
-   `brain-cog`); total 393,976 B raw as individual files; sprite 343,455 B raw.
+6. **Small geometry.** 1,015 icons average 393 B of SVG markup (max 896 B,
+   `brain-cog`); total 403,078 B raw as individual files; sprite 351,756 B raw.
 7. **Illustrations are small and static.** 12 duotone illustrations total
    ~10.6 KB raw (~1.1 KB each), inline-friendly, no external assets.
 
@@ -177,12 +177,12 @@ Machine-dependent; sizes above are deterministic. Node 26.9.0, darwin-arm64,
 |---|---|
 | `svg("Bell")` | ~0.67 µs/op (~1.5M ops/s) |
 | `svg("Bell", { size, animate, label })` | ~0.85 µs/op |
-| `svg()` over all 1,000 icons | ~0.60 µs/icon |
+| `svg()` over all 1,015 icons | ~0.60 µs/icon |
 | `symbol("bell")` | ~0.07 µs/op |
 | cached `sprite()` | ~0.05 µs/op |
 | SSR `<Bell/>` (`renderToStaticMarkup`) | ~19.2 µs/op |
-| Cold ESM import `js/index.mjs` | ~4.3 ms median (5 fresh processes, 1,000 icons) |
-| Gallery `file://` load (Playwright Chromium) | ~10.3 ms wall, FCP ~16 ms, virtualized 1,000-icon grid |
+| Cold ESM import `js/index.mjs` | ~4.3 ms median (5 fresh processes, 1,015 icons) |
+| Gallery `file://` load (Playwright Chromium) | ~10.3 ms wall, FCP ~16 ms, virtualized 1,015-icon grid |
 
 The whole dataset renders from static strings/nodes; there is no parse or lookup
 cost per icon after import.
@@ -191,7 +191,7 @@ cost per icon after import.
 
 | Approach | Cost | Best for |
 |---|---|---|
-| `<use href="#nexa-bell">` + inline sprite | one 29.4 KB brotli request for all 1,000 icons (fixed stroke 2) | app shells, galleries, SSR pages |
+| `<use href="#nexa-bell">` + inline sprite | one 29.4 KB brotli request for all 1,015 icons (fixed stroke 2) | app shells, galleries, SSR pages |
 | Named React import / deep import / category import | ~1,544 B brotli for the first icon, ~41–49 B/extra | React apps with a few icons |
 | Per-icon `icons/*.svg` file | ~221 B brotli per icon, one request each | static sites, `<img>`, email, docs |
 | `svg()` from `@nexa/icons/js` | 41.3 KB brotli ESM includes all icon + category data; zero fetch | no-build pages, Node scripts, server render |
@@ -244,13 +244,13 @@ node scripts/verify.mjs  # release verification (dataset, parity, sizes, a11y, d
 | Asset | Budget | Actual |
 |---|---|---|
 | Individual SVG | ≤ 1.0 KB raw | max 896 B (`brain-cog.svg`) |
-| Sprite | < 260 KB raw | 343,455 B |
+| Sprite | < 260 KB raw | 351,756 B |
 | One-icon React bundle | < 1.5 KB brotli | 953 B |
 | Animation + shape/fill/3D/swap CSS | ≤ 18 KB raw / ≤ 4 KB brotli | 16,198 B / 3,270 B |
 | Gallery shell | 0 ms gallery JS before first paint (observer only); shell < 40 KB | 30,402 B shell (build-report budget 40,960 B) |
-| `js/index.mjs` | < 60 KB gzip | 73,075 B gzip for 1,000 icons |
+| `js/index.mjs` | < 60 KB gzip | 76,253 B gzip for 1,015 icons |
 
 The dataset is regenerated deterministically; these sizes are stable unless
 icons, categories, swap pairs or the presentation layer change. The gallery is
-the largest artefact set because it contains all 1,000 icons plus the virtualized
+the largest artefact set because it contains all 1,015 icons plus the virtualized
 viewer; it is split into shell/data/app for first-paint speed.

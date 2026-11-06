@@ -84,6 +84,7 @@ export const CATEGORIES: readonly NexaCategory[] = [
       "Euro",
       "HandCoins",
       "IndianRupee",
+      "Invoice",
       "Landmark",
       "Percent",
       "PiggyBank",
@@ -227,6 +228,7 @@ export const CATEGORIES: readonly NexaCategory[] = [
       "BookPlus",
       "BookX",
       "Brain",
+      "Crest",
       "Dna",
       "DraftingCompass",
       "FlaskConical",
@@ -266,6 +268,7 @@ export const CATEGORIES: readonly NexaCategory[] = [
       "CarBattery",
       "Caravan",
       "Compass",
+      "FlagIreland",
       "Fuel",
       "Hotel",
       "Luggage",
@@ -314,6 +317,7 @@ export const CATEGORIES: readonly NexaCategory[] = [
     "label": "Shopping & Commerce",
     "description": "Shopping, products, orders, delivery, tags, discounts and gifts.",
     "icons": [
+      "Apple",
       "Banknote",
       "BanknoteArrowDown",
       "BanknoteArrowUp",
@@ -329,10 +333,16 @@ export const CATEGORIES: readonly NexaCategory[] = [
       "CreditCardPlus",
       "CreditCardReader",
       "CreditCardX",
+      "Facebook",
       "Factory",
       "Fuel",
       "Gift",
+      "GitHub",
+      "Google",
       "HandCoins",
+      "Indeed",
+      "LinkedIn",
+      "Microsoft",
       "Package",
       "Package2",
       "PackageCheck",
@@ -372,7 +382,9 @@ export const CATEGORIES: readonly NexaCategory[] = [
       "Wallet",
       "WalletCards",
       "WalletMinimal",
-      "Warehouse"
+      "Warehouse",
+      "WhatsApp",
+      "XLogo"
     ]
   },
   {
@@ -404,7 +416,9 @@ export const CATEGORIES: readonly NexaCategory[] = [
       "LockKeyhole",
       "LockKeyholeOpen",
       "LockOpen",
+      "Passport",
       "Radiation",
+      "ResidencePermit",
       "Scale",
       "ScanEye",
       "ScanFace",
@@ -423,7 +437,8 @@ export const CATEGORIES: readonly NexaCategory[] = [
       "Siren",
       "SirenOff",
       "Vault",
-      "VenetianMask"
+      "VenetianMask",
+      "Visa"
     ]
   },
   {

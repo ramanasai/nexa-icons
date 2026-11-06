@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "total": 1000,
+  "total": 1015,
   "categories": [
     {
       "id": "health",
@@ -84,6 +84,7 @@
         "Euro",
         "HandCoins",
         "IndianRupee",
+        "Invoice",
         "Landmark",
         "Percent",
         "PiggyBank",
@@ -227,6 +228,7 @@
         "BookPlus",
         "BookX",
         "Brain",
+        "Crest",
         "Dna",
         "DraftingCompass",
         "FlaskConical",
@@ -266,6 +268,7 @@
         "CarBattery",
         "Caravan",
         "Compass",
+        "FlagIreland",
         "Fuel",
         "Hotel",
         "Luggage",
@@ -314,6 +317,7 @@
       "label": "Shopping & Commerce",
       "description": "Shopping, products, orders, delivery, tags, discounts and gifts.",
       "icons": [
+        "Apple",
         "Banknote",
         "BanknoteArrowDown",
         "BanknoteArrowUp",
@@ -329,10 +333,16 @@
         "CreditCardPlus",
         "CreditCardReader",
         "CreditCardX",
+        "Facebook",
         "Factory",
         "Fuel",
         "Gift",
+        "GitHub",
+        "Google",
         "HandCoins",
+        "Indeed",
+        "LinkedIn",
+        "Microsoft",
         "Package",
         "Package2",
         "PackageCheck",
@@ -372,7 +382,9 @@
         "Wallet",
         "WalletCards",
         "WalletMinimal",
-        "Warehouse"
+        "Warehouse",
+        "WhatsApp",
+        "XLogo"
       ]
     },
     {
@@ -404,7 +416,9 @@
         "LockKeyhole",
         "LockKeyholeOpen",
         "LockOpen",
+        "Passport",
         "Radiation",
+        "ResidencePermit",
         "Scale",
         "ScanEye",
         "ScanFace",
@@ -423,7 +437,8 @@
         "Siren",
         "SirenOff",
         "Vault",
-        "VenetianMask"
+        "VenetianMask",
+        "Visa"
       ]
     },
     {
@@ -4637,6 +4652,51 @@
     "ThermometerSnowflake": [
       "health",
       "weather"
+    ],
+    "Google": [
+      "commerce"
+    ],
+    "LinkedIn": [
+      "commerce"
+    ],
+    "GitHub": [
+      "commerce"
+    ],
+    "Apple": [
+      "commerce"
+    ],
+    "Microsoft": [
+      "commerce"
+    ],
+    "XLogo": [
+      "commerce"
+    ],
+    "Facebook": [
+      "commerce"
+    ],
+    "WhatsApp": [
+      "commerce"
+    ],
+    "Indeed": [
+      "commerce"
+    ],
+    "Passport": [
+      "security"
+    ],
+    "Visa": [
+      "security"
+    ],
+    "ResidencePermit": [
+      "security"
+    ],
+    "FlagIreland": [
+      "travel"
+    ],
+    "Crest": [
+      "education"
+    ],
+    "Invoice": [
+      "finance"
     ]
   },
   "uncategorized": []

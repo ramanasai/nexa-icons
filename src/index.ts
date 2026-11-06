@@ -15,7 +15,7 @@ export { CATEGORIES } from "./categories/catalog.js";
 export type { NexaCategory } from "./categories/catalog.js";
 export { ICON_NAMES, resolveKebab } from "./registry.js";
 
-/* 1000 icons */
+/* 1015 icons */
 export { Activity } from "./icons/activity.js";
 export { AlertCircle } from "./icons/circle-exclamation-point.js";
 export { AlertTriangle } from "./icons/triangle-exclamation-point.js";
@@ -1016,6 +1016,21 @@ export { TreePine } from "./icons/tree-pine.js";
 export { Trees } from "./icons/trees.js";
 export { UtilityPole } from "./icons/utility-pole.js";
 export { Warehouse } from "./icons/warehouse.js";
+export { Google } from "./icons/google.js";
+export { LinkedIn } from "./icons/linkedin.js";
+export { GitHub } from "./icons/github.js";
+export { Apple } from "./icons/apple.js";
+export { Microsoft } from "./icons/microsoft.js";
+export { XLogo } from "./icons/x-logo.js";
+export { Facebook } from "./icons/facebook.js";
+export { WhatsApp } from "./icons/whatsapp.js";
+export { Indeed } from "./icons/indeed.js";
+export { Passport } from "./icons/passport.js";
+export { Visa } from "./icons/visa.js";
+export { ResidencePermit } from "./icons/residence-permit.js";
+export { FlagIreland } from "./icons/flag-ireland.js";
+export { Crest } from "./icons/crest.js";
+export { Invoice } from "./icons/invoice.js";
 
 /* Duplicate requested names kept as aliases: XIcon === X, TriangleAlert === AlertTriangle */
 export { AlertTriangle as TriangleAlert } from "./icons/triangle-exclamation-point.js";

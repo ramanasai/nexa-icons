@@ -42,7 +42,9 @@ __export(security_exports, {
   LockKeyhole: () => import_lock_keyhole.LockKeyhole,
   LockKeyholeOpen: () => import_lock_keyhole_open.LockKeyholeOpen,
   LockOpen: () => import_lock_open.LockOpen,
+  Passport: () => import_passport.Passport,
   Radiation: () => import_radiation.Radiation,
+  ResidencePermit: () => import_residence_permit.ResidencePermit,
   Scale: () => import_scale.Scale,
   ScanEye: () => import_scan_eye.ScanEye,
   ScanFace: () => import_scan_face.ScanFace,
@@ -61,7 +63,8 @@ __export(security_exports, {
   Siren: () => import_siren.Siren,
   SirenOff: () => import_siren_off.SirenOff,
   Vault: () => import_vault.Vault,
-  VenetianMask: () => import_venetian_mask.VenetianMask
+  VenetianMask: () => import_venetian_mask.VenetianMask,
+  Visa: () => import_visa.Visa
 });
 module.exports = __toCommonJS(security_exports);
 var import_ban = require("../icons/ban.js");
@@ -88,7 +91,9 @@ var import_lock = require("../icons/lock.js");
 var import_lock_keyhole = require("../icons/lock-keyhole.js");
 var import_lock_keyhole_open = require("../icons/lock-keyhole-open.js");
 var import_lock_open = require("../icons/lock-open.js");
+var import_passport = require("../icons/passport.js");
 var import_radiation = require("../icons/radiation.js");
+var import_residence_permit = require("../icons/residence-permit.js");
 var import_scale = require("../icons/scale.js");
 var import_scan_eye = require("../icons/scan-eye.js");
 var import_scan_face = require("../icons/scan-face.js");
@@ -108,3 +113,4 @@ var import_siren = require("../icons/siren.js");
 var import_siren_off = require("../icons/siren-off.js");
 var import_vault = require("../icons/vault.js");
 var import_venetian_mask = require("../icons/venetian-mask.js");
+var import_visa = require("../icons/visa.js");

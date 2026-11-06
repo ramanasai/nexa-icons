@@ -24,6 +24,7 @@ export { DollarSign } from "../icons/dollar-sign.js";
 export { Euro } from "../icons/euro.js";
 export { HandCoins } from "../icons/hand-coins.js";
 export { IndianRupee } from "../icons/indian-rupee.js";
+export { Invoice } from "../icons/invoice.js";
 export { Landmark } from "../icons/landmark.js";
 export { Percent } from "../icons/percent.js";
 export { PiggyBank } from "../icons/piggy-bank.js";

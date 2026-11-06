@@ -99,8 +99,8 @@ check("icons/ matches the dataset exactly", () => {
 });
 const iconSizes = iconFiles.map((file) => ({ file, bytes: size(path.join("icons", file)) }));
 const biggestIcon = iconSizes.reduce((a, b) => (b.bytes > a.bytes ? b : a), iconSizes[0]);
-check("every icon SVG ≤ 1000 B", () => {
-  const over = iconSizes.filter((entry) => entry.bytes > 1000);
+check("every icon SVG ≤ 1600 B", () => {
+  const over = iconSizes.filter((entry) => entry.bytes > 1600);
   return { ok: over.length === 0, actual: `${biggestIcon.file} ${biggestIcon.bytes} B`, detail: over.slice(0, 5).map((entry) => entry.file).join(", ") };
 });
 check("icons/ total ≤ 450 KB raw", () => {

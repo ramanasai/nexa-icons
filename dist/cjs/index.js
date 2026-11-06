@@ -38,6 +38,7 @@ __export(index_exports, {
   Ambulance: () => import_ambulance.Ambulance,
   Anchor: () => import_anchor.Anchor,
   Aperture: () => import_aperture.Aperture,
+  Apple: () => import_apple.Apple,
   Archive: () => import_archive.Archive,
   ArchiveX: () => import_archive_x.ArchiveX,
   ArrowDown: () => import_arrow_down.ArrowDown,
@@ -295,6 +296,7 @@ __export(index_exports, {
   CreditCardPlus: () => import_credit_card_plus.CreditCardPlus,
   CreditCardReader: () => import_credit_card_reader.CreditCardReader,
   CreditCardX: () => import_credit_card_x.CreditCardX,
+  Crest: () => import_crest.Crest,
   Croissant: () => import_croissant.Croissant,
   Crop: () => import_crop.Crop,
   Crosshair: () => import_crosshair.Crosshair,
@@ -351,6 +353,7 @@ __export(index_exports, {
   EyeClosed: () => import_eye_closed.EyeClosed,
   EyeDashed: () => import_eye_dashed.EyeDashed,
   EyeOff: () => import_eye_off.EyeOff,
+  Facebook: () => import_facebook.Facebook,
   Factory: () => import_factory.Factory,
   FastForward: () => import_fast_forward.FastForward,
   Fence: () => import_fence.Fence,
@@ -373,6 +376,7 @@ __export(index_exports, {
   Filter: () => import_funnel.Filter,
   Fingerprint: () => import_fingerprint_pattern.Fingerprint,
   Flag: () => import_flag.Flag,
+  FlagIreland: () => import_flag_ireland.FlagIreland,
   FlagOff: () => import_flag_off.FlagOff,
   Flame: () => import_flame.Flame,
   FlaskConical: () => import_flask_conical.FlaskConical,
@@ -409,6 +413,7 @@ __export(index_exports, {
   GitCompare: () => import_git_compare.GitCompare,
   GitFork: () => import_git_fork.GitFork,
   GitGraph: () => import_git_graph.GitGraph,
+  GitHub: () => import_github.GitHub,
   GitMerge: () => import_git_merge.GitMerge,
   GitMergeConflict: () => import_git_merge_conflict.GitMergeConflict,
   GitPullRequestCreate: () => import_git_pull_request_create.GitPullRequestCreate,
@@ -420,6 +425,7 @@ __export(index_exports, {
   GlobeOff: () => import_globe_off.GlobeOff,
   GlobePlus: () => import_globe_plus.GlobePlus,
   GlobeX: () => import_globe_x.GlobeX,
+  Google: () => import_google.Google,
   GraduationCap: () => import_graduation_cap.GraduationCap,
   Grape: () => import_grape.Grape,
   Grid2x2: () => import_grid_2x2.Grid2x2,
@@ -486,8 +492,10 @@ __export(index_exports, {
   ImageUp: () => import_image_up.ImageUp,
   Images: () => import_images.Images,
   Inbox: () => import_inbox.Inbox,
+  Indeed: () => import_indeed.Indeed,
   IndianRupee: () => import_indian_rupee.IndianRupee,
   Info: () => import_info.Info,
+  Invoice: () => import_invoice.Invoice,
   Italic: () => import_italic.Italic,
   IterationCw: () => import_iteration_cw.IterationCw,
   Kanban: () => import_kanban.Kanban,
@@ -518,6 +526,7 @@ __export(index_exports, {
   Link2: () => import_link_2.Link2,
   Link2Off: () => import_link_2_off.Link2Off,
   LinkIcon: () => import_link.LinkIcon,
+  LinkedIn: () => import_linkedin.LinkedIn,
   List: () => import_list.List,
   ListCheck: () => import_list_check.ListCheck,
   ListChecks: () => import_list_checks.ListChecks,
@@ -589,6 +598,7 @@ __export(index_exports, {
   MicSignal: () => import_mic_signal.MicSignal,
   MicVocal: () => import_mic_vocal.MicVocal,
   Microscope: () => import_microscope.Microscope,
+  Microsoft: () => import_microsoft.Microsoft,
   Microwave: () => import_microwave.Microwave,
   Milestone: () => import_milestone.Milestone,
   Milk: () => import_milk.Milk,
@@ -662,6 +672,7 @@ __export(index_exports, {
   PanelsTopLeft: () => import_panels_top_left.PanelsTopLeft,
   Paperclip: () => import_paperclip.Paperclip,
   ParkingMeter: () => import_parking_meter.ParkingMeter,
+  Passport: () => import_passport.Passport,
   Pause: () => import_pause.Pause,
   Pen: () => import_pen.Pen,
   PenLine: () => import_pen_line.PenLine,
@@ -734,6 +745,7 @@ __export(index_exports, {
   RemoveFormatting: () => import_remove_formatting.RemoveFormatting,
   Repeat: () => import_repeat.Repeat,
   Reply: () => import_reply.Reply,
+  ResidencePermit: () => import_residence_permit.ResidencePermit,
   Rewind: () => import_rewind.Rewind,
   Road: () => import_road.Road,
   Rocket: () => import_rocket.Rocket,
@@ -988,6 +1000,7 @@ __export(index_exports, {
   Vibrate: () => import_vibrate.Vibrate,
   Video: () => import_video.Video,
   VideoOff: () => import_video_off.VideoOff,
+  Visa: () => import_visa.Visa,
   Voicemail: () => import_voicemail.Voicemail,
   Volume: () => import_volume.Volume,
   VolumeOff: () => import_volume_off.VolumeOff,
@@ -1008,6 +1021,7 @@ __export(index_exports, {
   WebcamOff: () => import_webcam_off.WebcamOff,
   Webhook: () => import_webhook.Webhook,
   WebhookOff: () => import_webhook_off.WebhookOff,
+  WhatsApp: () => import_whatsapp.WhatsApp,
   Wheat: () => import_wheat.Wheat,
   WheatOff: () => import_wheat_off.WheatOff,
   WholeWord: () => import_whole_word.WholeWord,
@@ -1028,6 +1042,7 @@ __export(index_exports, {
   XCircle: () => import_circle_x.XCircle,
   XIcon: () => import_x2.X,
   XLineTop: () => import_x_line_top.XLineTop,
+  XLogo: () => import_x_logo.XLogo,
   Zap: () => import_zap.Zap,
   ZapOff: () => import_zap_off.ZapOff,
   ZoomIn: () => import_zoom_in.ZoomIn,
@@ -2046,5 +2061,20 @@ var import_tree_pine = require("./icons/tree-pine.js");
 var import_trees = require("./icons/trees.js");
 var import_utility_pole = require("./icons/utility-pole.js");
 var import_warehouse = require("./icons/warehouse.js");
+var import_google = require("./icons/google.js");
+var import_linkedin = require("./icons/linkedin.js");
+var import_github = require("./icons/github.js");
+var import_apple = require("./icons/apple.js");
+var import_microsoft = require("./icons/microsoft.js");
+var import_x_logo = require("./icons/x-logo.js");
+var import_facebook = require("./icons/facebook.js");
+var import_whatsapp = require("./icons/whatsapp.js");
+var import_indeed = require("./icons/indeed.js");
+var import_passport = require("./icons/passport.js");
+var import_visa = require("./icons/visa.js");
+var import_residence_permit = require("./icons/residence-permit.js");
+var import_flag_ireland = require("./icons/flag-ireland.js");
+var import_crest = require("./icons/crest.js");
+var import_invoice = require("./icons/invoice.js");
 var import_triangle_exclamation_point2 = require("./icons/triangle-exclamation-point.js");
 var import_x2 = require("./icons/x.js");

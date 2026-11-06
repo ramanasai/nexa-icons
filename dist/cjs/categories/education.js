@@ -30,6 +30,7 @@ __export(education_exports, {
   BookPlus: () => import_book_plus.BookPlus,
   BookX: () => import_book_x.BookX,
   Brain: () => import_brain.Brain,
+  Crest: () => import_crest.Crest,
   Dna: () => import_dna.Dna,
   DraftingCompass: () => import_drafting_compass.DraftingCompass,
   FlaskConical: () => import_flask_conical.FlaskConical,
@@ -69,6 +70,7 @@ var import_book_open_check = require("../icons/book-open-check.js");
 var import_book_plus = require("../icons/book-plus.js");
 var import_book_x = require("../icons/book-x.js");
 var import_brain = require("../icons/brain.js");
+var import_crest = require("../icons/crest.js");
 var import_dna = require("../icons/dna.js");
 var import_drafting_compass = require("../icons/drafting-compass.js");
 var import_flask_conical = require("../icons/flask-conical.js");

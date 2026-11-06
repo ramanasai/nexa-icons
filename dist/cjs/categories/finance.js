@@ -43,6 +43,7 @@ __export(finance_exports, {
   Euro: () => import_euro.Euro,
   HandCoins: () => import_hand_coins.HandCoins,
   IndianRupee: () => import_indian_rupee.IndianRupee,
+  Invoice: () => import_invoice.Invoice,
   Landmark: () => import_landmark.Landmark,
   Percent: () => import_percent.Percent,
   PiggyBank: () => import_piggy_bank.PiggyBank,
@@ -89,6 +90,7 @@ var import_dollar_sign = require("../icons/dollar-sign.js");
 var import_euro = require("../icons/euro.js");
 var import_hand_coins = require("../icons/hand-coins.js");
 var import_indian_rupee = require("../icons/indian-rupee.js");
+var import_invoice = require("../icons/invoice.js");
 var import_landmark = require("../icons/landmark.js");
 var import_percent = require("../icons/percent.js");
 var import_piggy_bank = require("../icons/piggy-bank.js");

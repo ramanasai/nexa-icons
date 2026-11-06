@@ -1,6 +1,6 @@
 {
-  "requested": 1000,
-  "unique": 1000,
+  "requested": 1015,
+  "unique": 1015,
   "duplicates": [],
   "animation": {
     "bounce": [
@@ -451,7 +451,22 @@
       "BuildingComplexPlus",
       "Factory",
       "MapPinCheck",
-      "Warehouse"
+      "Warehouse",
+      "Google",
+      "LinkedIn",
+      "GitHub",
+      "Apple",
+      "Microsoft",
+      "XLogo",
+      "Facebook",
+      "WhatsApp",
+      "Indeed",
+      "Passport",
+      "Visa",
+      "ResidencePermit",
+      "FlagIreland",
+      "Crest",
+      "Invoice"
     ],
     "pulse": [
       "Activity",
@@ -1039,9 +1054,9 @@
     ]
   },
   "sizes": {
-    "datasetBytes": 803661,
-    "svgTotalBytes": 393976,
-    "svgAvgBytes": 394,
-    "spriteBytes": 343455
+    "datasetBytes": 819522,
+    "svgTotalBytes": 403078,
+    "svgAvgBytes": 397,
+    "spriteBytes": 351756
   }
 }

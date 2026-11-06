@@ -1,6 +1,6 @@
 # Nexa Icons
 
-> Open-source icon system: 1,000 stroke icons in 24 categories, shipped as
+> Open-source icon system: 1,015 stroke icons in 24 categories, shipped as
 > tree-shakeable React/TypeScript, zero-dependency JavaScript, HTML sprites,
 > Go and Rust packages. Every icon is currentColor-only, theme-safe, and can
 > optionally use shapes, outline/duotone/solid fill, semantic animations,
@@ -26,7 +26,7 @@
 - [Glass & gradients](https://github.com/ramanasai/nexa-icons/blob/main/docs/effects.md): 7 glass presets, glass body, motion, triggers, 8 gradients + hue animation, CSS variables.
 - [Design rules](https://github.com/ramanasai/nexa-icons/blob/main/docs/design.md) · [Theming](https://github.com/ramanasai/nexa-icons/blob/main/docs/theming.md)
 - [Performance](https://github.com/ramanasai/nexa-icons/blob/main/docs/performance.md): measured bundles and budgets.
-- [Inventory](https://github.com/ramanasai/nexa-icons/blob/main/docs/inventory.md): 1,000 icons, 24 categories, variant counts.
+- [Inventory](https://github.com/ramanasai/nexa-icons/blob/main/docs/inventory.md): 1,015 icons, 24 categories, variant counts.
 - [Illustrations](https://github.com/ramanasai/nexa-icons/blob/main/illustrations/README.md): 12 duotone illustrations.
 - [Adding icons](https://github.com/ramanasai/nexa-icons/blob/main/docs/adding-icons.md) · [Troubleshooting](https://github.com/ramanasai/nexa-icons/blob/main/docs/troubleshooting.md) · [Migration from Lucide](https://github.com/ramanasai/nexa-icons/blob/main/docs/migration-from-lucide.md)
 
@@ -38,7 +38,7 @@
 - Sprite: https://raw.githubusercontent.com/ramanasai/nexa-icons/main/sprite.svg
 
 ## Quick facts
-- 1,000 icons, 24 categories, 26 swap pairs (49 directed edges).
+- 1,015 icons, 24 categories, 26 swap pairs (49 directed edges).
 - Defaults: 24×24 grid, 24 px, stroke 1.5; size→stroke 16→2, 20→1.75, 24+→1.5.
 - One tree-shaken React icon: ~1,544 B brotli (React external).
 - No runtime dependencies for the JS path; React is an optional peer.

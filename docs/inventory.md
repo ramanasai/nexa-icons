@@ -9,9 +9,9 @@ estimated.
 
 | Asset | Count | Notes |
 |---|---:|---|
-| Stroke icons (unique glyphs) | **1,000** | 24-category catalog, 24×24 grid, `currentColor` |
-| Importable names (icons + aliases) | **1,002** | every original pre-expansion name still resolves (`Loader2`, `Home`, `MoreHorizontal`, `XIcon`, `TriangleAlert`, …) |
-| Categories | **24** | 1,233 category memberships; 233 icons live in >1 category |
+| Stroke icons (unique glyphs) | **1,015** | 24-category catalog, 24×24 grid, `currentColor` |
+| Importable names (icons + aliases) | **1,017** | every original pre-expansion name still resolves (`Loader2`, `Home`, `MoreHorizontal`, `XIcon`, `TriangleAlert`, …) |
+| Categories | **24** | 1,248 category memberships; 233 icons live in >1 category |
 | Animation presets | **17** semantic (+ `fade-in` helper = 18 CSS classes) | every icon has a semantic preset |
 | Trigger modes | **7** | `hover`, `focus`, `press`, `mount`, `always`, `manual`, `inview` |
 | Swap/morph pairs | **26** → **49 directed edges** | 5 modes: `mirror`, `flip`, `rotate`, `slide`, `fade` |
@@ -24,19 +24,19 @@ estimated.
 | Gradient animation | **1** | `gradientAnim="hue"` (opt-in, reduced-motion safe) |
 | Gradient presets | **8** | aurora, ice, sunset, emerald, ocean, candy, gold, mono (optional) |
 | Illustrated icons | **12** | 64×64 duotone, empty-state/feature/onboarding |
-| React/TS components | **1,000** | tree-shakeable, typed, + aliases |
-| Standalone SVGs | **1,000** | plus one 650-symbol sprite |
+| React/TS components | **1,015** | tree-shakeable, typed, + aliases |
+| Standalone SVGs | **1,015** | plus one 650-symbol sprite |
 | Language targets | **5** | HTML/sprite, JS (ESM+CJS), TS/React, Go, Rust (+ GPUI adapter) |
 
 ## 2. Filled / unfilled / animated fill
 
 | Fill state | Icons | How |
 |---|---:|---|
-| Outline (default / "empty") | **1,000** | stroke-only, the shipped base |
-| Duotone (soft fill) | **1,000** | `variant="duotone"` / `filled="soft"` — theme-safe at 16 % opacity |
-| Solid ("filled") | **58** | only **closed-geometry** glyphs fill cleanly (`fillSafe`) |
-| Solid request on open geometry | **942** | automatically degrades to duotone — never produces a broken blob |
-| Fill ↔ empty animation | **1,000** | `animateFill` — 320 ms `fill-opacity` transition, reduced-motion safe |
+| Outline (default / "empty") | **1,015** | stroke-only, the shipped base |
+| Duotone (soft fill) | **1,015** | `variant="duotone"` / `filled="soft"` — theme-safe at 16 % opacity |
+| Solid ("filled") | **67** | only **closed-geometry** glyphs fill cleanly (`fillSafe`) |
+| Solid request on open geometry | **948** | automatically degrades to duotone — never produces a broken blob |
+| Fill ↔ empty animation | **1,015** | `animateFill` — 320 ms `fill-opacity` transition, reduced-motion safe |
 
 ```tsx
 <Heart filled animateFill />          // 45 solid-capable glyphs
@@ -48,9 +48,9 @@ estimated.
 
 | Item | Count | Detail |
 |---|---:|---|
-| Icons that support CSS-3D presets | **1,000** | every icon accepts `threeD` |
+| Icons that support CSS-3D presets | **1,015** | every icon accepts `threeD` |
 | 3D presets | **4** | `tilt`, `flip`, `orbit`, `extrude` |
-| Icon × preset combinations | **4,000** | `1,000 × 4` |
+| Icon × preset combinations | **4,060** | `1,015 × 4` |
 | Pre-rendered/WebGL 3D models | **0** | deliberately CSS transforms; no WebGL/runtime compute, no extra bytes |
 | Gallery 3D demos | 4 | keyboard-previewable (Enter/Space), reduced-motion disables all |
 
@@ -65,14 +65,14 @@ estimated.
 | `squircle` | 1 | 32 % radius |
 | `hexagon` | 1 | real 1 px clipped edge layer |
 | `diamond` | 1 | scaled so it fits its layout box |
-| **Total presentations** | **1,000 × 8** (7 shapes + none) = **5,200** | all follow `currentColor`, tint 14 % / border 26 % |
+| **Total presentations** | **1,015 × 8** (7 shapes + none) = **8,120** | all follow `currentColor`, tint 14 % / border 26 % |
 
 Glass and gradients compose with shapes, fills, 3D and animation:
-`1,000 × 7` glass surfaces = **4,550**, `1,000 × 8` gradient strokes = **5,200**, and
+`1,015 × 7` glass surfaces = **7,105**, `1,015 × 8` gradient strokes = **8,120**, and
 frosted-gradient tile combinations (`7 × 8`) — all opt-in via
 `@nexa/icons/effects.css` (8,468 B raw / 1,926 B brotli).
 
-## 5. Animation presets (1,000 icons mapped)
+## 5. Animation presets (1,015 icons mapped)
 
 | Preset | Icons | Preset | Icons |
 |---|---:|---|---:|
@@ -85,7 +85,7 @@ frosted-gradient tile combinations (`7 × 8`) — all opt-in via
 | `flip` | 4 | `ring` | 4 |
 | `nudge-right` | 4 | `nudge-up-right` | 3 |
 | `nudge-down-right` | 1 | `fade-in` (helper) | any |
-| **Total** | **1,000** | | |
+| **Total** | **1,015** | | |
 
 Triggers: 649 icons animate on `hover` by default; 1 (`Loader2`/`LoaderCircle`) is
 `always` (infinite spinner). `focus`, `press`, `inview`, `mount`, `manual` are
@@ -157,10 +157,10 @@ Total 10.6 KB of SVG; currentColor + 3 optional CSS variables; light/dark/graysc
 |---|---:|---:|
 | One tree-shaken React icon (incl. shape/fill/3D code) | 3,500 B | **1,544 B** |
 | 8 icons / 50 icons | — | 2,036 B / 3,347 B |
-| Full sprite (1,000 symbols) | 343,455 B | 41,198 B |
+| Full sprite (1,015 symbols) | 351,756 B | 43,623 B |
 | Animation + shape/fill/3D CSS | 16,198 B | 3,270 B |
-| Vanilla JS ESM (all 1,000, zero-dep) | 359,069 B | 57,507 B |
-| Gallery shell / data / app (local files, 0 third-party) | 30,402 / 444,244 / 87,603 B | 7,054 / 71,291 / 18,645 B |
+| Vanilla JS ESM (all 1,015, zero-dep) | 367,036 B | 60,064 B |
+| Gallery shell / data / app (local files, 0 third-party) | 30,402 / 451,911 / 87,603 B | 7,054 / 73,917 / 18,645 B |
 
 Reference point measured in the same harness: one Lucide icon tree-shaken =
 1,782 B brotli — Nexa is **1,544 B** for the same job.
@@ -171,7 +171,7 @@ Reference point measured in the same harness: one Lucide icon tree-shaken =
 |---|---|---|
 | **One source, five targets** | One JSON catalog code-generates React, ESM/CJS JS, Go, Rust and a GPUI adapter; Go/Rust render **byte-identical markup** to the JS reference (parity-tested) | Usually one language binding; ports drift |
 | **Presentation layer is part of the library** | 17 semantic animations with 7 triggers, 49 swap/morph edges, 7 shape containers, outline/duotone/solid fill with animation, 4 CSS-3D presets, 7 frosted-glass surfaces and 8 gradient presets — all CSS/SVG only, reduced-motion/forced-colours safe | Usually static SVGs; animation is left to the app or a JS animation library |
-| **Semantic motion, not generic effects** | Each of the 1,000 icons is mapped to a meaning-appropriate preset (bell rings, heart beats, arrows nudge in their direction, loaders spin) | Uniform “hover scale/rotate” or nothing |
+| **Semantic motion, not generic effects** | Each of the 1,015 icons is mapped to a meaning-appropriate preset (bell rings, heart beats, arrows nudge in their direction, loaders spin) | Uniform “hover scale/rotate” or nothing |
 | **Category-first imports** | `@nexa/icons/communication` (and matching metadata in JS/Go/Rust) with 24 curated categories | Flat names only, or categories only in docs |
 | **Tiny per-icon payload** | 1,544 B brotli for one icon incl. the whole presentation factory; no icon font, no sprite fetch needed | Icon fonts (hundreds of KB), or ~1.8 KB per icon |
 | **Zero runtime dependencies** | JS path has none; React is an optional peer; Go/Rust have zero deps | Often a runtime/helper dependency |
@@ -183,6 +183,6 @@ Reference point measured in the same harness: one Lucide icon tree-shaken =
 | **Agent-ready** | `AGENTS.md` + `skills/nexa-icons/SKILL.md` + stable APIs for HTML/JS/TS/Go/Rust/GPUI | Docs for humans only |
 
 **Not the goal:** replacing Lucide’s 1,600+ raw shapes, or being a general vector
-editor. Nexa is an opinionated, product-grade *system*: a curated 1,000-icon
+editor. Nexa is an opinionated, product-grade *system*: a curated 1,015-icon
 catalog, one visual language, and the presentation/accessibility/perf plumbing
 already solved in five languages.
