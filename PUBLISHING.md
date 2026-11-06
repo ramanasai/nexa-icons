@@ -1,5 +1,8 @@
 # Publishing @sairamanapb/icons to npm
 
+> **Status:** `1.0.0` is published on npm — https://www.npmjs.com/package/@sairamanapb/icons
+> (`npm view @sairamanapb/icons version` → `1.0.0`). Use this guide for the next release.
+
 ## 0. Preconditions
 
 - npm account with **2FA** enabled.

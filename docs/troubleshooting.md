@@ -7,7 +7,7 @@
   `TriangleAlert`; the canonical kebab is `triangle-exclamation-point`.
 - React's generic `<Icon name="…" />` returns `null` for unknown names instead of
   throwing. Use `getIcon(name)` when you need to check first.
-- The dataset has 650 icons across 24 categories; `XIcon` is an alias of `X` and
+- The dataset has 1,034 icons across 26 categories; `XIcon` is an alias of `X` and
   `TriangleAlert` of `AlertTriangle`. Importing either alias works.
 - List everything:
 
@@ -103,7 +103,7 @@ Stroke width is derived from size on purpose: **16→2, 20→1.75, 24/32/48→1.
 
 ## Category import does not resolve
 
-The catalog ships **650 icons in 24 categories**, and category entry points are
+The catalog ships **1,034 icons in 26 categories**, and category entry points are
 live (`@sairamanapb/icons/communication`, …). If one fails:
 
 - Check the id list (`navigation`, `arrows`, `actions`, `communication`, `media`,

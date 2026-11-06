@@ -1,11 +1,11 @@
 # Migrating from Lucide
 
 Nexa Icons is a curated icon set derived from **Lucide 1.70** (ISC), re-packaged
-for Nexa. The current catalog is 650 icons in 24 categories. If your app already imports `lucide-react`, migration is a package swap
+for Nexa. The current catalog is 1,034 icons in 26 categories. If your app already imports `lucide-react`, migration is a package swap
 plus one import-path change — the exported component names are the same names
 your code already uses.
 
-- 650 icons ship in 24 categories (plus the legacy `XIcon`/`TriangleAlert` aliases).
+- 1,034 icons ship in 26 categories (plus the legacy `XIcon`/`TriangleAlert` aliases).
 - Two requested names were exact duplicates and are kept as aliases:
   `XIcon === X`, `TriangleAlert === AlertTriangle`.
 - All requested public names remain importable.

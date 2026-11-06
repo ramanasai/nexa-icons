@@ -138,7 +138,7 @@ numbers live in [performance.md](performance.md).
 
 ## Catalog expansion and extra artefacts
 
-The catalog is **650 icons in 24 categories** (`data/categories.json`). Full
+The catalog is **1,034 icons in 26 categories** (`data/categories.json`). Full
 regeneration workflow:
 
 1. `data/categories.json` (authored) → `node scripts/generate-data.mjs` writes

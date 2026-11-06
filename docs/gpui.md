@@ -124,7 +124,7 @@ Performance characteristics:
   frame. Long grids become textured quads regardless of path complexity.
 - **Lazy**: the asset source runs when an icon is first painted, so never-rendered
   icons cost nothing.
-- **Cheap generation**: `Icon::svg()` is ~15 µs/icon for the full 650-icon
+- **Cheap generation**: `Icon::svg()` is ~15 µs/icon for the full 1,034-icon
   catalogue (~10 ms for all glyphs once).
 - **Reuse one size per grid**: the cache key includes rounded pixel size; mixing
   fractional sizes creates atlas variants. Animate container transform/opacity,

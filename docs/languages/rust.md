@@ -56,7 +56,7 @@ contract.
 | `pairs()` | `&'static [SwapPair]` | all 49 directed swap edges, incl. `from` |
 | `swap_mode(name)` | `&'static str` | mode for a pair, `"fade"` fallback |
 | `swap_svg(from, to, opts)` | `Option<String>` | two-layer `.nexa-swap` widget |
-| `categories()` | `&'static [Category]` | all 24 categories, catalog order |
+| `categories()` | `&'static [Category]` | all 26 categories, catalog order |
 | `by_category(id)` | `Option<&'static Category>` | one category by kebab id |
 | `category_icons(id)` | `Vec<&'static Icon>` | resolved icons for a category |
 
@@ -137,7 +137,7 @@ cd rust
 cargo test
 ```
 
-The integration tests cover the 650-icon count, alias data, case-insensitive and
+The integration tests cover the 1,034-icon count, alias data, case-insensitive and
 kebab lookup, builder behaviour, sprite/symbol completeness, XML-ish escaping,
 and that every icon renders without a hard-coded color. The crate is `#![forbid]`-free
 but contains no `unsafe`.
@@ -147,7 +147,7 @@ but contains no `unsafe`.
 ```rust
 use nexa_icons::{by_category, categories, category_icons};
 
-let all = categories();                          // 24 categories
+let all = categories();                          // 26 categories
 let communication = by_category("communication"); // Option<&Category>
 let icons = category_icons("communication");    // Vec<&Icon>
 ```

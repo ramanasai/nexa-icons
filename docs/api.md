@@ -356,7 +356,7 @@ fixed stroke 2; use the React component itself when you need size-aware stroke.
 
 ## Categories
 
-The **650-icon catalog is categorized** into 24 groups from
+The **1,034-icon catalog is categorized** into 24 groups from
 `data/categories.json`. Every binding exposes them:
 
 | Binding | API |

@@ -60,7 +60,7 @@ func main() {
 | `Pairs()` | `[]SwapPair` | all 49 directed swap edges, incl. `From` |
 | `SwapMode(name)` | `string` | mode for a pair, `"fade"` fallback |
 | `SwapSVG(from, to, opts ...SwapOption)` | `string` | two-layer `.nexa-swap` widget; `""` if a name is unknown |
-| `Categories()` | `[]Category` | all 24 categories in catalog order; `Category{ID, Label, Description, Icons}` |
+| `Categories()` | `[]Category` | all 26 categories in catalog order; `Category{ID, Label, Description, Icons}` |
 | `ByCategory(id)` | `(Category, bool)` | one category by kebab id (e.g. `"communication"`) |
 
 ### Options
@@ -145,7 +145,7 @@ go vet ./...
 go test ./...
 ```
 
-The module test suite checks the 650-icon count, aliases, lookup rules, sprite
+The module test suite checks the 1,034-icon count, aliases, lookup rules, sprite
 symbol completeness, option behaviour, XML well-formedness of every rendered
 icon, and that no output contains a hard-coded color.
 
@@ -162,7 +162,7 @@ communication, ok := nexaicons.ByCategory("communication")
 fmt.Println(communication.Label, len(communication.Icons))
 ```
 
-Categories are generated from `data/categories.json`: 24 categories today
+Categories are generated from `data/categories.json`: 26 categories today
 (navigation, arrows, actions, communication, media, files, data, finance, people,
 security, status, time, weather, devices, design, travel, places, education,
 health, food, development, commerce, editing, layout).

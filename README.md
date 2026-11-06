@@ -1,6 +1,10 @@
 # Nexa Icons
 
+[![npm version](https://img.shields.io/npm/v/@sairamanapb/icons?style=flat-square&logo=npm)](https://www.npmjs.com/package/@sairamanapb/icons)
+[![npm downloads](https://img.shields.io/npm/dm/@sairamanapb/icons?style=flat-square)](https://www.npmjs.com/package/@sairamanapb/icons)
 [![Live gallery](https://img.shields.io/badge/live%20gallery-nexa--icons-5b8def?style=flat-square)](https://ramanasai.github.io/nexa-icons/)
+
+**Published on npm:** [`@sairamanapb/icons@1.0.0`](https://www.npmjs.com/package/@sairamanapb/icons)
 
 **[Open the live icon gallery →](https://ramanasai.github.io/nexa-icons/)** — browse all 1,034 icons, shapes, fills, 3D, glass/gradients, swaps and illustrations, entirely client-side.
 
@@ -15,7 +19,7 @@ dependencies beyond the optional React peer**.
 
 - **1,034 icons** in **26 categories**, plus legacy aliases `XIcon === X`,
   `TriangleAlert === AlertTriangle`.
-- **Category imports** — `import { Bell } from "@sairamanapb/icons/communication"` (24
+- **Category imports** — `import { Bell } from "@sairamanapb/icons/communication"` (26
   tree-shakeable category entry points; metadata via `CATEGORIES`).
 - **24×24 grid**, 2px padding, stroke-first, `currentColor`, round caps/joins.
 - **Shape containers** — `square`, `rounded`, `circle`, `pill`, `squircle`,
