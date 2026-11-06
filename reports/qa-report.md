@@ -1,6 +1,6 @@
 # Nexa Icons — QA report
 
-**Release:** v1.0.0 · **Date:** 2026-11-06 · **Scope:** `@nexa/icons` 1,034-icon
+**Release:** v1.0.0 · **Date:** 2026-11-06 · **Scope:** `@sairamanapb/icons` 1,034-icon
 catalog across React/TypeScript, vanilla JS, HTML, Go, Rust and the Rust GPUI
 adapter.
 

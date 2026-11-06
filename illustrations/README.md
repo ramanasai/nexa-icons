@@ -114,7 +114,7 @@ recipe in §3 for theme-aware rendering.
 
 ```tsx
 // Vite / webpack 5 / Next.js: raw import, then inline
-import noJobs from "@nexa/icons/illustrations/no-jobs.svg?raw";
+import noJobs from "@sairamanapb/icons/illustrations/no-jobs.svg?raw";
 
 export function EmptyJobs() {
   return (
@@ -135,7 +135,7 @@ small wrapper that reads the manifest, the same pattern applies. A typed helper
 can be generated from `manifest.json`:
 
 ```tsx
-import manifest from "@nexa/icons/illustrations/manifest.json";
+import manifest from "@sairamanapb/icons/illustrations/manifest.json";
 
 const ILLUSTRATIONS = Object.fromEntries(
   manifest.map((item) => [item.id, item])

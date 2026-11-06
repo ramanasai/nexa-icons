@@ -3,7 +3,7 @@ name: nexa-icons
 description: >-
   Use when adding, choosing, styling, animating, or reviewing any icon, UI icon,
   SVG, spinner, empty-state, nav, or button icon in a Nexa
-  project — or when importing the @nexa/icons package from HTML, vanilla JS,
+  project — or when importing the @sairamanapb/icons package from HTML, vanilla JS,
   TypeScript/React, Go, or Rust. Covers the Nexa concept→icon map, 24px grid and
   size→stroke rules, currentColor theming, shape containers, fill variants,
   CSS 3D presets, the 17 CSS animation presets, accessibility, categories, and
@@ -55,19 +55,19 @@ the app-level style guide; `docs/` has the full reference.
 React / TSX (package root — imports React; React ≥18 is an optional peer):
 
 ```tsx
-import { Bell, Briefcase, Loader2, Icon, IconSwap, IconToggle } from "@nexa/icons";
-import { Bell } from "@nexa/icons/react/bell"; // or deep-import one module
-import "@nexa/icons/animations.css"; // once, app entry
+import { Bell, Briefcase, Loader2, Icon, IconSwap, IconToggle } from "@sairamanapb/icons";
+import { Bell } from "@sairamanapb/icons/react/bell"; // or deep-import one module
+import "@sairamanapb/icons/animations.css"; // once, app entry
 ```
 
 Vanilla JS / ESM (subpath — **no React needed**, zero dependencies):
 
 ```js
-import { svg, sprite, getIcon, names, swapSvg, pairFor } from "@nexa/icons/js";
+import { svg, sprite, getIcon, names, swapSvg, pairFor } from "@sairamanapb/icons/js";
 ```
 
-If the project does not use React, never import `@nexa/icons`; use
-`@nexa/icons/js` (or the Go/Rust package) instead.
+If the project does not use React, never import `@sairamanapb/icons`; use
+`@sairamanapb/icons/js` (or the Go/Rust package) instead.
 
 HTML (no build step):
 
@@ -163,8 +163,8 @@ Aliases that must keep working: `XIcon` → `X`, `TriangleAlert` → `AlertTrian
 **1,034 icons in 26 categories** with tree-shakeable category imports:
 
 ```tsx
-import { Bell } from "@nexa/icons/communication"; // React/JS
-import { CATEGORIES } from "@nexa/icons";         // array (JS: record + categories(id))
+import { Bell } from "@sairamanapb/icons/communication"; // React/JS
+import { CATEGORIES } from "@sairamanapb/icons";         // array (JS: record + categories(id))
 ```
 
 Go: `Categories()` / `ByCategory(id)`; Rust: `categories()` / `by_category()` /

@@ -4,15 +4,15 @@ Compact per-language reference, verified against the shipped packages. Long
 form: [`docs/api.md`](../../../docs/api.md). Source of truth: `src/types.ts`,
 `src/createIcon.tsx`, `js/index.mjs`, `go/icons.go`, `rust/src/lib.rs`.
 
-## React / TypeScript — `@nexa/icons`
+## React / TypeScript — `@sairamanapb/icons`
 
 ```tsx
-import { Bell, Loader2, Icon } from "@nexa/icons"; // imports React (optional peer)
-import { Bell } from "@nexa/icons/react/bell"; // deep import -> dist/icons/bell.js
-import "@nexa/icons/animations.css"; // once, app entry
+import { Bell, Loader2, Icon } from "@sairamanapb/icons"; // imports React (optional peer)
+import { Bell } from "@sairamanapb/icons/react/bell"; // deep import -> dist/icons/bell.js
+import "@sairamanapb/icons/animations.css"; // once, app entry
 ```
 
-Non-React projects use `@nexa/icons/js` (below) — the root entry requires React.
+Non-React projects use `@sairamanapb/icons/js` (below) — the root entry requires React.
 
 | Prop | Type | Default | Notes |
 |---|---|---|---|
@@ -55,7 +55,7 @@ registry — prefer named imports).
 ### Swap components
 
 ```tsx
-import { IconSwap, IconToggle, ArrowLeft, ArrowRight, Plus, Minus } from "@nexa/icons";
+import { IconSwap, IconToggle, ArrowLeft, ArrowRight, Plus, Minus } from "@sairamanapb/icons";
 
 <IconSwap from={ArrowLeft} to={ArrowRight} active={open} label="Direction" />
 <IconToggle from={Plus} to={Minus} label="Expand section" />
@@ -67,17 +67,17 @@ import { IconSwap, IconToggle, ArrowLeft, ArrowRight, Plus, Minus } from "@nexa/
 `aria-pressed` + required `label` and `pressed`/`defaultPressed`/
 `onPressedChange`. Pairs/modes come from `data/swaps.json`.
 
-## Vanilla JS — `@nexa/icons/js`
+## Vanilla JS — `@sairamanapb/icons/js`
 
 ```js
 import {
   svg, sprite, symbol, getIcon, hasIcon, names, ids,
   meta, ICONS, PRESETS, SWAP, SWAP_PAIRS, SIZE_PX, strokeForSize,
   pairFor, swapModeFor, swapSvg,
-} from "@nexa/icons/js";
+} from "@sairamanapb/icons/js";
 ```
 
-Root package ships CJS too: `const { Bell } = require("@nexa/icons")`.
+Root package ships CJS too: `const { Bell } = require("@sairamanapb/icons")`.
 
 | Export | Signature | Returns |
 |---|---|---|
@@ -106,7 +106,7 @@ attribute (plus `shape`, `variant`, `filled`, `animateFill`, `threeD` for the
 presentation features). `sprite({ strokeWidth })` sets the symbol stroke
 (default 2 — size-aware stroke is only available through the inline APIs). Go: `Sprite(SpriteStrokeWidth(w))` /
 `Symbol(name, SymbolStrokeWidth(w))`; Rust: `sprite_with(w)` / `Icon::symbol_with(w)`.
-Swap pairs ship at `@nexa/icons/data/swaps.json`.
+Swap pairs ship at `@sairamanapb/icons/data/swaps.json`.
 
 ```js
 svg("Bell", { size: 20 });                          // 20px / 1.75
@@ -186,10 +186,10 @@ let swap = nexa_icons::swap_svg("ArrowLeft", "ArrowRight", nexa_icons::SwapOptio
 - swap inner layers `.nexa-swap__a`/`.nexa-swap__b` are `aria-hidden="true"`; the
   wrapper carries the label.
 - **No runtime dependencies beyond the optional React peer**: root entry needs
-  React ≥18, `@nexa/icons/js`/Go/Rust need nothing.
+  React ≥18, `@sairamanapb/icons/js`/Go/Rust need nothing.
 - Shape/fill/3D are React + vanilla-JS features; Go/Rust expose base
   stroke/sprite/swap APIs. Categories are live in every binding:
-  React/JS `@nexa/icons/<id>` + `CATEGORIES`; Go `Categories()`/`ByCategory()`;
+  React/JS `@sairamanapb/icons/<id>` + `CATEGORIES`; Go `Categories()`/`ByCategory()`;
   Rust `categories()`/`by_category()`/`category_icons()`.
 
 ## Unknown names

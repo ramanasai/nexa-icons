@@ -125,7 +125,7 @@ test("documented Nexa imports resolve (root, /js and category entry points)", as
       if (!CATEGORY_IDS.includes(match[2])) continue; // /js, /react, /data, …
       const category = await import(`../dist/categories/${match[2]}.js`);
       for (const name of match[1].split(",").map((part) => part.trim()).filter(Boolean)) {
-        if (!(name in category)) problems.push(`${file}: ${name} not in @nexa/icons/${match[2]}`);
+        if (!(name in category)) problems.push(`${file}: ${name} not in @sairamanapb/icons/${match[2]}`);
       }
     }
   }

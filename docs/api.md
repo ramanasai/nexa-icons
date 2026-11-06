@@ -4,10 +4,10 @@ One dataset, five consumption paths: React/TypeScript, vanilla JS (ESM + CJS),
 plain HTML, Go, and Rust. Every renderer emits the same SVG contract, so icons
 look, theme, and animate identically everywhere.
 
-- React package: `@nexa/icons` (`dist/`, ESM + CJS, React ≥18 peer — **optional**).
+- React package: `@sairamanapb/icons` (`dist/`, ESM + CJS, React ≥18 peer — **optional**).
   This root entry statically imports React; non-React consumers must use the
   subpaths below.
-- Vanilla JS: `@nexa/icons/js` (`js/index.mjs`, `js/index.cjs`) — **zero
+- Vanilla JS: `@sairamanapb/icons/js` (`js/index.mjs`, `js/index.cjs`) — **zero
   dependencies, no React required**
 - Go: [`github.com/nexa-icons/nexa/go`](languages/go.md)
 - Rust: [`nexa-icons`](languages/rust.md)
@@ -43,11 +43,11 @@ the same size→stroke rule.
 | Accessibility | decorative → `aria-hidden="true"`; labelled → `role="img"` + `aria-label` |
 | Grid | `viewBox="0 0 24 24"` always |
 
-## React / TypeScript — `@nexa/icons`
+## React / TypeScript — `@sairamanapb/icons`
 
 ```tsx
-import { Bell, Loader2, Icon, NEXA_MAP } from "@nexa/icons";
-import "@nexa/icons/animations.css"; // once, app entry
+import { Bell, Loader2, Icon, NEXA_MAP } from "@sairamanapb/icons";
+import "@sairamanapb/icons/animations.css"; // once, app entry
 ```
 
 Exports: **650 named components**, the aliases `XIcon`/`TriangleAlert`, the
@@ -62,11 +62,11 @@ metadata), helpers `createIcon`, `strokeForSize`/`STROKE_FOR_PX`, `SIZE_PX`,
 ### Importing one icon without the barrel
 
 ```tsx
-import { Bell } from "@nexa/icons/react/bell"; // deep import -> dist/icons/bell.js
+import { Bell } from "@sairamanapb/icons/react/bell"; // deep import -> dist/icons/bell.js
 ```
 
 Each icon ships as its own ESM module under `dist/icons/<kebab>.js`; the
-`@nexa/icons/react/*` subpath exports it (with types). Use the barrel for the
+`@sairamanapb/icons/react/*` subpath exports it (with types). Use the barrel for the
 common case, or deep-import when a bundler/dev-server benefits from a single
 small module (the barrel is tree-shaken anyway, ~694 B brotli for one icon).
 
@@ -135,7 +135,7 @@ dataset preset (`ring` for Bell) on the dataset trigger. See
 ### Swap / morph — `IconSwap`, `IconToggle`
 
 ```tsx
-import { IconSwap, IconToggle, ArrowLeft, ArrowRight } from "@nexa/icons";
+import { IconSwap, IconToggle, ArrowLeft, ArrowRight } from "@sairamanapb/icons";
 
 <IconSwap from={ArrowLeft} to={ArrowRight} active={open} label="Direction" />
 <IconToggle from={ArrowLeft} to={ArrowRight} label="Next page" />
@@ -162,7 +162,7 @@ import { IconSwap, IconToggle, ArrowLeft, ArrowRight } from "@nexa/icons";
 For data-driven UIs (menus, tables, CMS content):
 
 ```tsx
-import { Icon } from "@nexa/icons";
+import { Icon } from "@sairamanapb/icons";
 
 <Icon name="bell" size={20} />                  // PascalCase, kebab, or alias
 <Icon name="TriangleAlert" animate="shake" />   // alias resolves to AlertTriangle
@@ -185,17 +185,17 @@ prefer named imports in app code so only used icons ship.
 
 | Path | Contents |
 |---|---|
-| `@nexa/icons` | ESM build `dist/index.js` + types `dist/index.d.ts`; CJS at `dist/cjs/index.js` (`require`) |
-| `@nexa/icons/animations.css` | the animation layer (`dist/animations.css`) |
-| `@nexa/icons/sprite.svg` | full symbol sprite |
-| `@nexa/icons/icons/*` | standalone SVG files |
-| `@nexa/icons/data/icons.json` | canonical dataset |
+| `@sairamanapb/icons` | ESM build `dist/index.js` + types `dist/index.d.ts`; CJS at `dist/cjs/index.js` (`require`) |
+| `@sairamanapb/icons/animations.css` | the animation layer (`dist/animations.css`) |
+| `@sairamanapb/icons/sprite.svg` | full symbol sprite |
+| `@sairamanapb/icons/icons/*` | standalone SVG files |
+| `@sairamanapb/icons/data/icons.json` | canonical dataset |
 
 `sideEffects: ["*.css"]` so bundlers keep the CSS import and tree-shake icons.
 `main`/`module`/`types` are set for classic resolvers; `exports` covers modern
 ESM/CJS consumers.
 
-## Vanilla JS — `@nexa/icons/js`
+## Vanilla JS — `@sairamanapb/icons/js`
 
 Zero dependencies; works in Node ≥18 and browsers. ESM (`js/index.mjs`) and CJS
 (`js/index.cjs`), ~11.7 KB brotli total. The runtime payload is lean: icon
@@ -207,12 +207,12 @@ import {
   svg, sprite, symbol, getIcon, hasIcon, names, ids,
   meta, ICONS, SWAP, SWAP_PAIRS, PRESETS, SIZE_PX, strokeForSize,
   pairFor, swapModeFor, swapSvg,
-} from "@nexa/icons/js";
+} from "@sairamanapb/icons/js";
 ```
 
 TypeScript declarations ship as `js/index.d.ts` (referenced by the package
-`exports` map). The root package also has a CJS build: `require("@nexa/icons")`
-works on Node. Subpath `@nexa/icons/js` ships both ESM and CJS.
+`exports` map). The root package also has a CJS build: `require("@sairamanapb/icons")`
+works on Node. Subpath `@sairamanapb/icons/js` ships both ESM and CJS.
 
 | Export | Signature | Returns |
 |---|---|---|
@@ -286,7 +286,7 @@ space/underscore-insensitive forms (`"book user"`, `"book_user"`).
 
 ```html
 <script type="module">
-  import { sprite } from "@nexa/icons/js";
+  import { sprite } from "@sairamanapb/icons/js";
   document.body.insertAdjacentHTML("afterbegin", sprite());
 </script>
 
@@ -326,7 +326,7 @@ import { createRequire } from "node:module";
 
 const require = createRequire(import.meta.url);
 const spriteFile = path.join(
-  path.dirname(require.resolve("@nexa/icons/package.json")),
+  path.dirname(require.resolve("@sairamanapb/icons/package.json")),
   "sprite.svg"
 );
 const sprite = readFileSync(spriteFile, "utf8");
@@ -349,9 +349,9 @@ export function Bell() {
 }
 ```
 
-With Vite/Next you can also `import sprite from "@nexa/icons/sprite.svg?raw"`
+With Vite/Next you can also `import sprite from "@sairamanapb/icons/sprite.svg?raw"`
 instead of reading the file. Alternatively call the vanilla `sprite()` from
-`@nexa/icons/js` on the server — it returns the same markup. Sprite symbols are
+`@sairamanapb/icons/js` on the server — it returns the same markup. Sprite symbols are
 fixed stroke 2; use the React component itself when you need size-aware stroke.
 
 ## Categories
@@ -361,25 +361,25 @@ The **650-icon catalog is categorized** into 24 groups from
 
 | Binding | API |
 |---|---|
-| React | `import { CATEGORIES } from "@nexa/icons"` (metadata); `import { Bell } from "@nexa/icons/communication"` |
-| Vanilla JS | `CATEGORIES`, `categories()`, `categories("communication")` from `@nexa/icons/js`; same category subpaths |
+| React | `import { CATEGORIES } from "@sairamanapb/icons"` (metadata); `import { Bell } from "@sairamanapb/icons/communication"` |
+| Vanilla JS | `CATEGORIES`, `categories()`, `categories("communication")` from `@sairamanapb/icons/js`; same category subpaths |
 | Go | `Categories() []Category`, `ByCategory(id) (Category, bool)` |
 | Rust | `categories()`, `by_category(id)`, `category_icons(id)` |
 
 ```tsx
-import { Bell } from "@nexa/icons/communication";
-import { CATEGORIES } from "@nexa/icons";
+import { Bell } from "@sairamanapb/icons/communication";
+import { CATEGORIES } from "@sairamanapb/icons";
 ```
 
 ```js
-import { CATEGORIES, categories } from "@nexa/icons/js";
+import { CATEGORIES, categories } from "@sairamanapb/icons/js";
 
 Object.keys(CATEGORIES);      // 24 ids
 categories("communication");  // { id, label, description, icons }
 ```
 
 Category entry modules are tree-shakeable subpaths
-(`@nexa/icons/<id>` → `dist/categories/<id>.js`). Ids: navigation, arrows,
+(`@sairamanapb/icons/<id>` → `dist/categories/<id>.js`). Ids: navigation, arrows,
 actions, communication, media, files, data, finance, people, security, status,
 time, weather, devices, design, travel, places, education, health, food,
 development, commerce, editing, layout.
@@ -424,7 +424,7 @@ detail, `manifest.json` + `preview.html`). Usage:
 ```
 
 ```tsx
-import noJobs from "@nexa/icons/illustrations/no-jobs.svg?raw";
+import noJobs from "@sairamanapb/icons/illustrations/no-jobs.svg?raw";
 <div style={{ color: "var(--nexa-fg-muted)" }}
      dangerouslySetInnerHTML={{ __html: noJobs }} />;
 ```
@@ -461,5 +461,5 @@ in-memory asset source. Full guide: [gpui.md](gpui.md).
 Use it to build your own renderer when no existing binding fits; keep geometry
 and `anim` metadata intact (see [adding-icons.md](adding-icons.md)). The
 semantic swap pairs ship as `data/swaps.json` and are exported as a package
-subpath (`import swaps from "@nexa/icons/data/swaps.json" with { type: "json" }`
-— or read `node_modules/@nexa/icons/data/swaps.json`).
+subpath (`import swaps from "@sairamanapb/icons/data/swaps.json" with { type: "json" }`
+— or read `node_modules/@sairamanapb/icons/data/swaps.json`).

@@ -561,9 +561,9 @@
     return {
       sprite: '<svg class="nexa-icon" width="' + size + '" height="' + size + '" role="img" aria-label="' + esc(icon.n) + '"><use href="#nexa-' + icon.k + '"/></svg>\n<!-- requires the Nexa sprite inlined once on the page -->',
       inline: source,
-      react: 'import { ' + icon.n + ' } from "@nexa/icons";\n\n' +
+      react: 'import { ' + icon.n + ' } from "@sairamanapb/icons";\n\n' +
         'export function Example() {\n  return <' + icon.n + ' size={' + size + '} animate="' + icon.p + '" />;\n}',
-      js: 'import { svg } from "@nexa/icons/js";\n\n' +
+      js: 'import { svg } from "@sairamanapb/icons/js";\n\n' +
         'const markup = svg("' + icon.k + '", { size: ' + size + ', animate: "' + icon.p + '" });\n' +
         'container.innerHTML = markup;',
       go: 'import (\n  "fmt"\n\n  nexaicons "github.com/nexa-icons/nexa/go"\n)\n\n' +
@@ -608,7 +608,7 @@
     var hints = {
       sprite: '<use href="#nexa-' + icon.k + '"/>',
       inline: '<svg>…</svg>',
-      react: 'import { ' + icon.n + ' } from "@nexa/icons"',
+      react: 'import { ' + icon.n + ' } from "@sairamanapb/icons"',
       js: 'svg("' + icon.k + '", { size: ' + state.size + ' })',
       go: 'nexaicons.Get("' + icon.n + '")',
       rust: 'nexa_icons::get("' + icon.n + '")'

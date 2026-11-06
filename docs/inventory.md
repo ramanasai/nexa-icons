@@ -70,7 +70,7 @@ estimated.
 Glass and gradients compose with shapes, fills, 3D and animation:
 `1,034 × 7` glass surfaces = **7,238**, `1,034 × 8` gradient strokes = **8,272**, and
 frosted-gradient tile combinations (`7 × 8`) — all opt-in via
-`@nexa/icons/effects.css` (8,468 B raw / 1,926 B brotli).
+`@sairamanapb/icons/effects.css` (8,468 B raw / 1,926 B brotli).
 
 ## 5. Animation presets (1,034 icons mapped)
 
@@ -95,32 +95,32 @@ opt-in per instance.
 
 | Category | Icons | Import |
 |---|---:|---|
-| Health & Wellness | 45 | `@nexa/icons/health` |
-| Finance & Money | 46 | `@nexa/icons/finance` |
-| Food & Drink | 48 | `@nexa/icons/food` |
-| Weather & Nature | 43 | `@nexa/icons/weather` |
-| Education & Learning | 38 | `@nexa/icons/education` |
-| Travel & Transport | 48 | `@nexa/icons/travel` |
-| Shopping & Commerce | 59 | `@nexa/icons/commerce` |
-| Security & Privacy | 44 | `@nexa/icons/security` |
-| Communication | 59 | `@nexa/icons/communication` |
-| Media & Camera | 51 | `@nexa/icons/media` |
-| Files & Folders | 69 | `@nexa/icons/files` |
-| Data & Analytics | 45 | `@nexa/icons/data` |
-| Devices & Hardware | 63 | `@nexa/icons/devices` |
-| Development | 49 | `@nexa/icons/development` |
-| Editing & Text | 65 | `@nexa/icons/editing` |
-| Design & Shapes | 57 | `@nexa/icons/design` |
-| Time & Calendar | 36 | `@nexa/icons/time` |
-| People & Users | 44 | `@nexa/icons/people` |
-| Navigation & Maps | 40 | `@nexa/icons/navigation` |
-| Layout & UI | 59 | `@nexa/icons/layout` |
-| Status & Feedback | 56 | `@nexa/icons/status` |
-| Actions & Controls | 65 | `@nexa/icons/actions` |
-| Arrows & Direction | 59 | `@nexa/icons/arrows` |
-| Places & Work | 59 | `@nexa/icons/places` |
-| Brands & Sources | 13 | `@nexa/icons/brands` |
-| Government & Immigration | 7 | `@nexa/icons/government` |
+| Health & Wellness | 45 | `@sairamanapb/icons/health` |
+| Finance & Money | 46 | `@sairamanapb/icons/finance` |
+| Food & Drink | 48 | `@sairamanapb/icons/food` |
+| Weather & Nature | 43 | `@sairamanapb/icons/weather` |
+| Education & Learning | 38 | `@sairamanapb/icons/education` |
+| Travel & Transport | 48 | `@sairamanapb/icons/travel` |
+| Shopping & Commerce | 59 | `@sairamanapb/icons/commerce` |
+| Security & Privacy | 44 | `@sairamanapb/icons/security` |
+| Communication | 59 | `@sairamanapb/icons/communication` |
+| Media & Camera | 51 | `@sairamanapb/icons/media` |
+| Files & Folders | 69 | `@sairamanapb/icons/files` |
+| Data & Analytics | 45 | `@sairamanapb/icons/data` |
+| Devices & Hardware | 63 | `@sairamanapb/icons/devices` |
+| Development | 49 | `@sairamanapb/icons/development` |
+| Editing & Text | 65 | `@sairamanapb/icons/editing` |
+| Design & Shapes | 57 | `@sairamanapb/icons/design` |
+| Time & Calendar | 36 | `@sairamanapb/icons/time` |
+| People & Users | 44 | `@sairamanapb/icons/people` |
+| Navigation & Maps | 40 | `@sairamanapb/icons/navigation` |
+| Layout & UI | 59 | `@sairamanapb/icons/layout` |
+| Status & Feedback | 56 | `@sairamanapb/icons/status` |
+| Actions & Controls | 65 | `@sairamanapb/icons/actions` |
+| Arrows & Direction | 59 | `@sairamanapb/icons/arrows` |
+| Places & Work | 59 | `@sairamanapb/icons/places` |
+| Brands & Sources | 13 | `@sairamanapb/icons/brands` |
+| Government & Immigration | 7 | `@sairamanapb/icons/government` |
 | **Total memberships** | **1267** | 233 icons in 2+ categories |
 
 ## 7. Illustrated icons (12, 64×64 duotone)
@@ -147,8 +147,8 @@ Total 10.6 KB of SVG; currentColor + 3 optional CSS variables; light/dark/graysc
 | Target | What ships | Notes |
 |---|---|---|
 | HTML | 650 SVGs + 1 sprite | `<svg><use href="#nexa-bell"/></svg>` |
-| JavaScript | `@nexa/icons/js` ESM + CJS | zero dependencies, `svg`/`sprite`/`categories`/`swapSvg` |
-| TypeScript / React | `@nexa/icons` | 650 components + `Icon`/`IconSwap`/`IconToggle`, `.d.ts`, deep import |
+| JavaScript | `@sairamanapb/icons/js` ESM + CJS | zero dependencies, `svg`/`sprite`/`categories`/`swapSvg` |
+| TypeScript / React | `@sairamanapb/icons` | 650 components + `Icon`/`IconSwap`/`IconToggle`, `.d.ts`, deep import |
 | Go | `github.com/nexa-icons/nexa/go` | zero deps, `Get`/`SVG`/`Symbol`/`Sprite`/`Categories`/`SwapSVG` |
 | Rust | crate `nexa-icons` | zero deps, `get`/`svg`/`symbol_with`/`sprite_with`/`categories`/`swap_svg` |
 | Rust + GPUI | `nexa-icons-gpui` | gpui 0.2.2 adapter, asset source, size-aware stroke, text-color inheritance |
@@ -174,7 +174,7 @@ Reference point measured in the same harness: one Lucide icon tree-shaken =
 | **One source, five targets** | One JSON catalog code-generates React, ESM/CJS JS, Go, Rust and a GPUI adapter; Go/Rust render **byte-identical markup** to the JS reference (parity-tested) | Usually one language binding; ports drift |
 | **Presentation layer is part of the library** | 17 semantic animations with 7 triggers, 49 swap/morph edges, 7 shape containers, outline/duotone/solid fill with animation, 4 CSS-3D presets, 7 frosted-glass surfaces and 8 gradient presets — all CSS/SVG only, reduced-motion/forced-colours safe | Usually static SVGs; animation is left to the app or a JS animation library |
 | **Semantic motion, not generic effects** | Each of the 1,034 icons is mapped to a meaning-appropriate preset (bell rings, heart beats, arrows nudge in their direction, loaders spin) | Uniform “hover scale/rotate” or nothing |
-| **Category-first imports** | `@nexa/icons/communication` (and matching metadata in JS/Go/Rust) with 24 curated categories | Flat names only, or categories only in docs |
+| **Category-first imports** | `@sairamanapb/icons/communication` (and matching metadata in JS/Go/Rust) with 24 curated categories | Flat names only, or categories only in docs |
 | **Tiny per-icon payload** | 1,544 B brotli for one icon incl. the whole presentation factory; no icon font, no sprite fetch needed | Icon fonts (hundreds of KB), or ~1.8 KB per icon |
 | **Zero runtime dependencies** | JS path has none; React is an optional peer; Go/Rust have zero deps | Often a runtime/helper dependency |
 | **Native Rust UI support** | `nexa-icons-gpui` — actual GPUI element, asset source, text-color inheritance, size-aware stroke | Icon packages rarely ship native GUI adapters |

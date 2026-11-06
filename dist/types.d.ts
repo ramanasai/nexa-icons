@@ -1,5 +1,5 @@
 /**
- * Shared TypeScript types for @nexa/icons.
+ * Shared TypeScript types for @sairamanapb/icons.
  * These are hand-written (not generated); NexaIconName is injected at the
  * ICON_NAME_UNION marker by scripts/generate-react.mjs.
  */

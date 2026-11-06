@@ -9,11 +9,11 @@ so it runs off the main thread, and adds zero JavaScript runtime.
 Load the stylesheet once:
 
 ```ts
-import "@nexa/icons/animations.css";
+import "@sairamanapb/icons/animations.css";
 ```
 
 ```html
-<link rel="stylesheet" href="node_modules/@nexa/icons/dist/animations.css">
+<link rel="stylesheet" href="node_modules/@sairamanapb/icons/dist/animations.css">
 ```
 
 ## The animation contract
@@ -133,8 +133,8 @@ Examples: `ArrowLeft ↔ ArrowRight` (mirror), `ArrowUp ↔ ArrowDown` (flip),
 ### React
 
 ```tsx
-import { IconSwap, IconToggle, ArrowLeft, ArrowRight } from "@nexa/icons";
-import "@nexa/icons/animations.css";
+import { IconSwap, IconToggle, ArrowLeft, ArrowRight } from "@sairamanapb/icons";
+import "@sairamanapb/icons/animations.css";
 
 <IconSwap from={ArrowLeft} to={ArrowRight} active={open} label="Direction" />
 
@@ -159,7 +159,7 @@ focus-visible ring. It is the accessible default for click-to-toggle glyphs.
 ### Vanilla JS / HTML
 
 ```js
-import { swapSvg, pairFor, swapModeFor } from "@nexa/icons/js";
+import { swapSvg, pairFor, swapModeFor } from "@sairamanapb/icons/js";
 
 pairFor("ArrowLeft");      // "ArrowRight"
 swapModeFor("ArrowLeft");  // "mirror"
@@ -324,5 +324,5 @@ same trigger semantics.
 
 Glass and gradient effects are **static** — they add no animation. They compose
 with presets, fills, shapes and CSS-3D (`<Crown glass="steel" gradient="gold"
-threeD="tilt" />`). Import `@nexa/icons/effects.css` once; see
+threeD="tilt" />`). Import `@sairamanapb/icons/effects.css` once; see
 [effects.md](effects.md) for presets, tokens and fallbacks.

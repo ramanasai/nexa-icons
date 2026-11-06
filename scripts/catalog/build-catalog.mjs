@@ -1069,6 +1069,6 @@ for (const row of categoryRows.slice(0, 6)) {
   const sample = REPRESENTATIVES[row.id] && category.icons.includes(REPRESENTATIVES[row.id])
     ? REPRESENTATIVES[row.id]
     : category.icons[0];
-  console.log(`  import { ${sample} } from "@nexa/icons/${row.id}";`);
+  console.log(`  import { ${sample} } from "@sairamanapb/icons/${row.id}";`);
 }
 console.log("\nwrote raw/catalog-names.txt and data/categories.json");

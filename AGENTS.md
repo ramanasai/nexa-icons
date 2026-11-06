@@ -1,7 +1,7 @@
 # AGENTS.md — Nexa Icons
 
 Canonical guide for humans and coding agents working with **Nexa Icons**
-(`@nexa/icons`): one stroke-first icon language, shipped for React/TypeScript,
+(`@sairamanapb/icons`): one stroke-first icon language, shipped for React/TypeScript,
 vanilla JS, plain HTML, Go and Rust with **zero runtime dependencies beyond the
 optional React peer**.
 
@@ -34,21 +34,21 @@ optional React peer**.
 
 | Manager | Command |
 |---|---|
-| npm | `npm install @nexa/icons` |
-| Yarn (Classic/Berry) | `yarn add @nexa/icons` |
-| pnpm | `pnpm add @nexa/icons` |
-| bun | `bun add @nexa/icons` |
+| npm | `npm install @sairamanapb/icons` |
+| Yarn (Classic/Berry) | `yarn add @sairamanapb/icons` |
+| pnpm | `pnpm add @sairamanapb/icons` |
+| bun | `bun add @sairamanapb/icons` |
 
 Two entry points in one package:
 
 | You are using | Import path | React needed? |
 |---|---|---|
-| React / TypeScript | `@nexa/icons` (root) | Yes — optional peer `react >= 18` |
-| Vanilla JS / HTML / Node | `@nexa/icons/js` | **No** — zero dependencies |
+| React / TypeScript | `@sairamanapb/icons` (root) | Yes — optional peer `react >= 18` |
+| Vanilla JS / HTML / Node | `@sairamanapb/icons/js` | **No** — zero dependencies |
 | Go | `github.com/nexa-icons/nexa/go` | No |
 | Rust | `nexa-icons` (crate) | No |
 | Rust + GPUI | `nexa-icons-gpui` (`rust/gpui/`) | No — needs GPUI 0.2.2 |
-| Illustrations | `@nexa/icons/illustrations/*` / `illustrations/` | No |
+| Illustrations | `@sairamanapb/icons/illustrations/*` / `illustrations/` | No |
 
 Contributors use the pinned toolchain:
 
@@ -64,8 +64,8 @@ MISE_DISABLE_TOOLS=1 mise run verify   # use system tools if mise has no install
 ### React / TypeScript
 
 ```tsx
-import { Bell, Loader2, IconToggle, ArrowLeft, ArrowRight } from "@nexa/icons";
-import "@nexa/icons/animations.css"; // once, app entry
+import { Bell, Loader2, IconToggle, ArrowLeft, ArrowRight } from "@sairamanapb/icons";
+import "@sairamanapb/icons/animations.css"; // once, app entry
 
 <Bell />                                  // 24px, stroke 1.5 (default), static
 <Bell animate />                          // semantic preset (ring) on hover
@@ -76,26 +76,26 @@ import "@nexa/icons/animations.css"; // once, app entry
 Deep import one module (smaller dev-server graphs; same tree-shaking result):
 
 ```tsx
-import { Bell } from "@nexa/icons/react/bell"; // -> dist/icons/bell.js
+import { Bell } from "@sairamanapb/icons/react/bell"; // -> dist/icons/bell.js
 ```
 
 Dynamic names (pulls the full registry — avoid for static UIs):
 
 ```tsx
-import { Icon, getIcon } from "@nexa/icons";
+import { Icon, getIcon } from "@sairamanapb/icons";
 <Icon name="bell" size={20} />;
 ```
 
 ### Vanilla JS / ESM
 
 ```js
-import { svg, sprite, symbol, getIcon, names, ICONS, categories, swapSvg, pairFor } from "@nexa/icons/js";
+import { svg, sprite, symbol, getIcon, names, ICONS, categories, swapSvg, pairFor } from "@sairamanapb/icons/js";
 
 document.querySelector("#bell").innerHTML = svg("Bell", { size: 20 });
 document.body.insertAdjacentHTML("afterbegin", sprite()); // inline once
 ```
 
-CJS: `const { svg } = require("@nexa/icons/js")` (and `require("@nexa/icons")` for the React root build).
+CJS: `const { svg } = require("@sairamanapb/icons/js")` (and `require("@sairamanapb/icons")` for the React root build).
 
 ### Plain HTML
 
@@ -105,7 +105,7 @@ CJS: `const { svg } = require("@nexa/icons/js")` (and `require("@nexa/icons")` f
      style="color:#3f3f46"><use href="#nexa-bell"/></svg>
 
 <!-- optional animation layer -->
-<link rel="stylesheet" href="node_modules/@nexa/icons/dist/animations.css">
+<link rel="stylesheet" href="node_modules/@sairamanapb/icons/dist/animations.css">
 <svg class="nexa-icon" aria-hidden="true" data-nexa-anim="ring"
      data-nexa-trigger="hover"><use href="#nexa-bell"/></svg>
 ```
@@ -179,7 +179,7 @@ svg("Bell", { shape: "circle", size: 24 });
 ### Glass & gradient (optional)
 
 ```tsx
-import "@nexa/icons/effects.css";   // once, only if you use these
+import "@sairamanapb/icons/effects.css";   // once, only if you use these
 <Bell glass />                       // frost (default)
 <Bell glass="ice" gradient="aurora" />
 <Bell glass="neon" glassAnim="sheen" />   // animated glass (sheen/pulse/float)
@@ -279,7 +279,7 @@ el.innerHTML = swapSvg("ArrowLeft", "ArrowRight", { label: "Direction" });
 Modes: `mirror`, `flip`, `rotate`, `slide`, `fade`, `auto` (pair default).
 Markup: `.nexa-swap` > `.nexa-swap__a`/`.nexa-swap__b` (both `aria-hidden`),
 `data-mode`, `data-nexa-active`. Pairs live in `data/swaps.json` (26 pairs → 49
-directed edges; shipped and exported as `@nexa/icons/data/swaps.json`). Go:
+directed edges; shipped and exported as `@sairamanapb/icons/data/swaps.json`). Go:
 `Pair`/`Pairs`/`SwapSVG`; Rust: `pair`/`pairs`/`swap_svg`.
 
 ## 9. Categories
@@ -288,12 +288,12 @@ directed edges; shipped and exported as `@nexa/icons/data/swaps.json`). Go:
 category subpaths, matching metadata in every binding:
 
 ```tsx
-import { Bell } from "@nexa/icons/communication";
-import { CATEGORIES } from "@nexa/icons"; // array of NexaCategory
+import { Bell } from "@sairamanapb/icons/communication";
+import { CATEGORIES } from "@sairamanapb/icons"; // array of NexaCategory
 ```
 
 ```js
-import { CATEGORIES, categories, ICONS } from "@nexa/icons/js";
+import { CATEGORIES, categories, ICONS } from "@sairamanapb/icons/js";
 Object.keys(CATEGORIES);      // 24 ids (record)
 categories("communication");  // { id, label, description, icons }
 ICONS;                        // flat map, unchanged
@@ -301,8 +301,8 @@ ICONS;                        // flat map, unchanged
 
 | Binding | Category API |
 |---|---|
-| React | `@nexa/icons/<id>` + `CATEGORIES` metadata (array) |
-| Vanilla JS | `@nexa/icons/<id>` + `CATEGORIES` (record) + `categories(id?)` |
+| React | `@sairamanapb/icons/<id>` + `CATEGORIES` metadata (array) |
+| Vanilla JS | `@sairamanapb/icons/<id>` + `CATEGORIES` (record) + `categories(id?)` |
 | Go | `Categories() []Category`, `ByCategory(id)` |
 | Rust | `categories()`, `by_category(id)`, `category_icons(id)` |
 
@@ -325,7 +325,7 @@ and the full design system in
 ```
 
 ```tsx
-import noJobs from "@nexa/icons/illustrations/no-jobs.svg?raw";
+import noJobs from "@sairamanapb/icons/illustrations/no-jobs.svg?raw";
 <span aria-hidden="true" dangerouslySetInnerHTML={{ __html: noJobs }} />;
 ```
 
@@ -422,7 +422,7 @@ Never hand-edit generated files (`data/`, `icons/`, `sprite.svg`, `src/icons/`,
 |---|---|
 | Icon missing / `undefined` | use a canonical name, kebab or alias; JS `svg()` throws `RangeError`, React `<Icon>` renders `null`, Go returns `(zero,false)`, Rust `None` |
 | Stroke too thick/thin | pass `size`/`strokeWidth`; sprite is fixed stroke 2 unless generated with a stroke width |
-| Animation not playing | load `@nexa/icons/animations.css`; pass `animate`; check trigger/reduced-motion; parent focus rule only applies to `hover` |
+| Animation not playing | load `@sairamanapb/icons/animations.css`; pass `animate`; check trigger/reduced-motion; parent focus rule only applies to `hover` |
 | Fill looks wrong | open geometry degrades to duotone by design; solid only for `fillSafe` icons |
 | Shape/3D wrapper breaks layout | frame is 1.7× the icon box (pill: 1.7×1.25); keep it in a flex/grid cell; label goes on the frame |
 | Sprite not rendering | same-document sprite required; ids are `#nexa-<kebab>`; don't use `<img>` |

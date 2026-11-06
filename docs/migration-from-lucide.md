@@ -37,11 +37,11 @@ to change.
 
 ```diff
 - import { Bell, Briefcase, Loader2 } from "lucide-react";
-+ import { Bell, Briefcase, Loader2 } from "@nexa/icons";
++ import { Bell, Briefcase, Loader2 } from "@sairamanapb/icons";
 ```
 
 ```tsx
-import { Bell, Briefcase, Loader2 } from "@nexa/icons";
+import { Bell, Briefcase, Loader2 } from "@sairamanapb/icons";
 
 <Bell aria-hidden="true" />
 <Briefcase size="md" />
@@ -58,7 +58,7 @@ automatically. Full props: [api.md](api.md).
 `lucide` (vanilla) users get the equivalent inline-SVG and sprite APIs:
 
 ```js
-import { svg, getIcon, names } from "@nexa/icons/js";
+import { svg, getIcon, names } from "@sairamanapb/icons/js";
 
 document.querySelector("#bell").innerHTML = svg("Bell", { size: 20 });
 console.log(names().length); // 650 (names() lists canonical names)
@@ -105,7 +105,7 @@ If your app used the earlier package name/tokens, map them:
 
 | Old | New |
 |---|---|
-| `@njs/icons`, `njs-icons` | `@nexa/icons` |
+| `@njs/icons`, `njs-icons` | `@sairamanapb/icons` |
 | `njs-icon`, `njs-*` classes | `nexa-icon`, `nexa-*` |
 | `data-njs-*` attributes | `data-nexa-*` |
 | `#njs-<kebab>` sprite ids | `#nexa-<kebab>` |
@@ -147,8 +147,8 @@ different Lucide icon for a concept, switch to the mapped one while you migrate:
 
 ## 6. Migration checklist
 
-1. Replace the dependency (`lucide-react` → `@nexa/icons`; `lucide` →
-   `@nexa/icons/js`). Uninstall the old package so both sets can't drift.
+1. Replace the dependency (`lucide-react` → `@sairamanapb/icons`; `lucide` →
+   `@sairamanapb/icons/js`). Uninstall the old package so both sets can't drift.
 2. Update imports only — no icon renames needed for requested names.
 3. Replace wrapper defaults with the Nexa `Icon`/`size` tokens so stroke follows
    the Nexa table ([design.md](design.md) §3).

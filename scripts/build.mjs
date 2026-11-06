@@ -3,7 +3,7 @@
  * Build the package — three artefacts, all generated from src/:
  *
  *   1. dist/*.js        ESM, one module per source file (tree-shakeable)
- *   2. dist/cjs/*.js    CommonJS mirror (for `require("@nexa/icons")`, yarn PnP
+ *   2. dist/cjs/*.js    CommonJS mirror (for `require("@sairamanapb/icons")`, yarn PnP
  *                       consumers and older bundlers) + a local package.json
  *                       that marks the folder as commonjs
  *   3. dist/*.d.ts      TypeScript declarations

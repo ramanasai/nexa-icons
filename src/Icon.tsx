@@ -4,7 +4,7 @@
  *
  * Trade-off, stated on purpose: this entry point pulls the full registry
  * (~all 166 path sets) into the bundle. In app code prefer the named imports
- * (`import { Bell } from "@nexa/icons"`) so only the icons you use ship.
+ * (`import { Bell } from "@sairamanapb/icons"`) so only the icons you use ship.
  */
 import { createElement, forwardRef } from "react";
 import { createIcon } from "./createIcon.js";

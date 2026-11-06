@@ -187,5 +187,5 @@ do not follow the outline rules. The UI set stays outline. See
   status colours semantic and pair with text.
 - `mono` gradient is the currentColor-safe option; all presets are retunable via
   `--nexa-grad-a/b` and degrade to Canvas/CanvasText in forced colours.
-- Import `@nexa/icons/effects.css` only in apps that use them (icons unaffected
+- Import `@sairamanapb/icons/effects.css` only in apps that use them (icons unaffected
   otherwise).

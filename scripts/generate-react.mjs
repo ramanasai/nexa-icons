@@ -175,7 +175,7 @@ ${Object.entries(data.meta.nexaMap)
 `
 );
 
-// Category barrels: `import { Bell } from "@nexa/icons/communication"`.
+// Category barrels: `import { Bell } from "@sairamanapb/icons/communication"`.
 const categories = data.meta.categories ?? [];
 const categoryDir = path.join(out, "categories");
 if (categories.length) fs.mkdirSync(categoryDir, { recursive: true });

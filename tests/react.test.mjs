@@ -191,7 +191,7 @@ test("d.ts: every icon, both aliases, prop types and helper signatures", () => {
 
 test("package.json: Nexa package exports/types/sideEffects/peer deps", () => {
   const pkg = JSON.parse(read("package.json"));
-  assert.equal(pkg.name, "@nexa/icons");
+  assert.equal(pkg.name, "@sairamanapb/icons");
   assert.equal(pkg.type, "module");
   assert.deepEqual(pkg.sideEffects, ["*.css"]);
   assert.equal(pkg.exports["."].import, "./dist/index.js");

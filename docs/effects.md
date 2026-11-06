@@ -8,7 +8,7 @@ soft blur, layered highlight, and an optional coloured gradient.
 
 ```ts
 // import once, anywhere after your icon styles
-import "@nexa/icons/effects.css";
+import "@sairamanapb/icons/effects.css";
 ```
 
 ```tsx

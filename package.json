@@ -1,5 +1,5 @@
 {
-  "name": "@nexa/icons",
+  "name": "@sairamanapb/icons",
   "version": "1.0.0",
   "description": "1,034 theme-aware, tree-shakeable stroke icons in 26 categories for React/TypeScript, vanilla JS, HTML, Go and Rust. currentColor-only, zero-dependency JS, semantic CSS animations, swaps, shapes, fill/duotone, glass/gradient effects, CSS-3D, 12 duotone illustrations and a Rust GPUI adapter.",
   "keywords": [

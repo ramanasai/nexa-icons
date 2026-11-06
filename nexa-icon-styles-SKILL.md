@@ -3,18 +3,18 @@ name: nexa-icon-styles
 description: >-
   Use when designing, choosing, drawing, or reviewing icons for
   Nexa: UI icons, empty states, feature cards, nav, buttons,
-  favicons, or social/OG graphics. The implementation lives in @nexa/icons
+  favicons, or social/OG graphics. The implementation lives in @sairamanapb/icons
   (1,034 icons, currentColor, CSS-only animation); never mix another icon set in.
 ---
 # Nexa icon styles
 
-One consistent icon language for Nexa (Next.js app, light theme `#fafafa`, dark theme `#0c0c0e`). The icons ship in `@nexa/icons` — 1,034 unique icons generated from one canonical dataset (`data/icons.json`). Follow these rules on every screen.
+One consistent icon language for Nexa (Next.js app, light theme `#fafafa`, dark theme `#0c0c0e`). The icons ship in `@sairamanapb/icons` — 1,034 unique icons generated from one canonical dataset (`data/icons.json`). Follow these rules on every screen.
 
 ## 1. Library
 
-- **Use `@nexa/icons` for every icon. Never mix another set on one screen** (no Lucide, no Heroicons, no hand-drawn one-offs).
-- Import icons individually (`import { Briefcase } from "@nexa/icons"`) so unused icons tree-shake out.
-- Import the animation stylesheet once in the app entry: `import "@nexa/icons/animations.css"`.
+- **Use `@sairamanapb/icons` for every icon. Never mix another set on one screen** (no Lucide, no Heroicons, no hand-drawn one-offs).
+- Import icons individually (`import { Briefcase } from "@sairamanapb/icons"`) so unused icons tree-shake out.
+- Import the animation stylesheet once in the app entry: `import "@sairamanapb/icons/animations.css"`.
 - Import the `Icon` wrapper only when the icon name is dynamic (it pulls the full registry — see [docs/performance.md](docs/performance.md)).
 - Full API: [docs/api.md](docs/api.md). Skill for agents: [skills/nexa-icons/SKILL.md](skills/nexa-icons/SKILL.md).
 
@@ -115,7 +115,7 @@ Add a new concept to this table instead of picking a different icon each time.
 
 ## 11. Review checklist
 
-1. Every icon is imported from `@nexa/icons` — no other library, no inline path soup?
+1. Every icon is imported from `@sairamanapb/icons` — no other library, no inline path soup?
 2. Sizes and strokes match the table?
 3. `currentColor`, readable in both themes and forced-colors?
 4. Active states filled or tinted consistently?
@@ -127,7 +127,7 @@ Add a new concept to this table instead of picking a different icon each time.
 ## Sample component
 
 ```tsx
-import { Bell, Briefcase, Loader2, IconToggle, ArrowLeft, ArrowRight } from "@nexa/icons";
+import { Bell, Briefcase, Loader2, IconToggle, ArrowLeft, ArrowRight } from "@sairamanapb/icons";
 
 <Bell size="sm" />                       {/* 16px / stroke 2, decorative */}
 <Briefcase size="lg" />                  {/* 24px / stroke 1.5 */}
@@ -136,4 +136,4 @@ import { Bell, Briefcase, Loader2, IconToggle, ArrowLeft, ArrowRight } from "@ne
 <IconToggle from={ArrowLeft} to={ArrowRight} label="Next direction" />
 ```
 
-Every icon is also available in plain HTML (`sprite.svg` + `<use>`), vanilla JS (`@nexa/icons/js`), Go and Rust — see [README.md](README.md).
+Every icon is also available in plain HTML (`sprite.svg` + `<use>`), vanilla JS (`@sairamanapb/icons/js`), Go and Rust — see [README.md](README.md).

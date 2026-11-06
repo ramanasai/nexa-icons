@@ -133,8 +133,8 @@ heavy.
 2. **Per-icon modules, tree-shakeable.** `src/icons/<kebab>.tsx` are pure modules
    with `/*#__PURE__*/ createIcon(...)` annotations, pure ESM, and
    `sideEffects: ["*.css"]`. Importing `Bell` drops the other 649 components, and
-   `@nexa/icons/react/bell` gives a deep import straight to
-   `dist/icons/bell.js`. Category subpaths (`@nexa/icons/communication`) are
+   `@sairamanapb/icons/react/bell` gives a deep import straight to
+   `dist/icons/bell.js`. Category subpaths (`@sairamanapb/icons/communication`) are
    equally tree-shakeable.
 3. **Sprite = one request.** `sprite()` returns a cached string; inline it once
    and every `<use href="#nexa-…">` is a document-local reference.
@@ -230,7 +230,7 @@ cost per icon after import.
 | `<use href="#nexa-bell">` + inline sprite | one 29.4 KB brotli request for all 1,034 icons (fixed stroke 2) | app shells, galleries, SSR pages |
 | Named React import / deep import / category import | ~1,544 B brotli for the first icon, ~41–49 B/extra | React apps with a few icons |
 | Per-icon `icons/*.svg` file | ~221 B brotli per icon, one request each | static sites, `<img>`, email, docs |
-| `svg()` from `@nexa/icons/js` | 41.3 KB brotli ESM includes all icon + category data; zero fetch | no-build pages, Node scripts, server render |
+| `svg()` from `@sairamanapb/icons/js` | 41.3 KB brotli ESM includes all icon + category data; zero fetch | no-build pages, Node scripts, server render |
 
 ## Tree-shaking proof
 
@@ -239,13 +239,13 @@ Bundle a named import with esbuild, minified ESM, React marked external
 
 ```bash
 # one icon
-printf 'import { Bell } from "@nexa/icons";\nconsole.log(Bell);\n' \
+printf 'import { Bell } from "@sairamanapb/icons";\nconsole.log(Bell);\n' \
   | ./node_modules/.bin/esbuild --bundle --minify --format=esm --platform=neutral \
       --external:react --outfile=/tmp/one.js --log-level=error
 # => 3,500 B raw / 1,544 B brotli (React itself not included)
 
 # eight icons
-printf 'import { Bell, Loader2, Briefcase, Search, Sparkles, Bookmark, Send, Mail } from "@nexa/icons";\nconsole.log(Bell, Loader2, Briefcase, Search, Sparkles, Bookmark, Send, Mail);\n' \
+printf 'import { Bell, Loader2, Briefcase, Search, Sparkles, Bookmark, Send, Mail } from "@sairamanapb/icons";\nconsole.log(Bell, Loader2, Briefcase, Search, Sparkles, Bookmark, Send, Mail);\n' \
   | ./node_modules/.bin/esbuild --bundle --minify --format=esm --platform=neutral \
       --external:react --outfile=/tmp/many.js --log-level=error
 # => 4,8 raw / 2,036 B brotli (8 icons)

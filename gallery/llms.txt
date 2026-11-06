@@ -10,9 +10,9 @@
 - [Icon gallery](https://ramanasai.github.io/nexa-icons/): search, categories, shape/fill/3D/glass demos, copy-ready snippets for HTML, JS, React, Go and Rust.
 
 ## Installation
-- npm / Yarn / pnpm / bun: `npm install @nexa/icons` (developers can also use `npm ci && npm test`)
-- React: `import { Bell } from "@nexa/icons"` (+ optional `@nexa/icons/animations.css`)
-- JavaScript (zero dependencies): `import { svg, sprite } from "@nexa/icons/js"`
+- npm / Yarn / pnpm / bun: `npm install @sairamanapb/icons` (developers can also use `npm ci && npm test`)
+- React: `import { Bell } from "@sairamanapb/icons"` (+ optional `@sairamanapb/icons/animations.css`)
+- JavaScript (zero dependencies): `import { svg, sprite } from "@sairamanapb/icons/js"`
 - HTML: inline `sprite.svg`, then `<svg><use href="#nexa-bell"/></svg>`
 - Go: `import nexaicons "github.com/nexa-icons/nexa/go"`
 - Rust: `use nexa_icons::{get, SvgOptions};`

@@ -49,8 +49,8 @@ export const SHAPES = ["square", "rounded", "circle", "pill", "squircle", "hexag
 export const FILL_VARIANTS = ["outline", "duotone", "solid"];
 export const THREE_D = ["tilt", "flip", "extrude", "orbit"];
 
-/** Rebrand constants — the shipped tree is @nexa/icons / nexa-* everywhere. */
-export const PKG_NAME = "@nexa/icons";
+/** Rebrand constants — the shipped tree is @sairamanapb/icons / nexa-* everywhere. */
+export const PKG_NAME = "@sairamanapb/icons";
 export const SPRITE_PREFIX = "nexa-";
 export const ICON_CLASS = "nexa-icon";
 export const FRAME_CLASS = "nexa-icon-frame";

@@ -75,7 +75,7 @@ Vanilla JS / HTML:
 svg("Bell", { animate: "ring", trigger: "hover" });
 ```
 
-Load the stylesheet once (`import "@nexa/icons/animations.css"` or link
+Load the stylesheet once (`import "@sairamanapb/icons/animations.css"` or link
 `dist/animations.css`); the attributes do nothing without it.
 
 ## Swap / morph transitions
@@ -93,7 +93,7 @@ Semantic pairs from `data/swaps.json` (26 base pairs → 49 directional entries)
 React:
 
 ```tsx
-import { IconSwap, IconToggle, ArrowLeft, ArrowRight } from "@nexa/icons";
+import { IconSwap, IconToggle, ArrowLeft, ArrowRight } from "@sairamanapb/icons";
 
 {/* IconToggle renders a real <button> with aria-pressed */}
 <IconToggle from={ArrowLeft} to={ArrowRight} label="Next page" />
@@ -103,7 +103,7 @@ import { IconSwap, IconToggle, ArrowLeft, ArrowRight } from "@nexa/icons";
 Vanilla JS:
 
 ```js
-import { swapSvg, pairFor, swapModeFor } from "@nexa/icons/js";
+import { swapSvg, pairFor, swapModeFor } from "@sairamanapb/icons/js";
 
 pairFor("ArrowLeft");      // "ArrowRight"
 swapModeFor("ArrowLeft");  // "mirror"

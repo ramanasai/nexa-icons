@@ -100,7 +100,7 @@ test("React dist exports CATEGORIES and a category barrel for every category", a
 
 test("category subpaths resolve through package.json exports (ESM + CJS + types)", () => {
   const pkg = JSON.parse(read("package.json"));
-  assert.equal(pkg.name, "@nexa/icons");
+  assert.equal(pkg.name, "@sairamanapb/icons");
   assert.ok(pkg.exports["./*"].import.endsWith("dist/categories/*.js"));
   assert.ok(pkg.exports["./*"].types.endsWith("dist/categories/*.d.ts"));
   assert.ok(pkg.exports["./*"].require.endsWith("dist/cjs/categories/*.js"));
@@ -113,5 +113,5 @@ test("category subpaths resolve through package.json exports (ESM + CJS + types)
     assert.deepEqual(Object.keys(cjs).sort(), [...category.icons].sort(), `cjs ${id} exports`);
   }
   // Node package self-reference resolves a category entry point.
-  assert.equal(typeof import("@nexa/icons/communication"), "object");
+  assert.equal(typeof import("@sairamanapb/icons/communication"), "object");
 });

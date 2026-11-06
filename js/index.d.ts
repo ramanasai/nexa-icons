@@ -1,4 +1,4 @@
-/* Type definitions for @nexa/icons/js — hand-written, matches js/index.mjs. */
+/* Type definitions for @sairamanapb/icons/js — hand-written, matches js/index.mjs. */
 
 export type NexaPreset =
   | "spin"

@@ -1,13 +1,13 @@
-# Publishing @nexa/icons to npm
+# Publishing @sairamanapb/icons to npm
 
 ## 0. Preconditions
 
 - npm account with **2FA** enabled.
 - Ownership of the **`@nexa` scope** (npm user or org). Package names in a scope
-  can only be published by that scope; `npm view @nexa/icons` being 404 does not
+  can only be published by that scope; `npm view @sairamanapb/icons` being 404 does not
   prove the scope is available.
-  - If you do not own `@nexa`, publish under your own scope instead:
-    `npm pkg set name=@YOURSCOPE/icons` (also update docs/badges).
+  - If the scope ever changes, update `npm pkg set name=@YOURSCOPE/icons` and the
+documented imports.
 - A clean working tree on `main`, matching the GitHub release.
 
 ## 1. Check the package
@@ -41,9 +41,9 @@ If npm asks for a one-time code: `npm publish --access public --otp=123456`.
 ## 4. Verify
 
 ```bash
-npm view @nexa/icons version dist.tarball
-npm pack @nexa/icons --dry-run  # or install in a throwaway project
-npm i @nexa/icons react
+npm view @sairamanapb/icons version dist.tarball
+npm pack @sairamanapb/icons --dry-run  # or install in a throwaway project
+npm i @sairamanapb/icons react
 ```
 
 ## 5. Subsequent releases

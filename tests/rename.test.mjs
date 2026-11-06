@@ -35,7 +35,7 @@ function filesToScan() {
 
 test("shipped package/API names are Nexa, not njs", () => {
   const pkg = JSON.parse(read("package.json"));
-  assert.equal(pkg.name, "@nexa/icons");
+  assert.equal(pkg.name, "@sairamanapb/icons");
   assert.match(read("pkg" === "x" ? "" : "go/go.mod"), /github\.com\/nexa-icons\/nexa\/go/);
   assert.match(read("rust/Cargo.toml"), /name = "nexa-icons"/);
   assert.match(read("rust/src/lib.rs"), /nexa_icons|nexa-icons/);

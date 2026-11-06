@@ -36,7 +36,7 @@ Stroke width is derived from size on purpose: **16→2, 20→1.75, 24/32/48→1.
 ## Animation does not play
 
 1. **Is `animations.css` loaded?** It is not imported automatically.
-   `import "@nexa/icons/animations.css";` once at the app entry, or link
+   `import "@sairamanapb/icons/animations.css";` once at the app entry, or link
    `dist/animations.css`. Without it, the `data-nexa-*` attributes do nothing.
 2. **Is the icon emitting the contract?** The rendered SVG needs
    `class="nexa-icon"`, `data-nexa-anim="<preset>"`, `data-nexa-trigger="…"`. In
@@ -104,7 +104,7 @@ Stroke width is derived from size on purpose: **16→2, 20→1.75, 24/32/48→1.
 ## Category import does not resolve
 
 The catalog ships **650 icons in 24 categories**, and category entry points are
-live (`@nexa/icons/communication`, …). If one fails:
+live (`@sairamanapb/icons/communication`, …). If one fails:
 
 - Check the id list (`navigation`, `arrows`, `actions`, `communication`, `media`,
   `files`, `data`, `finance`, `people`, `security`, `status`, `time`, `weather`,
@@ -118,7 +118,7 @@ live (`@nexa/icons/communication`, …). If one fails:
 
 ## Illustrations
 
-- Import raw in React/Vite (`@nexa/icons/illustrations/no-jobs.svg?raw`) or inline
+- Import raw in React/Vite (`@sairamanapb/icons/illustrations/no-jobs.svg?raw`) or inline
   the SVG; `currentColor` + `--nexa-ill-fg/soft/accent` tokens drive theming.
 - If an illustration looks flat/invisible, check it is inline (not `<img>`/
   `<object>`), and that `color` is set on an ancestor.
@@ -172,12 +172,12 @@ A `<use>` only resolves against a sprite in the **same document**.
   old bundlers that ignore `exports` can use the legacy fields: `main`
   (`dist/cjs/index.js`), `module` (`dist/index.js`), `types`
   (`dist/index.d.ts`).
-- `require("@nexa/icons")` works (CJS build); `import` works (ESM). Inside
+- `require("@sairamanapb/icons")` works (CJS build); `import` works (ESM). Inside
   `"type": "module"` projects use `import`; `.cjs` files use `require`.
 - Yarn PnP is not enabled by default: `.yarnrc.yml` uses `nodeLinker:
   node-modules` so npm/yarn/pnpm/bun installs behave identically. If you force
   PnP, declare the `react` peer yourself.
-- `bun add @nexa/icons` works; `bunfig.toml` in this repo sets `peer = true` for
+- `bun add @sairamanapb/icons` works; `bunfig.toml` in this repo sets `peer = true` for
   contributor installs.
 - Use the pinned toolchain (`mise install`) when a command fails because of a
   Node/Go/Rust version mismatch; see [development.md](development.md).
@@ -208,18 +208,18 @@ measurement. Server and client HTML should match when the props match.
   the CSS from a component or the root layout, and keep `"use client"` only
   where you actually use state (plain icons are server-renderable).
 - `<Icon name="…" />` and `getIcon()` import the full registry and are
-  client/bundle-heavy; named imports (`import { Bell } from "@nexa/icons"`) are
+  client/bundle-heavy; named imports (`import { Bell } from "@sairamanapb/icons"`) are
   server-safe and tree-shake. See [performance.md](performance.md).
 - If you inline `sprite()` in a server template, do it once in the layout, not
   per component — duplicate ids are invalid HTML.
 
 ## React package: import errors
 
-- `@nexa/icons` has **React as an optional peer dependency** (`>=18`). In a
-  non-React app use `@nexa/icons/js` instead.
+- `@sairamanapb/icons` has **React as an optional peer dependency** (`>=18`). In a
+  non-React app use `@sairamanapb/icons/js` instead.
 - Subpath exports are declared in `package.json` (`./js`, `./animations.css`,
   `./sprite.svg`, `./icons/*`). Older bundlers that ignore `exports` need the
-  file path (`@nexa/icons/dist/index.js`).
+  file path (`@sairamanapb/icons/dist/index.js`).
 - `dist/` is a build artifact (`npm run build`); if it is absent in a checkout,
   run the build before importing the package.
 

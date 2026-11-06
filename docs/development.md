@@ -63,10 +63,10 @@ Install as a dependency (pick your manager):
 
 | Manager | Command |
 |---|---|
-| npm | `npm install @nexa/icons` |
-| Yarn | `yarn add @nexa/icons` |
-| pnpm | `pnpm add @nexa/icons` |
-| bun | `bun add @nexa/icons` |
+| npm | `npm install @sairamanapb/icons` |
+| Yarn | `yarn add @sairamanapb/icons` |
+| pnpm | `pnpm add @sairamanapb/icons` |
+| bun | `bun add @sairamanapb/icons` |
 
 Contribute to this repo:
 
@@ -88,13 +88,13 @@ systems:
 ESM consumers:
 
 ```js
-import { Bell, IconSwap } from "@nexa/icons";
+import { Bell, IconSwap } from "@sairamanapb/icons";
 ```
 
 CJS consumers:
 
 ```js
-const { Bell, IconSwap } = require("@nexa/icons"); // dist/cjs/index.js
+const { Bell, IconSwap } = require("@sairamanapb/icons"); // dist/cjs/index.js
 ```
 
 `npm run build` is the canonical build for all managers; no manager-specific

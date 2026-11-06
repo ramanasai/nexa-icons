@@ -110,7 +110,7 @@ data generator when the file exists:
 - Every icon named in a category must exist in the dataset; unknown names are
   reported during generation.
 - Regenerate with `node scripts/generate-all.mjs`; category imports work across
-  React/JS (`@nexa/icons/<id>`), Go (`Categories`/`ByCategory`) and Rust
+  React/JS (`@sairamanapb/icons/<id>`), Go (`Categories`/`ByCategory`) and Rust
   (`categories`/`by_category`/`category_icons`).
 
 ## Illustrations and GPUI
@@ -143,7 +143,7 @@ Swap/morph pairs are hand-maintained in `data/swaps.json` (not generated):
 - Regenerate (`node scripts/generate-all.mjs`) so `src/swaps.ts`, the JS API and
   the gallery pick it up.
 - `data/swaps.json` ships in the package and is exported as
-  `@nexa/icons/data/swaps.json` for tooling that needs the pair table.
+  `@sairamanapb/icons/data/swaps.json` for tooling that needs the pair table.
 
 ## Remove an icon
 
