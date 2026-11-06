@@ -40,7 +40,7 @@
 ## Quick facts
 - 1,034 icons, 26 categories, 26 swap pairs (49 directed edges).
 - Defaults: 24×24 grid, 24 px, stroke 1.5; size→stroke 16→2, 20→1.75, 24+→1.5.
-- One tree-shaken React icon: ~1,828 B brotli (React external).
+- One tree-shaken React icon: ~1,834 B brotli (React external).
 - No runtime dependencies for the JS path; React is an optional peer.
 - 90/90 tests, release budgets and docs checks pass; gallery verified in Chromium and WebKit.
 - License: ISC; icon geometry derives from Lucide 1.70 (ISC) and Feather (MIT), attribution in NOTICE.

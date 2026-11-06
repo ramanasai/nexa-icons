@@ -1,6 +1,6 @@
 # Publishing @sairamanapb/icons to npm
 
-> **Published:** `1.0.0` is live. This tree is prepared as **1.0.1** with the accessibility, fill, cascade-layer, global-switch and Lucide fixes; run `npm publish --access public` (with OTP) to release it.
+> **Published:** `1.0.0` and `1.0.1` are live. `1.0.1` was published before the stroke/cascade/fill-pinning fixes; this tree is **1.0.2** and is the first release containing them. Run `npm publish --access public` (with OTP) to release it.
 
 > **Status:** `1.0.0` is published on npm — https://www.npmjs.com/package/@sairamanapb/icons
 > (`npm view @sairamanapb/icons version` → `1.0.0`). Use this guide for the next release.
