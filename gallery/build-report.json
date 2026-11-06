@@ -1,6 +1,6 @@
 {
   "generatedBy": "gallery/build.mjs",
-  "builtAt": "2026-11-06T12:47:06.132Z",
+  "builtAt": "2026-11-06T12:51:36.955Z",
   "icons": 1000,
   "swaps": 26,
   "categories": 24,
@@ -10,7 +10,7 @@
     "index.html": {
       "raw": 30402,
       "brotli": 7227,
-      "gzip": 8407
+      "gzip": 8408
     },
     "icons.data.js": {
       "raw": 444244,
@@ -24,5 +24,5 @@
     }
   },
   "shellBudget": 40960,
-  "buildMs": 918.3
+  "buildMs": 874.4
 }

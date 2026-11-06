@@ -38,6 +38,12 @@ dependencies beyond the optional React peer**.
   per-icon modules, tree-shakeable, ESM + CJS.
 - Derived from **Lucide 1.70** (ISC) with the Feather (MIT) notice retained.
 
+## For AI agents
+
+- [`llms.txt`](llms.txt) — compact, link-rich summary for LLM/agent tooling
+- [`AGENTS.md`](AGENTS.md) — canonical implementation guide
+- [`skills/nexa-icons/SKILL.md`](skills/nexa-icons/SKILL.md) — installable agent skill
+
 ## Install
 
 Two entry points — pick the one that matches your stack:

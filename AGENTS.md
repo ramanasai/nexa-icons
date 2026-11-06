@@ -435,6 +435,7 @@ Full list: [docs/troubleshooting.md](docs/troubleshooting.md).
 | Where | What |
 |---|---|
 | [README.md](README.md) | overview + quick starts + measured sizes |
+| [llms.txt](llms.txt) | compact LLM/agent summary (also served at the gallery root) |
 | [docs/api.md](docs/api.md) | React/JS/Go/Rust reference incl. shape/fill/3D/swap |
 | [docs/animations.md](docs/animations.md) | presets, triggers, fill/swap/3D motion |
 | [docs/design.md](docs/design.md) | grid, stroke, states, containers, motion |

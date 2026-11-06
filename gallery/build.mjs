@@ -45,7 +45,7 @@
  * Usage: node gallery/build.mjs
  */
 
-import { readFileSync, writeFileSync, existsSync, statSync, readdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, statSync, readdirSync, copyFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
@@ -276,6 +276,11 @@ const componentsCss = read(join(SRC, 'components.css')).trim();
 const drawerHtml = read(join(SRC, 'drawer.html')).trim();
 // animations.css ships inside app.js: it is only needed once icons render, so
 // keeping it out of the shell lets the shell stay under the 25 KB target.
+// Ship the LLM-facing summary at the site root (Pages serves gallery/).
+const llmsSrc = join(ROOT, 'llms.txt');
+const llmsOut = join(ROOT, 'gallery', 'llms.txt');
+if (existsSync(llmsSrc)) copyFileSync(llmsSrc, llmsOut);
+
 const injectedCss = minifyCss(animCss) + '\n' + minifyCss(effectsCss) + '\n' + minifyCss(componentsCss);
 let appSource = read(join(SRC, 'app.js')).trim();
 if (!appSource.includes('/*@COMPONENTS_CSS@*/')) fail('gallery/src/app.js is missing the /*@COMPONENTS_CSS@*/ marker');

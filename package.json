@@ -50,7 +50,8 @@
     "illustrations/preview.html",
     "illustrations/*.svg",
     "illustrations/manifest.json",
-    "illustrations/README.md"
+    "illustrations/README.md",
+    "llms.txt"
   ],
   "exports": {
     ".": {
