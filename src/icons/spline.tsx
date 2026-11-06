@@ -5,6 +5,7 @@ export const Spline = /*#__PURE__*/ createIcon({
   name: "Spline",
   kebab: "spline",
   fillSafe: false,
+  fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
   nodes: [["circle",{cx:"19",cy:"5",r:"2"}],["circle",{cx:"5",cy:"19",r:"2"}],["path",{d:"M5 17A12 12 0 0 1 17 5"}]],

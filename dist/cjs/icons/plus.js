@@ -26,6 +26,7 @@ const Plus = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   name: "Plus",
   kebab: "plus",
   fillSafe: false,
+  fillUnsafe: false,
   preset: "pop",
   trigger: "hover",
   nodes: [["path", { d: "M5 12h14" }], ["path", { d: "M12 5v14" }]]

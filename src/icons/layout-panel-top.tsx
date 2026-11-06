@@ -5,6 +5,7 @@ export const LayoutPanelTop = /*#__PURE__*/ createIcon({
   name: "LayoutPanelTop",
   kebab: "layout-panel-top",
   fillSafe: true,
+  fillUnsafe: false,
   preset: "shake",
   trigger: "hover",
   nodes: [["rect",{width:"18",height:"7",x:"3",y:"3",rx:"1"}],["rect",{width:"7",height:"7",x:"3",y:"14",rx:"1"}],["rect",{width:"7",height:"7",x:"14",y:"14",rx:"1"}]],

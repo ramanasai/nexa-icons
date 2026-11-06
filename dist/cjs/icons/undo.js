@@ -26,6 +26,7 @@ const Undo = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   name: "Undo",
   kebab: "undo",
   fillSafe: false,
+  fillUnsafe: false,
   preset: "nudge-up",
   trigger: "hover",
   nodes: [["path", { d: "M3 7v6h6" }], ["path", { d: "M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13" }]]

@@ -26,6 +26,7 @@ const Rows2 = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   name: "Rows2",
   kebab: "rows-2",
   fillSafe: false,
+  fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
   nodes: [["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2" }], ["path", { d: "M3 12h18" }]]

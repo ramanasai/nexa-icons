@@ -280,6 +280,8 @@ function isClosedNode([tag, attrs]) {
 // Heart is a closed visual shape (open path closes implicitly when filled);
 // Palette and KeyRound have internal detail/holes that a flat fill destroys.
 const FILL_SAFE_OVERRIDES = { Heart: true, Palette: false, KeyRound: false };
+// Icons with internal cut-outs/details that must not be flat-filled at all.
+const FILL_UNSAFE = new Set(["Palette", "KeyRound"]);
 
 const built = icons.map(({ name, kebab, aliases }) => {
   const nodes = vendor.nodes[kebab].map(([tag, attrs]) => [tag, { ...attrs }]);
@@ -298,6 +300,7 @@ const built = icons.map(({ name, kebab, aliases }) => {
       trigger: TRIGGER[name] ?? "hover",
     },
     fillSafe: FILL_SAFE_OVERRIDES[name] ?? isFillSafe(nodes),
+    fillUnsafe: FILL_UNSAFE.has(name),
     categories: cats,
     nodes,
     inner,
@@ -429,7 +432,7 @@ for (const category of categoryMeta) {
 for (const icon of built) {
   icon.inner = icon.nodes
     .map(([tag, attrs]) => {
-      const closed = icon.fillSafe === true || isClosedNode([tag, attrs]);
+      const closed = !icon.fillUnsafe && (icon.fillSafe === true || isClosedNode([tag, attrs]));
       return `<${tag} ${attributeString({ ...attrs, "data-closed": closed ? "true" : "false" })}/>`;
     })
     .join("");

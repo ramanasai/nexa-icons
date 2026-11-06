@@ -26,6 +26,7 @@ const Menu = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   name: "Menu",
   kebab: "menu",
   fillSafe: false,
+  fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
   nodes: [["path", { d: "M4 5h16" }], ["path", { d: "M4 12h16" }], ["path", { d: "M4 19h16" }]]

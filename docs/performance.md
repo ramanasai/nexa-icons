@@ -17,18 +17,18 @@ the current snapshot.
 | One-icon tree-shaken bundle (React external, incl. shape/fill/3D) | 4,155 B | 1,981 B | **1,828 B** |
 | Eight-icon tree-shaken bundle | 5,191 B | 2,247 B | **2,308 B** |
 | Fifty-icon tree-shaken bundle | 13,304 B | 3,799 B | **3,347 B** |
-| Full sprite, all 1,034 icons (`sprite.svg`) | 441,985 B | 57,721 B | **45,246 B** |
+| Full sprite, all 1,034 icons (`sprite.svg`) | 441,992 B | 57,721 B | **45,293 B** |
 | Animation + shape/fill/3D layer (`dist/animations.css`) | 17,290 B | 4,259 B | **3,583 B** |
 | React barrel (`dist/index.js`, re-exports only) | 68,230 B | 14,243 B | **11,953 B** |
 | CJS root entry (`dist/cjs/index.js`) | 68,490 B | 13,399 B | **11,336 B** |
-| Vanilla JS ESM, lean runtime (`js/index.mjs`) | 466,816 B | 80,407 B | **62,744 B** |
+| Vanilla JS ESM, lean runtime (`js/index.mjs`) | 486,467 B | 80,742 B | **62,847 B** |
 | JS type declarations (`js/index.d.ts`) | 5,706 B | 2,185 B | **1,846 B** |
 | Canonical dataset (`data/icons.json`) | 511,657 B | 92,167 B | **67,563 B** |
 | Category manifest (`data/categories.json`) | 51,666 B | 9,031 B | **7,540 B** |
 | Swap pairs dataset (`data/swaps.json`) | 2,047 B | 591 B | **518 B** |
 | Illustrated set, 12 SVGs (`illustrations/*.svg`) | 10,634 B | — | — |
 | Gallery shell (`gallery/index.html`) | 30,409 B | 8,407 B | **7,234 B** |
-| Gallery data (`gallery/icons.data.js`) | 550,458 B | 97,437 B | **76,041 B** |
+| Gallery data (`gallery/icons.data.js`) | 550,465 B | 97,437 B | **76,020 B** |
 | Gallery app (`gallery/app.js`) | 88,175 B | 21,126 B | **18,757 B** |
 
 Reference combinations:
@@ -37,9 +37,9 @@ Reference combinations:
 |---|---|
 | One icon in React, tree-shaken | **1,828 B brotli** |
 | One icon + animations | 1,828 B + 3,270 B ≈ **4.0 KB brotli** |
-| Every icon in the app, one sprite request | **45,246 B brotli** |
+| Every icon in the app, one sprite request | **45,293 B brotli** |
 | Every icon + animation/shape/fill/3D layer | ≈ **32.5 KB brotli** |
-| Whole gallery (650 cards + data + app) | **≈ 74.9 KB brotli** (shell 6,957 + data 76,041 + app 18,757) |
+| Whole gallery (650 cards + data + app) | **≈ 74.9 KB brotli** (shell 6,957 + data 76,020 + app 18,757) |
 
 The sprite is the cheapest way to make the whole set available: one cached
 request for all 1,034 icons. Named React imports are the cheapest way to ship a few
@@ -48,8 +48,8 @@ shape/fill/3D factory), ~40–49 B per extra icon.
 
 **Lean JS runtime.** `js/index.mjs` does not ship search `keywords`; icon records
 are `{name, aliases, preset, trigger, inner}` plus `kebab` from `getIcon()`.
-Keywords stay in `data/icons.json`. The 1,034-icon API is **466,816 B raw /
-62,744 B brotli** with all category metadata included.
+Keywords stay in `data/icons.json`. The 1,034-icon API is **486,467 B raw /
+62,847 B brotli** with all category metadata included.
 
 **CJS mirror.** `dist/cjs/` mirrors every ESM module for `require()` consumers;
 the CJS tree is larger because CommonJS cannot share modules. This is **package
@@ -86,7 +86,7 @@ then the grid is virtualized. Current measured build:
 | Part | Raw | Gzip | Brotli |
 |---|---:|---:|---:|
 | Shell `index.html` | 30,409 B | 8,407 B | **7,234 B** |
-| Data `icons.data.js` | 550,458 B | 97,437 B | **76,041 B** |
+| Data `icons.data.js` | 550,465 B | 97,437 B | **76,020 B** |
 | App `app.js` | 88,175 B | 21,126 B | **18,757 B** |
 
 All local files, **0 third-party requests (2 local deferred scripts)**. QA: 97/97 Playwright checks pass —
@@ -146,7 +146,7 @@ heavy.
 5. **Zero runtime dependencies beyond the optional React peer.** Plain JS, Go,
    Rust and the GPUI adapter carry no web runtime at all.
 6. **Small geometry.** 1,034 icons average 393 B of SVG markup (max 896 B,
-   `brain-cog`); total 494,280 B raw as individual files; sprite 441,985 B raw.
+   `brain-cog`); total 494,280 B raw as individual files; sprite 441,992 B raw.
 7. **Illustrations are small and static.** 12 duotone illustrations total
    ~10.6 KB raw (~1.1 KB each), inline-friendly, no external assets.
 
@@ -281,11 +281,11 @@ node scripts/verify.mjs  # release verification (dataset, parity, sizes, a11y, d
 | Asset | Budget | Actual |
 |---|---|---|
 | Individual SVG | ≤ 1.0 KB raw | max 896 B (`brain-cog.svg`) |
-| Sprite | < 260 KB raw | 441,985 B |
+| Sprite | < 260 KB raw | 441,992 B |
 | One-icon React bundle | < 1.5 KB brotli | 953 B |
 | Animation + shape/fill/3D/swap CSS | ≤ 18 KB raw / ≤ 4 KB brotli | 17,290 B / 3,583 B |
 | Gallery shell | 0 ms gallery JS before first paint (observer only); shell < 40 KB | 30,409 B shell (build-report budget 40,960 B) |
-| `js/index.mjs` | < 60 KB gzip | 80,407 B gzip for 1,034 icons |
+| `js/index.mjs` | < 60 KB gzip | 80,742 B gzip for 1,034 icons |
 
 The dataset is regenerated deterministically; these sizes are stable unless
 icons, categories, swap pairs or the presentation layer change. The gallery is

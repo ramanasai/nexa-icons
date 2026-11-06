@@ -26,6 +26,7 @@ const ListChevronsDownUp = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   name: "ListChevronsDownUp",
   kebab: "list-chevrons-down-up",
   fillSafe: false,
+  fillUnsafe: false,
   preset: "nudge-down",
   trigger: "hover",
   nodes: [["path", { d: "M3 5h8" }], ["path", { d: "M3 12h8" }], ["path", { d: "M3 19h8" }], ["path", { d: "m15 5 3 3 3-3" }], ["path", { d: "m15 19 3-3 3 3" }]]

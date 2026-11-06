@@ -26,6 +26,7 @@ const Square = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   name: "Square",
   kebab: "square",
   fillSafe: true,
+  fillUnsafe: false,
   preset: "pulse",
   trigger: "hover",
   nodes: [["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2" }]]

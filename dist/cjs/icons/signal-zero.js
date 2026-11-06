@@ -26,6 +26,7 @@ const SignalZero = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   name: "SignalZero",
   kebab: "signal-zero",
   fillSafe: false,
+  fillUnsafe: false,
   preset: "pulse",
   trigger: "hover",
   nodes: [["path", { d: "M2 20h.01" }]]

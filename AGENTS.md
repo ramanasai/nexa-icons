@@ -401,10 +401,10 @@ Measured baseline for the **1,034-icon catalog**:
 | One tree-shaken React icon (incl. shape/fill/3D) | < 2 KB brotli | ~1,828 B brotli |
 | 8 tree-shaken icons | — | ~2,308 B brotli |
 | 13 tree-shaken icons (typical authenticated page) | — | ~2,368 B brotli (≈182 B/icon average) |
-| Full sprite, 1,034 icons | — | 441,985 B raw / 45,246 B brotli |
+| Full sprite, 1,034 icons | — | 441,992 B raw / 45,293 B brotli |
 | `animations.css` (incl. shape/fill/3D/swap) | ≤ 18 KB raw / ≤ 4 KB brotli | 17,290 B / 3,583 B |
-| React barrel / JS ESM | — | barrel 68,230 B raw / 11,953 B br; JS ESM 466,816 B raw / 62,744 B br |
-| Gallery (shell-first) | 0 ms gallery JS before first paint (observer only); FP/FCP ~44 ms browser floor | 30,409 B shell + 550,458 B data + 88,175 B app; ~136-card virtual window, 976 DOM nodes |
+| React barrel / JS ESM | — | barrel 68,230 B raw / 11,953 B br; JS ESM 486,467 B raw / 62,847 B br |
+| Gallery (shell-first) | 0 ms gallery JS before first paint (observer only); FP/FCP ~44 ms browser floor | 30,409 B shell + 550,465 B data + 88,175 B app; ~136-card virtual window, 976 DOM nodes |
 
 Why it is fast: static precomputed node/string data, per-icon tree-shakeable
 modules, one cached sprite request, CSS-only animation/fill/swap/3D, no runtime

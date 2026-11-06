@@ -26,6 +26,7 @@ const Info = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   name: "Info",
   kebab: "info",
   fillSafe: false,
+  fillUnsafe: false,
   preset: "pulse",
   trigger: "hover",
   nodes: [["circle", { cx: "12", cy: "12", r: "10" }], ["path", { d: "M12 16v-4" }], ["path", { d: "M12 8h.01" }]]

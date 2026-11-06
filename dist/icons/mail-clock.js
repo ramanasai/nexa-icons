@@ -3,6 +3,7 @@ const MailClock = /* @__PURE__ */ createIcon({
   name: "MailClock",
   kebab: "mail-clock",
   fillSafe: false,
+  fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
   nodes: [["path", { d: "M16 14v2.2l1.6 1" }], ["path", { d: "m22 7-.759.484" }], ["path", { d: "M6.835 20H4a2 2 0 01-2-2V6a2 2 0 012-2h16a2 2 0 012 2v2" }], ["path", { d: "M7.605 10.567 2 7" }], ["circle", { cx: "16", cy: "16", r: "6" }]]

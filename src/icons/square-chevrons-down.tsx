@@ -5,6 +5,7 @@ export const SquareChevronsDown = /*#__PURE__*/ createIcon({
   name: "SquareChevronsDown",
   kebab: "square-chevrons-down",
   fillSafe: false,
+  fillUnsafe: false,
   preset: "nudge-down",
   trigger: "hover",
   nodes: [["path",{d:"M9 14L12 17L15 14"}],["path",{d:"M9 8L12 11L15 8"}],["rect",{x:"3",y:"3",width:"18",height:"18",rx:"2"}]],

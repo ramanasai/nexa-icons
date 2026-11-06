@@ -26,6 +26,7 @@ const FastForward = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   name: "FastForward",
   kebab: "fast-forward",
   fillSafe: true,
+  fillUnsafe: false,
   preset: "pulse",
   trigger: "hover",
   nodes: [["path", { d: "M12 6a2 2 0 0 1 3.414-1.414l6 6a2 2 0 0 1 0 2.828l-6 6A2 2 0 0 1 12 18z" }], ["path", { d: "M2 6a2 2 0 0 1 3.414-1.414l6 6a2 2 0 0 1 0 2.828l-6 6A2 2 0 0 1 2 18z" }]]

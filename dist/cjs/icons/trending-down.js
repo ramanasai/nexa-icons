@@ -26,6 +26,7 @@ const TrendingDown = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   name: "TrendingDown",
   kebab: "trending-down",
   fillSafe: false,
+  fillUnsafe: false,
   preset: "nudge-down",
   trigger: "hover",
   nodes: [["path", { d: "M16 17h6v-6" }], ["path", { d: "m22 17-8.5-8.5-5 5L2 7" }]]

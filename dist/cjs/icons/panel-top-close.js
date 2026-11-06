@@ -26,6 +26,7 @@ const PanelTopClose = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   name: "PanelTopClose",
   kebab: "panel-top-close",
   fillSafe: false,
+  fillUnsafe: false,
   preset: "shake",
   trigger: "hover",
   nodes: [["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2" }], ["path", { d: "M3 9h18" }], ["path", { d: "m9 16 3-3 3 3" }]]

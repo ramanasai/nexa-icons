@@ -26,6 +26,7 @@ const ChevronsRight = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   name: "ChevronsRight",
   kebab: "chevrons-right",
   fillSafe: false,
+  fillUnsafe: false,
   preset: "nudge-right",
   trigger: "hover",
   nodes: [["path", { d: "m6 17 5-5-5-5" }], ["path", { d: "m13 17 5-5-5-5" }]]

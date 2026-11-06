@@ -79,7 +79,7 @@ const isClosedNode = (node) => {
 const ICONS = {};
 for (const icon of data.icons) {
   const inner = icon.nodes
-    .map(([tag, attrs]) => `<${tag} ${serializeAttrs({ ...attrs, 'data-closed': icon.fillSafe === true || isClosedNode([tag, attrs]) ? 'true' : 'false' })}/>`)
+    .map(([tag, attrs]) => `<${tag} ${serializeAttrs({ ...attrs, 'data-closed': icon.fillUnsafe === true ? 'false' : icon.fillSafe === true || isClosedNode([tag, attrs]) ? 'true' : 'false' })}/>`)
     .join('');
   // `keywords` stay in data/icons.json (search metadata) but are not shipped
   // in the runtime payload: nothing in the JS API reads them at runtime.
@@ -89,6 +89,7 @@ for (const icon of data.icons) {
     preset: icon.anim.preset,
     trigger: icon.anim.trigger,
     fillSafe: icon.fillSafe !== false,
+    fillUnsafe: icon.fillUnsafe === true,
     inner,
   };
 }

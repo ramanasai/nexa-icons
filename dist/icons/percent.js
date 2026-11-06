@@ -3,6 +3,7 @@ const Percent = /* @__PURE__ */ createIcon({
   name: "Percent",
   kebab: "percent",
   fillSafe: false,
+  fillUnsafe: false,
   preset: "pop",
   trigger: "hover",
   nodes: [["line", { "x1": "19", "x2": "5", "y1": "5", "y2": "19" }], ["circle", { cx: "6.5", cy: "6.5", r: "2.5" }], ["circle", { cx: "17.5", cy: "17.5", r: "2.5" }]]

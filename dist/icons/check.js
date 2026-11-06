@@ -3,6 +3,7 @@ const Check = /* @__PURE__ */ createIcon({
   name: "Check",
   kebab: "check",
   fillSafe: false,
+  fillUnsafe: false,
   preset: "pop",
   trigger: "hover",
   nodes: [["path", { d: "M20 6 9 17l-5-5" }]]

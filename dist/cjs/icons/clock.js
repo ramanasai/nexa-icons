@@ -26,6 +26,7 @@ const Clock = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   name: "Clock",
   kebab: "clock",
   fillSafe: false,
+  fillUnsafe: false,
   preset: "pulse",
   trigger: "hover",
   nodes: [["circle", { cx: "12", cy: "12", r: "10" }], ["path", { d: "M12 6v6l4 2" }]]

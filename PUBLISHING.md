@@ -79,7 +79,7 @@ on npmjs.com and switch the workflow to `npm publish --provenance` with
 ## Gotchas
 
 - `dist/` is committed and also rebuilt by `prepublishOnly`; never hand-edit it.
-- The package is ~1.13 MB packed / ~7.73 MB unpacked (4,291 files) (1,034 icon modules × ESM+CJS);
+- The package is ~1.13 MB packed / ~7.87 MB unpacked (4,291 files) (1,034 icon modules × ESM+CJS);
   scoped npm has no per-package size limit, but keep an eye on it.
 - License: ISC; Lucide/Feather notices ship in `NOTICE` and must stay.
 - Brand marks in `brands` are trademarks of their owners; see `NOTICE`.

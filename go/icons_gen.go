@@ -710,7 +710,7 @@ var generatedIcons = []Icon{
 		Trigger:  "hover",
 		Aliases:  []string{"KeyRound"},
 		Keywords: []string{"key", "password", "security", "secure", "keychain", "key ring", "access", "credentials", "unlocked", "permission", "authentication", "authorization", "passkey", "secret", "token", "API key", "encryption", "protection", "protected", "privacy", "private", "public", "license", "ownership", "login", "fob"},
-		Inner:    `<path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z" data-closed="true"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor" data-closed="true"/>`,
+		Inner:    `<path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z" data-closed="false"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor" data-closed="false"/>`,
 	},
 	{
 		Name:     "Languages",
@@ -953,7 +953,7 @@ var generatedIcons = []Icon{
 		Trigger:  "hover",
 		Aliases:  []string{"Palette"},
 		Keywords: []string{"colors", "colours", "theme", "scheme", "paint", "watercolor", "watercolour", "artist"},
-		Inner:    `<path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z" data-closed="true"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor" data-closed="true"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor" data-closed="true"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor" data-closed="true"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor" data-closed="true"/>`,
+		Inner:    `<path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z" data-closed="false"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor" data-closed="false"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor" data-closed="false"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor" data-closed="false"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor" data-closed="false"/>`,
 	},
 	{
 		Name:     "PanelLeftClose",

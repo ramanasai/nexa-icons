@@ -26,6 +26,7 @@ const Circle = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   name: "Circle",
   kebab: "circle",
   fillSafe: true,
+  fillUnsafe: false,
   preset: "pulse",
   trigger: "hover",
   nodes: [["circle", { cx: "12", cy: "12", r: "10" }]]

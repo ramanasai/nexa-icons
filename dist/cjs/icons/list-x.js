@@ -26,6 +26,7 @@ const ListX = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   name: "ListX",
   kebab: "list-x",
   fillSafe: false,
+  fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
   nodes: [["path", { d: "M16 5H3" }], ["path", { d: "M11 12H3" }], ["path", { d: "M16 19H3" }], ["path", { d: "m15.5 9.5 5 5" }], ["path", { d: "m20.5 9.5-5 5" }]]

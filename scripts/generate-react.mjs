@@ -40,6 +40,7 @@ export const ${icon.name} = /*#__PURE__*/ createIcon({
   name: ${q(icon.name)},
   kebab: ${q(icon.kebab)},
   fillSafe: ${icon.fillSafe ? "true" : "false"},
+  fillUnsafe: ${icon.fillUnsafe ? "true" : "false"},
   preset: ${q(icon.anim.preset)},
   trigger: ${q(icon.anim.trigger)},
   nodes: ${q(icon.nodes).replace(/"([a-zA-Z-]+)":/g, "$1:")},
@@ -69,7 +70,7 @@ for (const icon of icons) {
 }
 const registryEntries = icons
   .map(
-    (i) => `  ${q(i.kebab)}: { name: ${q(i.name)}, kebab: ${q(i.kebab)}, fillSafe: ${i.fillSafe ? "true" : "false"}, preset: ${q(i.anim.preset)}, trigger: ${q(i.anim.trigger)}, nodes: ${q(i.nodes).replace(/"([a-zA-Z-]+)":/g, "$1:")} },`
+    (i) => `  ${q(i.kebab)}: { name: ${q(i.name)}, kebab: ${q(i.kebab)}, fillSafe: ${i.fillSafe ? "true" : "false"}, fillUnsafe: ${i.fillUnsafe ? "true" : "false"}, preset: ${q(i.anim.preset)}, trigger: ${q(i.anim.trigger)}, nodes: ${q(i.nodes).replace(/"([a-zA-Z-]+)":/g, "$1:")} },`
   )
   .join("\n");
 const lookupEntries = [...lookup.entries()]

@@ -5,6 +5,7 @@ export const Ungroup = /*#__PURE__*/ createIcon({
   name: "Ungroup",
   kebab: "ungroup",
   fillSafe: true,
+  fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
   nodes: [["rect",{x:"11",y:"14",width:"10",height:"7",rx:"2"}],["rect",{x:"3",y:"3",width:"10",height:"7",rx:"2"}]],

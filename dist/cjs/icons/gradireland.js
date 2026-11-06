@@ -26,6 +26,7 @@ const GradIreland = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   name: "GradIreland",
   kebab: "gradireland",
   fillSafe: false,
+  fillUnsafe: false,
   preset: "pop",
   trigger: "hover",
   nodes: [["rect", { x: "2.5", y: "2.5", width: "19", height: "19", rx: "5" }], ["path", { d: "M7.2 10a3 3 0 1 0 0 4h2.4" }], ["path", { d: "M7.2 12h2.4" }], ["path", { d: "M12.2 10v4" }], ["path", { d: "M12.2 10h2.2M12.2 14h2.2" }]]

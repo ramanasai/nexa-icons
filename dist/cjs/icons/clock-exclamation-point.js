@@ -26,6 +26,7 @@ const ClockExclamationPoint = /* @__PURE__ */ (0, import_createIcon.createIcon)(
   name: "ClockExclamationPoint",
   kebab: "clock-exclamation-point",
   fillSafe: false,
+  fillUnsafe: false,
   preset: "shake",
   trigger: "hover",
   nodes: [["path", { d: "M12 6v6l4 2" }], ["path", { d: "M20 12v5" }], ["path", { d: "M20 21h.01" }], ["path", { d: "M21.25 8.2A10 10 0 1 0 16 21.16" }]]

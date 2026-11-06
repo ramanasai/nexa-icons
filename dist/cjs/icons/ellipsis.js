@@ -26,6 +26,7 @@ const MoreHorizontal = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   name: "MoreHorizontal",
   kebab: "ellipsis",
   fillSafe: true,
+  fillUnsafe: false,
   preset: "pulse",
   trigger: "hover",
   nodes: [["circle", { cx: "12", cy: "12", r: "1" }], ["circle", { cx: "19", cy: "12", r: "1" }], ["circle", { cx: "5", cy: "12", r: "1" }]]

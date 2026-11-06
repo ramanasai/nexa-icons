@@ -225,7 +225,8 @@ export function createIcon(data: NexaIconData): NexaIconComponent {
 
     const strokePaint = hasGradient ? `url(#${gradientId})` : "currentColor";
     const renderNodes = data.nodes.map(([tag, attrs]) => {
-      const closed = data.fillSafe === true || isClosedNode([tag, attrs]);
+      const closed =
+        data.fillUnsafe !== true && (data.fillSafe === true || isClosedNode([tag, attrs]));
       return { tag, attrs: { ...attrs, "data-closed": closed ? "true" : "false" } };
     });
     const bodyLayer =

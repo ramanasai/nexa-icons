@@ -26,6 +26,7 @@ const Pause = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   name: "Pause",
   kebab: "pause",
   fillSafe: true,
+  fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
   nodes: [["rect", { x: "14", y: "3", width: "5", height: "18", rx: "1" }], ["rect", { x: "5", y: "3", width: "5", height: "18", rx: "1" }]]

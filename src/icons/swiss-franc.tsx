@@ -5,6 +5,7 @@ export const SwissFranc = /*#__PURE__*/ createIcon({
   name: "SwissFranc",
   kebab: "swiss-franc",
   fillSafe: false,
+  fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
   nodes: [["path",{d:"M10 10h7"}],["path",{d:"M10 20V5a1 1 0 011-1h7"}],["path",{d:"M6 16h9"}]],

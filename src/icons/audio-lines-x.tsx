@@ -5,6 +5,7 @@ export const AudioLinesX = /*#__PURE__*/ createIcon({
   name: "AudioLinesX",
   kebab: "audio-lines-x",
   fillSafe: false,
+  fillUnsafe: false,
   preset: "shake",
   trigger: "hover",
   nodes: [["path",{d:"M10 3v18"}],["path",{d:"M14 8v6.35"}],["path",{d:"m17 17 5 5"}],["path",{d:"M18 5v8.1"}],["path",{d:"M2 10v3"}],["path",{d:"M22 10v3"}],["path",{d:"m22 17-5 5"}],["path",{d:"M6 6v11"}]],

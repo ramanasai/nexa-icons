@@ -26,6 +26,7 @@ const SquareChevronsUp = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   name: "SquareChevronsUp",
   kebab: "square-chevrons-up",
   fillSafe: false,
+  fillUnsafe: false,
   preset: "nudge-up",
   trigger: "hover",
   nodes: [["path", { d: "M15 10L12 7L9 10" }], ["path", { d: "M15 16L12 13L9 16" }], ["rect", { x: "3", y: "3", width: "18", height: "18", rx: "2" }]]

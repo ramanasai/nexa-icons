@@ -5,6 +5,7 @@ export const Book = /*#__PURE__*/ createIcon({
   name: "Book",
   kebab: "book",
   fillSafe: false,
+  fillUnsafe: false,
   preset: "float",
   trigger: "hover",
   nodes: [["path",{d:"M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"}]],

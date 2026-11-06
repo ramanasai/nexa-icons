@@ -317,13 +317,13 @@ Brotli quality 11 on the shipped files; method and commands in
 | One standalone SVG (`icons/bell.svg`) | 384 B | **221 B** |
 | One React icon module (`dist/icons/bell.js`) | 407 B | **258 B** |
 | One-icon tree-shaken app bundle (incl. shape/fill/3D) | 4,155 B | **1,828 B** |
-| Full sprite, all 1,034 icons (`sprite.svg`) | 441,985 B | **45,246 B** |
+| Full sprite, all 1,034 icons (`sprite.svg`) | 441,992 B | **45,293 B** |
 | Animation + shape/fill/3D layer (`dist/animations.css`) | 17,290 B | **3,583 B** |
 | React barrel (`dist/index.js`) | 68,230 B | **11,953 B** |
 | CJS root bundle (`dist/cjs/index.js`) | 68,490 B | **11,336 B** |
-| Vanilla JS with all data (`js/index.mjs`) | 466,816 B | **62,744 B** |
+| Vanilla JS with all data (`js/index.mjs`) | 486,467 B | **62,847 B** |
 | Gallery shell (`gallery/index.html`) | 30,409 B | **7,247 B** |
-| Gallery data (`gallery/icons.data.js`) | 550,458 B | **76,041 B** |
+| Gallery data (`gallery/icons.data.js`) | 550,465 B | **76,020 B** |
 | Gallery app (`gallery/app.js`) | 88,175 B | **18,757 B** |
 | Illustrated set, 12 SVGs (`illustrations/`) | 10,634 B | — |
 

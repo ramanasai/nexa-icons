@@ -26,6 +26,7 @@ const ChevronLeft = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   name: "ChevronLeft",
   kebab: "chevron-left",
   fillSafe: false,
+  fillUnsafe: false,
   preset: "nudge-left",
   trigger: "hover",
   nodes: [["path", { d: "m15 18-6-6 6-6" }]]

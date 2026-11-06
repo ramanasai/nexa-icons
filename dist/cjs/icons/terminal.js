@@ -26,6 +26,7 @@ const Terminal = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   name: "Terminal",
   kebab: "terminal",
   fillSafe: false,
+  fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
   nodes: [["path", { d: "M12 19h8" }], ["path", { d: "m4 17 6-6-6-6" }]]

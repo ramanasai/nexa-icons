@@ -26,6 +26,7 @@ const SignalLow = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   name: "SignalLow",
   kebab: "signal-low",
   fillSafe: false,
+  fillUnsafe: false,
   preset: "pulse",
   trigger: "hover",
   nodes: [["path", { d: "M2 20h.01" }], ["path", { d: "M7 20v-4" }]]

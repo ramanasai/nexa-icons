@@ -26,6 +26,7 @@ const Diamond = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   name: "Diamond",
   kebab: "diamond",
   fillSafe: true,
+  fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
   nodes: [["path", { d: "M2.7 10.3a2.41 2.41 0 0 0 0 3.41l7.59 7.59a2.41 2.41 0 0 0 3.41 0l7.59-7.59a2.41 2.41 0 0 0 0-3.41l-7.59-7.59a2.41 2.41 0 0 0-3.41 0Z" }]]

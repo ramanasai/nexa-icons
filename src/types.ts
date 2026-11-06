@@ -100,12 +100,14 @@ export interface NexaIconData {
   trigger: NexaTrigger;
   /** True when the geometry is closed and fills cleanly (solid variant). */
   fillSafe?: boolean;
+  /** Internal cut-outs make flat fills unsafe (Palette, KeyRound). */
+  fillUnsafe?: boolean;
   nodes: readonly NexaNode[];
 }
 
 export interface NexaIconProps
   extends Omit<ComponentPropsWithoutRef<"svg">, "color" | "width" | "height" | "ref"> {
-  /** Named step (sm 16, md 20, lg 24, xl 40) or an explicit pixel size. Default 24px (Nexa "lg", stroke 1.5). */
+  /** Named step (sm 16, md 20, lg 24, xl 40) or an explicit pixel size. Default 24px; size-less icons use stroke 2. */
   size?: NexaSize | number;
   /** Override stroke width. Size-less (CSS-sized) icons default to 2; explicit size maps 16=>2, 20=>1.75, 24+=>1.5. */
   strokeWidth?: number;

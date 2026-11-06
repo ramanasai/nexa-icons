@@ -3,6 +3,7 @@ const XCircle = /* @__PURE__ */ createIcon({
   name: "XCircle",
   kebab: "circle-x",
   fillSafe: false,
+  fillUnsafe: false,
   preset: "shake",
   trigger: "hover",
   nodes: [["circle", { cx: "12", cy: "12", r: "10" }], ["path", { d: "m15 9-6 6" }], ["path", { d: "m9 9 6 6" }]]

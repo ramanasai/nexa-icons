@@ -26,6 +26,7 @@ const Target = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   name: "Target",
   kebab: "target",
   fillSafe: true,
+  fillUnsafe: false,
   preset: "pulse",
   trigger: "hover",
   nodes: [["circle", { cx: "12", cy: "12", r: "10" }], ["circle", { cx: "12", cy: "12", r: "6" }], ["circle", { cx: "12", cy: "12", r: "2" }]]

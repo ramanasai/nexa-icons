@@ -3,6 +3,7 @@ const IndianRupee = /* @__PURE__ */ createIcon({
   name: "IndianRupee",
   kebab: "indian-rupee",
   fillSafe: false,
+  fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
   nodes: [["path", { d: "m14 20-8-8h4c5.333 0 5.333-8 0-8" }], ["path", { d: "M6 4h12" }], ["path", { d: "M6 8h12" }]]

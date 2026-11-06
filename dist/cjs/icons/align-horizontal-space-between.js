@@ -26,6 +26,7 @@ const AlignHorizontalSpaceBetween = /* @__PURE__ */ (0, import_createIcon.create
   name: "AlignHorizontalSpaceBetween",
   kebab: "align-horizontal-space-between",
   fillSafe: false,
+  fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
   nodes: [["rect", { width: "6", height: "14", x: "3", y: "5", rx: "2" }], ["rect", { width: "6", height: "10", x: "15", y: "7", rx: "2" }], ["path", { d: "M3 2v20" }], ["path", { d: "M21 2v20" }]]

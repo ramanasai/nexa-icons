@@ -26,6 +26,7 @@ const LayoutGridCircles = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   name: "LayoutGridCircles",
   kebab: "layout-grid-circles",
   fillSafe: true,
+  fillUnsafe: false,
   preset: "pop",
   trigger: "hover",
   nodes: [["circle", { cx: "17.5", cy: "17.5", r: "3.5" }], ["circle", { cx: "17.5", cy: "6.5", r: "3.5" }], ["circle", { cx: "6.5", cy: "17.5", r: "3.5" }], ["circle", { cx: "6.5", cy: "6.5", r: "3.5" }]]
