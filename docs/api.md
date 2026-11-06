@@ -187,9 +187,10 @@ prefer named imports in app code so only used icons ship.
 |---|---|
 | `@sairamanapb/icons` | ESM build `dist/index.js` + types `dist/index.d.ts`; CJS at `dist/cjs/index.js` (`require`) |
 | `@sairamanapb/icons/animations.css` | the animation layer (`dist/animations.css`) |
-| `@sairamanapb/icons/sprite.svg` | full symbol sprite |
-| `@sairamanapb/icons/icons/*` | standalone SVG files |
-| `@sairamanapb/icons/data/icons.json` | canonical dataset |
+| `@sairamanapb/icons/sprite.svg` | full sprite (shipped) |
+
+Raw `icons/*.svg` and `data/icons.json` are **repo-only** (not in the npm
+runtime tarball); fetch them from GitHub or use `sprite.svg`.
 
 `sideEffects: ["*.css"]` so bundlers keep the CSS import and tree-shake icons.
 `main`/`module`/`types` are set for classic resolvers; `exports` covers modern

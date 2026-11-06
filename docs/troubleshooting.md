@@ -168,7 +168,7 @@ A `<use>` only resolves against a sprite in the **same document**.
 ## Package managers / install
 
 - The package exposes `exports` (ESM + CJS + `./js` + `./animations.css` +
-  `./react/*` + `./data/icons.json` + `./data/swaps.json`). Very
+  `./react/*` + `./data/swaps.json`; raw `icons/*`/`data/icons.json` are repo-only). Very
   old bundlers that ignore `exports` can use the legacy fields: `main`
   (`dist/cjs/index.js`), `module` (`dist/index.js`), `types`
   (`dist/index.d.ts`).
@@ -218,7 +218,7 @@ measurement. Server and client HTML should match when the props match.
 - `@sairamanapb/icons` has **React as an optional peer dependency** (`>=18`). In a
   non-React app use `@sairamanapb/icons/js` instead.
 - Subpath exports are declared in `package.json` (`./js`, `./animations.css`,
-  `./sprite.svg`, `./icons/*`). Older bundlers that ignore `exports` need the
+  `./sprite.svg`, `./react/*`). Older bundlers that ignore `exports` need the
   file path (`@sairamanapb/icons/dist/index.js`).
 - `dist/` is a build artifact (`npm run build`); if it is absent in a checkout,
   run the build before importing the package.

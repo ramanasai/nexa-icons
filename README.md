@@ -188,7 +188,7 @@ console.log(names().length); // 650
 
 No dependencies; ESM (`@sairamanapb/icons/js`) and CJS are both shipped. The runtime
 payload is lean: `getIcon()`/`ICONS` omit search `keywords` (they stay in
-`data/icons.json`), which keeps the whole API at ~41.3 KB brotli for all 1,034 icons.
+`data/icons.json`), which keeps the JS runtime at ~62.9 KB brotli for all 1,034 icons.
 
 ### TypeScript / React
 
@@ -332,7 +332,7 @@ Brotli quality 11 on the shipped files; method and commands in
 
 | Asset | Raw | Brotli |
 |---|---:|---:|
-| One standalone SVG (`icons/bell.svg`) | 384 B | **221 B** |
+| One standalone SVG (`icons/bell.svg`, repo) | 384 B | **221 B** |
 | One React icon module (`dist/icons/bell.js`) | 407 B | **258 B** |
 | One-icon tree-shaken app bundle (incl. shape/fill/3D) | 4,190 B | **1,834 B** |
 | Full sprite, all 1,034 icons (`sprite.svg`, shipped) | 441,995 B | **45,290 B** |
@@ -390,7 +390,7 @@ in the tarball).
 |---|---|---|
 | React/TS | `@sairamanapb/icons` | `import { Bell } from "@sairamanapb/icons"; <Bell size="md" />` |
 | Vanilla JS | `@sairamanapb/icons/js` | `import { svg } from "@sairamanapb/icons/js"; svg("Bell", { size: 20 })` |
-| HTML | `sprite.svg` / `icons/*.svg` | `<svg class="nexa-icon"><use href="#nexa-bell"/></svg>` |
+| HTML | `sprite.svg` (npm) / `icons/*.svg` (GitHub) | `<svg class="nexa-icon"><use href="#nexa-bell"/></svg>` |
 | Go | `github.com/nexa-icons/nexa/go` | `icon, _ := nexaicons.Get("Bell"); icon.SVG(nexaicons.Size(20))` |
 | Rust | `nexa-icons` | `get("Bell").unwrap().svg(SvgOptions::new().size(20))` |
 

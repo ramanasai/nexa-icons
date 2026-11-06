@@ -231,7 +231,7 @@ cost per icon after import.
 | `<use href="#nexa-bell">` + inline sprite | one 29.4 KB brotli request for all 1,034 icons (fixed stroke 2) | app shells, galleries, SSR pages |
 | Named React import / deep import / category import | ~1,834 B brotli for the first icon, ~41–49 B/extra | React apps with a few icons |
 | Per-icon `icons/*.svg` file | ~221 B brotli per icon, one request each | static sites, `<img>`, email, docs |
-| `svg()` from `@sairamanapb/icons/js` | 41.3 KB brotli ESM includes all icon + category data; zero fetch | no-build pages, Node scripts, server render |
+| `svg()` from `@sairamanapb/icons/js` | 62.9 KB brotli ESM includes all icon + category data; zero fetch | no-build pages, Node scripts, server render |
 
 ## Tree-shaking proof
 
@@ -314,3 +314,14 @@ Avoid the dynamic registry (`Icon`, `getIcon`, `ICONS`, `NEXA_MAP`) in client
 bundles: it intentionally pulls all 1,034 icon records (~12 KB brotli). The
 Lucide-compatible entry is at `@sairamanapb/icons/lucide`; it is tree-shakeable
 in the same way.
+
+
+## Runtime-only npm tarball (1.0.4+)
+
+The npm package is intentionally slim: `dist/` (ESM + CJS + types), `js/`,
+`sprite.svg`, data manifests, illustrations and AGENTS/README. Raw per-icon
+SVGs and the docs live in the GitHub repo.
+
+| | Files | Packed | Unpacked |
+|---|---:|---:|---:|
+| `@sairamanapb/icons` 1.0.4 | 3,242 | ~0.86 MB | ~6.19 MB |

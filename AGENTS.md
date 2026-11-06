@@ -51,6 +51,10 @@ Two entry points in one package:
 | Lucide-compatible | `@sairamanapb/icons/lucide` | Yes (`react`) |
 | Illustrations | `@sairamanapb/icons/illustrations/*` / `illustrations/` | No |
 
+> The npm tarball is runtime-only: raw `icons/*.svg` and the full `docs/` are
+> GitHub-only. `sprite.svg` is shipped in the package. Go/Rust crates live in
+> the repo and are not in the npm tarball.
+
 Contributors use the pinned toolchain:
 
 ```bash
@@ -390,6 +394,8 @@ div().text_color(rgb(0x27272a)).child(icon("bell"))
 - Fill/shape/3D are decoration: state must also exist in text/`aria-*`.
 - Global switches: `[data-nexa-fill="duotone|solid"]`, `[data-nexa-motion="off"]`
   and `--nexa-stroke` on an ancestor let an app style every icon without a wrapper.
+  `data-nexa-motion="off"` only disables Nexa-owned motion, not app-level
+  spinners/rotations on `.nexa-icon`.
 - Reduced motion and forced-colors are handled by `animations.css`.
 
 ## 14. Performance budgets

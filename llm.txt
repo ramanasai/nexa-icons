@@ -30,6 +30,12 @@
 - [Illustrations](https://github.com/ramanasai/nexa-icons/blob/main/illustrations/README.md): 12 duotone illustrations.
 - [Adding icons](https://github.com/ramanasai/nexa-icons/blob/main/docs/adding-icons.md) · [Troubleshooting](https://github.com/ramanasai/nexa-icons/blob/main/docs/troubleshooting.md) · [Migration from Lucide](https://github.com/ramanasai/nexa-icons/blob/main/docs/migration-from-lucide.md)
 
+## Package layout
+
+- npm runtime: `dist/` (ESM+CJS+types), `js/`, `sprite.svg`, data manifests, illustrations, AGENTS.md; 3,242 files / ~6.19 MB unpacked.
+- Raw `icons/*.svg`, `data/icons.json` and the full docs are GitHub-only (not in the npm tarball).
+- `data-nexa-motion="off"` scopes only Nexa animations; app animations on `.nexa-icon` are untouched.
+
 ## Machine-readable data
 - Dataset: https://raw.githubusercontent.com/ramanasai/nexa-icons/main/data/icons.json (geometry, keywords, categories, presets, fill-safety, aliases)
 - Categories: https://raw.githubusercontent.com/ramanasai/nexa-icons/main/data/categories.json

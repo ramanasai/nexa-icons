@@ -1,14 +1,14 @@
 # Publishing @sairamanapb/icons to npm
 
-> **Published:** `1.0.2` is live. This tree is **1.0.4** with scoped motion switches, a runtime-only tarball and the 1.0.3 Lucide/layer fixes; run `npm publish --access public` (with OTP) to release it.
+> **Published:** `1.0.3` is live. This tree is **1.0.4** with the scoped motion switch and runtime-only tarball; run `npm publish --access public` (with OTP) to release it.
 
-> **Status:** `1.0.0` is published on npm — https://www.npmjs.com/package/@sairamanapb/icons
-> (`npm view @sairamanapb/icons version` → `1.0.0`). Use this guide for the next release.
+> **Status:** https://www.npmjs.com/package/@sairamanapb/icons — run
+> `npm view @sairamanapb/icons version` for the current release.
 
 ## 0. Preconditions
 
 - npm account with **2FA** enabled.
-- Ownership of the **`@nexa` scope** (npm user or org). Package names in a scope
+- Ownership of the **`@sairamanapb` scope** (npm user or org). Package names in a scope
   can only be published by that scope; `npm view @sairamanapb/icons` being 404 does not
   prove the scope is available.
   - If the scope ever changes, update `npm pkg set name=@YOURSCOPE/icons` and the
