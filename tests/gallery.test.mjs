@@ -60,8 +60,8 @@ test("shell: Nexa shell-first chrome, 650-icon metadata, a11y and motion rules b
   assert.match(SHELL, /will not run without JavaScript|noscript|skeleton|aria-busy/i, "shell must degrade without app JS");
 });
 
-test("data payload: 650 icons + 24 categories + 26 swaps + presets, consistent with the dataset", () => {
-  assert.equal(DATA.v, "1.0.0");
+test("data payload: full catalog + 26 categories + swaps + presets, consistent with the dataset", () => {
+  assert.equal(DATA.v, JSON.parse(read("package.json")).version);
   assert.equal(DATA.count, ICONS.length);
   assert.equal(DATA.icons.length, ICONS.length);
   assert.equal(DATA.categories.length, CATEGORIES.length);

@@ -441,7 +441,7 @@ for (const icon of built) {
 const meta = {
   name: "Nexa Icons",
   categories: categoryMeta,
-  version: "1.0.0",
+  version: JSON.parse(fs.readFileSync(path.join(ROOT, "package.json"), "utf8")).version,
   count: built.length,
   requested: built.length,
   duplicates: duplicates.length,

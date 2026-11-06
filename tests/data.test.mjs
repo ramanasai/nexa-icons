@@ -20,7 +20,7 @@ test("meta: Nexa Icons, dataset-derived counts, 24 grid, categories manifest", (
   assert.equal(META.requested, COUNT, "expanded catalog has no unresolved requested names");
   assert.equal(META.duplicates, 0, "expanded catalog has no merged duplicates");
   assert.equal(META.grid, 24);
-  assert.equal(META.version, "1.0.0");
+  assert.equal(META.version, JSON.parse(fs.readFileSync(p("package.json"), "utf8")).version);
   assert.match(META.source, /Lucide/i);
   assert.ok(COUNT >= 900 && COUNT <= 1100, `catalog total ${COUNT} outside 900-1100`);
   assert.ok(Array.isArray(META.categories), "meta.categories must be embedded");
