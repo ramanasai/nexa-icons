@@ -453,50 +453,35 @@ html[data-theme="dark"] .hud-ok { color: #4ade80; }
 .fx-tile .nexa-icon { color: var(--text); }
 
 
-/* Glass toggle: real frosted glass tiles with refraction + specular light */
-.grid[data-glass] .icon-btn {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  border-radius: 18px;
-  background: var(--glass-card-bg, linear-gradient(135deg, #eef2ff, #f8fafc));
-}
-.grid[data-glass] .icon-btn::before {
-  content: "";
-  position: absolute;
-  inset: -45%;
-  z-index: 0;
-  background: var(--glass-blobs,
-    radial-gradient(circle at 26% 22%, #c7d2fe 0 18%, transparent 54%),
-    radial-gradient(circle at 78% 78%, #f9a8d4 0 16%, transparent 52%),
-    radial-gradient(circle at 62% 18%, #a5f3fc 0 12%, transparent 46%));
-  filter: blur(26px) saturate(190%);
-  opacity: 0.98;
-  pointer-events: none;
-}
-.grid[data-glass] .icon-btn > * { position: relative; z-index: 1; }
+/* Glass toggle: compact glass tiles around every icon (gallery layout stays intact) */
+.grid[data-glass] .icon-btn { background: transparent; border-color: transparent; }
 .glass-glyph {
+  --glass-a: #ffffff;
+  --glass-b: #c7d2fe;
+  --glass-ink: #3f3f46;
+  --glass-glow: rgba(255, 255, 255, 0.5);
   position: relative;
   display: grid;
   place-items: center;
-  width: calc(var(--icon-size) * 2.25);
-  height: calc(var(--icon-size) * 2.25);
-  border-radius: 30%;
+  width: calc(var(--icon-size) * 1.7);
+  height: calc(var(--icon-size) * 1.7);
+  border-radius: 28%;
   border-style: solid;
   border-width: 1px;
-  border-color: rgba(255, 255, 255, 0.95) rgba(255, 255, 255, 0.48) rgba(15, 23, 42, 0.3) rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.95) rgba(255, 255, 255, 0.5) rgba(15, 23, 42, 0.28) rgba(255, 255, 255, 0.78);
   background:
-    radial-gradient(130% 110% at 16% -4%, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.08) 42%, transparent 58%),
-    linear-gradient(145deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.02) 48%, rgba(255, 255, 255, 0.1));
-  backdrop-filter: blur(20px) saturate(210%);
-  -webkit-backdrop-filter: blur(20px) saturate(210%);
+    radial-gradient(125% 105% at 17% -6%, rgba(255, 255, 255, 0.72), transparent 48%),
+    radial-gradient(70% 65% at 82% 88%, var(--glass-b), transparent 72%),
+    linear-gradient(140deg, var(--glass-a), var(--glass-b));
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 1),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.28),
-    inset 0 -12px 20px rgba(15, 23, 42, 0.22),
-    inset 0 10px 14px rgba(255, 255, 255, 0.28),
-    0 2px 4px rgba(15, 23, 42, 0.18),
-    0 20px 38px -16px rgba(15, 23, 42, 0.55);
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.22),
+    inset 0 -9px 16px rgba(15, 23, 42, 0.2),
+    inset 0 8px 12px rgba(255, 255, 255, 0.25),
+    0 2px 4px rgba(15, 23, 42, 0.16),
+    0 10px 18px -10px rgba(15, 23, 42, 0.5);
   overflow: hidden;
   isolation: isolate;
 }
@@ -506,10 +491,10 @@ html[data-theme="dark"] .hud-ok { color: #4ade80; }
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(45% 32% at 26% 16%, rgba(255, 255, 255, 0.98), transparent 72%),
-    radial-gradient(22% 16% at 76% 22%, rgba(255, 255, 255, 0.8), transparent 80%),
-    linear-gradient(122deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.05) 30%, transparent 46%, transparent 66%, rgba(255, 255, 255, 0.22));
-  filter: blur(0.6px);
+    radial-gradient(45% 30% at 24% 14%, rgba(255, 255, 255, 0.95), transparent 72%),
+    radial-gradient(20% 14% at 76% 20%, rgba(255, 255, 255, 0.8), transparent 80%),
+    linear-gradient(122deg, rgba(255, 255, 255, 0.42), transparent 34%, transparent 64%, rgba(255, 255, 255, 0.24));
+  filter: blur(0.4px);
   opacity: 0.9;
 }
 .glass-glyph::after {
@@ -519,45 +504,34 @@ html[data-theme="dark"] .hud-ok { color: #4ade80; }
   z-index: 0;
   border-radius: inherit;
   box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.28),
-    inset 0 -2px 2px rgba(255, 255, 255, 0.55),
-    inset 0 3px 4px rgba(255, 255, 255, 0.3),
-    inset 0 -10px 16px rgba(15, 23, 42, 0.18),
-    inset 0 10px 18px rgba(255, 255, 255, 0.12);
+    inset 0 0 0 1px rgba(255, 255, 255, 0.3),
+    inset 0 -2px 2px rgba(255, 255, 255, 0.6),
+    inset 0 3px 4px rgba(255, 255, 255, 0.28),
+    inset 0 -8px 12px rgba(15, 23, 42, 0.16);
   pointer-events: none;
 }
 .glass-glyph .nexa-icon {
   position: relative;
   z-index: 1;
-  width: calc(var(--icon-size) * 0.56);
-  height: calc(var(--icon-size) * 0.56);
-  color: rgba(255, 255, 255, 0.97);
-  stroke-width: 2.1;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  color: var(--glass-ink);
+  stroke-width: 2;
   filter:
-    drop-shadow(0 1px 0.5px rgba(15, 23, 42, 0.55))
-    drop-shadow(0 -1px 0 rgba(255, 255, 255, 0.55))
-    drop-shadow(0 0 5px rgba(255, 255, 255, 0.35));
+    drop-shadow(0 1px 0.5px rgba(15, 23, 42, 0.4))
+    drop-shadow(0 -1px 0 rgba(255, 255, 255, 0.7));
 }
-/* preset backdrops */
-.grid[data-glass="frost"] .icon-btn { --glass-card-bg: linear-gradient(135deg, #e0e7ff, #fce7f3); --glass-blobs: radial-gradient(circle at 26% 22%, #818cf8 0 18%, transparent 54%), radial-gradient(circle at 78% 78%, #f472b6 0 16%, transparent 52%), radial-gradient(circle at 64% 16%, #67e8f9 0 12%, transparent 46%); }
-.grid[data-glass="ice"] .icon-btn { --glass-card-bg: linear-gradient(135deg, #bfdbfe, #eff6ff); --glass-blobs: radial-gradient(circle at 28% 20%, #3b82f6 0 18%, transparent 54%), radial-gradient(circle at 78% 80%, #22d3ee 0 16%, transparent 52%), radial-gradient(circle at 60% 20%, #e0f2fe 0 12%, transparent 46%); }
-.grid[data-glass="clear"] .icon-btn { --glass-card-bg: linear-gradient(135deg, #e2e8f0, #f8fafc); --glass-blobs: radial-gradient(circle at 26% 24%, #94a3b8 0 16%, transparent 56%), radial-gradient(circle at 76% 76%, #cbd5e1 0 14%, transparent 54%); }
-.grid[data-glass="steel"] .icon-btn { --glass-card-bg: linear-gradient(135deg, #cbd5e1, #f1f5f9); --glass-blobs: radial-gradient(circle at 26% 22%, #475569 0 18%, transparent 54%), radial-gradient(circle at 78% 78%, #94a3b8 0 16%, transparent 52%), radial-gradient(circle at 64% 18%, #e2e8f0 0 12%, transparent 46%); }
-.grid[data-glass="neon"] .icon-btn { --glass-card-bg: linear-gradient(135deg, #080d1a, #111827); --glass-blobs: radial-gradient(circle at 26% 22%, #8b5cf6 0 20%, transparent 52%), radial-gradient(circle at 78% 76%, #06b6d4 0 18%, transparent 50%), radial-gradient(circle at 58% 18%, #ec4899 0 12%, transparent 44%); color: #e9d5ff; }
-.grid[data-glass="jelly"] .icon-btn { --glass-card-bg: linear-gradient(135deg, #ddd6fe, #fdf4ff); --glass-blobs: radial-gradient(circle at 26% 22%, #7c3aed 0 18%, transparent 54%), radial-gradient(circle at 78% 76%, #f0abfc 0 16%, transparent 52%), radial-gradient(circle at 62% 16%, #5eead4 0 12%, transparent 46%); }
-.grid[data-glass="aurora"] .icon-btn { --glass-card-bg: linear-gradient(135deg, #ede9fe, #ecfeff); --glass-blobs: radial-gradient(circle at 24% 20%, #7c3aed 0 18%, transparent 52%), radial-gradient(circle at 78% 78%, #06b6d4 0 16%, transparent 50%), radial-gradient(circle at 66% 22%, #f0abfc 0 12%, transparent 44%); }
-.grid[data-glass="neon"] .glass-glyph {
-  background: radial-gradient(120% 100% at 18% 0%, rgba(167, 139, 250, 0.28), transparent 56%), linear-gradient(135deg, rgba(17, 24, 39, 0.6), rgba(8, 13, 26, 0.28));
-  border-color: rgba(196, 181, 253, 0.65);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), inset 0 0 22px rgba(139, 92, 246, 0.32), 0 0 30px -10px rgba(139, 92, 246, 0.9), 0 20px 38px -16px rgba(0, 0, 0, 0.8);
-}
-.grid[data-glass="jelly"] .glass-glyph {
-  background: radial-gradient(120% 100% at 18% 0%, rgba(255, 255, 255, 0.58), transparent 50%), linear-gradient(135deg, rgba(221, 214, 254, 0.22), rgba(139, 92, 246, 0.1));
-  border-color: rgba(255, 255, 255, 0.95);
-}
-.grid[data-glass="ice"] .glass-glyph { background: radial-gradient(120% 100% at 18% 0%, rgba(255, 255, 255, 0.7), transparent 50%), linear-gradient(135deg, rgba(191, 219, 254, 0.28), rgba(59, 130, 246, 0.12)); }
-.grid[data-glass="neon"] .nexa-icon { color: #f5f3ff; filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 6px rgba(167, 139, 250, 0.95)) drop-shadow(0 0 14px rgba(34, 211, 238, 0.55)); }
-.grid[data-glass] .card-name { color: inherit; opacity: 0.9; }
+/* preset materials */
+.glass-glyph--frost { --glass-a: #ffffff; --glass-b: #c7d2fe; --glass-ink: #3f3f46; }
+.glass-glyph--ice { --glass-a: #eff6ff; --glass-b: #60a5fa; --glass-ink: #1e3a8a; }
+.glass-glyph--clear { --glass-a: rgba(255, 255, 255, 0.5); --glass-b: rgba(255, 255, 255, 0.12); --glass-ink: #3f3f46; }
+.glass-glyph--steel { --glass-a: #e2e8f0; --glass-b: #64748b; --glass-ink: #0f172a; }
+.glass-glyph--neon { --glass-a: #312e81; --glass-b: #0e7490; --glass-ink: #f5f3ff; --glass-glow: rgba(167, 139, 250, 0.9); }
+.glass-glyph--jelly { --glass-a: #f5f3ff; --glass-b: #8b5cf6; --glass-ink: #3b0764; }
+.glass-glyph--aurora { --glass-a: #a78bfa; --glass-b: #22d3ee; --glass-ink: #111827; }
+.glass-glyph--neon .nexa-icon { color: #f5f3ff; filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 5px rgba(167, 139, 250, 0.9)); }
+.glass-glyph--neon { box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), inset 0 0 0 1px rgba(167, 139, 250, 0.35), inset 0 -10px 18px rgba(0, 0, 0, 0.5), 0 0 24px -10px rgba(139, 92, 246, 0.8), 0 10px 20px -12px rgba(0, 0, 0, 0.8); }
+.glass-glyph--jelly { box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1), inset 0 -10px 16px rgba(91, 33, 182, 0.22), inset 0 8px 14px rgba(255, 255, 255, 0.35), 0 2px 4px rgba(76, 29, 149, 0.18), 0 12px 22px -12px rgba(91, 33, 182, 0.55); }
 
 /* keep illustration cards compact */
 .ill-card .ill-desc, .ill-card p { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }

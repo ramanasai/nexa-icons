@@ -167,11 +167,12 @@ sheen/pulse/float loop. Reduced motion disables both modes.
 
 ## Gallery "Glass — all icons"
 
-The gallery applies the seven glass presets as **frosted glass tiles on every
-icon card**: a translucent rounded tile (background gradient + `backdrop-filter`,
-specular sheen, bevel and rim) sits over a colorful blurred backdrop, with the
-glyph etched in white (neon uses a dark translucent tile). It is a visual demo;
-apps use `glass`/`glassBody` on the React/JS components.
+The gallery applies the seven glass presets as **compact frosted tiles around
+every icon**, keeping the normal gallery grid/layout intact. Each tile is a
+translucent material (tinted gradient, `backdrop-filter`, specular sheen,
+beveled rim and inner shadow) with the glyph etched on top; neon and jelly use
+their darker/tinted glass, while the others stay light and translucent. It is a
+visual demo; apps use `glass`/`glassBody` on the React/JS components.
 
 ## Animated glass
 
