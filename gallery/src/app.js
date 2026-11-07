@@ -310,12 +310,23 @@
       }
     }
     var active = state.activeK ? icon.k === state.activeK : index === 0;
+    var iconMarkup;
+    if (state.glass) {
+      var gid = 'nexa-glass-' + index + '-' + icon.k;
+      var bodySvg = '<svg class="glass-body" viewBox="0 0 24 24" fill="none" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="--glass-fill:url(#' + gid + ');--glass-stroke:url(#' + gid + ')">' +
+        '<defs><linearGradient id="' + gid + '" x1="0" y1="0" x2="1" y2="1">' +
+        '<stop offset="0%" style="stop-color:var(--glass-1)"/><stop offset="100%" style="stop-color:var(--glass-2)"/>' +
+        '</linearGradient></defs>' + (icon.i || '') + '</svg>';
+      iconMarkup = '<span class="glass-glyph glass-glyph--' + esc(state.glass) + '">' + bodySvg + svgHTML(icon, { anim: esc(icon.p), trigger: trigger }) + '</span>';
+    } else {
+      iconMarkup = svgHTML(icon, { anim: esc(icon.p), trigger: trigger });
+    }
     return '<div class="card' + (icon.swap ? ' swap' : '') + '" role="listitem" data-h="' + icon.hue + '"' +
       (icon.swap ? ' data-swap="1"' : '') + ' aria-setsize="' + state.filtered.length + '" aria-posinset="' + (index + 1) + '">' +
       '<button class="icon-btn" type="button" data-k="' + esc(icon.k) + '" aria-label="' + esc(icon.n) + '"' +
       ' tabindex="' + (active ? '0' : '-1') + '"' +
       ' title="' + esc(icon.n) + ' · ' + esc(icon.k) + '">' +
-      svgHTML(icon, { anim: esc(icon.p), trigger: trigger }) +
+      iconMarkup +
       '<span class="card-name">' + highlightName(icon) + '</span>' +
       (hit ? '<span class="card-hit">' + esc(hit) + '</span>' : '') +
       '</button></div>';
@@ -998,7 +1009,9 @@
     if (glassFilter) {
       glassFilter.addEventListener('change', function () {
         var value = glassFilter.value;
+        state.glass = value || '';
         if (value) grid.setAttribute('data-glass', value); else grid.removeAttribute('data-glass');
+        renderWindow(true);
         announce(value ? 'Glass "' + value + '" applied to all icons' : 'Glass off');
       });
     }

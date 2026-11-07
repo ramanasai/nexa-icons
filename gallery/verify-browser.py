@@ -148,11 +148,22 @@ def main() -> int:
             state = page.evaluate("""() => {
                 const grid = document.querySelector('#grid');
                 const card = grid.querySelector('.icon-btn');
-                const cs = getComputedStyle(card);
-                return {attr: grid.getAttribute('data-glass'), bg: cs.backgroundImage, blur: cs.backdropFilter || cs.webkitBackdropFilter};
+                const glyph = grid.querySelector('.glass-glyph');
+                const body = glyph && glyph.querySelector('.glass-body');
+                const gradient = body && body.querySelector('linearGradient');
+                const stop = gradient && gradient.querySelector('stop');
+                return {
+                    attr: grid.getAttribute('data-glass'),
+                    glyph: glyph ? glyph.className : '',
+                    bodies: grid.querySelectorAll('.glass-body').length,
+                    hasGradient: Boolean(gradient),
+                    stop: stop ? getComputedStyle(stop).stopColor : '',
+                    bodyWidth: body ? getComputedStyle(body).strokeWidth : '',
+                };
             }""")
-            check(f"glass preset {preset} applies to every icon card",
-                  state["attr"] == preset and state["bg"] != "none" and state["blur"] not in ("none", ""), state)
+            check(f"glass preset {preset} renders a gradient glass body on every icon",
+                  state["attr"] == preset and state["bodies"] > 0 and f"glass-glyph--{preset}" in state["glyph"]
+                  and state["hasGradient"] and state["stop"] not in ("", "rgba(0, 0, 0, 0)"), state)
         page.select_option("#glass-filter", "")
         page.wait_for_timeout(60)
 
