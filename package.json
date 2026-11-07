@@ -99,7 +99,12 @@
     "verify": "node scripts/verify.mjs",
     "release": "node scripts/generate-all.mjs && npm test && node scripts/verify.mjs",
     "bench:compare": "node bench/compare-lucide.mjs",
-    "prepublishOnly": "npm run release && node gallery/build.mjs && npm pack --dry-run"
+    "prepublishOnly": "npm run release && node gallery/build.mjs && npm pack --dry-run",
+    "design:build": "node design/nexa-2.0/build.mjs",
+    "design:qa": "node design/nexa-2.0/qa.mjs",
+    "design:sheets": "node design/nexa-2.0/full-sheet.mjs",
+    "design:all": "node design/nexa-2.0/build.mjs && node design/nexa-2.0/qa.mjs && node design/nexa-2.0/full-sheet.mjs",
+    "design:snapshots": "python3 design/nexa-2.0/snapshots.py"
   },
   "peerDependencies": {
     "react": ">=18"

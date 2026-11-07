@@ -1,6 +1,6 @@
 # Nexa Icons — QA report
 
-**Release:** v1.0.0 · **Date:** 2026-11-06 · **Scope:** `@sairamanapb/icons` 1,034-icon
+**Release:** v1.1.0 + Nexa 2.0 alpha prototype · **Date:** 2026-11-07 · **Scope:** `@sairamanapb/icons` 1,034-icon
 catalog across React/TypeScript, vanilla JS, HTML, Go, Rust and the Rust GPUI
 adapter.
 
@@ -8,7 +8,7 @@ adapter.
 
 | Gate | Command | Result |
 |---|---|---|
-| Unit/integration suite | `npm test` | **100/100 pass** |
+| Unit/integration suite | `npm test` | **104/104 pass** |
 | Release verification | `node scripts/verify.mjs` | **OK** — all size/asset budgets |
 | Gallery browser checks | `python3 gallery/verify-browser.py` | **106/106 pass** (Chromium) |
 | Cross-browser checks | `python3 gallery/verify-cross-browser.py` | **26/26 pass** (Chromium + WebKit; Firefox launcher unavailable in this environment) |
@@ -16,6 +16,8 @@ adapter.
 | Rust crate | `cd rust && cargo test` | 17 pass |
 | GPUI adapter | `cd rust/gpui && cargo test` | 7 pass + clippy clean |
 | Docs/link checks | `npm test` (docs tests) | pass — 0 broken links |
+| Nexa 2.0 structural QA | `npm run design:qa` | pass — 20 icons × 3 variants |
+| Nexa 2.0 visual bbox snapshots | `npm run design:snapshots` | pass — 60 SVG snapshots, bbox OK |
 
 ## What is covered
 

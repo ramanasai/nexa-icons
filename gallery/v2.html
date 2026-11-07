@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nexa 2.0 Studio prototype</title>
+<style>
+  :root{color-scheme:dark;--bg:#09090b;--surface:#141417;--surface-2:#1c1c21;--text:#f4f4f5;--muted:#a1a1aa;--line:#2b2b32;--accent:#818cf8;--accent-soft:rgba(129,140,248,.16)}
+  *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 ui-sans-serif,system-ui,sans-serif}header{display:flex;align-items:center;gap:16px;padding:16px 22px;border-bottom:1px solid var(--line)}h1{font-size:16px;margin:0;letter-spacing:-.01em}header a{color:var(--muted);text-decoration:none}header a:hover{color:var(--text)}.tag{font-size:11px;color:var(--accent);border:1px solid var(--accent);padding:2px 7px;border-radius:999px}
+  main{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:18px;padding:18px 22px 32px}.panel{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(94px,1fr));gap:8px}.cell{display:grid;place-items:center;gap:7px;padding:14px 6px 10px;border:1px solid var(--line);border-radius:12px;background:var(--surface-2);color:var(--text);cursor:pointer}.cell:hover{border-color:#3f3f46}.cell[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}.cell svg{width:28px;height:28px;color:var(--text)}.cell span{font-size:10px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+  .preview{display:grid;place-items:center;min-height:220px;border:1px dashed var(--line);border-radius:14px;background:radial-gradient(circle at 30% 20%,#1e1b4b,transparent 60%),var(--surface-2);margin-bottom:14px}.preview .art{display:grid;place-items:center}.preview .art svg{width:112px;height:112px}
+  .row{display:grid;grid-template-columns:82px 1fr;align-items:center;gap:10px;margin:10px 0}.row label{font-size:12px;color:var(--muted)}select,input[type=color]{width:100%;padding:7px;border:1px solid var(--line);border-radius:8px;background:var(--surface-2);color:var(--text)}.actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}.actions button{flex:1 1 46%;padding:9px;border:1px solid var(--line);border-radius:9px;background:transparent;color:var(--text);cursor:pointer}.actions button:hover{border-color:var(--accent)}
+  .meta{color:var(--muted);font-size:12px}.variant-note{font-size:11px;color:var(--muted);margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+  @media(max-width:900px){main{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Nexa 2.0 Studio</h1><span class="tag">prototype · 20 icons</span>
+  <a href="./index.html" style="margin-left:auto">← Gallery</a><a href="./studio.html">Full Studio →</a>
+</header>
+<main>
+  <section class="panel" aria-label="Nexa 2.0 icons">
+    <div class="grid" id="grid"></div>
+  </section>
+  <section class="panel" aria-label="2.0 editor">
+    <div class="preview" id="preview" aria-live="polite"></div>
+    <div class="row"><label>Variant</label><select id="variant"><option value="outline">Outline</option><option value="solid">Solid</option><option value="duotone">Duotone</option></select></div>
+    <div class="row"><label>Size</label><select id="size"><option>16</option><option>20</option><option selected>24</option><option>32</option><option>48</option></select></div>
+    <div class="row"><label>Color</label><input id="color" type="color" value="#f4f4f5" /></div>
+    <div class="actions"><button data-export="svg">Export SVG</button><button data-export="png">Export PNG</button><button data-export="jsx">Export JSX</button><button data-export="css">Copy CSS</button></div>
+    <p class="meta" id="status" role="status"></p>
+    <p class="variant-note">Optical size rules live in <code>catalog.mjs</code>. This preview scales the 24px master; use <code>contact-sheet.html</code> for the optical 16/20/32/48 variants.</p>
+  </section>
+</main>
+<script src="./nexa2.data.js"></script>
+<script>
+(function(){
+  var DATA=window.NEXA_V2_DATA; var icons=DATA.icons; var selected=icons[0]; var state={variant:'outline',size:24,color:'#f4f4f5'};
+  var grid=document.getElementById('grid'),preview=document.getElementById('preview'),status=document.getElementById('status');
+  function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+  function svg(){return selected.variants[state.variant].replace('width="24" height="24"','width="'+state.size+'" height="'+state.size+'"').replace('class="nexa-icon"','class="nexa-icon" style="color:'+state.color+'"')}
+  function renderGrid(){grid.innerHTML=icons.map(function(i){return '<button type="button" class="cell" aria-pressed="'+(i===selected)+'" data-k="'+i.kebab+'"><span style="display:contents">'+i.variants.outline.replace('width="24" height="24"','width="26" height="26"')+'</span><span>'+esc(i.name)+'</span></button>'}).join('')}
+  function renderPreview(){preview.innerHTML='<div class="art">'+svg()+'</div>'}
+  grid.addEventListener('click',function(e){var b=e.target.closest('[data-k]');if(!b)return;selected=icons.find(function(i){return i.kebab===b.dataset.k});renderGrid();renderPreview()});
+  document.getElementById('variant').addEventListener('change',function(e){state.variant=e.target.value;renderPreview()});
+  document.getElementById('size').addEventListener('change',function(e){state.size=Number(e.target.value);renderPreview()});
+  document.getElementById('color').addEventListener('input',function(e){state.color=e.target.value;renderPreview()});
+  function download(name,mime,text){var a=document.createElement('a');var url=URL.createObjectURL(new Blob([text],{type:mime}));a.href=url;a.download=name;a.click();setTimeout(function(){URL.revokeObjectURL(url)},1000)}
+  document.querySelectorAll('[data-export]').forEach(function(b){b.addEventListener('click',function(){var t=b.dataset.export;
+    if(t==='svg')download(selected.kebab+'-'+state.variant+'.svg','image/svg+xml',svg());
+    else if(t==='jsx')download(selected.kebab+'-'+state.variant+'.jsx','text/plain','export function '+selected.name+'(props){\n  return (\n    '+svg().replace(/class=/g,'className=')+'\n  );\n}\n');
+    else if(t==='css'){if(navigator.clipboard)navigator.clipboard.writeText('.nexa-icon { color: '+state.color+'; }');status.textContent='CSS copied';}
+    else if(t==='png'){var img=new Image(),blob=new Blob([svg()],{type:'image/svg+xml'}),url=URL.createObjectURL(blob);img.onload=function(){var c=document.createElement('canvas');c.width=c.height=state.size*4;var ctx=c.getContext('2d');ctx.drawImage(img,0,0,c.width,c.height);URL.revokeObjectURL(url);c.toBlob(function(blob){var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=selected.kebab+'-'+state.variant+'.png';a.click()},'image/png')};img.src=url;}
+    if(t!=='css')status.textContent=t.toUpperCase()+' exported';
+  })});
+  renderGrid();renderPreview();
+})();
+</script>
+</body>
+</html>

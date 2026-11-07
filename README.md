@@ -6,7 +6,7 @@
 
 **Published on npm:** [`@sairamanapb/icons`](https://www.npmjs.com/package/@sairamanapb/icons)
 
-**[Open the live icon gallery →](https://ramanasai.github.io/nexa-icons/) · **[Open Nexa Studio →](https://ramanasai.github.io/nexa-icons/studio.html)**** — browse all 1,034 icons, shapes, fills, 3D, glass/gradients, swaps and illustrations, entirely client-side.
+**[Open the live icon gallery →](https://ramanasai.github.io/nexa-icons/)** · **[Open Nexa Studio →](https://ramanasai.github.io/nexa-icons/studio.html)** — browse all 1,034 icons, shapes, fills, 3D, glass/gradients, swaps and illustrations, entirely client-side.
 
 **The Nexa icon system** — one stroke-first visual language for navigation,
 actions, empty states and status, shipped for React/TypeScript, vanilla JS,
@@ -39,6 +39,9 @@ dependencies beyond the optional React peer**.
   `swapSvg` in vanilla JS, pure CSS everywhere.
 - **Illustrated set** — 12 duotone 64×64 illustrations for empty states,
   feature cards and onboarding (`illustrations/`, manifest + preview).
+- **Nexa 2.0 design prototype** — [audit](docs/nexa-2.0-audit.md),
+  [design system](docs/nexa-2.0-design-system.md), 20 redesigned icons with
+  outline/solid/duotone and optical sizes, plus a live [Studio prototype](https://ramanasai.github.io/nexa-icons/v2.html).
 - **Nexa Studio** — a browser editor at `gallery/studio.html` for search, sizing,
   stroke/color, outline/duotone/solid/glass, shapes, motion and SVG/JSX/PNG/CSS
   export.

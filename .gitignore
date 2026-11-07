@@ -55,3 +55,6 @@ review/api/pack/webpack-test/
 
 # generated benchmark output
 bench/comparison.json
+
+# generated visual QA snapshots
+design/nexa-2.0/screenshots/

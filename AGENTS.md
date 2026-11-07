@@ -462,6 +462,8 @@ Full list: [docs/troubleshooting.md](docs/troubleshooting.md).
 | [docs/api.md](docs/api.md) | React/JS/Go/Rust reference incl. shape/fill/3D/swap |
 | [docs/animations.md](docs/animations.md) | presets, triggers, fill/swap/3D motion |
 | [docs/studio.md](docs/studio.md) | Nexa Studio editor + exports |
+| [docs/nexa-2.0-design-system.md](docs/nexa-2.0-design-system.md) | Nexa 2.0 geometry, variants, optical sizing |
+| [docs/nexa-2.0-audit.md](docs/nexa-2.0-audit.md) | visual audit + 20-icon plan |
 | [docs/design.md](docs/design.md) | grid, stroke, states, containers, motion |
 | [docs/theming.md](docs/theming.md) | currentColor, contrast, forced colors |
 | [docs/performance.md](docs/performance.md) | measured sizes/runtime, budgets, no-WASM |

@@ -35,6 +35,7 @@ try{new PerformanceObserver(function(l){l.getEntries().forEach(function(e){windo
       <span class="badge" title="Data + app are local deferred files"><b id="hud-data-hero">…</b> data</span>
       <span class="badge badge-accent" title="Local files only — 0 third-party requests (2 local scripts)"><b>0</b> external</span>
       <a class="badge" href="./studio.html">Studio →</a>
+      <a class="badge" href="./v2.html">2.0 preview →</a>
     </div>
   </div>
 </div>
@@ -98,6 +99,19 @@ try{new PerformanceObserver(function(l){l.getEntries().forEach(function(e){windo
             <option value="jelly">jelly</option>
             <option value="aurora">aurora</option>
           </select>
+        </label>
+        <label class="field" for="bg-filter">
+          <span class="group-label">Preview background</span>
+          <select class="select" id="bg-filter">
+            <option value="neutral">Neutral</option>
+            <option value="paper">Paper</option>
+            <option value="dark">Dark</option>
+            <option value="grid">Grid</option>
+          </select>
+        </label>
+        <label class="field" for="stroke-range">
+          <span class="group-label">Stroke override</span>
+          <input id="stroke-range" type="range" min="1" max="3" step="0.25" value="1.5" aria-label="Stroke override" />
         </label>
         <label class="field" for="preset-filter">
         <span class="group-label">Preset</span>

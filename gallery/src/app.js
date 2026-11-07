@@ -31,6 +31,8 @@
   var gridError = $('#grid-error');
   var search = $('#q');
   var glassFilter = $('#glass-filter');
+  var bgFilter = $('#bg-filter');
+  var strokeRange = $('#stroke-range');
   var clearBtn = $('#clear-search');
   var countEl = $('#result-count');
   var presetFilter = $('#preset-filter');
@@ -1003,6 +1005,18 @@
 
   /* ------------------------------------------------------------- events */
   function bindEvents() {
+    if (bgFilter) {
+      bgFilter.addEventListener('change', function () {
+        grid.setAttribute('data-preview', bgFilter.value);
+        announce('Preview background: ' + bgFilter.value);
+      });
+    }
+    if (strokeRange) {
+      strokeRange.addEventListener('input', function () {
+        grid.style.setProperty('--stroke', strokeRange.value);
+        announce('Stroke override ' + strokeRange.value);
+      });
+    }
     if (glassFilter) {
       glassFilter.addEventListener('change', function () {
         var value = glassFilter.value;
