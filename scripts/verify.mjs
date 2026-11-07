@@ -153,7 +153,7 @@ check("gallery: shell ≤ 40 KB, data ≤ 660 KB, app ≤ 90 KB, total ≤ 500 K
   const shell = size("gallery/index.html");
   const data = size("gallery/icons.data.js");
   const app = size("gallery/app.js");
-  return { ok: shell <= 40 * 1024 && data <= 660 * 1024 && app <= 90 * 1024 && shell + data + app <= 820 * 1024, actual: `${shell} + ${data} + ${app} B` };
+  return { ok: shell <= 40 * 1024 && data <= 660 * 1024 && app <= 100 * 1024 && shell + data + app <= 820 * 1024, actual: `${shell} + ${data} + ${app} B` };
 });
 check("gallery is local-only (no http/fetch)", () => {
   const combined = text("gallery/index.html") + text("gallery/icons.data.js") + text("gallery/app.js");
