@@ -84,7 +84,7 @@ fs.writeFileSync(path.join(OUT, "comparison.html"), page("Nexa 2.0 — old vs ne
 const sheetSections = icons.map((icon) => `<section><h2>${icon.name}</h2><div class="variants">${variants.flatMap((v) => sizes.map((s) => iconCell(icon, v, s))).join("")}</div></section>`).join("\n");
 fs.writeFileSync(path.join(OUT, "contact-sheet.html"), page("Nexa 2.0 — contact sheet", `<header><h1>Nexa 2.0 contact sheet</h1><p>20 representative icons · 3 variants · 5 optical sizes. Validate silhouettes, spacing, and small-size clarity.</p></header>${sheetSections}`));
 
-for (const [src, dst] of [["studio.html", "gallery/v2.html"], ["studio-data.js", "gallery/nexa2.data.js"]]) {
+for (const [src, dst] of [["studio.html", "gallery/v2.html"], ["studio-data.js", "gallery/nexa2.data.js"], ["comparison.html", "gallery/v2-comparison.html"], ["contact-sheet.html", "gallery/v2-contact-sheet.html"], ["catalog-categories.html", "gallery/v2-catalog.html"]]) {
   fs.copyFileSync(path.join(OUT, src), path.join(ROOT, dst));
 }
 console.log(`Nexa 2.0: ${icons.length} icons × 3 variants, ${icons.length * 6} SVG files, sheets written.`);
