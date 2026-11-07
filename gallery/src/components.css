@@ -453,19 +453,58 @@ html[data-theme="dark"] .hud-ok { color: #4ade80; }
 .fx-tile .nexa-icon { color: var(--text); }
 
 
-/* Glass toggle applies a frosted surface to every icon card */
+/* Glass toggle applies the package's seven glass presets to every icon card */
 .grid[data-glass] .icon-btn {
-  border-radius: 13px;
-  backdrop-filter: blur(12px) saturate(150%);
-  -webkit-backdrop-filter: blur(12px) saturate(150%);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 8px 18px -12px rgba(15, 23, 42, 0.35);
+  --card-glass-a: color-mix(in srgb, currentColor 8%, transparent);
+  --card-glass-b: color-mix(in srgb, currentColor 3%, transparent);
+  --card-glass-edge: color-mix(in srgb, currentColor 20%, transparent);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid var(--card-glass-edge);
+  background:
+    radial-gradient(120% 100% at 18% 0%, rgba(255, 255, 255, 0.5), transparent 55%),
+    linear-gradient(135deg, var(--card-glass-a), var(--card-glass-b));
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.65),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.14),
+    0 10px 22px -12px color-mix(in srgb, currentColor 40%, transparent);
 }
-.grid[data-glass="frost"] .icon-btn { background: color-mix(in srgb, currentColor 8%, transparent); border-color: color-mix(in srgb, currentColor 18%, transparent); }
-.grid[data-glass="ice"] .icon-btn { background: color-mix(in srgb, #bfdbfe 32%, transparent); border-color: #bfdbfe; }
-.grid[data-glass="neon"] .icon-btn { background: color-mix(in srgb, #0b1224 72%, transparent); border-color: color-mix(in srgb, #a78bfa 55%, transparent); color: #e9d5ff; }
-.grid[data-glass="jelly"] .icon-btn { background: color-mix(in srgb, #ddd6fe 46%, transparent); border-color: #ede9fe; }
-.grid[data-glass] .card-name { color: inherit; opacity: 0.85; }
-
+.grid[data-glass] .icon-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(118deg, rgba(255, 255, 255, 0.55), transparent 36%, transparent 64%, rgba(255, 255, 255, 0.18));
+  opacity: 0.7;
+  z-index: 0;
+}
+.grid[data-glass] .icon-btn > * { position: relative; z-index: 1; }
+.grid[data-glass="frost"] .icon-btn { --card-glass-a: color-mix(in srgb, currentColor 10%, transparent); --card-glass-b: color-mix(in srgb, currentColor 4%, transparent); }
+.grid[data-glass="ice"] .icon-btn { --card-glass-a: rgba(191, 219, 254, 0.52); --card-glass-b: rgba(96, 165, 250, 0.32); --card-glass-edge: rgba(191, 219, 254, 0.62); }
+.grid[data-glass="clear"] .icon-btn { --card-glass-a: color-mix(in srgb, currentColor 5%, transparent); --card-glass-b: color-mix(in srgb, currentColor 2%, transparent); --card-glass-edge: color-mix(in srgb, currentColor 14%, transparent); backdrop-filter: blur(8px) saturate(130%); }
+.grid[data-glass="steel"] .icon-btn { --card-glass-a: rgba(148, 163, 184, 0.42); --card-glass-b: rgba(51, 65, 85, 0.24); --card-glass-edge: rgba(203, 213, 225, 0.5); }
+.grid[data-glass="neon"] .icon-btn {
+  --card-glass-a: rgba(11, 18, 36, 0.8); --card-glass-b: rgba(26, 35, 64, 0.62);
+  --card-glass-edge: rgba(167, 139, 250, 0.62);
+  color: #e9d5ff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 0 22px -10px rgba(167, 139, 250, 0.8), 0 10px 22px -12px rgba(0, 0, 0, 0.7);
+}
+.grid[data-glass="neon"] .icon-btn::before { opacity: 0.35; }
+.grid[data-glass="jelly"] .icon-btn {
+  --card-glass-a: rgba(221, 214, 254, 0.62); --card-glass-b: rgba(167, 139, 250, 0.3);
+  --card-glass-edge: rgba(245, 243, 255, 0.7);
+  box-shadow: inset 0 2px 1px rgba(255, 255, 255, 0.9), inset 0 -3px 6px rgba(124, 58, 237, 0.2), 0 12px 24px -14px rgba(139, 92, 246, 0.65);
+}
+.grid[data-glass="aurora"] .icon-btn {
+  --card-glass-a: rgba(167, 139, 250, 0.4); --card-glass-b: rgba(34, 211, 238, 0.26);
+  --card-glass-edge: rgba(34, 211, 238, 0.5);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 10px 24px -12px rgba(34, 211, 238, 0.45);
+}
+.grid[data-glass] .card-name { color: inherit; opacity: 0.88; }
 
 /* keep illustration cards compact */
 .ill-card .ill-desc, .ill-card p { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }

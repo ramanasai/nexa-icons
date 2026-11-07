@@ -8,9 +8,9 @@ adapter.
 
 | Gate | Command | Result |
 |---|---|---|
-| Unit/integration suite | `npm test` | **96/96 pass** |
+| Unit/integration suite | `npm test` | **100/100 pass** |
 | Release verification | `node scripts/verify.mjs` | **OK** — all size/asset budgets |
-| Gallery browser checks | `python3 gallery/verify-browser.py` | **98/98 pass** (Chromium) |
+| Gallery browser checks | `python3 gallery/verify-browser.py` | **106/106 pass** (Chromium) |
 | Cross-browser checks | `python3 gallery/verify-cross-browser.py` | **26/26 pass** (Chromium + WebKit; Firefox launcher unavailable in this environment) |
 | Go module | `cd go && go test ./...` | pass (1,034 icons) |
 | Rust crate | `cd rust && cargo test` | 17 pass |

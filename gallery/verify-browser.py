@@ -139,6 +139,23 @@ def main() -> int:
           marks: document.querySelectorAll('#grid .card-name mark').length,
           url: location.search
         })""")
+        glass_options = page.eval_on_selector_all("#glass-filter option", "els => els.map(e => e.value)")
+        check("glass — all icons exposes off + 7 presets",
+              glass_options == ["", "frost", "ice", "clear", "steel", "neon", "jelly", "aurora"], glass_options)
+        for preset in ["frost", "ice", "clear", "steel", "neon", "jelly", "aurora"]:
+            page.select_option("#glass-filter", preset)
+            page.wait_for_timeout(60)
+            state = page.evaluate("""() => {
+                const grid = document.querySelector('#grid');
+                const card = grid.querySelector('.icon-btn');
+                const cs = getComputedStyle(card);
+                return {attr: grid.getAttribute('data-glass'), bg: cs.backgroundImage, blur: cs.backdropFilter || cs.webkitBackdropFilter};
+            }""")
+            check(f"glass preset {preset} applies to every icon card",
+                  state["attr"] == preset and state["bg"] != "none" and state["blur"] not in ("none", ""), state)
+        page.select_option("#glass-filter", "")
+        page.wait_for_timeout(60)
+
         check("search filters over the full 650-icon dataset", 1 <= search["cards"] <= 40, search["cards"])
         check("search bar shows a single clear affordance (native clear suppressed)",
               "::-webkit-search-cancel-button" in page.evaluate("() => Array.from(document.styleSheets).map(s => { try { return Array.from(s.cssRules).map(r => r.cssText).join(''); } catch { return ''; } }).join('')"),
