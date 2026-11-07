@@ -29,5 +29,5 @@ const Waypoints = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "pulse",
   trigger: "hover",
-  nodes: [["path", { d: "m10.586 5.414-5.172 5.172" }], ["path", { d: "m18.586 13.414-5.172 5.172" }], ["path", { d: "M6 12h12" }], ["circle", { cx: "12", cy: "20", r: "2" }], ["circle", { cx: "12", cy: "4", r: "2" }], ["circle", { cx: "20", cy: "12", r: "2" }], ["circle", { cx: "4", cy: "12", r: "2" }]]
+  nodes: [["path", { d: "m10.586 5.414-5.172 5.172", pathLength: "1" }], ["path", { d: "m18.586 13.414-5.172 5.172", pathLength: "1" }], ["path", { d: "M6 12h12", pathLength: "1" }], ["circle", { cx: "12", cy: "20", r: "2" }], ["circle", { cx: "12", cy: "4", r: "2" }], ["circle", { cx: "20", cy: "12", r: "2" }], ["circle", { cx: "4", cy: "12", r: "2" }]]
 });

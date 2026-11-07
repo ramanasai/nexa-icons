@@ -8,5 +8,5 @@ export const CheckCircle = /*#__PURE__*/ createIcon({
   fillUnsafe: false,
   preset: "pop",
   trigger: "hover",
-  nodes: [["path",{d:"M21.801 10A10 10 0 1 1 17 3.335"}],["path",{d:"m9 11 3 3L22 4"}]],
+  nodes: [["path",{d:"M21.801 10A10 10 0 1 1 17 3.335",pathLength:"1"}],["path",{d:"m9 11 3 3L22 4",pathLength:"1"}]],
 });

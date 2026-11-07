@@ -6,7 +6,7 @@ const CloudLightning = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "float",
   trigger: "hover",
-  nodes: [["path", { d: "M6 16.326A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 .5 8.973" }], ["path", { d: "m13 12-3 5h4l-3 5" }]]
+  nodes: [["path", { d: "M6 16.326A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 .5 8.973", pathLength: "1" }], ["path", { d: "m13 12-3 5h4l-3 5", pathLength: "1" }]]
 });
 export {
   CloudLightning

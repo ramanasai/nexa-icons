@@ -6,7 +6,7 @@ const Disc2 = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "bounce",
   trigger: "hover",
-  nodes: [["circle", { cx: "12", cy: "12", r: "10" }], ["circle", { cx: "12", cy: "12", r: "4" }], ["path", { d: "M12 12h.01" }]]
+  nodes: [["circle", { cx: "12", cy: "12", r: "10" }], ["circle", { cx: "12", cy: "12", r: "4" }], ["path", { d: "M12 12h.01", pathLength: "1" }]]
 });
 export {
   Disc2

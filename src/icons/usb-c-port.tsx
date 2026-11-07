@@ -8,5 +8,5 @@ export const UsbCPort = /*#__PURE__*/ createIcon({
   fillUnsafe: false,
   preset: "pulse",
   trigger: "hover",
-  nodes: [["path",{d:"M6 12h12"}],["rect",{x:"2",y:"8",width:"20",height:"8",rx:"4"}]],
+  nodes: [["path",{d:"M6 12h12",pathLength:"1"}],["rect",{x:"2",y:"8",width:"20",height:"8",rx:"4"}]],
 });

@@ -6,7 +6,7 @@ const Baseline = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
-  nodes: [["path", { d: "M4 20h16" }], ["path", { d: "m6 16 6-12 6 12" }], ["path", { d: "M8 12h8" }]]
+  nodes: [["path", { d: "M4 20h16", pathLength: "1" }], ["path", { d: "m6 16 6-12 6 12", pathLength: "1" }], ["path", { d: "M8 12h8", pathLength: "1" }]]
 });
 export {
   Baseline

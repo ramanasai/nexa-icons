@@ -6,7 +6,7 @@ const Globe = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "pulse",
   trigger: "hover",
-  nodes: [["circle", { cx: "12", cy: "12", r: "10" }], ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" }], ["path", { d: "M2 12h20" }]]
+  nodes: [["circle", { cx: "12", cy: "12", r: "10" }], ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", pathLength: "1" }], ["path", { d: "M2 12h20", pathLength: "1" }]]
 });
 export {
   Globe

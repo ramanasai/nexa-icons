@@ -8,5 +8,5 @@ export const ChevronLeft = /*#__PURE__*/ createIcon({
   fillUnsafe: false,
   preset: "nudge-left",
   trigger: "hover",
-  nodes: [["path",{d:"m15 18-6-6 6-6"}]],
+  nodes: [["path",{d:"m15 18-6-6 6-6",pathLength:"1"}]],
 });

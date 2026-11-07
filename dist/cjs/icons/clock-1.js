@@ -29,5 +29,5 @@ const Clock1 = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
-  nodes: [["circle", { cx: "12", cy: "12", r: "10" }], ["path", { d: "M12 6v6l2-4" }]]
+  nodes: [["circle", { cx: "12", cy: "12", r: "10" }], ["path", { d: "M12 6v6l2-4", pathLength: "1" }]]
 });

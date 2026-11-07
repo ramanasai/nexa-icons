@@ -29,5 +29,5 @@ const ChevronDown = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "nudge-down",
   trigger: "hover",
-  nodes: [["path", { d: "m6 9 6 6 6-6" }]]
+  nodes: [["path", { d: "m6 9 6 6 6-6", pathLength: "1" }]]
 });

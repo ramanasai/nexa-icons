@@ -6,7 +6,7 @@ const Power = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "pulse",
   trigger: "hover",
-  nodes: [["path", { d: "M12 2v10" }], ["path", { d: "M18.4 6.6a9 9 0 1 1-12.77.04" }]]
+  nodes: [["path", { d: "M12 2v10", pathLength: "1" }], ["path", { d: "M18.4 6.6a9 9 0 1 1-12.77.04", pathLength: "1" }]]
 });
 export {
   Power

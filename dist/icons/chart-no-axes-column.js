@@ -6,7 +6,7 @@ const BarChart2 = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "pulse",
   trigger: "hover",
-  nodes: [["path", { d: "M5 21v-6" }], ["path", { d: "M12 21V3" }], ["path", { d: "M19 21V9" }]]
+  nodes: [["path", { d: "M5 21v-6", pathLength: "1" }], ["path", { d: "M12 21V3", pathLength: "1" }], ["path", { d: "M19 21V9", pathLength: "1" }]]
 });
 export {
   BarChart2

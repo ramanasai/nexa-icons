@@ -8,5 +8,5 @@ export const ChartNoAxesGantt = /*#__PURE__*/ createIcon({
   fillUnsafe: false,
   preset: "pulse",
   trigger: "hover",
-  nodes: [["path",{d:"M6 5h12"}],["path",{d:"M4 12h10"}],["path",{d:"M12 19h8"}]],
+  nodes: [["path",{d:"M6 5h12",pathLength:"1"}],["path",{d:"M4 12h10",pathLength:"1"}],["path",{d:"M12 19h8",pathLength:"1"}]],
 });

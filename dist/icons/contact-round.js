@@ -6,7 +6,7 @@ const ContactRound = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
-  nodes: [["path", { d: "M16 2v2" }], ["path", { d: "M17.915 21a6 6 0 10-12 0" }], ["path", { d: "M8 2v2" }], ["circle", { cx: "12", cy: "11", r: "4" }], ["rect", { x: "3", y: "3", width: "18", height: "18", rx: "2" }]]
+  nodes: [["path", { d: "M16 2v2", pathLength: "1" }], ["path", { d: "M17.915 21a6 6 0 10-12 0", pathLength: "1" }], ["path", { d: "M8 2v2", pathLength: "1" }], ["circle", { cx: "12", cy: "11", r: "4" }], ["rect", { x: "3", y: "3", width: "18", height: "18", rx: "2" }]]
 });
 export {
   ContactRound

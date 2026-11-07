@@ -29,5 +29,5 @@ const ChevronsLeftRight = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "nudge-right",
   trigger: "hover",
-  nodes: [["path", { d: "m9 7-5 5 5 5" }], ["path", { d: "m15 7 5 5-5 5" }]]
+  nodes: [["path", { d: "m9 7-5 5 5 5", pathLength: "1" }], ["path", { d: "m15 7 5 5-5 5", pathLength: "1" }]]
 });

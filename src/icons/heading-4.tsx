@@ -8,5 +8,5 @@ export const Heading4 = /*#__PURE__*/ createIcon({
   fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
-  nodes: [["path",{d:"M12 18V6"}],["path",{d:"M17 10v3a1 1 0 0 0 1 1h3"}],["path",{d:"M21 10v8"}],["path",{d:"M4 12h8"}],["path",{d:"M4 18V6"}]],
+  nodes: [["path",{d:"M12 18V6",pathLength:"1"}],["path",{d:"M17 10v3a1 1 0 0 0 1 1h3",pathLength:"1"}],["path",{d:"M21 10v8",pathLength:"1"}],["path",{d:"M4 12h8",pathLength:"1"}],["path",{d:"M4 18V6",pathLength:"1"}]],
 });

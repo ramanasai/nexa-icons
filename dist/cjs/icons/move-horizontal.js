@@ -29,5 +29,5 @@ const MoveHorizontal = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "flip",
   trigger: "hover",
-  nodes: [["path", { d: "m18 8 4 4-4 4" }], ["path", { d: "M2 12h20" }], ["path", { d: "m6 8-4 4 4 4" }]]
+  nodes: [["path", { d: "m18 8 4 4-4 4", pathLength: "1" }], ["path", { d: "M2 12h20", pathLength: "1" }], ["path", { d: "m6 8-4 4 4 4", pathLength: "1" }]]
 });

@@ -6,7 +6,7 @@ const ChevronLast = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "nudge-up",
   trigger: "hover",
-  nodes: [["path", { d: "m7 18 6-6-6-6" }], ["path", { d: "M17 6v12" }]]
+  nodes: [["path", { d: "m7 18 6-6-6-6", pathLength: "1" }], ["path", { d: "M17 6v12", pathLength: "1" }]]
 });
 export {
   ChevronLast

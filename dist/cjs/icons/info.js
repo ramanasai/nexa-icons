@@ -29,5 +29,5 @@ const Info = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "pulse",
   trigger: "hover",
-  nodes: [["circle", { cx: "12", cy: "12", r: "10" }], ["path", { d: "M12 16v-4" }], ["path", { d: "M12 8h.01" }]]
+  nodes: [["circle", { cx: "12", cy: "12", r: "10" }], ["path", { d: "M12 16v-4", pathLength: "1" }], ["path", { d: "M12 8h.01", pathLength: "1" }]]
 });

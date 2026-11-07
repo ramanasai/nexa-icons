@@ -8,5 +8,5 @@ export const Pilcrow = /*#__PURE__*/ createIcon({
   fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
-  nodes: [["path",{d:"M13 4v16"}],["path",{d:"M17 4v16"}],["path",{d:"M19 4H9.5a4.5 4.5 0 0 0 0 9H13"}]],
+  nodes: [["path",{d:"M13 4v16",pathLength:"1"}],["path",{d:"M17 4v16",pathLength:"1"}],["path",{d:"M19 4H9.5a4.5 4.5 0 0 0 0 9H13",pathLength:"1"}]],
 });

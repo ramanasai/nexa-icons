@@ -29,5 +29,5 @@ const Tv = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "pulse",
   trigger: "hover",
-  nodes: [["path", { d: "m17 2-5 5-5-5" }], ["rect", { width: "20", height: "15", x: "2", y: "7", rx: "2" }]]
+  nodes: [["path", { d: "m17 2-5 5-5-5", pathLength: "1" }], ["rect", { width: "20", height: "15", x: "2", y: "7", rx: "2" }]]
 });

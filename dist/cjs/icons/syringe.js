@@ -29,5 +29,5 @@ const Syringe = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "pulse",
   trigger: "hover",
-  nodes: [["path", { d: "m18 2 4 4" }], ["path", { d: "m17 7 3-3" }], ["path", { d: "M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5" }], ["path", { d: "m9 11 4 4" }], ["path", { d: "m5 19-3 3" }], ["path", { d: "m14 4 6 6" }]]
+  nodes: [["path", { d: "m18 2 4 4", pathLength: "1" }], ["path", { d: "m17 7 3-3", pathLength: "1" }], ["path", { d: "M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5", pathLength: "1" }], ["path", { d: "m9 11 4 4", pathLength: "1" }], ["path", { d: "m5 19-3 3", pathLength: "1" }], ["path", { d: "m14 4 6 6", pathLength: "1" }]]
 });

@@ -6,7 +6,7 @@ const ArrowDown = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "nudge-down",
   trigger: "hover",
-  nodes: [["path", { d: "M12 5v14" }], ["path", { d: "m19 12-7 7-7-7" }]]
+  nodes: [["path", { d: "M12 5v14", pathLength: "1" }], ["path", { d: "m19 12-7 7-7-7", pathLength: "1" }]]
 });
 export {
   ArrowDown

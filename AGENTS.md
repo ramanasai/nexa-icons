@@ -225,7 +225,10 @@ svg("Bell", { filled: "soft", animateFill: true });
 - Only **closed-geometry** icons (`fillSafe` in `data/icons.json`) fill cleanly.
   `solid` on an open glyph automatically degrades to `duotone`, so it never
   produces a broken shape.
-- Fill only targets **closed nodes** (`data-closed="true"`), so open paths
+- Duotone opacity is configurable with `fillOpacity={0..1}` (`--nexa-fill-opacity`).
+  Solid on open geometry renders a thick `nexa-icon-body` fallback, so the solid
+  variant is consistent; `fillUnsafe` detail icons (Palette, KeyRound) stay
+  unfilled. Fill only targets **closed nodes** (`data-closed="true"`), so open paths
   (checks, chevrons, arrows) never get stray fill marks. The SVG carries
   `data-fill-state="true|soft"`, `data-fill-safe="true|false"` and
   `data-fill-anim="true"` when animated; `solid` on a non-fill-safe icon degrades
@@ -259,11 +262,14 @@ on the frame).
 
 ## 7. Animation presets and triggers
 
-17 semantic presets + `fade-in`; CSS-only `transform`/`opacity`:
+22 presets (17 semantic + `draw`, `spring`, `success`, `error`, `progress`) + `fade-in`; CSS-only:
 
 `spin`, `pulse`, `ring`, `shake`, `wiggle`, `flip`, `bounce`, `float`, `tilt`,
 `heartbeat`, `pop`, `nudge-up`, `nudge-up-right`, `nudge-right`,
-`nudge-down-right`, `nudge-down`, `nudge-left`, and `fade-in`.
+`nudge-down-right`, `nudge-down`, `nudge-left`, `draw`, `spring`, `success`,
+`error`, `progress`, and `fade-in`. Draw/progress animate `path` strokes
+(`stroke-dashoffset`), so they are the only non-compositor presets; reduced
+motion disables them too.
 
 Triggers: `hover` (default; includes keyboard `:focus-visible` and parent
 button/link focus), `parent` (plays when the nearest `<a>`, `<button>` or
@@ -404,13 +410,13 @@ Measured baseline for the **1,034-icon catalog**:
 
 | Asset | Budget | Current |
 |---|---|---|
-| One tree-shaken React icon (incl. shape/fill/3D) | < 2 KB brotli | ~1,834 B brotli |
-| 8 tree-shaken icons | — | ~2,308 B brotli |
+| One tree-shaken React icon (incl. shape/fill/3D) | < 2.6 KB brotli | ~2,096 B brotli |
+| 8 tree-shaken icons | — | ~2,600 B brotli |
 | 13 tree-shaken icons (typical authenticated page) | — | ~2,368 B brotli (≈182 B/icon average) |
-| Full sprite, 1,034 icons | — | 441,995 B raw / 45,290 B brotli |
-| `animations.css` (incl. shape/fill/3D/swap) | ≤ 18 KB raw / ≤ 4 KB brotli | 17,301 B / 3,558 B |
-| React barrel / JS ESM | — | barrel 68,230 B raw / 11,953 B br; JS ESM 486,713 B raw / 62,895 B br |
-| Gallery (shell-first) | 0 ms gallery JS before first paint (observer only); FP/FCP ~44 ms browser floor | 30,409 B shell + 550,468 B data + 88,175 B app; ~136-card virtual window, 976 DOM nodes |
+| Full sprite, 1,034 icons | — | 496,505 B raw / 45,723 B brotli |
+| `animations.css` (incl. shape/fill/3D/swap) | ≤ 18 KB raw / ≤ 4 KB brotli | 18,929 B / 3,835 B |
+| React barrel / JS ESM | — | barrel 68,230 B raw / 11,953 B br; JS ESM 549,204 B raw / 63,536 B br |
+| Gallery (shell-first) | 0 ms gallery JS before first paint (observer only); FP/FCP ~44 ms browser floor | 30,461 B shell + 612,246 B data + 89,584 B app; ~136-card virtual window, 976 DOM nodes |
 
 Why it is fast: static precomputed node/string data, per-icon tree-shakeable
 modules, one cached sprite request, CSS-only animation/fill/swap/3D, no runtime
@@ -455,6 +461,7 @@ Full list: [docs/troubleshooting.md](docs/troubleshooting.md).
 | [llms.txt](llms.txt) | compact LLM/agent summary (also served at the gallery root) |
 | [docs/api.md](docs/api.md) | React/JS/Go/Rust reference incl. shape/fill/3D/swap |
 | [docs/animations.md](docs/animations.md) | presets, triggers, fill/swap/3D motion |
+| [docs/studio.md](docs/studio.md) | Nexa Studio editor + exports |
 | [docs/design.md](docs/design.md) | grid, stroke, states, containers, motion |
 | [docs/theming.md](docs/theming.md) | currentColor, contrast, forced colors |
 | [docs/performance.md](docs/performance.md) | measured sizes/runtime, budgets, no-WASM |

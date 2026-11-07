@@ -6,7 +6,7 @@ const Rows2 = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
-  nodes: [["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2" }], ["path", { d: "M3 12h18" }]]
+  nodes: [["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2" }], ["path", { d: "M3 12h18", pathLength: "1" }]]
 });
 export {
   Rows2

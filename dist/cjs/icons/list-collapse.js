@@ -29,5 +29,5 @@ const ListCollapse = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
-  nodes: [["path", { d: "M10 5h11" }], ["path", { d: "M10 12h11" }], ["path", { d: "M10 19h11" }], ["path", { d: "m3 10 3-3-3-3" }], ["path", { d: "m3 20 3-3-3-3" }]]
+  nodes: [["path", { d: "M10 5h11", pathLength: "1" }], ["path", { d: "M10 12h11", pathLength: "1" }], ["path", { d: "M10 19h11", pathLength: "1" }], ["path", { d: "m3 10 3-3-3-3", pathLength: "1" }], ["path", { d: "m3 20 3-3-3-3", pathLength: "1" }]]
 });

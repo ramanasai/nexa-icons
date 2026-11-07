@@ -43,6 +43,11 @@ export const PRESETS = [
   "nudge-right",
   "nudge-up-right",
   "nudge-down-right",
+  "draw",
+  "spring",
+  "success",
+  "error",
+  "progress",
 ] as const satisfies readonly NexaPreset[];
 
 /**
@@ -84,6 +89,9 @@ export function createIcon(data: NexaIconData): NexaIconComponent {
       size,
       strokeWidth,
       absoluteStrokeWidth,
+      weight,
+      edges,
+      fillOpacity,
       color,
       width,
       height,
@@ -121,8 +129,11 @@ export function createIcon(data: NexaIconData): NexaIconComponent {
 
     const explicitSize = size !== undefined;
     const px = typeof size === "number" ? size : size ? SIZE_PX[size] : 24;
-    const baseStroke = strokeWidth ?? (explicitSize ? strokeForSize(px) : 2);
-    const stroke = absoluteStrokeWidth ? (strokeWidth ?? 2) * (24 / px) : baseStroke;
+    const opticalBase = explicitSize ? strokeForSize(px) : 2;
+    const weightFactor = weight === "light" ? 0.8 : weight === "bold" ? 1.35 : 1;
+    const round3 = (value: number) => Math.round(value * 1000) / 1000;
+    const baseStroke = round3(strokeWidth ?? opticalBase * weightFactor);
+    const stroke = round3(absoluteStrokeWidth ? (strokeWidth ?? opticalBase) * (24 / px) : baseStroke);
     const preset = resolvePreset(animate, data.preset);
     const accessibleLabel = label ?? title ?? ariaLabelProp;
     const labelled = accessibleLabel != null || ariaLabelledByProp != null;
@@ -159,6 +170,7 @@ export function createIcon(data: NexaIconData): NexaIconComponent {
       svgStyle.strokeWidth = `var(--nexa-stroke, ${baseStroke})`;
     }
     if (color) svgStyle.color = color;
+    if (fillOpacity != null) (svgStyle as Record<string, string | number>)["--nexa-fill-opacity"] = String(fillOpacity);
     if (gradientPreset) svgStyle.stroke = `url(#nexa-g${reactId.replace(/[^a-zA-Z0-9_-]/g, "")})`;
     const glassStyle = glassConfig
       ? ({
@@ -186,8 +198,8 @@ export function createIcon(data: NexaIconData): NexaIconComponent {
       fill: "none",
       stroke: hasGradient ? `url(#${gradientId})` : "currentColor",
       strokeWidth: stroke,
-      strokeLinecap: "round",
-      strokeLinejoin: "round",
+      strokeLinecap: edges === "sharp" ? "butt" : "round",
+      strokeLinejoin: edges === "sharp" ? "miter" : "round",
       className: ["nexa-icon", hasGradient ? `nexa-grad--${gradientPreset}` : "", className]
         .filter(Boolean)
         .join(" "),
@@ -199,8 +211,21 @@ export function createIcon(data: NexaIconData): NexaIconComponent {
       focusable: "false",
       "data-nexa-icon": data.kebab,
       "data-nexa-fill-safe": fillSafe ? "true" : "false",
+      "data-nexa-size": explicitSize ? px : undefined,
       style: Object.keys(svgStyle).length ? svgStyle : undefined,
-      "data-fill-state": fillExplicit ? (resolvedFill === "outline" ? "false" : fillSafe ? fillState : "soft") : undefined,
+      "data-fill-state": fillExplicit
+        ? resolvedFill === "outline"
+          ? "false"
+          : resolvedFill === "solid" && data.fillUnsafe === true
+            ? "false"
+            : resolvedFill === "solid" && !fillSafe
+              ? "true"
+              : fillSafe
+                ? fillState
+                : "soft"
+        : undefined,
+      "data-fill-fallback":
+        resolvedFill === "solid" && !fillSafe && data.fillUnsafe !== true ? "body" : undefined,
       "data-fill-anim": animateFill ? "true" : undefined,
       "data-nexa-gradient-anim": hasGradient && gradientAnim ? gradientAnim : undefined,
       "data-nexa-anim": preset,
@@ -242,12 +267,13 @@ export function createIcon(data: NexaIconData): NexaIconComponent {
       return { tag, attrs: { ...attrs, "data-closed": closed ? "true" : "false" } };
     });
     const bodyLayer =
-      glassBody && hasGlass
+      (glassBody && hasGlass) || (resolvedFill === "solid" && !fillSafe && data.fillUnsafe !== true)
         ? h(
             "g",
             {
               key: "__body",
               className: "nexa-icon-body",
+              "data-nexa-fill-fallback": "body",
               fill: "none",
               stroke: strokePaint,
               strokeWidth: Math.max(5, stroke * 3.2),

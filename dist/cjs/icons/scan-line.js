@@ -29,5 +29,5 @@ const ScanLine = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "pop",
   trigger: "hover",
-  nodes: [["path", { d: "M3 7V5a2 2 0 0 1 2-2h2" }], ["path", { d: "M17 3h2a2 2 0 0 1 2 2v2" }], ["path", { d: "M21 17v2a2 2 0 0 1-2 2h-2" }], ["path", { d: "M7 21H5a2 2 0 0 1-2-2v-2" }], ["path", { d: "M7 12h10" }]]
+  nodes: [["path", { d: "M3 7V5a2 2 0 0 1 2-2h2", pathLength: "1" }], ["path", { d: "M17 3h2a2 2 0 0 1 2 2v2", pathLength: "1" }], ["path", { d: "M21 17v2a2 2 0 0 1-2 2h-2", pathLength: "1" }], ["path", { d: "M7 21H5a2 2 0 0 1-2-2v-2", pathLength: "1" }], ["path", { d: "M7 12h10", pathLength: "1" }]]
 });

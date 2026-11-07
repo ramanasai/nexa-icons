@@ -29,5 +29,5 @@ const SquareDashedXCorner = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "pulse",
   trigger: "hover",
-  nodes: [["path", { d: "M14 3h1" }], ["path", { d: "m16 16 5 5" }], ["path", { d: "M19 3a2 2 0 012 2" }], ["path", { d: "m21 16-5 5" }], ["path", { d: "M21 9v1" }], ["path", { d: "M3 14v1" }], ["path", { d: "M3 9v1" }], ["path", { d: "M5 21a2 2 0 01-2-2" }], ["path", { d: "M5 3a2 2 0 00-2 2" }], ["path", { d: "M9 21h1" }], ["path", { d: "M9 3h1" }]]
+  nodes: [["path", { d: "M14 3h1", pathLength: "1" }], ["path", { d: "m16 16 5 5", pathLength: "1" }], ["path", { d: "M19 3a2 2 0 012 2", pathLength: "1" }], ["path", { d: "m21 16-5 5", pathLength: "1" }], ["path", { d: "M21 9v1", pathLength: "1" }], ["path", { d: "M3 14v1", pathLength: "1" }], ["path", { d: "M3 9v1", pathLength: "1" }], ["path", { d: "M5 21a2 2 0 01-2-2", pathLength: "1" }], ["path", { d: "M5 3a2 2 0 00-2 2", pathLength: "1" }], ["path", { d: "M9 21h1", pathLength: "1" }], ["path", { d: "M9 3h1", pathLength: "1" }]]
 });

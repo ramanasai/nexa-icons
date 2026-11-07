@@ -6,7 +6,7 @@ const Grid3x3 = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "pop",
   trigger: "hover",
-  nodes: [["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2" }], ["path", { d: "M3 9h18" }], ["path", { d: "M3 15h18" }], ["path", { d: "M9 3v18" }], ["path", { d: "M15 3v18" }]]
+  nodes: [["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2" }], ["path", { d: "M3 9h18", pathLength: "1" }], ["path", { d: "M3 15h18", pathLength: "1" }], ["path", { d: "M9 3v18", pathLength: "1" }], ["path", { d: "M15 3v18", pathLength: "1" }]]
 });
 export {
   Grid3x3

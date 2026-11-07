@@ -8,5 +8,5 @@ export const Terminal = /*#__PURE__*/ createIcon({
   fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
-  nodes: [["path",{d:"M12 19h8"}],["path",{d:"m4 17 6-6-6-6"}]],
+  nodes: [["path",{d:"M12 19h8",pathLength:"1"}],["path",{d:"m4 17 6-6-6-6",pathLength:"1"}]],
 });

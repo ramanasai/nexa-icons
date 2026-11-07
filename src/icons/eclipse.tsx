@@ -8,5 +8,5 @@ export const Eclipse = /*#__PURE__*/ createIcon({
   fillUnsafe: false,
   preset: "float",
   trigger: "hover",
-  nodes: [["circle",{cx:"12",cy:"12",r:"10"}],["path",{d:"M12 2a7 7 0 1 0 10 10"}]],
+  nodes: [["circle",{cx:"12",cy:"12",r:"10"}],["path",{d:"M12 2a7 7 0 1 0 10 10",pathLength:"1"}]],
 });

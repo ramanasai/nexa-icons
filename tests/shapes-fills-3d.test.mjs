@@ -47,18 +47,20 @@ test("fill variants: outline default, duotone/solid state, fillSafe degradation,
   for (const filled of [true, "soft", false]) {
     const html = ssr(dist.Bell, { filled });
     if (filled === false) assert.match(html, /data-fill-state="false"/, "filled=false pins outline");
-    else assert.match(html, /data-fill-state="soft"/, `open glyph filled=${filled} must degrade to duotone`);
+    else if (filled === "soft") assert.match(html, /data-fill-state="soft"/, "soft is duotone");
+    else assert.match(html, /data-fill-state="true"[^>]*data-fill-fallback="body"/, "solid uses body fallback");
   }
   for (const variant of FILL_VARIANTS) {
     const html = ssr(dist.Bell, { variant });
     if (variant === "outline") assert.match(html, /data-fill-state="false"/);
-    else assert.match(html, /data-fill-state="soft"/, `variant ${variant} on open glyph`);
+    else if (variant === "duotone") assert.match(html, /data-fill-state="soft"/);
+    else assert.match(html, /data-fill-state="true"[^>]*data-fill-fallback="body"/);
   }
   // Closed geometry (fillSafe) fills solid; open geometry never does.
   const safe = [...FILL_SAFE][0];
   assert.match(ssr(dist[safe], { filled: true }), /data-fill-state="true"/, `${safe} is fillSafe`);
   assert.match(ssr(dist[safe], { variant: "solid" }), /data-fill-state="true"/);
-  assert.match(ssr(dist.Bell, { variant: "solid" }), /data-fill-state="soft"/, "solid degrades on open glyph");
+  assert.match(ssr(dist.Bell, { variant: "solid" }), /data-fill-state="true"[^>]*data-fill-fallback="body"/, "solid uses body fallback");
   const animated = ssr(dist.Heart, { filled: true, animateFill: true });
   assert.match(animated, /data-fill-anim="true"/);
   assert.match(ssr(dist.Heart, { filled: true }), /data-fill-state="true"/);
@@ -107,7 +109,7 @@ test("JS API matches React for shapes, fill and 3D", () => {
     assert.match(react, new RegExp(`nexa-shape--${shape}`));
   }
   assert.match(js.svg("Circle", { filled: true }), /data-fill-state="true"/);
-  assert.match(js.svg("Bell", { filled: true }), /data-fill-state="soft"/);
+  assert.match(js.svg("Bell", { filled: true }), /data-fill-state="true"[^>]*data-fill-fallback="body"/);
   for (const preset of THREE_D) {
     assert.match(js.svg("Bell", { threeD: preset }), new RegExp(`data-nexa-3d="${preset}"`));
   }

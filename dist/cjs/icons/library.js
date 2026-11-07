@@ -29,5 +29,5 @@ const Library = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "pop",
   trigger: "hover",
-  nodes: [["path", { d: "m16 6 4 14" }], ["path", { d: "M12 6v14" }], ["path", { d: "M8 8v12" }], ["path", { d: "M4 4v16" }]]
+  nodes: [["path", { d: "m16 6 4 14", pathLength: "1" }], ["path", { d: "M12 6v14", pathLength: "1" }], ["path", { d: "M8 8v12", pathLength: "1" }], ["path", { d: "M4 4v16", pathLength: "1" }]]
 });

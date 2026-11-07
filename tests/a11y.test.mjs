@@ -19,10 +19,10 @@ test("animation layer ships all 17 presets plus fade-in", () => {
   assert.ok(keyframes.size >= 18);
 });
 
-test("keyframes are compositor-only (transform/opacity only)", () => {
+test("keyframes are compositor-only except draw-on stroke-dashoffset", () => {
   const blocks = [...CSS.matchAll(/@keyframes\s+[a-z-]+\s*\{([\s\S]*?)\n\}/g)];
   assert.ok(blocks.length >= 16, `only ${blocks.length} keyframe blocks parsed`);
-  const allowed = new Set(["transform", "opacity", "animation-timing-function"]);
+  const allowed = new Set(["transform", "opacity", "animation-timing-function", "stroke-dashoffset"]);
   const violations = [];
   for (const block of blocks) for (const match of block[1].matchAll(/([a-z-]+)\s*:/g)) if (!allowed.has(match[1])) violations.push(match[1]);
   assert.deepEqual([...new Set(violations)], []);

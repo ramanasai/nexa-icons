@@ -29,5 +29,5 @@ const IndianRupee = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
-  nodes: [["path", { d: "m14 20-8-8h4c5.333 0 5.333-8 0-8" }], ["path", { d: "M6 4h12" }], ["path", { d: "M6 8h12" }]]
+  nodes: [["path", { d: "m14 20-8-8h4c5.333 0 5.333-8 0-8", pathLength: "1" }], ["path", { d: "M6 4h12", pathLength: "1" }], ["path", { d: "M6 8h12", pathLength: "1" }]]
 });

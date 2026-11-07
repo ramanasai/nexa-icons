@@ -6,7 +6,7 @@ const CheckCircle2 = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "pop",
   trigger: "hover",
-  nodes: [["circle", { cx: "12", cy: "12", r: "10" }], ["path", { d: "m16 9-5.5 5.5L8 12" }]]
+  nodes: [["circle", { cx: "12", cy: "12", r: "10" }], ["path", { d: "m16 9-5.5 5.5L8 12", pathLength: "1" }]]
 });
 export {
   CheckCircle2

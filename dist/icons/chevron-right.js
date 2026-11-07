@@ -6,7 +6,7 @@ const ChevronRight = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "nudge-right",
   trigger: "hover",
-  nodes: [["path", { d: "m9 18 6-6-6-6" }]]
+  nodes: [["path", { d: "m9 18 6-6-6-6", pathLength: "1" }]]
 });
 export {
   ChevronRight

@@ -6,7 +6,7 @@ const Check = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "pop",
   trigger: "hover",
-  nodes: [["path", { d: "M20 6 9 17l-5-5" }]]
+  nodes: [["path", { d: "M20 6 9 17l-5-5", pathLength: "1" }]]
 });
 export {
   Check

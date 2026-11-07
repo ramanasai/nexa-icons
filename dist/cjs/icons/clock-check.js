@@ -29,5 +29,5 @@ const ClockCheck = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "pop",
   trigger: "hover",
-  nodes: [["path", { d: "M21.95 13a10 10 0 1 0-8.685 8.92" }], ["path", { d: "M12 6v6l4 2" }], ["path", { d: "m16 19 2 2 4-4" }]]
+  nodes: [["path", { d: "M21.95 13a10 10 0 1 0-8.685 8.92", pathLength: "1" }], ["path", { d: "M12 6v6l4 2", pathLength: "1" }], ["path", { d: "m16 19 2 2 4-4", pathLength: "1" }]]
 });

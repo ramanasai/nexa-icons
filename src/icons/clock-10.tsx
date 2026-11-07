@@ -8,5 +8,5 @@ export const Clock10 = /*#__PURE__*/ createIcon({
   fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
-  nodes: [["circle",{cx:"12",cy:"12",r:"10"}],["path",{d:"M12 6v6l-4-2"}]],
+  nodes: [["circle",{cx:"12",cy:"12",r:"10"}],["path",{d:"M12 6v6l-4-2",pathLength:"1"}]],
 });

@@ -6,7 +6,7 @@ const IterationCw = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "pop",
   trigger: "hover",
-  nodes: [["path", { d: "M4 10a8 8 0 1 1 8 8H4" }], ["path", { d: "m8 22-4-4 4-4" }]]
+  nodes: [["path", { d: "M4 10a8 8 0 1 1 8 8H4", pathLength: "1" }], ["path", { d: "m8 22-4-4 4-4", pathLength: "1" }]]
 });
 export {
   IterationCw

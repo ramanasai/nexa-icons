@@ -29,5 +29,5 @@ const Mountain = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "float",
   trigger: "hover",
-  nodes: [["path", { d: "m8 3 4 8 5-5 5 15H2L8 3z" }]]
+  nodes: [["path", { d: "m8 3 4 8 5-5 5 15H2L8 3z", pathLength: "1" }]]
 });

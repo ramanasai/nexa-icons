@@ -29,5 +29,5 @@ const ArrowUp = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "nudge-up",
   trigger: "hover",
-  nodes: [["path", { d: "m5 12 7-7 7 7" }], ["path", { d: "M12 19V5" }]]
+  nodes: [["path", { d: "m5 12 7-7 7 7", pathLength: "1" }], ["path", { d: "M12 19V5", pathLength: "1" }]]
 });

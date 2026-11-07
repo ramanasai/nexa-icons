@@ -29,5 +29,5 @@ const CircleChevronsUp = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "nudge-up",
   trigger: "hover",
-  nodes: [["path", { d: "M15 10L12 7L9 10" }], ["path", { d: "M15 16L12 13L9 16" }], ["circle", { cx: "12", cy: "12", r: "10" }]]
+  nodes: [["path", { d: "M15 10L12 7L9 10", pathLength: "1" }], ["path", { d: "M15 16L12 13L9 16", pathLength: "1" }], ["circle", { cx: "12", cy: "12", r: "10" }]]
 });

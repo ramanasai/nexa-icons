@@ -29,5 +29,5 @@ const ListCheck = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "pop",
   trigger: "hover",
-  nodes: [["path", { d: "M16 5H3" }], ["path", { d: "M16 12H3" }], ["path", { d: "M11 19H3" }], ["path", { d: "m15 18 2 2 4-4" }]]
+  nodes: [["path", { d: "M16 5H3", pathLength: "1" }], ["path", { d: "M16 12H3", pathLength: "1" }], ["path", { d: "M11 19H3", pathLength: "1" }], ["path", { d: "m15 18 2 2 4-4", pathLength: "1" }]]
 });

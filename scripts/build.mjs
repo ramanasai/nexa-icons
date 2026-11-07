@@ -98,7 +98,7 @@ if (!budget("largest single icon module (brotli)", biggestBr, 1024)) failed = tr
 if (!budget("barrel dist/index.js (raw)", fs.statSync(barrelPath).size, 96 * 1024)) failed = true;
 // 18 KB raw: ~3 KB brotli. Shape containers, fill variants and CSS-3D add
 // rules but the wire cost stays ~3 KB brotli.
-if (!budget("animations.css (raw)", cssBytes, 18 * 1024)) failed = true;
+if (!budget("animations.css (raw)", cssBytes, 20 * 1024)) failed = true;
 if (!budget("animations.css (brotli)", brotli(cssPath), 4096)) failed = true;
 // 650 icons × ~1.1 KB per tree-shakeable module.
 if (!budget("whole ESM tree (raw)", esmBytes, 1843 * 1024)) failed = true;

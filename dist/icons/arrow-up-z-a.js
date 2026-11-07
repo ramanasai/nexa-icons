@@ -6,7 +6,7 @@ const ArrowUpZA = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "nudge-up",
   trigger: "hover",
-  nodes: [["path", { d: "m3 8 4-4 4 4" }], ["path", { d: "M7 4v16" }], ["path", { d: "M15 4h5l-5 6h5" }], ["path", { d: "M15 20v-3.5a2.5 2.5 0 0 1 5 0V20" }], ["path", { d: "M20 18h-5" }]]
+  nodes: [["path", { d: "m3 8 4-4 4 4", pathLength: "1" }], ["path", { d: "M7 4v16", pathLength: "1" }], ["path", { d: "M15 4h5l-5 6h5", pathLength: "1" }], ["path", { d: "M15 20v-3.5a2.5 2.5 0 0 1 5 0V20", pathLength: "1" }], ["path", { d: "M20 18h-5", pathLength: "1" }]]
 });
 export {
   ArrowUpZA

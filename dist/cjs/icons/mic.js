@@ -29,5 +29,5 @@ const Mic = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
-  nodes: [["path", { d: "M12 19v3" }], ["path", { d: "M19 10v2a7 7 0 0 1-14 0v-2" }], ["rect", { x: "9", y: "2", width: "6", height: "13", rx: "3" }]]
+  nodes: [["path", { d: "M12 19v3", pathLength: "1" }], ["path", { d: "M19 10v2a7 7 0 0 1-14 0v-2", pathLength: "1" }], ["rect", { x: "9", y: "2", width: "6", height: "13", rx: "3" }]]
 });

@@ -29,5 +29,5 @@ const CircleChevronsDown = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "nudge-down",
   trigger: "hover",
-  nodes: [["path", { d: "M9 14L12 17L15 14" }], ["path", { d: "M9 8L12 11L15 8" }], ["circle", { cx: "12", cy: "12", r: "10" }]]
+  nodes: [["path", { d: "M9 14L12 17L15 14", pathLength: "1" }], ["path", { d: "M9 8L12 11L15 8", pathLength: "1" }], ["circle", { cx: "12", cy: "12", r: "10" }]]
 });

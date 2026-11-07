@@ -6,7 +6,7 @@ const Clock12 = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
-  nodes: [["circle", { cx: "12", cy: "12", r: "10" }], ["path", { d: "M12 6v6" }]]
+  nodes: [["circle", { cx: "12", cy: "12", r: "10" }], ["path", { d: "M12 6v6", pathLength: "1" }]]
 });
 export {
   Clock12

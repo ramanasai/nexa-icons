@@ -6,7 +6,7 @@ const CodeXml = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
-  nodes: [["path", { d: "m18 16 4-4-4-4" }], ["path", { d: "m6 8-4 4 4 4" }], ["path", { d: "m14.5 4-5 16" }]]
+  nodes: [["path", { d: "m18 16 4-4-4-4", pathLength: "1" }], ["path", { d: "m6 8-4 4 4 4", pathLength: "1" }], ["path", { d: "m14.5 4-5 16", pathLength: "1" }]]
 });
 export {
   CodeXml

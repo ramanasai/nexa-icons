@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nexa Studio — icon editor</title>
+<style>
+  :root { color-scheme: light dark; --bg:#f7f7f8; --surface:#fff; --text:#18181b; --muted:#71717a; --border:#e4e4e7; --accent:#4f46e5; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0c0c0e; --surface:#161618; --text:#f4f4f5; --muted:#a1a1aa; --border:#27272a; --accent:#818cf8; } }
+  * { box-sizing: border-box; } body { margin:0; background:var(--bg); color:var(--text); font:14px/1.5 ui-sans-serif,system-ui,sans-serif; }
+  header { display:flex; gap:16px; align-items:center; padding:14px 20px; border-bottom:1px solid var(--border); }
+  header h1 { font-size:16px; margin:0; } header a { color:var(--muted); text-decoration:none; }
+  main { display:grid; grid-template-columns: minmax(0,1fr) 360px; gap:16px; padding:16px 20px; }
+  .panel { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:14px; }
+  .search { width:100%; padding:9px 10px; border:1px solid var(--border); border-radius:9px; background:transparent; color:inherit; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(52px,1fr)); gap:4px; max-height:calc(100vh - 190px); overflow:auto; margin-top:10px; }
+  .cell { border:1px solid transparent; background:transparent; color:inherit; border-radius:9px; padding:7px; cursor:pointer; display:grid; place-items:center; }
+  .cell:hover { background:color-mix(in srgb, currentColor 6%, transparent); } .cell[aria-pressed="true"] { border-color:var(--accent); background:color-mix(in srgb, var(--accent) 12%, transparent); }
+  .stage { display:grid; place-items:center; min-height:300px; border:1px dashed var(--border); border-radius:14px; margin:12px 0; background:
+    linear-gradient(45deg, color-mix(in srgb,currentColor 4%,transparent) 25%, transparent 25%, transparent 75%, color-mix(in srgb,currentColor 4%,transparent) 75%) 0 0/16px 16px, var(--surface);
+  }
+  .row { display:grid; grid-template-columns:90px 1fr; gap:8px; align-items:center; margin:8px 0; }
+  label { color:var(--muted); font-size:12px; } select,input[type=range],input[type=color] { width:100%; accent-color:var(--accent); }
+  select { padding:6px; border:1px solid var(--border); border-radius:8px; background:transparent; color:inherit; }
+  .actions { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }
+  .actions button { flex:1 1 46%; padding:8px; border:1px solid var(--border); border-radius:9px; background:transparent; color:inherit; cursor:pointer; }
+  .actions button:hover { border-color:var(--accent); }
+  .meta { color:var(--muted); font-size:12px; } code { font-family:ui-monospace,monospace; font-size:12px; }
+  .nexa-icon { display:inline-block; vertical-align:-.125em; fill:none; stroke:currentColor; stroke-linecap:round; stroke-linejoin:round; }
+  .nexa-icon-frame { display:inline-grid; place-items:center; border:1px solid color-mix(in srgb,currentColor 26%,transparent); background:color-mix(in srgb,currentColor 14%,transparent); }
+  .nexa-shape--square{border-radius:2%}.nexa-shape--rounded{border-radius:22%}.nexa-shape--circle{border-radius:50%}
+  .nexa-shape--pill{border-radius:999px}.nexa-shape--squircle{border-radius:32%}.nexa-shape--hexagon{clip-path:polygon(50% 0,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%)}
+  .nexa-shape--diamond{transform:rotate(45deg)}
+  .nexa-glass{backdrop-filter:blur(10px);background:linear-gradient(135deg,color-mix(in srgb,currentColor 20%,transparent),color-mix(in srgb,currentColor 6%,transparent));box-shadow:inset 0 1px 0 color-mix(in srgb,#fff 55%,transparent)}
+  [data-nexa-anim="pulse"]{animation:p 1s ease-in-out infinite}[data-nexa-anim="spin"]{animation:s 1s linear infinite}
+  [data-nexa-anim="draw"] path{stroke-dasharray:1;stroke-dashoffset:1;animation:d 1s ease forwards}
+  [data-nexa-anim="spring"]{animation:sp .6s cubic-bezier(.34,1.56,.64,1)}
+  [data-nexa-anim="success"]{animation:su .5s cubic-bezier(.34,1.56,.64,1)}
+  [data-nexa-anim="error"]{animation:er .4s ease}
+  [data-nexa-anim="progress"] path{stroke-dasharray:.22 .78;animation:pr 1.2s linear infinite}
+  @keyframes p{50%{transform:scale(1.1)}}@keyframes s{to{transform:rotate(360deg)}}@keyframes d{to{stroke-dashoffset:0}}
+  @keyframes sp{0%{transform:scale(.9)}55%{transform:scale(1.12)}100%{transform:scale(1)}}@keyframes su{0%{transform:scale(.7);opacity:0}60%{transform:scale(1.12);opacity:1}100%{transform:scale(1)}}
+  @keyframes er{25%{transform:translateX(-2px)}50%{transform:translateX(2px)}75%{transform:translateX(-1px)}}@keyframes pr{to{stroke-dashoffset:-1}}
+  @media (prefers-reduced-motion: reduce){[data-nexa-anim],[data-nexa-anim="draw"] path,[data-nexa-anim="progress"] path{animation:none!important}}
+  @media (max-width:900px){main{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><h1>Nexa Studio</h1><a href="./index.html">← Gallery</a><span class="meta" id="count"></span></header>
+<main>
+  <section class="panel" aria-label="Icon browser">
+    <input class="search" id="q" type="search" placeholder="Search 1,034 icons…" autocomplete="off" />
+    <div class="grid" id="grid" role="listbox" aria-label="Icons"></div>
+  </section>
+  <section class="panel" aria-label="Icon editor">
+    <div class="stage" id="stage" aria-live="polite"></div>
+    <div class="meta" id="label">Bell</div>
+    <div class="row"><label for="size">Size</label><select id="size"><option>16</option><option>20</option><option selected>24</option><option>32</option><option>48</option></select></div>
+    <div class="row"><label for="stroke">Stroke</label><input id="stroke" type="range" min="0.5" max="4" step="0.25" value="2" /></div>
+    <div class="row"><label for="color">Color</label><input id="color" type="color" value="#18181b" /></div>
+    <div class="row"><label for="fill">Fill</label><select id="fill"><option value="outline">Outline</option><option value="duotone">Duotone</option><option value="solid">Solid</option><option value="glass">Glass</option></select></div>
+    <div class="row"><label for="shape">Shape</label><select id="shape"><option value="">None</option><option value="rounded">Rounded</option><option value="circle">Circle</option><option value="squircle">Squircle</option><option value="pill">Pill</option><option value="hexagon">Hexagon</option><option value="diamond">Diamond</option><option value="square">Square</option></select></div>
+    <div class="row"><label for="edges">Edges</label><select id="edges"><option value="round">Round</option><option value="sharp">Sharp</option></select></div>
+    <div class="row"><label for="weight">Weight</label><select id="weight"><option value="light">Light</option><option value="regular" selected>Regular</option><option value="bold">Bold</option></select></div>
+    <div class="row"><label for="motion">Motion</label><select id="motion"><option value="">None</option><option value="pulse">Pulse</option><option value="spin">Spin</option><option value="draw">Draw-on</option><option value="spring">Spring</option><option value="success">Success</option><option value="error">Error</option><option value="progress">Progress</option></select></div>
+    <div class="actions">
+      <button type="button" data-export="svg">Export SVG</button>
+      <button type="button" data-export="jsx">Export JSX</button>
+      <button type="button" data-export="png">Export PNG</button>
+      <button type="button" data-export="css">Copy CSS</button>
+    </div>
+    <p class="meta" id="status" role="status"></p>
+  </section>
+</main>
+<script src="./icons.data.js"></script>
+<script>
+(function(){
+  var DATA = window.NEXA_DATA || { icons: [], paths: [] };
+  var icons = DATA.icons.map(function(t,i){ return { kebab:t[0], name:t[1], inner:(DATA.paths && DATA.paths[i]) || '' }; });
+  var byKebab = new Map(icons.map(function(i){return [i.kebab,i];}));
+  var state = { selected: byKebab.get('bell') || icons[0], size:24, stroke:2, color:'#18181b', fill:'outline', shape:'', edges:'round', weight:'regular', motion:'' };
+  var q = document.getElementById('q'), grid = document.getElementById('grid'), stage = document.getElementById('stage'), label = document.getElementById('label'), status = document.getElementById('status'), count = document.getElementById('count');
+  function esc(s){ return String(s).replace(/[&<>"']/g, function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
+  function weightFactor(){ return state.weight==='light'?.8:state.weight==='bold'?1.35:1; }
+  function svgMarkup(){
+    var inner = state.selected.inner || '';
+    var stroke = (state.stroke * weightFactor()).toFixed(2);
+    var attrs = 'xmlns="http://www.w3.org/2000/svg" width="'+state.size+'" height="'+state.size+'" viewBox="0 0 24 24" fill="none" stroke="'+esc(state.color)+'" stroke-width="'+stroke+'" stroke-linecap="'+(state.edges==='sharp'?'butt':'round')+'" stroke-linejoin="'+(state.edges==='sharp'?'miter':'round')+'" class="nexa-icon"' + (state.motion?' data-nexa-anim="'+state.motion+'"':'');
+    return '<svg '+attrs+'>'+inner+'</svg>';
+  }
+  function previewMarkup(){
+    var svg = svgMarkup();
+    if (state.fill==='glass' || state.shape) {
+      var box = state.fill==='glass' ? Math.round(state.size*1.7) : Math.round(state.size*1.7);
+      var cls = 'nexa-icon-frame' + (state.shape?' nexa-shape--'+state.shape:'') + (state.fill==='glass'?' nexa-glass':'');
+      return '<span class="'+cls+'" style="width:'+box+'px;height:'+box+'px">'+svg+'</span>';
+    }
+    return svg;
+  }
+  function renderStage(){ stage.innerHTML = previewMarkup(); label.textContent = state.selected.name + ' · ' + state.selected.kebab; }
+  function renderGrid(){
+    var term = q.value.trim().toLowerCase();
+    var list = icons.filter(function(i){ return !term || i.name.toLowerCase().includes(term) || i.kebab.includes(term); });
+    count.textContent = list.length + ' / ' + icons.length + ' icons';
+    grid.innerHTML = list.slice(0,300).map(function(i){
+      return '<button type="button" class="cell" role="option" aria-selected="'+(i===state.selected)+'" aria-label="'+esc(i.name)+'" data-kebab="'+esc(i.kebab)+'">'+'<svg class="nexa-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+i.inner+'</svg></button>';
+    }).join('') || '<p class="meta">No icons match.</p>';
+  }
+  grid.addEventListener('click', function(e){ var b=e.target.closest('[data-kebab]'); if(!b) return; state.selected=byKebab.get(b.dataset.kebab); renderGrid(); renderStage(); });
+  q.addEventListener('input', renderGrid);
+  ['size','stroke','color','fill','shape','edges','weight','motion'].forEach(function(id){
+    document.getElementById(id).addEventListener('input', function(e){
+      var v=e.target.value; state[id] = (id==='size'||id==='stroke') ? Number(v) : v; renderStage();
+    });
+  });
+  function download(name, mime, content){ var a=document.createElement('a'); var url=URL.createObjectURL(new Blob([content],{type:mime})); a.href=url; a.download=name; a.click(); setTimeout(function(){URL.revokeObjectURL(url);},1000); }
+  function cssSnippet(){
+    return '/* @sairamanapb/icons */\n.nexa-icon {\n  color: '+state.color+';\n  stroke-width: '+state.stroke+';\n}\n' + (state.motion ? '[data-nexa-anim="'+state.motion+'"] { }\n' : '');
+  }
+  document.querySelectorAll('[data-export]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var type=btn.dataset.export, name=state.selected.kebab;
+      if(type==='svg') download(name+'.svg','image/svg+xml',svgMarkup());
+      else if(type==='jsx') download(name+'.jsx','text/plain','export function '+state.selected.name.replace(/[^A-Za-z0-9]/g,'')+'(props) {\n  return (\n    '+svgMarkup().replace(/class=/g,'className=').replace(/stroke-width/g,'strokeWidth').replace(/stroke-linecap/g,'strokeLinecap').replace(/stroke-linejoin/g,'strokeLinejoin')+'\n  );\n}\n');
+      else if(type==='css') { navigator.clipboard && navigator.clipboard.writeText(cssSnippet()); status.textContent='CSS copied'; }
+      else if(type==='png'){
+        var img=new Image(); var blob=new Blob([svgMarkup()],{type:'image/svg+xml'}); var url=URL.createObjectURL(blob);
+        img.onload=function(){ var c=document.createElement('canvas'); var scale=4; c.width=state.size*scale; c.height=state.size*scale; var ctx=c.getContext('2d'); ctx.drawImage(img,0,0,c.width,c.height); URL.revokeObjectURL(url); c.toBlob(function(b){ var a=document.createElement('a'); a.href=URL.createObjectURL(b); a.download=name+'.png'; a.click(); },'image/png'); };
+        img.src=url;
+      }
+      if(type!=='css') status.textContent = type.toUpperCase()+' exported';
+    });
+  });
+  renderGrid(); renderStage();
+})();
+</script>
+</body>
+</html>

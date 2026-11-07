@@ -29,5 +29,5 @@ const SignalLow = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "pulse",
   trigger: "hover",
-  nodes: [["path", { d: "M2 20h.01" }], ["path", { d: "M7 20v-4" }]]
+  nodes: [["path", { d: "M2 20h.01", pathLength: "1" }], ["path", { d: "M7 20v-4", pathLength: "1" }]]
 });

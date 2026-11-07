@@ -6,7 +6,7 @@ const WavesHorizontal = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "shake",
   trigger: "hover",
-  nodes: [["path", { d: "M2 12q2.5 2 5 0t5 0 5 0 5 0" }], ["path", { d: "M2 19q2.5 2 5 0t5 0 5 0 5 0" }], ["path", { d: "M2 5q2.5 2 5 0t5 0 5 0 5 0" }]]
+  nodes: [["path", { d: "M2 12q2.5 2 5 0t5 0 5 0 5 0", pathLength: "1" }], ["path", { d: "M2 19q2.5 2 5 0t5 0 5 0 5 0", pathLength: "1" }], ["path", { d: "M2 5q2.5 2 5 0t5 0 5 0 5 0", pathLength: "1" }]]
 });
 export {
   WavesHorizontal

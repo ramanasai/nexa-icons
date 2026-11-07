@@ -29,5 +29,5 @@ const PlusCircle = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "pop",
   trigger: "hover",
-  nodes: [["circle", { cx: "12", cy: "12", r: "10" }], ["path", { d: "M8 12h8" }], ["path", { d: "M12 8v8" }]]
+  nodes: [["circle", { cx: "12", cy: "12", r: "10" }], ["path", { d: "M8 12h8", pathLength: "1" }], ["path", { d: "M12 8v8", pathLength: "1" }]]
 });

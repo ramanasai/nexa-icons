@@ -29,5 +29,5 @@ const XLineTop = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
-  nodes: [["path", { d: "M18 4H6" }], ["path", { d: "M18 8 6 20" }], ["path", { d: "m6 8 12 12" }]]
+  nodes: [["path", { d: "M18 4H6", pathLength: "1" }], ["path", { d: "M18 8 6 20", pathLength: "1" }], ["path", { d: "m6 8 12 12", pathLength: "1" }]]
 });

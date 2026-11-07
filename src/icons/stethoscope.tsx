@@ -8,5 +8,5 @@ export const Stethoscope = /*#__PURE__*/ createIcon({
   fillUnsafe: false,
   preset: "heartbeat",
   trigger: "hover",
-  nodes: [["path",{d:"M11 2v2"}],["path",{d:"M5 2v2"}],["path",{d:"M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"}],["path",{d:"M8 15a6 6 0 0 0 12 0v-3"}],["circle",{cx:"20",cy:"10",r:"2"}]],
+  nodes: [["path",{d:"M11 2v2",pathLength:"1"}],["path",{d:"M5 2v2",pathLength:"1"}],["path",{d:"M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1",pathLength:"1"}],["path",{d:"M8 15a6 6 0 0 0 12 0v-3",pathLength:"1"}],["circle",{cx:"20",cy:"10",r:"2"}]],
 });

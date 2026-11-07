@@ -29,5 +29,5 @@ const MessageCircleText = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
-  nodes: [["path", { d: "M3.086 17.509a2 2 0 00-.094-1.167 10 10 0 114.777 4.719 2 2 0 00-1.099-.092l-3.413.998a1 1 0 01-1.236-1.168z" }], ["path", { d: "M8 12h9" }], ["path", { d: "M8 16h5" }], ["path", { d: "M8 8h7" }]]
+  nodes: [["path", { d: "M3.086 17.509a2 2 0 00-.094-1.167 10 10 0 114.777 4.719 2 2 0 00-1.099-.092l-3.413.998a1 1 0 01-1.236-1.168z", pathLength: "1" }], ["path", { d: "M8 12h9", pathLength: "1" }], ["path", { d: "M8 16h5", pathLength: "1" }], ["path", { d: "M8 8h7", pathLength: "1" }]]
 });

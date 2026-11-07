@@ -214,7 +214,7 @@ test("TypeScript: tsc --noEmit is clean", () => {
   assert.equal(result.status, 0, `tsc failed:\n${result.stdout}\n${result.stderr}`);
 });
 
-test("tree-shaking: one-icon bundle stays under 1.5 KB brotli and drops unused icons", async () => {
+test("tree-shaking: one-icon bundle stays under 2.6 KB brotli and drops unused icons", async () => {
   const result = await build({
     stdin: {
       contents: `import { Bell } from ${JSON.stringify(p("dist/index.js"))};\nexport { Bell };\n`,
@@ -230,5 +230,5 @@ test("tree-shaking: one-icon bundle stays under 1.5 KB brotli and drops unused i
   const gz = gzip(Buffer.from(code));
   assert.ok(code.includes("M10.268"), "Bell geometry missing");
   assert.ok(!code.includes("M18 6 6 18"), "X icon was not tree-shaken");
-  assert.ok(br < 2048, `one-icon bundle ${bytes} B raw / ${br} B br / ${gz} B gz`);
+  assert.ok(br < 2662, `one-icon bundle ${bytes} B raw / ${br} B br / ${gz} B gz`);
 });

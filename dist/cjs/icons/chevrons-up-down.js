@@ -29,5 +29,5 @@ const ChevronsUpDown = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "flip",
   trigger: "hover",
-  nodes: [["path", { d: "m7 15 5 5 5-5" }], ["path", { d: "m7 9 5-5 5 5" }]]
+  nodes: [["path", { d: "m7 15 5 5 5-5", pathLength: "1" }], ["path", { d: "m7 9 5-5 5 5", pathLength: "1" }]]
 });

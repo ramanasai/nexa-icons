@@ -29,5 +29,5 @@ const Cylinder = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
-  nodes: [["ellipse", { cx: "12", cy: "5", rx: "9", ry: "3" }], ["path", { d: "M3 5v14a9 3 0 0 0 18 0V5" }]]
+  nodes: [["ellipse", { cx: "12", cy: "5", rx: "9", ry: "3" }], ["path", { d: "M3 5v14a9 3 0 0 0 18 0V5", pathLength: "1" }]]
 });

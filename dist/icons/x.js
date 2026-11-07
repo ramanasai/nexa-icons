@@ -6,7 +6,7 @@ const X = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "shake",
   trigger: "hover",
-  nodes: [["path", { d: "M18 6 6 18" }], ["path", { d: "m6 6 12 12" }]]
+  nodes: [["path", { d: "M18 6 6 18", pathLength: "1" }], ["path", { d: "m6 6 12 12", pathLength: "1" }]]
 });
 export {
   X

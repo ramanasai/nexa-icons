@@ -29,5 +29,5 @@ const ChevronUp = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "nudge-up",
   trigger: "hover",
-  nodes: [["path", { d: "m18 15-6-6-6 6" }]]
+  nodes: [["path", { d: "m18 15-6-6-6 6", pathLength: "1" }]]
 });

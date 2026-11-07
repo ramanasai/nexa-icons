@@ -6,7 +6,7 @@ const Menu = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
-  nodes: [["path", { d: "M4 5h16" }], ["path", { d: "M4 12h16" }], ["path", { d: "M4 19h16" }]]
+  nodes: [["path", { d: "M4 5h16", pathLength: "1" }], ["path", { d: "M4 12h16", pathLength: "1" }], ["path", { d: "M4 19h16", pathLength: "1" }]]
 });
 export {
   Menu

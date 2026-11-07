@@ -29,5 +29,5 @@ const SquareChevronsDown = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "nudge-down",
   trigger: "hover",
-  nodes: [["path", { d: "M9 14L12 17L15 14" }], ["path", { d: "M9 8L12 11L15 8" }], ["rect", { x: "3", y: "3", width: "18", height: "18", rx: "2" }]]
+  nodes: [["path", { d: "M9 14L12 17L15 14", pathLength: "1" }], ["path", { d: "M9 8L12 11L15 8", pathLength: "1" }], ["rect", { x: "3", y: "3", width: "18", height: "18", rx: "2" }]]
 });

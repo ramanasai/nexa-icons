@@ -29,5 +29,5 @@ const GalleryVertical = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
-  nodes: [["path", { d: "M3 2h18" }], ["rect", { width: "18", height: "12", x: "3", y: "6", rx: "2" }], ["path", { d: "M3 22h18" }]]
+  nodes: [["path", { d: "M3 2h18", pathLength: "1" }], ["rect", { width: "18", height: "12", x: "3", y: "6", rx: "2" }], ["path", { d: "M3 22h18", pathLength: "1" }]]
 });

@@ -29,5 +29,5 @@ const ArrowDownRight = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "nudge-down-right",
   trigger: "hover",
-  nodes: [["path", { d: "m7 7 10 10" }], ["path", { d: "M17 7v10H7" }]]
+  nodes: [["path", { d: "m7 7 10 10", pathLength: "1" }], ["path", { d: "M17 7v10H7", pathLength: "1" }]]
 });

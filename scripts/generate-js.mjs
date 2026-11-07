@@ -196,6 +196,9 @@ function svg(name, options = {}) {
     size,
     strokeWidth,
     absoluteStrokeWidth,
+    weight,
+    edges,
+    fillOpacity,
     ariaHidden,
     "aria-label": ariaLabelOption,
     animate,
@@ -222,8 +225,11 @@ function svg(name, options = {}) {
 
   const explicitSize = size !== undefined;
   const px = typeof size === 'string' ? SIZE_PX[size] || 24 : Number(size) || 24;
-  const baseStroke = strokeWidth == null ? (explicitSize ? strokeForSize(px) : 2) : Number(strokeWidth);
-  const stroke = absoluteStrokeWidth ? (strokeWidth == null ? 2 : Number(strokeWidth)) * (24 / px) : baseStroke;
+  const opticalBase = explicitSize ? strokeForSize(px) : 2;
+  const weightFactor = weight === 'light' ? 0.8 : weight === 'bold' ? 1.35 : 1;
+  const round3 = (value) => Math.round(value * 1000) / 1000;
+  const baseStroke = round3(strokeWidth == null ? opticalBase * weightFactor : Number(strokeWidth));
+  const stroke = round3(absoluteStrokeWidth ? (strokeWidth == null ? opticalBase : Number(strokeWidth)) * (24 / px) : baseStroke);
   const glassConfig = glass && typeof glass === 'object' ? glass : null;
   const glassPreset =
     glass === true ? 'frost' : typeof glass === 'string' ? glass : glassConfig ? glassConfig.preset || 'frost' : null;
@@ -263,8 +269,8 @@ function svg(name, options = {}) {
   attrs.push('fill="none"');
   attrs.push('stroke="' + (gradientId ? 'url(#' + gradientId + ')' : 'currentColor') + '"');
   attrs.push('stroke-width="' + stroke + '"');
-  attrs.push('stroke-linecap="round"');
-  attrs.push('stroke-linejoin="round"');
+  attrs.push('stroke-linecap="' + (edges === 'sharp' ? 'butt' : 'round') + '"');
+  attrs.push('stroke-linejoin="' + (edges === 'sharp' ? 'miter' : 'round') + '"');
   attrs.push('class="' + esc(
     ['nexa-icon', gradientPreset ? 'nexa-grad--' + gradientPreset : '', className || classNameAlt]
       .filter(Boolean)
@@ -274,6 +280,7 @@ function svg(name, options = {}) {
     var styleBits = [];
     if (strokeWidth == null && !absoluteStrokeWidth) styleBits.push('stroke-width:var(--nexa-stroke,' + baseStroke + ')');
     if (color != null) styleBits.push('color:' + esc(color));
+    if (fillOpacity != null) styleBits.push('--nexa-fill-opacity:' + Number(fillOpacity));
     if (gradientId) styleBits.push('stroke:url(#' + gradientId + ')');
     if (styleBits.length) attrs.push('style="' + styleBits.join(';') + '"');
   }
@@ -287,6 +294,7 @@ function svg(name, options = {}) {
   attrs.push('focusable="false"');
   attrs.push('data-nexa-icon="' + icon.kebab + '"');
   attrs.push('data-nexa-fill-safe="' + (icon.fillSafe === false ? 'false' : 'true') + '"');
+  if (explicitSize) attrs.push('data-nexa-size="' + px + '"');
   if (gradientPreset && gradientAnim) attrs.push('data-nexa-gradient-anim="' + esc(gradientAnim) + '"');
   if (preset) {
     attrs.push('data-nexa-anim="' + esc(preset) + '"');
@@ -300,7 +308,8 @@ function svg(name, options = {}) {
 
   const titleMarkup = title != null ? '<title>' + esc(title) + '</title>' : '';
   if (fillExplicit) {
-    attrs.push('data-fill-state="' + (fill === 'outline' ? 'false' : fill === 'solid' ? (icon.fillSafe === false ? 'soft' : 'true') : 'soft') + '"');
+    attrs.push('data-fill-state="' + (fill === 'outline' ? 'false' : fill === 'solid' && icon.fillUnsafe === true ? 'false' : fill === 'solid' ? 'true' : 'soft') + '"');
+    if (fill === 'solid' && icon.fillSafe === false && icon.fillUnsafe !== true) attrs.push('data-fill-fallback="body"');
   }
   if (fillExplicit && fill !== 'outline' && animateFill) attrs.push('data-fill-anim="true"');
   const gradientStops = gradientConfig
@@ -314,7 +323,7 @@ function svg(name, options = {}) {
   const gradientDefs = gradientId
     ? '<defs><linearGradient id="' + gradientId + '" ' + gradientCoords + '>' + gradientStops + '</linearGradient></defs>'
     : '';
-  const bodyMarkup = glassBody && glassPreset
+  const bodyMarkup = (glassBody && glassPreset) || (fill === 'solid' && icon.fillSafe === false && icon.fillUnsafe !== true)
     ? '<g class="nexa-icon-body" fill="none" stroke="' + (gradientId ? 'url(#' + gradientId + ')' : 'currentColor') +
       '" stroke-width="' + Math.max(5, stroke * 3.2) + '" stroke-linecap="round" stroke-linejoin="round">' + icon.inner + '</g>'
     : '';

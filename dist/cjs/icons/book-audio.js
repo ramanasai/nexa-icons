@@ -29,5 +29,5 @@ const BookAudio = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "shake",
   trigger: "hover",
-  nodes: [["path", { d: "M12 6v7" }], ["path", { d: "M16 8v3" }], ["path", { d: "M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" }], ["path", { d: "M8 8v3" }]]
+  nodes: [["path", { d: "M12 6v7", pathLength: "1" }], ["path", { d: "M16 8v3", pathLength: "1" }], ["path", { d: "M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20", pathLength: "1" }], ["path", { d: "M8 8v3", pathLength: "1" }]]
 });

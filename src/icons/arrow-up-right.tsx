@@ -8,5 +8,5 @@ export const ArrowUpRight = /*#__PURE__*/ createIcon({
   fillUnsafe: false,
   preset: "nudge-up-right",
   trigger: "hover",
-  nodes: [["path",{d:"M7 7h10v10"}],["path",{d:"M7 17 17 7"}]],
+  nodes: [["path",{d:"M7 7h10v10",pathLength:"1"}],["path",{d:"M7 17 17 7",pathLength:"1"}]],
 });

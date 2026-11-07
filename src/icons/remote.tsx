@@ -8,5 +8,5 @@ export const Remote = /*#__PURE__*/ createIcon({
   fillUnsafe: false,
   preset: "pop",
   trigger: "hover",
-  nodes: [["rect",{x:"4",y:"5",width:"16",height:"9",rx:"1.5"}],["path",{d:"M2 18h20"}],["path",{d:"M8 8c2-2 6-2 8 0"}],["path",{d:"M10 10c1.2-1.2 2.8-1.2 4 0"}]],
+  nodes: [["rect",{x:"4",y:"5",width:"16",height:"9",rx:"1.5"}],["path",{d:"M2 18h20",pathLength:"1"}],["path",{d:"M8 8c2-2 6-2 8 0",pathLength:"1"}],["path",{d:"M10 10c1.2-1.2 2.8-1.2 4 0",pathLength:"1"}]],
 });

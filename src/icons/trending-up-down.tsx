@@ -8,5 +8,5 @@ export const TrendingUpDown = /*#__PURE__*/ createIcon({
   fillUnsafe: false,
   preset: "nudge-down",
   trigger: "hover",
-  nodes: [["path",{d:"M14.828 14.828 21 21"}],["path",{d:"M21 16v5h-5"}],["path",{d:"m21 3-9 9-4-4-6 6"}],["path",{d:"M21 8V3h-5"}]],
+  nodes: [["path",{d:"M14.828 14.828 21 21",pathLength:"1"}],["path",{d:"M21 16v5h-5",pathLength:"1"}],["path",{d:"m21 3-9 9-4-4-6 6",pathLength:"1"}],["path",{d:"M21 8V3h-5",pathLength:"1"}]],
 });

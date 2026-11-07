@@ -29,5 +29,5 @@ const VisaStamp = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "pop",
   trigger: "hover",
-  nodes: [["circle", { cx: "12", cy: "12", r: "7" }], ["path", { d: "M8 12h8M8 15h5" }], ["path", { d: "M9 5V3M15 5V3" }]]
+  nodes: [["circle", { cx: "12", cy: "12", r: "7" }], ["path", { d: "M8 12h8M8 15h5", pathLength: "1" }], ["path", { d: "M9 5V3M15 5V3", pathLength: "1" }]]
 });

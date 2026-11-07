@@ -6,7 +6,7 @@ const Minus = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "pulse",
   trigger: "hover",
-  nodes: [["path", { d: "M5 12h14" }]]
+  nodes: [["path", { d: "M5 12h14", pathLength: "1" }]]
 });
 export {
   Minus

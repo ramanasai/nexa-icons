@@ -29,5 +29,5 @@ const DatabaseCheck = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "pop",
   trigger: "hover",
-  nodes: [["path", { d: "m16 19 2 2 4-4" }], ["path", { d: "M21 13.127V5" }], ["path", { d: "M3 12A9 3 0 0 0 21 12" }], ["path", { d: "M3 5V19A9 3 0 0 0 13.318 21.968" }], ["ellipse", { cx: "12", cy: "5", rx: "9", ry: "3" }]]
+  nodes: [["path", { d: "m16 19 2 2 4-4", pathLength: "1" }], ["path", { d: "M21 13.127V5", pathLength: "1" }], ["path", { d: "M3 12A9 3 0 0 0 21 12", pathLength: "1" }], ["path", { d: "M3 5V19A9 3 0 0 0 13.318 21.968", pathLength: "1" }], ["ellipse", { cx: "12", cy: "5", rx: "9", ry: "3" }]]
 });

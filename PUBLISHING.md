@@ -1,6 +1,6 @@
 # Publishing @sairamanapb/icons to npm
 
-> **Published:** `1.0.4` is live (3,242 files / ~6.19 MB unpacked). Use this guide for the next release: bump the version, run the gate, and publish with OTP.
+> **Published:** `1.0.4` is live. This tree is **1.1.0** (visual variants, advanced motion, Nexa Studio; 3,242 files / ~6.62 MB unpacked). Publish with OTP after the release gate.
 
 > **Status:** https://www.npmjs.com/package/@sairamanapb/icons — run
 > `npm view @sairamanapb/icons version` for the current release.

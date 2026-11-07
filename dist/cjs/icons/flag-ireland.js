@@ -29,5 +29,5 @@ const FlagIreland = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "pop",
   trigger: "hover",
-  nodes: [["path", { d: "M5 21V4" }], ["path", { d: "M5 4h14v12H5" }], ["path", { d: "M9.7 4v12M14.3 4v12" }]]
+  nodes: [["path", { d: "M5 21V4", pathLength: "1" }], ["path", { d: "M5 4h14v12H5", pathLength: "1" }], ["path", { d: "M9.7 4v12M14.3 4v12", pathLength: "1" }]]
 });

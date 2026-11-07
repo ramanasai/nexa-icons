@@ -6,7 +6,7 @@ const Martini = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
-  nodes: [["path", { d: "M12 12 4.207 4.207A.707.707 0 0 1 4.707 3h14.586a.707.707 0 0 1 .5 1.207z" }], ["path", { d: "M12 12v10" }], ["path", { d: "M7 22h10" }]]
+  nodes: [["path", { d: "M12 12 4.207 4.207A.707.707 0 0 1 4.707 3h14.586a.707.707 0 0 1 .5 1.207z", pathLength: "1" }], ["path", { d: "M12 12v10", pathLength: "1" }], ["path", { d: "M7 22h10", pathLength: "1" }]]
 });
 export {
   Martini

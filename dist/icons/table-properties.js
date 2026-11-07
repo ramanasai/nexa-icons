@@ -6,7 +6,7 @@ const TableProperties = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
-  nodes: [["path", { d: "M15 3v18" }], ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2" }], ["path", { d: "M21 9H3" }], ["path", { d: "M21 15H3" }]]
+  nodes: [["path", { d: "M15 3v18", pathLength: "1" }], ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2" }], ["path", { d: "M21 9H3", pathLength: "1" }], ["path", { d: "M21 15H3", pathLength: "1" }]]
 });
 export {
   TableProperties

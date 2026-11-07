@@ -29,5 +29,5 @@ const CreditCardCheck = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "pop",
   trigger: "hover",
-  nodes: [["path", { d: "M12.5 19H4a2 2 0 01-2-2V7a2 2 0 012-2h16a2 2 0 012 2v4" }], ["path", { d: "M2 10h20" }], ["path", { d: "M6 14h2" }], ["path", { d: "m16 17 2 2 4-4" }]]
+  nodes: [["path", { d: "M12.5 19H4a2 2 0 01-2-2V7a2 2 0 012-2h16a2 2 0 012 2v4", pathLength: "1" }], ["path", { d: "M2 10h20", pathLength: "1" }], ["path", { d: "M6 14h2", pathLength: "1" }], ["path", { d: "m16 17 2 2 4-4", pathLength: "1" }]]
 });

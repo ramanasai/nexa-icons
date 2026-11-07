@@ -157,15 +157,15 @@ Total 10.6 KB of SVG; currentColor + 3 optional CSS variables; light/dark/graysc
 
 | Artefact | Raw | Brotli |
 |---|---:|---:|
-| One tree-shaken React icon (incl. shape/fill/3D code) | 4,190 B | **1,834 B** |
+| One tree-shaken React icon (incl. shape/fill/3D code) | 4,877 B | **2,096 B** |
 | 8 icons / 50 icons | — | 2,308 B / 3,347 B |
-| Full sprite (1,034 symbols) | 441,995 B | 45,290 B |
-| Animation + shape/fill/3D CSS | 17,301 B | 3,558 B |
-| Vanilla JS ESM (all 1,034, zero-dep) | 486,713 B | 62,895 B |
-| Gallery shell / data / app (local files, 0 third-party) | 30,409 / 550,468 / 88,175 B | 7,247 / 76,039 / 18,757 B |
+| Full sprite (1,034 symbols) | 496,505 B | 45,723 B |
+| Animation + shape/fill/3D CSS | 18,929 B | 3,835 B |
+| Vanilla JS ESM (all 1,034, zero-dep) | 549,204 B | 63,536 B |
+| Gallery shell / data / app (local files, 0 third-party) | 30,461 / 612,246 / 89,584 B | 7,268 / 76,383 / 18,948 B |
 
 Reference point measured in the same harness: one Lucide icon tree-shaken =
-Lucide 1,571 B brotli in the same harness; Nexa is **1,834 B** for the first icon (the extra accessibility, closed-fill and em-frame logic). At 168 icons Nexa is still ~19% lighter (9.9 KB vs 12.1 KB br).
+Lucide 1,571 B brotli in the same harness; Nexa is **2,096 B** for the first icon (the extra accessibility, closed-fill and em-frame logic). At 168 icons Nexa is still ~19% lighter (9.9 KB vs 12.1 KB br).
 
 ## 10. What makes this different from typical icon packages
 

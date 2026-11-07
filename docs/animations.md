@@ -1,6 +1,6 @@
 # Animations and swaps
 
-The animation layer is **CSS only**: `dist/animations.css` ships 17 semantic
+The animation layer is **CSS only**: `dist/animations.css` ships 22 animation
 presets, a `fade-in` helper, six-plus triggers, the icon-swap transitions, the
 fill ↔ empty transition, and the CSS-3D presentation presets.
 Motion uses only `transform`, `opacity` and `color`-free compositor properties,
@@ -77,7 +77,7 @@ svg("Loader2", { animate: "spin", trigger: "always" });
 svg("Bell", { animate: "pulse", trigger: "inview" });
 ```
 
-## The 17 presets
+## The presets
 
 Counts are from `data/report.json` (`animation`); examples are real icons.
 Every preset is one-shot unless its trigger loops.
@@ -338,3 +338,22 @@ threeD="tilt" />`). Import `@sairamanapb/icons/effects.css` once; see
 `[role="button"]` is hovered or `:focus-visible`. For app-wide control, put
 `data-nexa-motion="off"` on a container to disable presets, fill, swap and 3D
 transitions inside it.
+
+
+## Advanced presets (1.1)
+
+| Preset | What it does | Motion |
+|---|---|---|
+| `draw` | draws the path on (`stroke-dashoffset`, `pathLength=1`) | paint |
+| `progress` | looping partial dash, for loading/progress | paint |
+| `spring` | overshoot scale with a spring easing | transform |
+| `success` | pop-in confirmation | transform/opacity |
+| `error` | short horizontal shake | transform |
+
+`draw`/`progress` animate path strokes and are opt-in; every preset is disabled
+by `prefers-reduced-motion: reduce`.
+
+## Nexa Studio
+
+The visual editor lives at `gallery/studio.html` and exports SVG, JSX, PNG and
+CSS. See [studio.md](studio.md).

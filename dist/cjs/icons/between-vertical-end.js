@@ -29,5 +29,5 @@ const BetweenVerticalEnd = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "shake",
   trigger: "hover",
-  nodes: [["rect", { width: "7", height: "13", x: "3", y: "3", rx: "1" }], ["path", { d: "m9 22 3-3 3 3" }], ["rect", { width: "7", height: "13", x: "14", y: "3", rx: "1" }]]
+  nodes: [["rect", { width: "7", height: "13", x: "3", y: "3", rx: "1" }], ["path", { d: "m9 22 3-3 3 3", pathLength: "1" }], ["rect", { width: "7", height: "13", x: "14", y: "3", rx: "1" }]]
 });

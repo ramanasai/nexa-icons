@@ -6,7 +6,7 @@ const CheckLine = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "pop",
   trigger: "hover",
-  nodes: [["path", { d: "M20 4L9 15" }], ["path", { d: "M21 19L3 19" }], ["path", { d: "M9 15L4 10" }]]
+  nodes: [["path", { d: "M20 4L9 15", pathLength: "1" }], ["path", { d: "M21 19L3 19", pathLength: "1" }], ["path", { d: "M9 15L4 10", pathLength: "1" }]]
 });
 export {
   CheckLine

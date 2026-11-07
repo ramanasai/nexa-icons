@@ -226,7 +226,7 @@ works on Node. Subpath `@sairamanapb/icons/js` ships both ESM and CJS.
 | `ids()` | — | 650 kebab ids, sorted |
 | `meta` | — | dataset meta (count, grid, sizes, `nexaMap`, source/license) |
 | `ICONS` | — | map `kebab → {name, aliases, preset, trigger, inner}` (search `keywords` live only in `data/icons.json`) |
-| `PRESETS` | — | 18 animation names (17 presets + `fade-in`) |
+| `PRESETS` | — | 23 animation names (22 presets + `fade-in`) |
 | `SIZE_PX` | — | `{sm:16, md:20, lg:24, xl:40}` |
 | `strokeForSize(px)` | `number` | 16→2, 20→1.75, 24+→1.5 |
 | `swapSvg(from, to, opts?)` | `(string, string, object)` | two-layer swap widget markup; `RangeError` if either name is unknown |

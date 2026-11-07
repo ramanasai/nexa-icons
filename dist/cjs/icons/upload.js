@@ -29,5 +29,5 @@ const Upload = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "nudge-up",
   trigger: "hover",
-  nodes: [["path", { d: "M12 3v12" }], ["path", { d: "m17 8-5-5-5 5" }], ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" }]]
+  nodes: [["path", { d: "M12 3v12", pathLength: "1" }], ["path", { d: "m17 8-5-5-5 5", pathLength: "1" }], ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", pathLength: "1" }]]
 });

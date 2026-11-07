@@ -6,7 +6,7 @@ const PersonStanding = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "pulse",
   trigger: "hover",
-  nodes: [["circle", { cx: "12", cy: "5", r: "1" }], ["path", { d: "m9 20 3-6 3 6" }], ["path", { d: "m6 8 6 2 6-2" }], ["path", { d: "M12 10v4" }]]
+  nodes: [["circle", { cx: "12", cy: "5", r: "1" }], ["path", { d: "m9 20 3-6 3 6", pathLength: "1" }], ["path", { d: "m6 8 6 2 6-2", pathLength: "1" }], ["path", { d: "M12 10v4", pathLength: "1" }]]
 });
 export {
   PersonStanding

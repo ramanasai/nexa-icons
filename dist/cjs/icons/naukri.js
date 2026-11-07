@@ -29,5 +29,5 @@ const Naukri = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "pop",
   trigger: "hover",
-  nodes: [["rect", { x: "2.5", y: "2.5", width: "19", height: "19", rx: "5" }], ["path", { d: "M8 16V8l8 8V8" }]]
+  nodes: [["rect", { x: "2.5", y: "2.5", width: "19", height: "19", rx: "5" }], ["path", { d: "M8 16V8l8 8V8", pathLength: "1" }]]
 });

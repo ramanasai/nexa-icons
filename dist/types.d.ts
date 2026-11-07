@@ -7,6 +7,8 @@ import type { ComponentPropsWithoutRef, ForwardRefExoticComponent, RefAttributes
 export type NexaSize = "sm" | "md" | "lg" | "xl";
 export type NexaShape = "square" | "rounded" | "circle" | "pill" | "squircle" | "hexagon" | "diamond";
 export type NexaFill = "outline" | "duotone" | "solid";
+export type NexaEdge = "round" | "sharp";
+export type NexaWeight = "light" | "regular" | "bold";
 export type Nexa3D = "tilt" | "flip" | "extrude" | "orbit";
 export interface NexaGlassConfig {
     preset?: NexaGlass;
@@ -27,7 +29,8 @@ export type NexaGlassTrigger = "always" | "hover";
 export type NexaGradientAnim = "hue";
 export type NexaGlass = "frost" | "ice" | "clear" | "steel" | "neon" | "jelly" | "aurora";
 export type NexaGradient = "aurora" | "ice" | "sunset" | "emerald" | "ocean" | "candy" | "gold" | "mono";
-export type NexaPreset = "spin" | "pulse" | "ring" | "shake" | "wiggle" | "flip" | "bounce" | "float" | "tilt" | "heartbeat" | "pop" | "fade-in" | "nudge-up" | "nudge-down" | "nudge-left" | "nudge-right" | "nudge-up-right" | "nudge-down-right";
+export type NexaExtraPreset = "draw" | "spring" | "success" | "error" | "progress";
+export type NexaPreset = NexaExtraPreset | "spin" | "pulse" | "ring" | "shake" | "wiggle" | "flip" | "bounce" | "float" | "tilt" | "heartbeat" | "pop" | "fade-in" | "nudge-up" | "nudge-down" | "nudge-left" | "nudge-right" | "nudge-up-right" | "nudge-down-right";
 export type NexaTrigger = "hover" | "focus" | "press" | "mount" | "always" | "manual" | "inview" | "parent";
 /** One SVG child, e.g. ["path", { d: "..." }]. Static by design. */
 export type NexaNode = readonly [string, Readonly<Record<string, string>>];
@@ -48,6 +51,12 @@ export interface NexaIconProps extends Omit<ComponentPropsWithoutRef<"svg">, "co
     size?: NexaSize | number;
     /** Override stroke width. Size-less (CSS-sized) icons default to 2; explicit size maps 16=>2, 20=>1.75, 24+=>1.5. */
     strokeWidth?: number;
+    /** Optical weight multiplier: light 0.8×, regular 1×, bold 1.35×. */
+    weight?: NexaWeight;
+    /** Rounded (default) or sharp line caps/joins. */
+    edges?: NexaEdge;
+    /** Duotone fill opacity, 0–1 (default 0.16). */
+    fillOpacity?: number;
     /** Keep the rendered stroke at `strokeWidth * 24 / size` regardless of icon size (Lucide-compatible). */
     absoluteStrokeWidth?: boolean;
     /** Convenience color override (sets `color`, so currentColor picks it up). */

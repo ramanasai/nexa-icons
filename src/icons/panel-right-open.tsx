@@ -8,5 +8,5 @@ export const PanelRightOpen = /*#__PURE__*/ createIcon({
   fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
-  nodes: [["rect",{width:"18",height:"18",x:"3",y:"3",rx:"2"}],["path",{d:"M15 3v18"}],["path",{d:"m10 15-3-3 3-3"}]],
+  nodes: [["rect",{width:"18",height:"18",x:"3",y:"3",rx:"2"}],["path",{d:"M15 3v18",pathLength:"1"}],["path",{d:"m10 15-3-3 3-3",pathLength:"1"}]],
 });

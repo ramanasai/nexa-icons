@@ -6,7 +6,7 @@ const ListSortDescending = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
-  nodes: [["path", { d: "M15 12H3" }], ["path", { d: "M3 5h18" }], ["path", { d: "M9 19H3" }]]
+  nodes: [["path", { d: "M15 12H3", pathLength: "1" }], ["path", { d: "M3 5h18", pathLength: "1" }], ["path", { d: "M9 19H3", pathLength: "1" }]]
 });
 export {
   ListSortDescending

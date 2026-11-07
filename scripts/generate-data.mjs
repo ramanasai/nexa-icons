@@ -432,6 +432,9 @@ for (const category of categoryMeta) {
 // Canonical inner markup carries data-closed so CSS can fill only closed
 // geometry; React, JS, sprite and tests all render the same string.
 for (const icon of built) {
+  icon.nodes = icon.nodes.map(([tag, attrs]) =>
+    tag === "path" ? [tag, { ...attrs, pathLength: "1" }] : [tag, { ...attrs }]
+  );
   icon.inner = icon.nodes
     .map(([tag, attrs]) => {
       const closed = !icon.fillUnsafe && (icon.fillSafe === true || isClosedNode([tag, attrs]));

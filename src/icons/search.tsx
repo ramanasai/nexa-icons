@@ -8,5 +8,5 @@ export const Search = /*#__PURE__*/ createIcon({
   fillUnsafe: false,
   preset: "pulse",
   trigger: "hover",
-  nodes: [["path",{d:"m21 21-4.34-4.34"}],["circle",{cx:"11",cy:"11",r:"8"}]],
+  nodes: [["path",{d:"m21 21-4.34-4.34",pathLength:"1"}],["circle",{cx:"11",cy:"11",r:"8"}]],
 });

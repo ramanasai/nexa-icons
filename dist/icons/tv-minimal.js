@@ -6,7 +6,7 @@ const TvMinimal = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "pulse",
   trigger: "hover",
-  nodes: [["path", { d: "M7 21h10" }], ["rect", { width: "20", height: "14", x: "2", y: "3", rx: "2" }]]
+  nodes: [["path", { d: "M7 21h10", pathLength: "1" }], ["rect", { width: "20", height: "14", x: "2", y: "3", rx: "2" }]]
 });
 export {
   TvMinimal

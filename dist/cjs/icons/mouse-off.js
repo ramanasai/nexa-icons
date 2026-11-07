@@ -29,5 +29,5 @@ const MouseOff = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "shake",
   trigger: "hover",
-  nodes: [["path", { d: "M12 6v.343" }], ["path", { d: "M18.218 18.218A7 7 0 0 1 5 15V9a7 7 0 0 1 .782-3.218" }], ["path", { d: "M19 13.343V9A7 7 0 0 0 8.56 2.902" }], ["path", { d: "M22 22 2 2" }]]
+  nodes: [["path", { d: "M12 6v.343", pathLength: "1" }], ["path", { d: "M18.218 18.218A7 7 0 0 1 5 15V9a7 7 0 0 1 .782-3.218", pathLength: "1" }], ["path", { d: "M19 13.343V9A7 7 0 0 0 8.56 2.902", pathLength: "1" }], ["path", { d: "M22 22 2 2", pathLength: "1" }]]
 });

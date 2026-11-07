@@ -121,7 +121,7 @@ test("svg() options: sizing, a11y, animation, colour, escaping, shapes, fill, 3D
   assert.match(js.svg("Bell", { label: "Alerts", shape: "circle" }), /^<span[^>]*role="img"[^>]*aria-label="Alerts"/);
   assert.match(js.svg("Bell", { variant: "duotone" }), /data-fill-state="soft"/);
   assert.match(js.svg("Circle", { filled: true }), /data-fill-state="true"/, "fillSafe icon fills solid");
-  assert.match(js.svg("Bell", { filled: true }), /data-fill-state="soft"/, "open glyph degrades to duotone");
+  assert.match(js.svg("Bell", { filled: true }), /data-fill-state="true"[^>]*data-fill-fallback="body"/, "open glyph fills via body layer");
   assert.match(js.svg("Heart", { filled: true, animateFill: true }), /data-fill-anim="true"/);
   for (const preset of THREE_D) {
     const out = js.svg("Bell", { threeD: preset });

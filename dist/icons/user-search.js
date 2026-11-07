@@ -6,7 +6,7 @@ const UserSearch = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "pop",
   trigger: "hover",
-  nodes: [["circle", { cx: "10", cy: "7", r: "4" }], ["path", { d: "M10.3 15H7a4 4 0 0 0-4 4v2" }], ["circle", { cx: "17", cy: "17", r: "3" }], ["path", { d: "m21 21-1.9-1.9" }]]
+  nodes: [["circle", { cx: "10", cy: "7", r: "4" }], ["path", { d: "M10.3 15H7a4 4 0 0 0-4 4v2", pathLength: "1" }], ["circle", { cx: "17", cy: "17", r: "3" }], ["path", { d: "m21 21-1.9-1.9", pathLength: "1" }]]
 });
 export {
   UserSearch

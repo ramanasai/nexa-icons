@@ -45,7 +45,7 @@ test("fills target closed nodes only and fill-safe overrides are applied", () =>
   assert.match(js.svg("Heart", { filled: true }), /data-fill-state="true"/);
   for (const name of ["Palette", "KeyRound"]) {
     assert.equal(ICONS.find((icon) => icon.name === name).fillSafe, false, `${name}: not fill safe`);
-    assert.match(js.svg(name, { variant: "solid" }), /data-fill-state="soft"/, `${name}: degrades`);
+    assert.match(js.svg(name, { variant: "solid" }), /data-fill-state="false"/, `${name}: not filled`);
   }
 });
 

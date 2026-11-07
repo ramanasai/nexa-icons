@@ -6,7 +6,7 @@ const PlayOff = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "shake",
   trigger: "hover",
-  nodes: [["path", { d: "m10.215 4.56 9.79 5.71a2 2 0 0 1 .003 3.458l-.393.23" }], ["path", { d: "m16.042 16.042-8.034 4.686A2 2 0 0 1 5 19V5" }], ["path", { d: "m2 2 20 20" }]]
+  nodes: [["path", { d: "m10.215 4.56 9.79 5.71a2 2 0 0 1 .003 3.458l-.393.23", pathLength: "1" }], ["path", { d: "m16.042 16.042-8.034 4.686A2 2 0 0 1 5 19V5", pathLength: "1" }], ["path", { d: "m2 2 20 20", pathLength: "1" }]]
 });
 export {
   PlayOff

@@ -6,7 +6,7 @@
 
 **Published on npm:** [`@sairamanapb/icons`](https://www.npmjs.com/package/@sairamanapb/icons)
 
-**[Open the live icon gallery →](https://ramanasai.github.io/nexa-icons/)** — browse all 1,034 icons, shapes, fills, 3D, glass/gradients, swaps and illustrations, entirely client-side.
+**[Open the live icon gallery →](https://ramanasai.github.io/nexa-icons/) · **[Open Nexa Studio →](https://ramanasai.github.io/nexa-icons/studio.html)**** — browse all 1,034 icons, shapes, fills, 3D, glass/gradients, swaps and illustrations, entirely client-side.
 
 **The Nexa icon system** — one stroke-first visual language for navigation,
 actions, empty states and status, shipped for React/TypeScript, vanilla JS,
@@ -24,11 +24,14 @@ dependencies beyond the optional React peer**.
 - **24×24 grid**, 2px padding, stroke-first, `currentColor`, round caps/joins.
 - **Shape containers** — `square`, `rounded`, `circle`, `pill`, `squircle`,
   `hexagon`, `diamond` — theme-safe via `color-mix(currentColor …)`.
+- **Optical variants** — `edges="round|sharp"`, `weight="light|regular|bold"`,
+  configurable duotone `fillOpacity`, and a consistent solid body fallback for
+  open geometry (detail-sensitive icons stay unfilled).
 - **Fill variants** — outline / duotone / solid, with CSS-only fill ↔ empty
   animation; open geometry degrades to duotone automatically.
 - **CSS 3D presets** — `tilt`, `flip`, `extrude`, `orbit` (presentation, not
   WebGL).
-- **17 semantic animation presets** (plus `fade-in`), CSS-only,
+- **22 animation presets** (17 semantic + 5 advanced: draw-on, spring, success, error, progress), CSS-only,
   `prefers-reduced-motion` aware, with `hover`/`focus`/`press`/`inview`/`mount`/
   `always`/`manual` triggers.
 - **Swap / morph transitions** between semantic pairs (`ArrowLeft ↔ ArrowRight`,
@@ -36,6 +39,9 @@ dependencies beyond the optional React peer**.
   `swapSvg` in vanilla JS, pure CSS everywhere.
 - **Illustrated set** — 12 duotone 64×64 illustrations for empty states,
   feature cards and onboarding (`illustrations/`, manifest + preview).
+- **Nexa Studio** — a browser editor at `gallery/studio.html` for search, sizing,
+  stroke/color, outline/duotone/solid/glass, shapes, motion and SVG/JSX/PNG/CSS
+  export.
 - **Native Rust/GPUI** — `nexa-icons-gpui` renders catalog icons in GPUI windows
   ([docs/gpui.md](docs/gpui.md)).
 - **No runtime dependencies beyond an optional React peer.** Static geometry,
@@ -217,7 +223,7 @@ export function Pager() {
 <Crown threeD="tilt" />
 ```
 
-Tree-shaken cost: ~1,834 B brotli for the first icon (includes the shape/fill/3D factory), ~41–49 B per extra icon.
+Tree-shaken cost: ~2,096 B brotli for the first icon (includes the shape/fill/3D factory), ~41–49 B per extra icon.
 
 ### Go
 
@@ -334,15 +340,15 @@ Brotli quality 11 on the shipped files; method and commands in
 |---|---:|---:|
 | One standalone SVG (`icons/bell.svg`, repo) | 384 B | **221 B** |
 | One React icon module (`dist/icons/bell.js`) | 407 B | **258 B** |
-| One-icon tree-shaken app bundle (incl. shape/fill/3D) | 4,190 B | **1,834 B** |
-| Full sprite, all 1,034 icons (`sprite.svg`, shipped) | 441,995 B | **45,290 B** |
-| Animation + shape/fill/3D layer (`dist/animations.css`) | 17,301 B | **3,558 B** |
+| One-icon tree-shaken app bundle (incl. shape/fill/3D) | 4,877 B | **2,096 B** |
+| Full sprite, all 1,034 icons (`sprite.svg`, shipped) | 496,505 B | **45,723 B** |
+| Animation + shape/fill/3D layer (`dist/animations.css`) | 18,929 B | **3,835 B** |
 | React barrel (`dist/index.js`) | 68,230 B | **11,953 B** |
 | CJS root bundle (`dist/cjs/index.js`) | 68,490 B | **11,336 B** |
-| Vanilla JS with all data (`js/index.mjs`) | 486,713 B | **62,895 B** |
-| Gallery shell (`gallery/index.html`) | 30,409 B | **7,247 B** |
-| Gallery data (`gallery/icons.data.js`) | 550,468 B | **76,039 B** |
-| Gallery app (`gallery/app.js`) | 88,175 B | **18,757 B** |
+| Vanilla JS with all data (`js/index.mjs`) | 549,204 B | **63,536 B** |
+| Gallery shell (`gallery/index.html`) | 30,461 B | **7,268 B** |
+| Gallery data (`gallery/icons.data.js`) | 612,246 B | **76,383 B** |
+| Gallery app (`gallery/app.js`) | 89,584 B | **18,948 B** |
 | Illustrated set, 12 SVGs (`illustrations/`) | 10,634 B | — |
 
 ## Project structure
@@ -433,7 +439,7 @@ dark use the same files. Details: [docs/theming.md](docs/theming.md).
 
 ## Animation
 
-17 semantic presets, CSS `transform`/`opacity` only — no JS runtime. Every icon
+22 presets (17 semantic + 5 advanced), CSS-only — no JS runtime. Every icon
 carries a default preset (e.g. `Bell` → `ring`, `Loader2` → `spin`); animation is
 opt-in with `animate`, hover-triggered by default (`focus`, `press`, `inview`,
 `mount`, `always`, `manual` also supported), `Loader2` loops. Swap/morph
@@ -500,7 +506,7 @@ The animation layer, packages, tooling and docs are original Nexa work under ISC
 | [docs/design.md](docs/design.md) | grid, stroke, states, containers, motion, a11y |
 | [docs/theming.md](docs/theming.md) | currentColor, tokens, contrast, forced colors |
 | [docs/api.md](docs/api.md) | React/JS/Go/Rust reference |
-| [docs/animations.md](docs/animations.md) | 17 presets, triggers, reduced motion, custom CSS |
+| [docs/animations.md](docs/animations.md) | 22 presets, triggers, reduced motion, custom CSS |
 | [docs/performance.md](docs/performance.md) | measured sizes, tree-shaking proof, no-WASM rationale |
 | [docs/gpui.md](docs/gpui.md) | Rust GPUI integration (`nexa-icons-gpui`) |
 | [docs/development.md](docs/development.md) | mise tasks, package-manager matrix, regenerate |

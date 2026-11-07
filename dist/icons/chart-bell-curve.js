@@ -6,7 +6,7 @@ const ChartBellCurve = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "ring",
   trigger: "hover",
-  nodes: [["path", { d: "M3 3v16a2 2 0 0 0 2 2h16" }], ["path", { d: "M7 16c3.5 0 2.5-10 6-10s2.5 10 6 10" }]]
+  nodes: [["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", pathLength: "1" }], ["path", { d: "M7 16c3.5 0 2.5-10 6-10s2.5 10 6 10", pathLength: "1" }]]
 });
 export {
   ChartBellCurve

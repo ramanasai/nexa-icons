@@ -6,7 +6,7 @@ const ChevronsUp = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "nudge-up",
   trigger: "hover",
-  nodes: [["path", { d: "m17 11-5-5-5 5" }], ["path", { d: "m17 18-5-5-5 5" }]]
+  nodes: [["path", { d: "m17 11-5-5-5 5", pathLength: "1" }], ["path", { d: "m17 18-5-5-5 5", pathLength: "1" }]]
 });
 export {
   ChevronsUp

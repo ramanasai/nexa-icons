@@ -8,5 +8,5 @@ export const Microsoft = /*#__PURE__*/ createIcon({
   fillUnsafe: false,
   preset: "pop",
   trigger: "hover",
-  nodes: [["path",{d:"M0 0v11.408h11.408V0zm12.594 0v11.408H24V0zM0 12.594V24h11.408V12.594zm12.594 0V24H24V12.594z",fill:"currentColor",stroke:"none"}]],
+  nodes: [["path",{d:"M0 0v11.408h11.408V0zm12.594 0v11.408H24V0zM0 12.594V24h11.408V12.594zm12.594 0V24H24V12.594z",fill:"currentColor",stroke:"none",pathLength:"1"}]],
 });

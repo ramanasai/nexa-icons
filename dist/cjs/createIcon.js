@@ -46,7 +46,12 @@ const PRESETS = [
   "nudge-left",
   "nudge-right",
   "nudge-up-right",
-  "nudge-down-right"
+  "nudge-down-right",
+  "draw",
+  "spring",
+  "success",
+  "error",
+  "progress"
 ];
 function strokeForSize(px) {
   if (px <= 16) return 2;
@@ -68,6 +73,9 @@ function createIcon(data) {
       size,
       strokeWidth,
       absoluteStrokeWidth,
+      weight,
+      edges,
+      fillOpacity,
       color,
       width,
       height,
@@ -98,8 +106,11 @@ function createIcon(data) {
     } = restProps;
     const explicitSize = size !== void 0;
     const px = typeof size === "number" ? size : size ? SIZE_PX[size] : 24;
-    const baseStroke = strokeWidth ?? (explicitSize ? strokeForSize(px) : 2);
-    const stroke = absoluteStrokeWidth ? (strokeWidth ?? 2) * (24 / px) : baseStroke;
+    const opticalBase = explicitSize ? strokeForSize(px) : 2;
+    const weightFactor = weight === "light" ? 0.8 : weight === "bold" ? 1.35 : 1;
+    const round3 = (value) => Math.round(value * 1e3) / 1e3;
+    const baseStroke = round3(strokeWidth ?? opticalBase * weightFactor);
+    const stroke = round3(absoluteStrokeWidth ? (strokeWidth ?? opticalBase) * (24 / px) : baseStroke);
     const preset = resolvePreset(animate, data.preset);
     const accessibleLabel = label ?? title ?? ariaLabelProp;
     const labelled = accessibleLabel != null || ariaLabelledByProp != null;
@@ -124,6 +135,7 @@ function createIcon(data) {
       svgStyle.strokeWidth = `var(--nexa-stroke, ${baseStroke})`;
     }
     if (color) svgStyle.color = color;
+    if (fillOpacity != null) svgStyle["--nexa-fill-opacity"] = String(fillOpacity);
     if (gradientPreset) svgStyle.stroke = `url(#nexa-g${reactId.replace(/[^a-zA-Z0-9_-]/g, "")})`;
     const glassStyle = glassConfig ? {
       ...glassConfig.blur != null ? { "--nexa-glass-blur": `${glassConfig.blur}px` } : {},
@@ -146,8 +158,8 @@ function createIcon(data) {
       fill: "none",
       stroke: hasGradient ? `url(#${gradientId})` : "currentColor",
       strokeWidth: stroke,
-      strokeLinecap: "round",
-      strokeLinejoin: "round",
+      strokeLinecap: edges === "sharp" ? "butt" : "round",
+      strokeLinejoin: edges === "sharp" ? "miter" : "round",
       className: ["nexa-icon", hasGradient ? `nexa-grad--${gradientPreset}` : "", className].filter(Boolean).join(" "),
       role: labelled && !hasShape && !threeD && !hasGlass ? "img" : void 0,
       "aria-hidden": ariaHiddenProp ?? (labelled && !hasShape && !threeD && !hasGlass ? void 0 : true),
@@ -156,8 +168,10 @@ function createIcon(data) {
       focusable: "false",
       "data-nexa-icon": data.kebab,
       "data-nexa-fill-safe": fillSafe ? "true" : "false",
+      "data-nexa-size": explicitSize ? px : void 0,
       style: Object.keys(svgStyle).length ? svgStyle : void 0,
-      "data-fill-state": fillExplicit ? resolvedFill === "outline" ? "false" : fillSafe ? fillState : "soft" : void 0,
+      "data-fill-state": fillExplicit ? resolvedFill === "outline" ? "false" : resolvedFill === "solid" && data.fillUnsafe === true ? "false" : resolvedFill === "solid" && !fillSafe ? "true" : fillSafe ? fillState : "soft" : void 0,
+      "data-fill-fallback": resolvedFill === "solid" && !fillSafe && data.fillUnsafe !== true ? "body" : void 0,
       "data-fill-anim": animateFill ? "true" : void 0,
       "data-nexa-gradient-anim": hasGradient && gradientAnim ? gradientAnim : void 0,
       "data-nexa-anim": preset,
@@ -191,11 +205,12 @@ function createIcon(data) {
       const closed = data.fillUnsafe !== true && (data.fillSafe === true || isClosedNode([tag, attrs]));
       return { tag, attrs: { ...attrs, "data-closed": closed ? "true" : "false" } };
     });
-    const bodyLayer = glassBody && hasGlass ? h(
+    const bodyLayer = glassBody && hasGlass || resolvedFill === "solid" && !fillSafe && data.fillUnsafe !== true ? h(
       "g",
       {
         key: "__body",
         className: "nexa-icon-body",
+        "data-nexa-fill-fallback": "body",
         fill: "none",
         stroke: strokePaint,
         strokeWidth: Math.max(5, stroke * 3.2),

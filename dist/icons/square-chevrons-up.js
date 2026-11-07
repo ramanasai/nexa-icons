@@ -6,7 +6,7 @@ const SquareChevronsUp = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "nudge-up",
   trigger: "hover",
-  nodes: [["path", { d: "M15 10L12 7L9 10" }], ["path", { d: "M15 16L12 13L9 16" }], ["rect", { x: "3", y: "3", width: "18", height: "18", rx: "2" }]]
+  nodes: [["path", { d: "M15 10L12 7L9 10", pathLength: "1" }], ["path", { d: "M15 16L12 13L9 16", pathLength: "1" }], ["rect", { x: "3", y: "3", width: "18", height: "18", rx: "2" }]]
 });
 export {
   SquareChevronsUp

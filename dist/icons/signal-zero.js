@@ -6,7 +6,7 @@ const SignalZero = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "pulse",
   trigger: "hover",
-  nodes: [["path", { d: "M2 20h.01" }]]
+  nodes: [["path", { d: "M2 20h.01", pathLength: "1" }]]
 });
 export {
   SignalZero

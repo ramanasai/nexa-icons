@@ -6,7 +6,7 @@ const Underline = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
-  nodes: [["path", { d: "M6 4v6a6 6 0 0 0 12 0V4" }], ["line", { "x1": "4", "x2": "20", "y1": "20", "y2": "20" }]]
+  nodes: [["path", { d: "M6 4v6a6 6 0 0 0 12 0V4", pathLength: "1" }], ["line", { "x1": "4", "x2": "20", "y1": "20", "y2": "20" }]]
 });
 export {
   Underline

@@ -29,5 +29,5 @@ const Loader2 = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "spin",
   trigger: "always",
-  nodes: [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56" }]]
+  nodes: [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", pathLength: "1" }]]
 });

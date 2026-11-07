@@ -7,7 +7,7 @@ export declare const SIZE_PX: {
     readonly xl: 40;
 };
 /** All CSS animation presets understood by animations.css. */
-export declare const PRESETS: readonly ["spin", "pulse", "ring", "shake", "wiggle", "flip", "bounce", "float", "tilt", "heartbeat", "pop", "fade-in", "nudge-up", "nudge-down", "nudge-left", "nudge-right", "nudge-up-right", "nudge-down-right"];
+export declare const PRESETS: readonly ["spin", "pulse", "ring", "shake", "wiggle", "flip", "bounce", "float", "tilt", "heartbeat", "pop", "fade-in", "nudge-up", "nudge-down", "nudge-left", "nudge-right", "nudge-up-right", "nudge-down-right", "draw", "spring", "success", "error", "progress"];
 /**
  * Nexa stroke rule: stroke gets optically lighter as the icon grows.
  * 16px => 2, 20px => 1.75, 24px and up => 1.5.

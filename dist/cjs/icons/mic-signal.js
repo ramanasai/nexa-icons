@@ -29,5 +29,5 @@ const MicSignal = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
-  nodes: [["path", { d: "M12 17v4" }], ["path", { d: "M18 11a6 6 0 00-3-5.197" }], ["path", { d: "M2 11a10 10 0 015-8.662" }], ["path", { d: "M22 11a10 10 0 00-5-8.662" }], ["path", { d: "M6 11a6 6 0 013-5.197" }], ["path", { d: "M9 21h6" }], ["rect", { x: "10", y: "9", width: "4", height: "8", rx: "2" }]]
+  nodes: [["path", { d: "M12 17v4", pathLength: "1" }], ["path", { d: "M18 11a6 6 0 00-3-5.197", pathLength: "1" }], ["path", { d: "M2 11a10 10 0 015-8.662", pathLength: "1" }], ["path", { d: "M22 11a10 10 0 00-5-8.662", pathLength: "1" }], ["path", { d: "M6 11a6 6 0 013-5.197", pathLength: "1" }], ["path", { d: "M9 21h6", pathLength: "1" }], ["rect", { x: "10", y: "9", width: "4", height: "8", rx: "2" }]]
 });

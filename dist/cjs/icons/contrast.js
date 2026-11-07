@@ -29,5 +29,5 @@ const Contrast = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
-  nodes: [["circle", { cx: "12", cy: "12", r: "10" }], ["path", { d: "M12 18a6 6 0 0 0 0-12v12z" }]]
+  nodes: [["circle", { cx: "12", cy: "12", r: "10" }], ["path", { d: "M12 18a6 6 0 0 0 0-12v12z", pathLength: "1" }]]
 });

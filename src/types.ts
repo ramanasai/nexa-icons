@@ -17,6 +17,8 @@ export type NexaShape =
   | "diamond";
 
 export type NexaFill = "outline" | "duotone" | "solid";
+export type NexaEdge = "round" | "sharp";
+export type NexaWeight = "light" | "regular" | "bold";
 
 export type Nexa3D = "tilt" | "flip" | "extrude" | "orbit";
 
@@ -59,7 +61,10 @@ export type NexaGradient =
   | "gold"
   | "mono";
 
+export type NexaExtraPreset = "draw" | "spring" | "success" | "error" | "progress";
+
 export type NexaPreset =
+  | NexaExtraPreset
   | "spin"
   | "pulse"
   | "ring"
@@ -111,6 +116,12 @@ export interface NexaIconProps
   size?: NexaSize | number;
   /** Override stroke width. Size-less (CSS-sized) icons default to 2; explicit size maps 16=>2, 20=>1.75, 24+=>1.5. */
   strokeWidth?: number;
+  /** Optical weight multiplier: light 0.8×, regular 1×, bold 1.35×. */
+  weight?: NexaWeight;
+  /** Rounded (default) or sharp line caps/joins. */
+  edges?: NexaEdge;
+  /** Duotone fill opacity, 0–1 (default 0.16). */
+  fillOpacity?: number;
   /** Keep the rendered stroke at `strokeWidth * 24 / size` regardless of icon size (Lucide-compatible). */
   absoluteStrokeWidth?: boolean;
   /** Convenience color override (sets `color`, so currentColor picks it up). */

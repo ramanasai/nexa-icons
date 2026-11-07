@@ -6,7 +6,7 @@ const PanelLeftClose = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "nudge-left",
   trigger: "hover",
-  nodes: [["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2" }], ["path", { d: "M9 3v18" }], ["path", { d: "m16 15-3-3 3-3" }]]
+  nodes: [["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2" }], ["path", { d: "M9 3v18", pathLength: "1" }], ["path", { d: "m16 15-3-3 3-3", pathLength: "1" }]]
 });
 export {
   PanelLeftClose

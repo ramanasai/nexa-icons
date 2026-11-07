@@ -29,5 +29,5 @@ const ListSortAscending = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "wiggle",
   trigger: "hover",
-  nodes: [["path", { d: "M3 19h18" }], ["path", { d: "M15 12H3" }], ["path", { d: "M9 5H3" }]]
+  nodes: [["path", { d: "M3 19h18", pathLength: "1" }], ["path", { d: "M15 12H3", pathLength: "1" }], ["path", { d: "M9 5H3", pathLength: "1" }]]
 });

@@ -29,5 +29,5 @@ const Minus = /* @__PURE__ */ (0, import_createIcon.createIcon)({
   fillUnsafe: false,
   preset: "pulse",
   trigger: "hover",
-  nodes: [["path", { d: "M5 12h14" }]]
+  nodes: [["path", { d: "M5 12h14", pathLength: "1" }]]
 });

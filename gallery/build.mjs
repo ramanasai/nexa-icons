@@ -284,6 +284,11 @@ if (existsSync(llmsSrc)) copyFileSync(llmsSrc, llmsOut);
 const llmSrc = join(ROOT, 'llm.txt');
 if (existsSync(llmSrc)) copyFileSync(llmSrc, join(ROOT, 'gallery', 'llm.txt'));
 
+// Studio is a static editor shell that loads the same local dataset.
+const studioSrc = join(ROOT, 'gallery', 'src', 'studio.html');
+const studioOut = join(ROOT, 'gallery', 'studio.html');
+if (existsSync(studioSrc)) copyFileSync(studioSrc, studioOut);
+
 const injectedCss = minifyCss(animCss) + '\n' + minifyCss(effectsCss) + '\n' + minifyCss(componentsCss);
 let appSource = read(join(SRC, 'app.js')).trim();
 if (!appSource.includes('/*@COMPONENTS_CSS@*/')) fail('gallery/src/app.js is missing the /*@COMPONENTS_CSS@*/ marker');

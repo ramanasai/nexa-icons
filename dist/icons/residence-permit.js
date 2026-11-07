@@ -6,7 +6,7 @@ const ResidencePermit = /* @__PURE__ */ createIcon({
   fillUnsafe: false,
   preset: "pop",
   trigger: "hover",
-  nodes: [["rect", { x: "2.5", y: "5", width: "19", height: "14", rx: "2" }], ["rect", { x: "5.5", y: "8", width: "3", height: "3", rx: ".5" }], ["path", { d: "M11 9h5M11 12h5M11 15h3" }], ["path", { d: "M18 14.5a2 2 0 0 0-4 0v1.5" }]]
+  nodes: [["rect", { x: "2.5", y: "5", width: "19", height: "14", rx: "2" }], ["rect", { x: "5.5", y: "8", width: "3", height: "3", rx: ".5" }], ["path", { d: "M11 9h5M11 12h5M11 15h3", pathLength: "1" }], ["path", { d: "M18 14.5a2 2 0 0 0-4 0v1.5", pathLength: "1" }]]
 });
 export {
   ResidencePermit
