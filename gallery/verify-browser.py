@@ -147,23 +147,24 @@ def main() -> int:
             page.wait_for_timeout(60)
             state = page.evaluate("""() => {
                 const grid = document.querySelector('#grid');
-                const card = grid.querySelector('.icon-btn');
                 const glyph = grid.querySelector('.glass-glyph');
-                const body = glyph && glyph.querySelector('.glass-body');
-                const gradient = body && body.querySelector('linearGradient');
-                const stop = gradient && gradient.querySelector('stop');
+                const cs = glyph ? getComputedStyle(glyph) : null;
+                const sheen = glyph && glyph.querySelector('.glass-sheen');
                 return {
                     attr: grid.getAttribute('data-glass'),
                     glyph: glyph ? glyph.className : '',
-                    bodies: grid.querySelectorAll('.glass-body').length,
-                    hasGradient: Boolean(gradient),
-                    stop: stop ? getComputedStyle(stop).stopColor : '',
-                    bodyWidth: body ? getComputedStyle(body).strokeWidth : '',
+                    glyphs: grid.querySelectorAll('.glass-glyph').length,
+                    sheens: grid.querySelectorAll('.glass-sheen').length,
+                    backdrop: cs ? (cs.backdropFilter || cs.webkitBackdropFilter) : '',
+                    bg: cs ? cs.backgroundImage : '',
+                    border: cs ? cs.borderTopColor : '',
                 };
             }""")
-            check(f"glass preset {preset} renders a gradient glass body on every icon",
-                  state["attr"] == preset and state["bodies"] > 0 and f"glass-glyph--{preset}" in state["glyph"]
-                  and state["hasGradient"] and state["stop"] not in ("", "rgba(0, 0, 0, 0)"), state)
+            check(f"glass preset {preset} renders a frosted glass tile on every icon",
+                  state["attr"] == preset and state["glyphs"] > 0 and state["sheens"] > 0
+                  and f"glass-glyph--{preset}" in state["glyph"]
+                  and state["backdrop"] not in ("none", "")
+                  and state["bg"] != "none", state)
         page.select_option("#glass-filter", "")
         page.wait_for_timeout(60)
 

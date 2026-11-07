@@ -312,12 +312,9 @@
     var active = state.activeK ? icon.k === state.activeK : index === 0;
     var iconMarkup;
     if (state.glass) {
-      var gid = 'nexa-glass-' + index + '-' + icon.k;
-      var bodySvg = '<svg class="glass-body" viewBox="0 0 24 24" fill="none" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="--glass-fill:url(#' + gid + ');--glass-stroke:url(#' + gid + ')">' +
-        '<defs><linearGradient id="' + gid + '" x1="0" y1="0" x2="1" y2="1">' +
-        '<stop offset="0%" style="stop-color:var(--glass-1)"/><stop offset="100%" style="stop-color:var(--glass-2)"/>' +
-        '</linearGradient></defs>' + (icon.i || '') + '</svg>';
-      iconMarkup = '<span class="glass-glyph glass-glyph--' + esc(state.glass) + '">' + bodySvg + svgHTML(icon, { anim: esc(icon.p), trigger: trigger }) + '</span>';
+      iconMarkup = '<span class="glass-glyph glass-glyph--' + esc(state.glass) + '">' +
+        '<span class="glass-sheen" aria-hidden="true"></span>' +
+        svgHTML(icon, { anim: esc(icon.p), trigger: trigger }) + '</span>';
     } else {
       iconMarkup = svgHTML(icon, { anim: esc(icon.p), trigger: trigger });
     }

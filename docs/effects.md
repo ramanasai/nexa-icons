@@ -167,11 +167,11 @@ sheen/pulse/float loop. Reduced motion disables both modes.
 
 ## Gallery "Glass — all icons"
 
-The gallery applies the seven glass presets to **every glyph**, not just a tile:
-each card renders a gradient-filled `glass-body` behind the normal stroke
-(closed paths are filled with the gradient, open paths get a thick gradient
-stroke), plus a specular highlight. It is a visual demo of the effect; apps use
-`glass`/`glassBody` on the React/JS components.
+The gallery applies the seven glass presets as **frosted glass tiles on every
+icon card**: a translucent rounded tile (background gradient + `backdrop-filter`,
+specular sheen, bevel and rim) sits over a colorful blurred backdrop, with the
+glyph etched in white (neon uses a dark translucent tile). It is a visual demo;
+apps use `glass`/`glassBody` on the React/JS components.
 
 ## Animated glass
 
